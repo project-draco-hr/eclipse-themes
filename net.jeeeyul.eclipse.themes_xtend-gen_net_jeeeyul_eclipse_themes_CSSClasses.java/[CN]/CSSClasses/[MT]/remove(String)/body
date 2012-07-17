@@ -1,0 +1,4 @@
+{
+  boolean _remove=this.classes.remove(className);
+  return _remove;
+}

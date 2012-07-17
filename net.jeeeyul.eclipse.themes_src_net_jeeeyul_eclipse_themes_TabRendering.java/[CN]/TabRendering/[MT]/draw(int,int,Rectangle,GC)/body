@@ -1,0 +1,17 @@
+{
+  String classNames=(String)folder.getData(CSSSWTConstants.CSS_CLASS_NAME_KEY);
+  CSSClasses cc=new CSSClasses(classNames);
+  if (folder.getItemCount() == 0) {
+    if (cc.add("empty")) {
+      folder.setData(CSSSWTConstants.CSS_CLASS_NAME_KEY,cc.toString());
+      folder.reskin(SWT.ALL);
+    }
+  }
+ else {
+    if (cc.remove("empty")) {
+      folder.setData(CSSSWTConstants.CSS_CLASS_NAME_KEY,cc.toString());
+      folder.reskin(SWT.ALL);
+    }
+  }
+  super.draw(part,state,bounds,gc);
+}

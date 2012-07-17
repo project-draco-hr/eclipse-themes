@@ -1,0 +1,12 @@
+{
+  boolean _xifexpression=false;
+  boolean _contains=this.classes.contains(className);
+  if (_contains) {
+    return false;
+  }
+ else {
+    boolean _add=this.classes.add(className);
+    _xifexpression=_add;
+  }
+  return _xifexpression;
+}

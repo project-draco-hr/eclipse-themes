@@ -1,0 +1,17 @@
+{
+  boolean _and=false;
+  boolean _notEquals=(!Objects.equal(source,null));
+  if (!_notEquals) {
+    _and=false;
+  }
+ else {
+    String _trim=source.trim();
+    boolean _isEmpty=_trim.isEmpty();
+    boolean _not=(!_isEmpty);
+    _and=(_notEquals && _not);
+  }
+  if (_and) {
+    String[] _split=source.split(" ");
+    Iterables.<String>addAll(this.classes,((Iterable<? extends String>)Conversions.doWrapArray(_split)));
+  }
+}
