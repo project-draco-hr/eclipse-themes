@@ -1,11 +1,5 @@
 {
   super(folder);
   this.folder=folder;
-  folder.addListener(SWT.Skin,new Listener(){
-    @Override public void handleEvent(    Event event){
-      System.out.println("????");
-    }
-  }
-);
   updateClassJob.schedule();
 }
