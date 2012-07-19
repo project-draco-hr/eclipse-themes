@@ -1,4 +1,0 @@
-{
-  CSSClasses _cSSClasses=new CSSClasses("a b c");
-  InputOutput.<CSSClasses>println(_cSSClasses);
-}

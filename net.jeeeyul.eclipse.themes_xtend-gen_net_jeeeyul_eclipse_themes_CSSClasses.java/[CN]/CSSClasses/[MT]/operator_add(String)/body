@@ -1,0 +1,4 @@
+{
+  boolean _add=this.add(className);
+  return _add;
+}

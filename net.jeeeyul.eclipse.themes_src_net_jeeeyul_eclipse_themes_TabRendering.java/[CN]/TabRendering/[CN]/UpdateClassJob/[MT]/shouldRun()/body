@@ -1,3 +1,0 @@
-{
-  return folder != null && !folder.isDisposed();
-}
