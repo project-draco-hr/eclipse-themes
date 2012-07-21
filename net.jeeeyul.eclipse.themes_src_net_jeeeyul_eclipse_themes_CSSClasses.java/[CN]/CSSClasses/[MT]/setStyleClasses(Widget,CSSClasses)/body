@@ -1,0 +1,3 @@
+{
+  w.setData(CSSSWTConstants.CSS_CLASS_NAME_KEY,newStyleClasses.toString());
+}

@@ -1,4 +1,0 @@
-{
-  String _join=IterableExtensions.join(this.classes," ");
-  return _join;
-}

@@ -1,0 +1,4 @@
+{
+  if (classes.contains(className))   return false;
+  return classes.add(className);
+}

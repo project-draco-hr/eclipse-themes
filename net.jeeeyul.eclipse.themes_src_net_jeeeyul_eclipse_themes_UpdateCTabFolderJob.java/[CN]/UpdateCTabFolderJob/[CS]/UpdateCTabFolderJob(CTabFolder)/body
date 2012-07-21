@@ -1,0 +1,5 @@
+{
+  super("Update CTabFolder CSS");
+  this.folder=folder;
+  this.setSystem(true);
+}
