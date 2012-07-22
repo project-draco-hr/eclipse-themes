@@ -1,0 +1,3 @@
+{
+  if (source != null && !source.trim().isEmpty())   for (  String name : source.split(" "))   classes.add(name);
+}

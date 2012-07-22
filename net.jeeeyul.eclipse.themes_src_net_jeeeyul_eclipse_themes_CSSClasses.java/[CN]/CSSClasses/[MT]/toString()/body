@@ -1,0 +1,7 @@
+{
+  if (classes.isEmpty())   return "";
+  Iterator<String> iter=classes.iterator();
+  StringBuilder sb=new StringBuilder(iter.next());
+  while (iter.hasNext())   sb.append(" ").append(iter.next());
+  return sb.toString();
+}

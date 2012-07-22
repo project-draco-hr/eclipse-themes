@@ -1,0 +1,4 @@
+{
+  String literal=(String)w.getData(CSSSWTConstants.CSS_CLASS_NAME_KEY);
+  return new CSSClasses(literal);
+}
