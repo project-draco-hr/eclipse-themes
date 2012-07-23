@@ -1,0 +1,8 @@
+{
+  for (  Color each : colors) {
+    if (each != null && !each.isDisposed()) {
+      each.dispose();
+    }
+  }
+  colors=null;
+}

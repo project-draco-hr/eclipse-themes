@@ -1,0 +1,10 @@
+{
+  if (activeGradient != null) {
+    activeGradient.dispose();
+    activeGradient=null;
+  }
+  if (inactiveGradient != null) {
+    inactiveGradient.dispose();
+    inactiveGradient=null;
+  }
+}

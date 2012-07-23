@@ -1,0 +1,11 @@
+{
+  if (colors == null) {
+    colors=new Color[3];
+    colors[0]=new Color(display,new RGB(hsb[0],hsb[1],hsb[2]));
+    float saturation=Math.min(hsb[1] * 1.5f,1f);
+    float brightness=Math.max(hsb[2] * 0.99f,0f);
+    colors[1]=new Color(display,new RGB(hsb[0],saturation,brightness));
+    colors[2]=new Color(display,255,255,255);
+  }
+  return colors;
+}
