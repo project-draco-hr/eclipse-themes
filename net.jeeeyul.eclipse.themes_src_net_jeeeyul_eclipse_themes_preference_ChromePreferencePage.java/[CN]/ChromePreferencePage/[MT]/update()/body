@@ -1,0 +1,7 @@
+{
+  float[] old=decorator.getHsb();
+  old[0]=hueScale.getSelection();
+  old[1]=satScale.getSelection() / 100f;
+  decorator.setHsb(old);
+  decorator.apply(folder);
+}

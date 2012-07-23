@@ -1,0 +1,8 @@
+{
+  IPreferenceStore store=Activator.getDefault().getPreferenceStore();
+  float[] current=decorator.getHsb();
+  store.setValue("chrome-active-hue",current[0]);
+  store.setValue("chrome-active-saturation",current[1]);
+  store.setValue("chrome-active-brightness",current[2]);
+  return super.performOk();
+}

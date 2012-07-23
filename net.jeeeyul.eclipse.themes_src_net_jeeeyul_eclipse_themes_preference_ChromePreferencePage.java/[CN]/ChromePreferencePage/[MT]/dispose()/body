@@ -1,0 +1,4 @@
+{
+  decorator.dispose();
+  super.dispose();
+}

@@ -1,0 +1,24 @@
+{
+  hueScale=new Scale(body,SWT.NORMAL);
+  hueScale.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+  hueScale.setMinimum(0);
+  hueScale.setMaximum(360);
+  hueScale.setSelection((int)decorator.getHsb()[0]);
+  hueScale.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      update();
+    }
+  }
+);
+  satScale=new Scale(body,SWT.NORMAL);
+  satScale.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+  satScale.setMinimum(0);
+  satScale.setMaximum(100);
+  satScale.setSelection((int)(decorator.getHsb()[1] * 100));
+  satScale.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      update();
+    }
+  }
+);
+}

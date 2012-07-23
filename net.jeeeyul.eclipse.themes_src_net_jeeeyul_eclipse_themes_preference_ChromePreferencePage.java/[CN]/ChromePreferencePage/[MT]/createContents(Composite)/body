@@ -1,0 +1,21 @@
+{
+  Composite composite=new Composite(parent,SWT.NORMAL);
+  composite.setLayout(new GridLayout());
+  folder=new CTabFolder(composite,SWT.NORMAL);
+  folder.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+  CSSClasses tags=CSSClasses.getStyleClasses(folder);
+  tags.add("chrome-tabfolder-preview");
+  CSSClasses.setStyleClasses(folder,tags);
+  CTabItem item=new CTabItem(folder,SWT.Close);
+  Composite body=new Composite(folder,SWT.NORMAL);
+  body.setBackgroundMode(SWT.INHERIT_FORCE);
+  body.setBackground(parent.getDisplay().getSystemColor(SWT.COLOR_WHITE));
+  body.setLayout(new GridLayout());
+  fillContents(body);
+  item.setControl(body);
+  item.setText("Example");
+  folder.setSelection(item);
+  folder.reskin(SWT.ALL);
+  decorator.apply(folder);
+  return composite;
+}

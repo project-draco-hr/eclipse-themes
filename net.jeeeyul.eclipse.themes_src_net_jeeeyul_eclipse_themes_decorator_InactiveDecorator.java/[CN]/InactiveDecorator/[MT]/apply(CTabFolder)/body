@@ -1,0 +1,3 @@
+{
+  tabFolder.setBackground(COLORS,new int[]{99,100},true);
+}

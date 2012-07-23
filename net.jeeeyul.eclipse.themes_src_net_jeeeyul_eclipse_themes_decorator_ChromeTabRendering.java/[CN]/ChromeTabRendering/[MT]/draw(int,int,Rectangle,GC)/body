@@ -1,0 +1,15 @@
+{
+  CSSClasses tags=CSSClasses.getStyleClasses(tabFolder);
+  if (part == PART_BACKGROUND && !tags.contains("chrome-tabfolder-preview")) {
+    if (tabFolder.getItemCount() == 0) {
+      preference.getEmptyDecorator().apply(tabFolder);
+    }
+ else     if (tags.contains("active")) {
+      preference.getActiveDecorator().apply(tabFolder);
+    }
+ else {
+      preference.getInactiveDecorator().apply(tabFolder);
+    }
+  }
+  super.draw(part,state,bounds,gc);
+}
