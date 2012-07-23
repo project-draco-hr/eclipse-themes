@@ -1,0 +1,6 @@
+{
+  IPreferenceStore store=Activator.getDefault().getPreferenceStore();
+  store.setDefault("chrome-active-hue",221f);
+  store.setDefault("chrome-active-saturation",.15f);
+  store.setDefault("chrome-active-brightness",.96f);
+}

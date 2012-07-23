@@ -1,0 +1,6 @@
+{
+  if (inactiveDecorator == null) {
+    inactiveDecorator=new InactiveDecorator();
+  }
+  return inactiveDecorator;
+}

@@ -1,0 +1,6 @@
+{
+  if (activeDecorator != null) {
+    activeDecorator.dispose();
+    activeDecorator=null;
+  }
+}

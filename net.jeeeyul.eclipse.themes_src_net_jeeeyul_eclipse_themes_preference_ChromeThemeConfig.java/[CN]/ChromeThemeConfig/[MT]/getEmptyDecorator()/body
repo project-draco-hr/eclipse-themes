@@ -1,0 +1,6 @@
+{
+  if (emptyDecorator == null) {
+    emptyDecorator=new EmptyDecorator();
+  }
+  return emptyDecorator;
+}
