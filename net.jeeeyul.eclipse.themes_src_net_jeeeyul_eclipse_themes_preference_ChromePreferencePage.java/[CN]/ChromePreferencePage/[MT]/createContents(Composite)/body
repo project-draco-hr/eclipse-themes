@@ -8,6 +8,7 @@
   tags.add("chrome-tabfolder-preview");
   CSSClasses.setStyleClasses(folder,tags);
   CTabItem item=new CTabItem(folder,SWT.Close);
+  item.setImage(SharedImages.getImage(SharedImages.PALETTE));
   Composite body=new Composite(folder,SWT.NORMAL);
   body.setBackgroundMode(SWT.INHERIT_FORCE);
   body.setBackground(parent.getDisplay().getSystemColor(SWT.COLOR_WHITE));
