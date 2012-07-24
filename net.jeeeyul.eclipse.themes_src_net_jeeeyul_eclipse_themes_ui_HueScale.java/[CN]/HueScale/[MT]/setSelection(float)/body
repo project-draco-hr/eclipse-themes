@@ -1,4 +1,11 @@
 {
+  if (this.selection == selection) {
+    return;
+  }
   this.selection=selection;
   redraw();
+  Event event=new Event();
+  event.widget=this;
+  event.display=getDisplay();
+  notifyListeners(SWT.Selection,event);
 }

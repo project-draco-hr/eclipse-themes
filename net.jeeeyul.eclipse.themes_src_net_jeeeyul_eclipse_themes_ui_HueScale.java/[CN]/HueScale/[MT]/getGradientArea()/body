@@ -1,9 +1,11 @@
 {
+  int horizontalMargin=10;
+  int gradientHeight=10;
   Rectangle clientArea=getClientArea();
   Rectangle gradientArea=getClientArea();
-  gradientArea.height=10;
+  gradientArea.height=gradientHeight;
   gradientArea.y=(clientArea.height - gradientArea.height) / 2;
-  gradientArea.width-=10;
+  gradientArea.width-=horizontalMargin * 2;
   gradientArea.x=(clientArea.width - gradientArea.width) / 2;
   return gradientArea;
 }

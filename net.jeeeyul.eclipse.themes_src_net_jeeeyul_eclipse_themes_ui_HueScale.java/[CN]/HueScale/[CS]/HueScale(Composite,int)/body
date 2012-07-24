@@ -12,4 +12,16 @@
     }
   }
 );
+  addListener(SWT.MouseDown,new Listener(){
+    @Override public void handleEvent(    Event event){
+      onMouseDown(event);
+    }
+  }
+);
+  addListener(SWT.MouseUp,new Listener(){
+    @Override public void handleEvent(    Event event){
+      onMouseUp(event);
+    }
+  }
+);
 }

@@ -4,6 +4,7 @@
   shell.setLayout(new FillLayout());
   HueScale hueScale=new HueScale(shell,SWT.NORMAL);
   hueScale.setSelection(180f);
+  shell.pack();
   shell.open();
   while (!shell.isDisposed()) {
     if (!display.readAndDispatch()) {

@@ -4,10 +4,8 @@
   startGroup.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
   startGroup.setLayout(new GridLayout(2,false));
   new org.eclipse.swt.widgets.Label(startGroup,SWT.NORMAL).setText("Hue:");
-  startHueScale=new Scale(startGroup,SWT.NORMAL);
+  startHueScale=new HueScale(startGroup,SWT.NORMAL);
   startHueScale.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-  startHueScale.setMinimum(0);
-  startHueScale.setMaximum(360);
   startHueScale.setSelection((int)decorator.getStartHSB()[0]);
   startHueScale.addListener(SWT.Selection,new Listener(){
     @Override public void handleEvent(    Event event){
@@ -76,10 +74,8 @@
 );
   lockHueField.setLayoutData(new GridData(SWT.FILL,SWT.FILL,true,false,2,1));
   new org.eclipse.swt.widgets.Label(endGroup,SWT.NORMAL).setText("Hue:");
-  endHueScale=new Scale(endGroup,SWT.NORMAL);
+  endHueScale=new HueScale(endGroup,SWT.NORMAL);
   endHueScale.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-  endHueScale.setMinimum(0);
-  endHueScale.setMaximum(360);
   endHueScale.setSelection((int)decorator.getEndHSB()[0]);
   endHueScale.addListener(SWT.Selection,new Listener(){
     @Override public void handleEvent(    Event event){
