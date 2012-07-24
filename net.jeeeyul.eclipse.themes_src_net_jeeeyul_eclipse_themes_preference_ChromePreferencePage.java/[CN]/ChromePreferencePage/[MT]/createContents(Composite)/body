@@ -17,7 +17,6 @@
   item.setControl(body);
   item.setText("Active Gradient");
   folder.setSelection(item);
-  folder.reskin(SWT.ALL);
   decorator.apply(folder);
   return composite;
 }

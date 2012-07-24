@@ -1,6 +1,6 @@
 {
   CSSClasses tags=CSSClasses.getStyleClasses(tabFolder);
-  if (part == PART_BODY) {
+  if (part == PART_BODY && !tags.contains("chrome-tabfolder-preview")) {
     if (tabFolder.getItemCount() == 0) {
       preference.getEmptyDecorator().apply(tabFolder);
       tabFolder.setTabHeight(23);
