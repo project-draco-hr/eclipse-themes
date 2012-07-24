@@ -1,0 +1,24 @@
+{
+  IPreferenceStore store=getStore();
+  float[] start=new float[3];
+  start[0]=store.getDefaultFloat("chrome-active-start-hue");
+  start[1]=store.getDefaultFloat("chrome-active-start-saturation");
+  start[2]=store.getDefaultFloat("chrome-active-start-brightness");
+  float[] end=new float[3];
+  end[0]=store.getDefaultFloat("chrome-active-end-hue");
+  end[1]=store.getDefaultFloat("chrome-active-end-saturation");
+  end[2]=store.getDefaultFloat("chrome-active-end-brightness");
+  decorator.setStartHSB(start);
+  decorator.setEndHSB(end);
+  startHueScale.setSelection((int)start[0]);
+  startSaturationScale.setSelection((int)(start[1] * 100));
+  startBrightnessScale.setSelection((int)(start[2] * 100));
+  endHueScale.setSelection((int)end[0]);
+  endSaturationScale.setSelection((int)(end[1] * 100));
+  endBrightnessScale.setSelection((int)(end[2] * 100));
+  autoEndColorField.setSelection(store.getDefaultBoolean("chrome-auto-end-color"));
+  lockHueField.setSelection(store.getDefaultBoolean("chrome-lock-hue"));
+  updateLock();
+  updateAuto();
+  update();
+}

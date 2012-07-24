@@ -3,6 +3,7 @@
   composite.setLayout(new GridLayout());
   folder=new CTabFolder(composite,SWT.NORMAL);
   folder.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+  createFakeToolbar();
   CSSClasses tags=CSSClasses.getStyleClasses(folder);
   tags.add("chrome-tabfolder-preview");
   CSSClasses.setStyleClasses(folder,tags);

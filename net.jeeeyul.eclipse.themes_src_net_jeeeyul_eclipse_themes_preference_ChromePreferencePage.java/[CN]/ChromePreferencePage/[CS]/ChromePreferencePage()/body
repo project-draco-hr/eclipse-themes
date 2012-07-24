@@ -9,4 +9,5 @@
   hsbEnd[1]=store.getFloat("chrome-active-end-saturation");
   hsbEnd[2]=store.getFloat("chrome-active-end-brightness");
   decorator=new GradientDecorator(hsbStart,hsbEnd);
+  setDescription("Chrome Theme Configuration");
 }
