@@ -1,0 +1,15 @@
+{
+  super(parent,style | SWT.DOUBLE_BUFFERED);
+  addListener(SWT.Paint,new Listener(){
+    @Override public void handleEvent(    Event event){
+      onPaint(event);
+    }
+  }
+);
+  addListener(SWT.MouseMove,new Listener(){
+    @Override public void handleEvent(    Event event){
+      onMouseMove(event);
+    }
+  }
+);
+}

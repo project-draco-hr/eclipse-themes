@@ -1,0 +1,13 @@
+{
+  Display display=Display.getDefault();
+  Shell shell=new Shell(display);
+  shell.setLayout(new FillLayout());
+  HueScale hueScale=new HueScale(shell,SWT.NORMAL);
+  hueScale.setSelection(180f);
+  shell.open();
+  while (!shell.isDisposed()) {
+    if (!display.readAndDispatch()) {
+      display.sleep();
+    }
+  }
+}

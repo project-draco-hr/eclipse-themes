@@ -1,0 +1,6 @@
+{
+  GC gc=event.gc;
+  gc.setAntialias(SWT.ON);
+  drawGradient(gc);
+  drawSelection(gc);
+}
