@@ -1,0 +1,4 @@
+{
+  disposeEndColor();
+  this.endHSB=endHSB;
+}

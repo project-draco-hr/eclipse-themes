@@ -1,0 +1,11 @@
+{
+  boolean isAutomaticEndColor=isAutomaticEndColor();
+  lockHueField.setEnabled(!isAutomaticEndColor);
+  endBrightnessScale.setEnabled(!isAutomaticEndColor);
+  endHueScale.setEnabled(!isAutomaticEndColor);
+  endSaturationScale.setEnabled(!isAutomaticEndColor);
+  if (isAutomaticEndColor) {
+    computeEndColor();
+    update();
+  }
+}

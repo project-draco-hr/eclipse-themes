@@ -1,8 +1,12 @@
 {
-  IPreferenceStore store=Activator.getDefault().getPreferenceStore();
-  float hsb[]=new float[3];
-  hsb[0]=store.getFloat("chrome-active-hue");
-  hsb[1]=store.getFloat("chrome-active-saturation");
-  hsb[2]=store.getFloat("chrome-active-brightness");
-  decorator=new AutoGradientDecorator(hsb);
+  IPreferenceStore store=getStore();
+  float hsbStart[]=new float[3];
+  hsbStart[0]=store.getFloat("chrome-active-start-hue");
+  hsbStart[1]=store.getFloat("chrome-active-start-saturation");
+  hsbStart[2]=store.getFloat("chrome-active-start-brightness");
+  float hsbEnd[]=new float[3];
+  hsbEnd[0]=store.getFloat("chrome-active-end-hue");
+  hsbEnd[1]=store.getFloat("chrome-active-end-saturation");
+  hsbEnd[2]=store.getFloat("chrome-active-end-brightness");
+  decorator=new GradientDecorator(hsbStart,hsbEnd);
 }

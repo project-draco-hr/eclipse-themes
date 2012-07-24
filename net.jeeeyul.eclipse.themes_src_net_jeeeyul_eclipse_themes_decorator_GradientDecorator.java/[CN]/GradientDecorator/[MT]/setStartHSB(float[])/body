@@ -1,0 +1,4 @@
+{
+  disposeStartColor();
+  this.startHSB=startHSB;
+}

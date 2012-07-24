@@ -1,9 +1,0 @@
-{
-  Assert.isNotNull(hsb);
-  Assert.isLegal(hsb.length == 3);
-  if (this.hsb.equals(hsb)) {
-    return;
-  }
-  this.hsb=hsb;
-  invaidate();
-}

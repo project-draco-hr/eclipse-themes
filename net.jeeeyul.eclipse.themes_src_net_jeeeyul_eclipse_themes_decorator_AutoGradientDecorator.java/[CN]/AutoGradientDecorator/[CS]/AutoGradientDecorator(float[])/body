@@ -1,4 +1,0 @@
-{
-  Assert.isNotNull(hsb);
-  this.hsb=hsb;
-}

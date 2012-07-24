@@ -1,4 +1,0 @@
-{
-  this.display=tabFolder.getDisplay();
-  tabFolder.setBackground(getColors(),new int[]{99,100},true);
-}

@@ -1,8 +1,14 @@
 {
-  IPreferenceStore store=Activator.getDefault().getPreferenceStore();
-  float[] current=decorator.getHsb();
-  store.setValue("chrome-active-hue",current[0]);
-  store.setValue("chrome-active-saturation",current[1]);
-  store.setValue("chrome-active-brightness",current[2]);
+  IPreferenceStore store=getStore();
+  float[] start=decorator.getStartHSB();
+  store.setValue("chrome-active-start-hue",start[0]);
+  store.setValue("chrome-active-start-saturation",start[1]);
+  store.setValue("chrome-active-start-brightness",start[2]);
+  float[] end=decorator.getEndHSB();
+  store.setValue("chrome-active-end-hue",end[0]);
+  store.setValue("chrome-active-end-saturation",end[1]);
+  store.setValue("chrome-active-end-brightness",end[2]);
+  store.setValue("chrome-auto-end-color",autoEndColorField.getSelection());
+  store.setValue("chrome-lock-hue",lockHueField.getSelection());
   return super.performOk();
 }

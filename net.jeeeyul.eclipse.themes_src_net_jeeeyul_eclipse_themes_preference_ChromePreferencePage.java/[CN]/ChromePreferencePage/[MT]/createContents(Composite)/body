@@ -13,7 +13,7 @@
   body.setLayout(new GridLayout());
   fillContents(body);
   item.setControl(body);
-  item.setText("Example");
+  item.setText("Active Gradient");
   folder.setSelection(item);
   folder.reskin(SWT.ALL);
   decorator.apply(folder);

@@ -1,0 +1,5 @@
+{
+  endHueScale.setSelection(startHueScale.getSelection());
+  endSaturationScale.setSelection(Math.min((int)(startSaturationScale.getSelection() * 1.15),100));
+  endBrightnessScale.setSelection((int)(startBrightnessScale.getSelection() * 0.95));
+}

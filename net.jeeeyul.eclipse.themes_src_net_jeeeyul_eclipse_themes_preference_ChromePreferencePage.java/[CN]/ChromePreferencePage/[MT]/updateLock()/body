@@ -1,0 +1,10 @@
+{
+  if (isHueSynchronized()) {
+    endHueScale.setEnabled(false);
+    endHueScale.setSelection(startHueScale.getSelection());
+  }
+ else {
+    endHueScale.setEnabled(true);
+  }
+  update();
+}
