@@ -4,9 +4,10 @@
   lock.release();
   for (  Composite each : array) {
     try {
-      setSashWidth(each,ChromeThemeConfig.getInstance().getSashWidth());
+      updateSash(each,ChromeThemeConfig.getInstance().getSashWidth());
     }
  catch (    Exception e) {
+      ChromeThemeCore.getDefault().log(e);
       e.printStackTrace();
     }
   }

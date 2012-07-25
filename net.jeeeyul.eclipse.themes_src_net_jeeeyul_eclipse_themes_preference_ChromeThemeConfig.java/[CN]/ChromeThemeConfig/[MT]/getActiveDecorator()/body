@@ -1,6 +1,6 @@
 {
   if (activeDecorator == null) {
-    IPreferenceStore store=Activator.getDefault().getPreferenceStore();
+    IPreferenceStore store=ChromeThemeCore.getDefault().getPreferenceStore();
     float start[]=new float[3];
     start[0]=store.getFloat(ChromeConstants.CHROME_ACTIVE_START_HUE);
     start[1]=store.getFloat(ChromeConstants.CHROME_ACTIVE_START_SATURATION);

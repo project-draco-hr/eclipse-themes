@@ -6,7 +6,7 @@
       if (composite.getLayout() instanceof SashLayout) {
         trackSashContainer(composite);
         if (ThemeTracker.getInstance().isChromeThemeActive()) {
-          setSashWidth(composite,ChromeThemeConfig.getInstance().getSashWidth());
+          updateSash(composite,ChromeThemeConfig.getInstance().getSashWidth());
         }
       }
     }

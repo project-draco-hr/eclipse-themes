@@ -4,10 +4,11 @@
   lock.release();
   for (  Composite each : array) {
     try {
-      setSashWidth(each,4);
+      updateSash(each,4);
     }
  catch (    Exception e) {
       e.printStackTrace();
+      ChromeThemeCore.getDefault().log(e);
     }
   }
 }

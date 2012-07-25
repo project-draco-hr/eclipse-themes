@@ -1,0 +1,17 @@
+{
+  if (each == null || each.isDisposed()) {
+    return;
+  }
+  if (!(each.getLayout() instanceof SashLayout)) {
+    return;
+  }
+  SashLayout layout=(SashLayout)each.getLayout();
+  try {
+    getSashWidthField().setInt(layout,width);
+  }
+ catch (  Exception e) {
+    ChromeThemeCore.getDefault().log(e);
+    e.printStackTrace();
+  }
+  each.layout(true,true);
+}

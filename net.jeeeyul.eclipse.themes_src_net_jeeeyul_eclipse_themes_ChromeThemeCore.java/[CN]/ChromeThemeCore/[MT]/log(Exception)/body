@@ -1,0 +1,3 @@
+{
+  getLog().log(new Status(IStatus.ERROR,getBundle().getSymbolicName(),e.getMessage(),e));
+}

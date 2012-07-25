@@ -1,5 +1,5 @@
 {
-  IPreferenceStore store=Activator.getDefault().getPreferenceStore();
+  IPreferenceStore store=ChromeThemeCore.getDefault().getPreferenceStore();
   store.setDefault(ChromeConstants.CHROME_ACTIVE_START_HUE,221f);
   store.setDefault(ChromeConstants.CHROME_ACTIVE_START_SATURATION,.10f);
   store.setDefault(ChromeConstants.CHROME_ACTIVE_START_BRIGHTNESS,.97f);

@@ -1,6 +1,6 @@
 {
   if (partShadow == null) {
-    IPreferenceStore store=Activator.getDefault().getPreferenceStore();
+    IPreferenceStore store=ChromeThemeCore.getDefault().getPreferenceStore();
     String sashPreset=store.getString(ChromeConstants.CHROME_SASH_PRESET);
     if (ChromeConstants.CHROME_SASH_PRESET_ADVANCED.equals(sashPreset)) {
       partShadow=store.getBoolean(ChromeConstants.CHOME_PART_SHADOW);
