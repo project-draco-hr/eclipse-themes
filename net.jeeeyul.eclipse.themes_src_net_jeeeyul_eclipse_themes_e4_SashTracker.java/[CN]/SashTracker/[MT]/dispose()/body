@@ -1,0 +1,4 @@
+{
+  sashContainers.clear();
+  eventBroker.unsubscribe(sashWeightHandler);
+}

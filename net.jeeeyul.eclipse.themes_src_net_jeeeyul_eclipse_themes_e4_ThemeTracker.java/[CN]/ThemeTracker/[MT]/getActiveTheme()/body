@@ -1,0 +1,7 @@
+{
+  if (activeTheme == null) {
+    IThemeEngine engine=(IThemeEngine)Display.getDefault().getData("org.eclipse.e4.ui.css.swt.theme");
+    activeTheme=engine.getActiveTheme();
+  }
+  return activeTheme;
+}

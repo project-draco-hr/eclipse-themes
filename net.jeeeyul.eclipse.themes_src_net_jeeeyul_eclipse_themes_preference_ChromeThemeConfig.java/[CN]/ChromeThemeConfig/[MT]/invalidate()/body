@@ -3,4 +3,6 @@
     activeDecorator.dispose();
     activeDecorator=null;
   }
+  sashWidth=null;
+  partShadow=null;
 }

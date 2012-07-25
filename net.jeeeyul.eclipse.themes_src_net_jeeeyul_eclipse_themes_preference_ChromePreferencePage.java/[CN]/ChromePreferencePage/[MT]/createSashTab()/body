@@ -1,0 +1,52 @@
+{
+  CTabItem item=new CTabItem(folder,SWT.CLOSE);
+  item.setText("Layout");
+  item.setImage(SharedImages.getImage(SharedImages.LAYOUT));
+  Composite body=new Composite(folder,SWT.NORMAL);
+  body.setBackgroundMode(SWT.INHERIT_FORCE);
+  body.setBackground(folder.getDisplay().getSystemColor(SWT.COLOR_WHITE));
+  body.setLayout(new GridLayout());
+  item.setControl(body);
+  Group group=new Group(body,SWT.NORMAL);
+  group.setText("Sash");
+  group.setLayout(new GridLayout());
+  group.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+  thinSashButton=new Button(group,SWT.RADIO);
+  thinSashButton.setText("Thin Sash (Classic)");
+  standardSashButton=new Button(group,SWT.RADIO);
+  standardSashButton.setText("Standard");
+  manualSashButton=new Button(group,SWT.RADIO);
+  manualSashButton.setText("Manual (Advanced)");
+  String preset=getStore().getString(ChromeConstants.CHROME_SASH_PRESET);
+  if (ChromeConstants.CHROME_SASH_PRESET_THIN.equals(preset)) {
+    thinSashButton.setSelection(true);
+  }
+ else   if (ChromeConstants.CHROME_SASH_PRESET_STANDARD.equals(preset)) {
+    standardSashButton.setSelection(true);
+  }
+ else {
+    manualSashButton.setSelection(true);
+  }
+  manualSashButton.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      updateAdvanced();
+    }
+  }
+);
+  Group advancedGroup=new Group(body,SWT.NORMAL);
+  advancedGroup.setText("Advanced");
+  advancedGroup.setLayout(new GridLayout(2,false));
+  advancedGroup.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+  useShadowField=new Button(advancedGroup,SWT.CHECK);
+  useShadowField.setText("Cast shadows for parts");
+  useShadowField.setLayoutData(new GridData(SWT.FILL,SWT.FILL,true,false,2,1));
+  useShadowField.setSelection(ChromeThemeConfig.getInstance().usePartShadow());
+  new Label(advancedGroup,SWT.NORMAL).setText("Sash Width:");
+  sashWidthScale=new Scale(advancedGroup,SWT.NORMAL);
+  sashWidthScale.setMinimum(1);
+  sashWidthScale.setMaximum(10);
+  sashWidthScale.setSelection(ChromeThemeConfig.getInstance().getSashWidth());
+  sashWidthScale.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+  updateAdvanced();
+  return item;
+}

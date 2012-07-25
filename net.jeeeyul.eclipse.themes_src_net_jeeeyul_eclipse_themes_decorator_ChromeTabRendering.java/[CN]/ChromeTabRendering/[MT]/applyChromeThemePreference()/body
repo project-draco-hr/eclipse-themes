@@ -1,0 +1,7 @@
+{
+  if (tabFolder.isDisposed()) {
+    return;
+  }
+  setShadowVisible(preference.usePartShadow());
+  invalidateTabItems();
+}

@@ -18,7 +18,23 @@
   endBrightnessScale.setSelection((int)(end[2] * 100));
   autoEndColorField.setSelection(store.getDefaultBoolean("chrome-auto-end-color"));
   lockHueField.setSelection(store.getDefaultBoolean("chrome-lock-hue"));
+  sashWidthScale.setSelection(store.getDefaultInt(ChromeConstants.CHOME_PART_CONTAINER_SASH_WIDTH));
+  useShadowField.setSelection(store.getDefaultBoolean(ChromeConstants.CHOME_PART_SHADOW));
+  thinSashButton.setSelection(false);
+  standardSashButton.setSelection(false);
+  manualSashButton.setSelection(false);
+  String defaultPreset=store.getDefaultString(ChromeConstants.CHROME_SASH_PRESET);
+  if (ChromeConstants.CHROME_SASH_PRESET_THIN.equals(defaultPreset)) {
+    thinSashButton.setSelection(true);
+  }
+ else   if (ChromeConstants.CHROME_SASH_PRESET_STANDARD.equals(defaultPreset)) {
+    standardSashButton.setSelection(true);
+  }
+ else {
+    manualSashButton.setSelection(true);
+  }
   updateLock();
   updateAuto();
   update();
+  updateAdvanced();
 }

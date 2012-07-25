@@ -1,0 +1,4 @@
+{
+  eventBroker.subscribe(UIEvents.UIElement.TOPIC_WIDGET,sashWeightHandler);
+  INSTANCE=this;
+}

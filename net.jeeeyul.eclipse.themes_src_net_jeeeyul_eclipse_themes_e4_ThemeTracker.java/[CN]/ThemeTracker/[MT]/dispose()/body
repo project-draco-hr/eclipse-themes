@@ -1,0 +1,3 @@
+{
+  eventBroker.unsubscribe(themeChangeHandler);
+}

@@ -1,0 +1,16 @@
+{
+  if (sashWidth == null) {
+    IPreferenceStore store=Activator.getDefault().getPreferenceStore();
+    String sashPreset=store.getString(ChromeConstants.CHROME_SASH_PRESET);
+    if (ChromeConstants.CHROME_SASH_PRESET_ADVANCED.equals(sashPreset)) {
+      sashWidth=store.getInt(ChromeConstants.CHOME_PART_CONTAINER_SASH_WIDTH);
+    }
+ else     if (ChromeConstants.CHROME_SASH_PRESET_THIN.equals(sashPreset)) {
+      sashWidth=2;
+    }
+ else {
+      sashWidth=4;
+    }
+  }
+  return sashWidth;
+}

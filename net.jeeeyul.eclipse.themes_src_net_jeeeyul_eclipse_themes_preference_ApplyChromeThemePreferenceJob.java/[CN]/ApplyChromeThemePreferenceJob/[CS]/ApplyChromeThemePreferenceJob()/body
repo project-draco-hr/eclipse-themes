@@ -1,0 +1,4 @@
+{
+  super("Update Chrome Renderings");
+  setSystem(true);
+}

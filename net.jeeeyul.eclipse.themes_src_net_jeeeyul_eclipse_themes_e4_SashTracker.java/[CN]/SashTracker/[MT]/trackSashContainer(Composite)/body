@@ -1,0 +1,14 @@
+{
+  if (composite.isDisposed() || !(composite.getLayout() instanceof SashLayout)) {
+    return;
+  }
+  lock.acquire();
+  sashContainers.add(composite);
+  lock.release();
+  composite.addListener(SWT.Dispose,new Listener(){
+    @Override public void handleEvent(    org.eclipse.swt.widgets.Event event){
+      untrack(composite);
+    }
+  }
+);
+}

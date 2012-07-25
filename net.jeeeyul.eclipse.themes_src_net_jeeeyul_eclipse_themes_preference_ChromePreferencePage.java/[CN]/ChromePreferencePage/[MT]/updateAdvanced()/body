@@ -1,0 +1,4 @@
+{
+  sashWidthScale.setEnabled(manualSashButton.getSelection());
+  useShadowField.setEnabled(manualSashButton.getSelection());
+}

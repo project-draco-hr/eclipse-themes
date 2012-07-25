@@ -1,0 +1,4 @@
+{
+  INSTANCE=this;
+  eventBroker.subscribe(IThemeEngine.Events.THEME_CHANGED,themeChangeHandler);
+}

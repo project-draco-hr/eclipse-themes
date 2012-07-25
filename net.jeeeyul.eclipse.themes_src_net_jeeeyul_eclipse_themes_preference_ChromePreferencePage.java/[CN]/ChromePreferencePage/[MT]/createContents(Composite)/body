@@ -3,20 +3,19 @@
   composite.setLayout(new GridLayout());
   folder=new CTabFolder(composite,SWT.NORMAL);
   folder.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+  folder.addCTabFolder2Listener(new CTabFolder2Adapter(){
+    @Override public void close(    CTabFolderEvent event){
+      event.doit=false;
+    }
+  }
+);
   createFakeToolbar();
   CSSClasses tags=CSSClasses.getStyleClasses(folder);
   tags.add("chrome-tabfolder-preview");
   CSSClasses.setStyleClasses(folder,tags);
-  CTabItem item=new CTabItem(folder,SWT.Close);
-  item.setImage(SharedImages.getImage(SharedImages.PALETTE));
-  Composite body=new Composite(folder,SWT.NORMAL);
-  body.setBackgroundMode(SWT.INHERIT_FORCE);
-  body.setBackground(parent.getDisplay().getSystemColor(SWT.COLOR_WHITE));
-  body.setLayout(new GridLayout());
-  fillContents(body);
-  item.setControl(body);
-  item.setText("Active Gradient");
-  folder.setSelection(item);
+  CTabItem colorTab=createColorTab();
+  createSashTab();
+  folder.setSelection(colorTab);
   decorator.apply(folder);
   return composite;
 }

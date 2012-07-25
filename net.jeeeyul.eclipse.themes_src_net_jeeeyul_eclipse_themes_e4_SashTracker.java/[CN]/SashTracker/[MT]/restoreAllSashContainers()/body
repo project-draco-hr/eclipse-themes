@@ -1,0 +1,13 @@
+{
+  lock.acquire();
+  Composite[] array=sashContainers.toArray(new Composite[sashContainers.size()]);
+  lock.release();
+  for (  Composite each : array) {
+    try {
+      setSashWidth(each,4);
+    }
+ catch (    Exception e) {
+      e.printStackTrace();
+    }
+  }
+}

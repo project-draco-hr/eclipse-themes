@@ -1,0 +1,3 @@
+{
+  return "bundleclass://" + Activator.getDefault().getBundle().getSymbolicName() + "/"+ addonClass.getCanonicalName();
+}

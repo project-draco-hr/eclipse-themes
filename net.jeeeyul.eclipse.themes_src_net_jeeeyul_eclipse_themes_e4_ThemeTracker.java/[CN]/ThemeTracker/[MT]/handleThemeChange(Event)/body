@@ -1,0 +1,14 @@
+{
+  ITheme theme=(ITheme)event.getProperty(IThemeEngine.Events.THEME);
+  if (theme == null) {
+    return;
+  }
+  activeTheme=theme;
+  boolean isChromeThemeActivated=ChromeConstants.CHROME_THEME_ID.equals(theme.getId());
+  if (isChromeThemeActivated) {
+    new ApplyChromeThemePreferenceJob().schedule();
+  }
+ else {
+    SashTracker.getInstance().restoreAllSashContainers();
+  }
+}

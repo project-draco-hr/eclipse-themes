@@ -1,0 +1,16 @@
+{
+  if (partShadow == null) {
+    IPreferenceStore store=Activator.getDefault().getPreferenceStore();
+    String sashPreset=store.getString(ChromeConstants.CHROME_SASH_PRESET);
+    if (ChromeConstants.CHROME_SASH_PRESET_ADVANCED.equals(sashPreset)) {
+      partShadow=store.getBoolean(ChromeConstants.CHOME_PART_SHADOW);
+    }
+ else     if (ChromeConstants.CHROME_SASH_PRESET_THIN.equals(sashPreset)) {
+      partShadow=false;
+    }
+ else {
+      partShadow=true;
+    }
+  }
+  return partShadow;
+}

@@ -1,0 +1,5 @@
+{
+  int tabHeight=tabFolder.getTabHeight();
+  tabFolder.setTabHeight(99);
+  tabFolder.setTabHeight(tabHeight);
+}
