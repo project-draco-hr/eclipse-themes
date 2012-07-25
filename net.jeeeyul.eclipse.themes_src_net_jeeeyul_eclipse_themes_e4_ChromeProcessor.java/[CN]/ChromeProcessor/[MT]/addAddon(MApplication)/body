@@ -1,9 +1,10 @@
 {
+  validateAddons(application);
   Set<String> contributionIds=getContributionURIs(application);
   if (!contributionIds.contains(getContributionURI(WidgetTracker.class))) {
     installAddon(application,WidgetTracker.class);
   }
-  if (!contributionIds.contains(getContributionURI(ThemeTracker.class))) {
-    installAddon(application,ThemeTracker.class);
+  if (!contributionIds.contains(getContributionURI(ActiveThemeTracker.class))) {
+    installAddon(application,ActiveThemeTracker.class);
   }
 }

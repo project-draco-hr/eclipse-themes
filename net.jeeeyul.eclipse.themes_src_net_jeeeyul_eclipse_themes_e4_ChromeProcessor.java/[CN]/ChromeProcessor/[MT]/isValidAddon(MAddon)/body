@@ -1,0 +1,12 @@
+{
+  String uri=addon.getContributionURI();
+  IPath path=new Path(uri);
+  Class<?> type=null;
+  try {
+    type=Class.forName(path.lastSegment());
+  }
+ catch (  ClassNotFoundException e) {
+    return false;
+  }
+  return type != null;
+}

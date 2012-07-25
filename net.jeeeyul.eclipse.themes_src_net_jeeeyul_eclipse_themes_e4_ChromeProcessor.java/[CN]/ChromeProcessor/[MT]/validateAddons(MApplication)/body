@@ -1,0 +1,12 @@
+{
+  MAddon[] addonList=application.getAddons().toArray(new MAddon[application.getAddons().size()]);
+  for (  MAddon eachAddon : addonList) {
+    if (isContributedByChromeTheme(eachAddon)) {
+      boolean validate=isValidAddon(eachAddon);
+      if (!validate) {
+        application.getAddons().remove(eachAddon);
+        ChromeThemeCore.getDefault().logWarn(MessageFormat.format("{0} is deprecated addon, so it was removed.",eachAddon.getContributionURI()));
+      }
+    }
+  }
+}

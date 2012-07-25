@@ -1,0 +1,3 @@
+{
+  return getContributorURI().equals(each.getContributorURI());
+}

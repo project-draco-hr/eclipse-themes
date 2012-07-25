@@ -1,6 +1,6 @@
 {
   invalidate();
-  if (ThemeTracker.getInstance().isChromeThemeActive()) {
+  if (ActiveThemeTracker.getInstance().isChromeThemeActive()) {
     updateJob.schedule();
   }
 }
