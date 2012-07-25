@@ -1,0 +1,3 @@
+{
+  return "plugin://" + ChromeThemeCore.getDefault().getBundle().getSymbolicName();
+}

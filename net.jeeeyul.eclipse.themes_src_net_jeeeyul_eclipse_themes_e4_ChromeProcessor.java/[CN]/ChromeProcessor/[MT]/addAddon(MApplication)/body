@@ -1,20 +1,9 @@
 {
-  HashSet<String> contributionIds=new HashSet<String>();
-  for (  MAddon a : application.getAddons()) {
-    if (a.getContributionURI() != null) {
-      contributionIds.add(a.getContributionURI());
-    }
-  }
-  if (!contributionIds.contains(getContributionURI(SashTracker.class))) {
-    MAddon chromeAddon=MApplicationFactory.INSTANCE.createAddon();
-    chromeAddon.setContributionURI(getContributionURI(SashTracker.class));
-    chromeAddon.setContributorURI("plugin://" + ChromeThemeCore.getDefault().getBundle().getSymbolicName());
-    application.getAddons().add(chromeAddon);
+  Set<String> contributionIds=getContributionURIs(application);
+  if (!contributionIds.contains(getContributionURI(WidgetTracker.class))) {
+    installAddon(application,WidgetTracker.class);
   }
   if (!contributionIds.contains(getContributionURI(ThemeTracker.class))) {
-    MAddon chromeAddon=MApplicationFactory.INSTANCE.createAddon();
-    chromeAddon.setContributionURI(getContributionURI(ThemeTracker.class));
-    chromeAddon.setContributorURI("plugin://" + ChromeThemeCore.getDefault().getBundle().getSymbolicName());
-    application.getAddons().add(chromeAddon);
+    installAddon(application,ThemeTracker.class);
   }
 }

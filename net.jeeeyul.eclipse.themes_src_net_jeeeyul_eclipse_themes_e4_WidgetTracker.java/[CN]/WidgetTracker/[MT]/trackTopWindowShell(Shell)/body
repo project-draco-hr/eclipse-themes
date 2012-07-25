@@ -1,0 +1,14 @@
+{
+  if (shell == null || shell.isDisposed()) {
+    return;
+  }
+  lock.acquire();
+  topWindows.add(shell);
+  lock.release();
+  shell.addListener(SWT.Dispose,new Listener(){
+    @Override public void handleEvent(    org.eclipse.swt.widgets.Event event){
+      untrack(shell);
+    }
+  }
+);
+}

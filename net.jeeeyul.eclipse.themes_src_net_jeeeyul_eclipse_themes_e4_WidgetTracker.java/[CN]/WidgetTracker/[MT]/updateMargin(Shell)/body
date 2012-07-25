@@ -1,0 +1,9 @@
+{
+  TrimmedPartLayout layout=(TrimmedPartLayout)((Shell)widget).getLayout();
+  int marginTop=ChromeThemeConfig.getInstance().getSashWidth();
+  if (ChromeThemeConfig.getInstance().usePartShadow()) {
+    marginTop+=3;
+  }
+  layout.gutterTop=marginTop;
+  ((Shell)widget).layout();
+}
