@@ -16,7 +16,7 @@
   }
   gc.fillRoundRectangle(outline.x,outline.y,outline.width,outline.height,5,5);
   gc.drawRoundRectangle(outline.x,outline.y,outline.width,outline.height,5,5);
-  Color color=new Color(getDisplay(),new RGB(selection,1f,1f));
+  Color color=new Color(getDisplay(),new RGB(selection,saturation,brightness));
   gc.setBackground(color);
   gc.fillRectangle(selectionBox);
   gc.drawRectangle(selectionBox);
