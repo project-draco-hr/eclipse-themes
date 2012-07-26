@@ -1,0 +1,3 @@
+{
+  return parent.getSimple() ? _shortenText(gc,text,width,"...") : _shortenText(gc,text,width,"");
+}

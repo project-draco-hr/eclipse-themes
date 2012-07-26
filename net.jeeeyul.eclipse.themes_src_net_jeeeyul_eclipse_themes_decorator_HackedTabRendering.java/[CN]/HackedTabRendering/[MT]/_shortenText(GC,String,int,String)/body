@@ -1,0 +1,18 @@
+{
+  if (gc.textExtent(text,SWT.DRAW_TRANSPARENT | SWT.DRAW_MNEMONIC).x <= width)   return text;
+  int ellipseWidth=gc.textExtent(ellipses,SWT.DRAW_TRANSPARENT | SWT.DRAW_MNEMONIC).x;
+  int length=text.length();
+  TextLayout layout=new TextLayout(parent.getDisplay());
+  layout.setText(text);
+  int end=layout.getPreviousOffset(length,SWT.MOVEMENT_CLUSTER);
+  while (end > 0) {
+    text=text.substring(0,end);
+    int l=gc.textExtent(text,SWT.DRAW_TRANSPARENT | SWT.DRAW_MNEMONIC).x;
+    if (l + ellipseWidth <= width) {
+      break;
+    }
+    end=layout.getPreviousOffset(end,SWT.MOVEMENT_CLUSTER);
+  }
+  layout.dispose();
+  return end == 0 ? text.substring(0,1) : text + ellipses;
+}

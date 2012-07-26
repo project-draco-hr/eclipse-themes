@@ -1,0 +1,58 @@
+{
+  try {
+    CTabItem item=parent.getItem(index);
+    int x=bounds.x;
+    int y=bounds.y;
+    int height=bounds.height;
+    int width=bounds.width;
+    if (!item.isShowing())     return;
+    Rectangle clipping=gc.getClipping();
+    if (!clipping.intersects(bounds))     return;
+    if ((state & SWT.FOREGROUND) != 0) {
+      Rectangle trim=computeTrim(index,SWT.NONE,0,0,0,0);
+      int xDraw=x - trim.x;
+      Image image=item.getImage();
+      if (image != null && !image.isDisposed() && parent.getUnselectedImageVisible()) {
+        Rectangle imageBounds=image.getBounds();
+        int maxImageWidth=x + width - xDraw - (trim.width + trim.x);
+        if (parent.getUnselectedCloseVisible() && ((parent.getStyle() & SWT.CLOSE) != 0 || item.getShowClose())) {
+          maxImageWidth-=((Rectangle)CTabItem_closeRect.get(item)).width + 4;
+        }
+        if (imageBounds.width < maxImageWidth) {
+          int imageX=xDraw;
+          int imageHeight=imageBounds.height;
+          int imageY=y + (height - imageHeight) / 2;
+          imageY+=parent.getTabPosition() == SWT.BOTTOM ? -1 : 1;
+          int imageWidth=imageBounds.width * imageHeight / imageBounds.height;
+          gc.drawImage(image,imageBounds.x,imageBounds.y,imageBounds.width,imageBounds.height,imageX,imageY,imageWidth,imageHeight);
+          xDraw+=imageWidth + 4;
+        }
+      }
+      int textWidth=x + width - xDraw - (trim.width + trim.x);
+      if (parent.getUnselectedCloseVisible() && ((parent.getStyle() & SWT.CLOSE) != 0 || item.getShowClose())) {
+        textWidth-=((Rectangle)CTabItem_closeRect.get(item)).width + 4;
+      }
+      if (textWidth > 0) {
+        Font gcFont=gc.getFont();
+        gc.setFont(item.getFont() == null ? parent.getFont() : item.getFont());
+        if (CTabItem_shortenText.get(item) == null || CTabItem_shortenTextWidth.getInt(item) != textWidth) {
+          CTabItem_shortenText.set(item,_shortenText(gc,item.getText(),textWidth));
+          CTabItem_shortenTextWidth.setInt(item,textWidth);
+        }
+        Point extent=gc.textExtent((String)CTabItem_shortenText.get(item),SWT.DRAW_TRANSPARENT | SWT.DRAW_MNEMONIC);
+        int textY=y + (height - extent.y) / 2;
+        textY+=parent.getTabPosition() == SWT.BOTTOM ? -1 : 1;
+        gc.setAlpha(180);
+        gc.setForeground(parent.getDisplay().getSystemColor(SWT.COLOR_WHITE));
+        gc.drawText((String)CTabItem_shortenText.get(item),xDraw,textY + 1,SWT.DRAW_TRANSPARENT | SWT.DRAW_MNEMONIC);
+        gc.setAlpha(255);
+        gc.setForeground(parent.getForeground());
+        gc.drawText((String)CTabItem_shortenText.get(item),xDraw,textY,SWT.DRAW_TRANSPARENT | SWT.DRAW_MNEMONIC);
+        gc.setFont(gcFont);
+      }
+    }
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}

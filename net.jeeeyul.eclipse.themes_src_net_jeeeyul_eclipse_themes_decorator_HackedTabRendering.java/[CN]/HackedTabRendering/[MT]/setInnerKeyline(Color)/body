@@ -1,0 +1,4 @@
+{
+  this.innerKeyline=color;
+  parent.redraw();
+}

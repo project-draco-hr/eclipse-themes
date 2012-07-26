@@ -1,0 +1,7 @@
+{
+  this.paddingLeft=paddingLeft;
+  this.paddingRight=paddingRight;
+  this.paddingTop=paddingTop;
+  this.paddingBottom=paddingBottom;
+  parent.redraw();
+}

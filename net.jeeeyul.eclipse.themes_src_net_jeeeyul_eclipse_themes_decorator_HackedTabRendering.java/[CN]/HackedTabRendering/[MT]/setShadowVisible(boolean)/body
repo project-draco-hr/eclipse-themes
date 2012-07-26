@@ -1,0 +1,4 @@
+{
+  this.shadowEnabled=visible;
+  parent.redraw();
+}
