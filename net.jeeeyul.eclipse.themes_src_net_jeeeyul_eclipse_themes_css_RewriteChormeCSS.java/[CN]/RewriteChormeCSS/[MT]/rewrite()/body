@@ -1,0 +1,28 @@
+{
+  try {
+    CSSEngine cssEngine=WidgetElement.getEngine(display);
+    ExtendedDocumentCSS documentCSS=(ExtendedDocumentCSS)cssEngine.getDocumentCSS();
+    StyleSheet chromeSheet=findChromeSheet(documentCSS);
+    ChromeCSSGenerator generator=new ChromeCSSGenerator();
+    StyleSheet newSheet=cssEngine.parseStyleSheet(new StringReader(generator.generate().toString()));
+    StyleSheetList oldSheetList=documentCSS.getStyleSheets();
+    List<StyleSheet> newSheetList=new ArrayList<StyleSheet>();
+    for (int i=0; i < oldSheetList.getLength(); i++) {
+      StyleSheet sheet=oldSheetList.item(i);
+      if (sheet != chromeSheet) {
+        newSheetList.add(sheet);
+      }
+ else {
+        newSheetList.add(newSheet);
+      }
+    }
+    documentCSS.removeAllStyleSheets();
+    for (    StyleSheet each : newSheetList) {
+      documentCSS.addStyleSheet(each);
+    }
+    cssEngine.reapply();
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}

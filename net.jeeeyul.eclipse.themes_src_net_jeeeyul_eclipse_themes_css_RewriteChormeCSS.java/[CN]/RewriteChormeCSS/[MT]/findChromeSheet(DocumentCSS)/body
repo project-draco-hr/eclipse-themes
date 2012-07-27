@@ -1,0 +1,20 @@
+{
+  StyleSheet chromeSheet=null;
+  StyleSheetList styleSheets=documentCSS.getStyleSheets();
+  SearchChromeSheet:   for (int i=0; i < styleSheets.getLength(); i++) {
+    StyleSheet eachSheet=styleSheets.item(i);
+    if (eachSheet instanceof CSSStyleSheet) {
+      CSSRuleList cssRules=((CSSStyleSheet)eachSheet).getCssRules();
+      for (int j=0; j < cssRules.getLength(); j++) {
+        ExtendedCSSRule rule=(ExtendedCSSRule)cssRules.item(j);
+        SelectorList selectorList=rule.getSelectorList();
+        String selectorText=selectorList.item(0).toString();
+        if (CHROME_THEME_FIRST_SELECTOR.equals(selectorText)) {
+          chromeSheet=eachSheet;
+          break SearchChromeSheet;
+        }
+      }
+    }
+  }
+  return chromeSheet;
+}
