@@ -1,8 +1,4 @@
 {
-  test();
-  if (true) {
-    return;
-  }
   IPreferenceStore store=getStore();
   float[] start=new float[3];
   start[0]=store.getDefaultFloat("chrome-active-start-hue");
