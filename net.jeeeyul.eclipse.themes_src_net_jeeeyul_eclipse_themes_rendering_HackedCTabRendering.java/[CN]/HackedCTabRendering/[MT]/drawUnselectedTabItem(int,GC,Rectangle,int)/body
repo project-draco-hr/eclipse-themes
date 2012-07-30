@@ -58,6 +58,7 @@
         gc.setFont(gcFont);
       }
     }
+    if (parent.getUnselectedCloseVisible() && (hasStyle(parent,SWT.CLOSE) || hasStyle(item,SWT.CLOSE)))     _drawClose(gc,getCloseRect(item),getCloseImageState(item));
   }
  catch (  Exception e) {
     e.printStackTrace();

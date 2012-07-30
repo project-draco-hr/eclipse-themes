@@ -4,7 +4,8 @@
     ExtendedDocumentCSS documentCSS=(ExtendedDocumentCSS)cssEngine.getDocumentCSS();
     StyleSheet chromeSheet=findChromeSheet(documentCSS);
     ChromeCSSGenerator generator=new ChromeCSSGenerator();
-    StyleSheet newSheet=cssEngine.parseStyleSheet(new StringReader(generator.generate().toString()));
+    String newCSSContent=generator.generate().toString();
+    StyleSheet newSheet=cssEngine.parseStyleSheet(new StringReader(newCSSContent));
     StyleSheetList oldSheetList=documentCSS.getStyleSheets();
     List<StyleSheet> newSheetList=new ArrayList<StyleSheet>();
     for (int i=0; i < oldSheetList.getLength(); i++) {

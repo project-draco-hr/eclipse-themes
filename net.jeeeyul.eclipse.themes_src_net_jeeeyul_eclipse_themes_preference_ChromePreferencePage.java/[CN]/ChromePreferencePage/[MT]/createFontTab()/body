@@ -1,0 +1,18 @@
+{
+  CTabItem fontItem=new CTabItem(folder,SWT.CLOSE);
+  fontItem.setText("Font");
+  fontItem.setImage(SharedImages.getImage(SharedImages.FONT));
+  Composite composite=new Composite(folder,SWT.NORMAL);
+  composite.setBackground(folder.getDisplay().getSystemColor(SWT.COLOR_WHITE));
+  composite.setBackgroundMode(SWT.INHERIT_FORCE);
+  composite.setLayout(new GridLayout());
+  Button b=new Button(composite,SWT.PUSH);
+  b.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      FontDialog dialog=new FontDialog(getShell());
+      dialog.open();
+    }
+  }
+);
+  fontItem.setControl(composite);
+}

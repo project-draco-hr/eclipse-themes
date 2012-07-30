@@ -10,8 +10,8 @@
   store.setValue("chrome-active-end-brightness",end[2]);
   store.setValue("chrome-auto-end-color",autoEndColorField.getSelection());
   store.setValue("chrome-lock-hue",lockHueField.getSelection());
-  store.setValue(ChromeConstants.CHOME_PART_CONTAINER_SASH_WIDTH,sashWidthScale.getSelection());
-  store.setValue(ChromeConstants.CHOME_PART_SHADOW,useShadowField.getSelection());
+  store.setValue(ChromeConstants.CRHOME_PART_CONTAINER_SASH_WIDTH,sashWidthScale.getSelection());
+  store.setValue(ChromeConstants.CRHOME_PART_SHADOW,useShadowField.getSelection());
   if (thinSashButton.getSelection()) {
     store.setValue(ChromeConstants.CHROME_SASH_PRESET,ChromeConstants.CHROME_SASH_PRESET_THIN);
   }

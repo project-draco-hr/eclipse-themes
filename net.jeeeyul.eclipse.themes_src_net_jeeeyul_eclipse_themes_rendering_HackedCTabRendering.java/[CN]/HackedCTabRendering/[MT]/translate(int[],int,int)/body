@@ -1,0 +1,9 @@
+{
+  int[] result=new int[pointArray.length];
+  System.arraycopy(pointArray,0,result,0,pointArray.length);
+  for (int i=0; i < result.length; i+=2) {
+    result[i]+=dx;
+    result[i + 1]+=dy;
+  }
+  return result;
+}
