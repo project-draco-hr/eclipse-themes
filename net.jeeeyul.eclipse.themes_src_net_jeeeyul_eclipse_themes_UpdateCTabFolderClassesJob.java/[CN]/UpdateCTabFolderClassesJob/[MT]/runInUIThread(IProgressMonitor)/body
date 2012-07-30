@@ -4,8 +4,12 @@
   }
   CSSClasses classes=CSSClasses.getStyleClasses(folder);
   boolean haveToSetEmpty=folder.getItemCount() == 0;
-  if (haveToSetEmpty)   classes.add("empty");
- else   classes.remove("empty");
+  if (haveToSetEmpty) {
+    classes.add("empty");
+  }
+ else {
+    classes.remove("empty");
+  }
   CSSClasses.setStyleClasses(folder,classes);
   getThemeEngine().applyStyles(folder,true);
   return Status.OK_STATUS;
