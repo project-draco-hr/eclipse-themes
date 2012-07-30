@@ -1,12 +1,15 @@
 {
   CSSClasses tags=CSSClasses.getStyleClasses(tabFolder);
+  boolean hasEmptyClass=tags.contains("empty");
+  boolean haveToSetEmpty=tabFolder.getItemCount() == 0;
+  if (hasEmptyClass != haveToSetEmpty) {
+    updateTags.schedule();
+  }
   if (part == PART_BODY && !tags.contains("chrome-tabfolder-preview")) {
     if (tabFolder.getItemCount() == 0) {
-      preference.getEmptyDecorator().apply(tabFolder);
       tabFolder.setTabHeight(23);
     }
  else     if (tags.contains("active")) {
-      preference.getActiveDecorator().apply(tabFolder);
       tabFolder.setTabHeight(-1);
     }
  else {

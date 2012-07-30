@@ -42,9 +42,11 @@
         Point extent=gc.textExtent((String)CTabItem_shortenText.get(item),SWT.DRAW_TRANSPARENT | SWT.DRAW_MNEMONIC);
         int textY=y + (height - extent.y) / 2;
         textY+=parent.getTabPosition() == SWT.BOTTOM ? -1 : 1;
-        gc.setAlpha(180);
-        gc.setForeground(parent.getDisplay().getSystemColor(SWT.COLOR_WHITE));
-        gc.drawText((String)CTabItem_shortenText.get(item),xDraw,textY + 1,SWT.DRAW_TRANSPARENT | SWT.DRAW_MNEMONIC);
+        if (showUnselectedTabItemShadow()) {
+          gc.setAlpha(180);
+          gc.setForeground(parent.getDisplay().getSystemColor(SWT.COLOR_WHITE));
+          gc.drawText((String)CTabItem_shortenText.get(item),xDraw,textY + 1,SWT.DRAW_TRANSPARENT | SWT.DRAW_MNEMONIC);
+        }
         gc.setAlpha(255);
         gc.setForeground(parent.getForeground());
         gc.drawText((String)CTabItem_shortenText.get(item),xDraw,textY,SWT.DRAW_TRANSPARENT | SWT.DRAW_MNEMONIC);

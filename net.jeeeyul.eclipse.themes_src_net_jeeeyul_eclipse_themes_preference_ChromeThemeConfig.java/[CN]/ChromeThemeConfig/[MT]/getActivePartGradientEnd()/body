@@ -1,0 +1,11 @@
+{
+  if (activePartGradientEnd == null) {
+    float start[]=new float[3];
+    IPreferenceStore store=ChromeThemeCore.getDefault().getPreferenceStore();
+    start[0]=store.getFloat(ChromeConstants.CHROME_ACTIVE_END_HUE);
+    start[1]=store.getFloat(ChromeConstants.CHROME_ACTIVE_END_SATURATION);
+    start[2]=store.getFloat(ChromeConstants.CHROME_ACTIVE_END_BRIGHTNESS);
+    activePartGradientEnd=new RGB(start[0],start[1],start[2]);
+  }
+  return activePartGradientEnd;
+}
