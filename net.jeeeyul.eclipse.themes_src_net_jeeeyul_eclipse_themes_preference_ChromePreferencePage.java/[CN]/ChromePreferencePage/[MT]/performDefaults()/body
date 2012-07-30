@@ -33,6 +33,19 @@
  else {
     manualSashButton.setSelection(true);
   }
+  if (previewFont != null && !previewFont.isDisposed()) {
+    previewFont.dispose();
+  }
+  String fontName=getPreferenceStore().getDefaultString(ChromeConstants.CHROME_PART_FONT_NAME);
+  float height=getPreferenceStore().getDefaultFloat(ChromeConstants.CHROME_PART_FONT_SIZE);
+  FontData fontData=new FontData();
+  fontData.setName(fontName);
+  fontData.height=height;
+  fontPreviewLabel.setData(fontData);
+  fontPreviewLabel.setText(fontData.getName() + " " + fontData.height+ "px");
+  previewFont=new Font(getShell().getDisplay(),fontData);
+  fontPreviewLabel.setFont(previewFont);
+  fontPreviewLabel.getParent().layout(true);
   updateLock();
   updateAuto();
   update();

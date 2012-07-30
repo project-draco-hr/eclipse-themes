@@ -1,0 +1,20 @@
+{
+  FontDialog dialog=new FontDialog(getShell());
+  if (fontPreviewLabel.getData() instanceof FontData) {
+    dialog.setFontList(new FontData[]{(FontData)fontPreviewLabel.getData()});
+  }
+  FontData fontData=dialog.open();
+  if (fontData == null) {
+    return;
+  }
+  if (previewFont != null && !previewFont.isDisposed()) {
+    previewFont.dispose();
+  }
+  fontPreviewLabel.setData(fontData);
+  fontPreviewLabel.getFont();
+  previewFont=new Font(getShell().getDisplay(),fontData);
+  fontPreviewLabel.setFont(previewFont);
+  fontPreviewLabel.setText(fontData.getName() + " " + fontData.height+ "px");
+  fontPreviewLabel.setFont(previewFont);
+  fontPreviewLabel.getParent().layout(true);
+}

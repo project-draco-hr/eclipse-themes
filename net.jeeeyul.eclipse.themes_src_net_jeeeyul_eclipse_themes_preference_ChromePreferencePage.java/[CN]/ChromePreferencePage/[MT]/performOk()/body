@@ -21,6 +21,12 @@
  else {
     store.setValue(ChromeConstants.CHROME_SASH_PRESET,ChromeConstants.CHROME_SASH_PRESET_ADVANCED);
   }
+  Object data=fontPreviewLabel.getData();
+  if (data instanceof FontData) {
+    FontData fontData=(FontData)data;
+    store.setValue(ChromeConstants.CHROME_PART_FONT_NAME,fontData.getName());
+    store.setValue(ChromeConstants.CHROME_PART_FONT_SIZE,fontData.height);
+  }
   try {
     workingCopyManager.applyChanges();
   }

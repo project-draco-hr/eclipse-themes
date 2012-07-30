@@ -2,10 +2,13 @@
   CSSClasses tags=CSSClasses.getStyleClasses(tabFolder);
   if (tags.contains("EditorStack")) {
   }
-  boolean hasEmptyClass=tags.contains("empty");
   boolean haveToSetEmpty=tabFolder.getItemCount() == 0;
-  if (hasEmptyClass != haveToSetEmpty) {
+  if (haveToSetEmpty && !tags.contains("empty")) {
     updateTags.schedule();
+    updateItems();
   }
-  return tags;
+ else   if (!haveToSetEmpty && !tags.contains("nonEmpty")) {
+    updateTags.schedule();
+    updateItems();
+  }
 }

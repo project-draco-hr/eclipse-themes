@@ -1,7 +1,8 @@
 {
   if (partFontData == null) {
-    partFontData=new FontData(preferenceStore.getString(ChromeConstants.CHROME_PART_FONT_NAME));
-    partFontData.height=preferenceStore.getInt(ChromeConstants.CHROME_PART_FONT_SIZE);
+    partFontData=new FontData();
+    partFontData.setName(preferenceStore.getString(ChromeConstants.CHROME_PART_FONT_NAME));
+    partFontData.height=preferenceStore.getFloat(ChromeConstants.CHROME_PART_FONT_SIZE);
   }
   return partFontData;
 }

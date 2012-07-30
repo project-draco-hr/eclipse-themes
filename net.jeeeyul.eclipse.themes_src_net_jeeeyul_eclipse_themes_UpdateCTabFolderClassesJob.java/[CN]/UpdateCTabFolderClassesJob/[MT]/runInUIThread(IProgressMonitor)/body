@@ -6,9 +6,11 @@
   boolean haveToSetEmpty=folder.getItemCount() == 0;
   if (haveToSetEmpty) {
     classes.add("empty");
+    classes.remove("nonEmpty");
   }
  else {
     classes.remove("empty");
+    classes.add("nonEmpty");
   }
   CSSClasses.setStyleClasses(folder,classes);
   getThemeEngine().applyStyles(folder,true);

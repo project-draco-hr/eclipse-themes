@@ -3,4 +3,6 @@
   activePartGradientStart=null;
   sashWidth=null;
   partShadow=null;
+  partFontData=null;
+  partShadow=null;
 }
