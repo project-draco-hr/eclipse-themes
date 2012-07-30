@@ -1,5 +1,7 @@
 {
-  IPreferenceStore store=getStore();
+  String bundleId=ChromeThemeCore.getDefault().getBundle().getSymbolicName();
+  workingCopyManager=new WorkingCopyManager();
+  ScopedPreferenceStore store=new ScopedPreferenceStore(new WorkingCopyScopeContext(workingCopyManager,InstanceScope.INSTANCE),bundleId);
   setPreferenceStore(store);
   float hsbStart[]=new float[3];
   hsbStart[0]=store.getFloat("chrome-active-start-hue");

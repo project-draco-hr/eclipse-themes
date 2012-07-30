@@ -1,0 +1,28 @@
+{
+  if (closeRect.width == 0 || closeRect.height == 0)   return;
+  int x=closeRect.x + Math.max(1,(closeRect.width - 9) / 2);
+  int y=closeRect.y + Math.max(1,(closeRect.height - 9) / 2);
+  y+=parent.getTabPosition() == SWT.BOTTOM ? -1 : 1;
+switch (closeImageState & (SWT.HOT | SWT.SELECTED | SWT.BACKGROUND)) {
+case SWT.NONE:
+{
+      gc.drawImage(SharedImages.getImage(SharedImages.CLOSE_NORMAL),x,y);
+      break;
+    }
+case SWT.HOT:
+{
+    gc.drawImage(SharedImages.getImage(SharedImages.CLOSE_ACTIVE),x,y);
+    break;
+  }
+case SWT.SELECTED:
+{
+  gc.drawImage(SharedImages.getImage(SharedImages.CLOSE_ACTIVE),x + 1,y + 1);
+  break;
+}
+case SWT.BACKGROUND:
+{
+gc.drawImage(SharedImages.getImage(SharedImages.CLOSE_NORMAL),x,y);
+break;
+}
+}
+}

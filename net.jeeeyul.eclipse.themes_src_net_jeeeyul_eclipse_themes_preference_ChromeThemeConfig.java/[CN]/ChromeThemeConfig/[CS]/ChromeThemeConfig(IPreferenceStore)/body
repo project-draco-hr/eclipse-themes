@@ -1,0 +1,4 @@
+{
+  this.preferenceStore=preferenceStore;
+  preferenceStore.addPropertyChangeListener(this);
+}

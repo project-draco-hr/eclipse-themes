@@ -1,8 +1,4 @@
 {
-  if (activeDecorator != null) {
-    activeDecorator.dispose();
-    activeDecorator=null;
-  }
   activePartGradientEnd=null;
   activePartGradientStart=null;
   sashWidth=null;

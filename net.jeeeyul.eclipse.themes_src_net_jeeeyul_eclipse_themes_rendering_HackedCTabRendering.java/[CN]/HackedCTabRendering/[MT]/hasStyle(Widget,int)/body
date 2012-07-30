@@ -1,0 +1,3 @@
+{
+  return (w.getStyle() & flag) != 0;
+}

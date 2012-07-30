@@ -1,0 +1,17 @@
+{
+  CTabFolderElement model=(CTabFolderElement)element;
+  CTabFolder folder=(CTabFolder)model.getNativeWidget();
+  CTabFolderRenderer renderer=folder.getRenderer();
+  if (!(renderer instanceof ChromeTabRendering)) {
+    return false;
+  }
+  ChromeTabRendering rendering=(ChromeTabRendering)renderer;
+  Color color=(Color)engine.convert(value,Color.class,folder.getDisplay());
+  if (property.equals("selected-tab-color")) {
+    rendering.setSelectedTabItemColor(color);
+  }
+ else   if (property.equals("unselected-tab-color")) {
+    rendering.setUnselectedTabItemColor(color);
+  }
+  return true;
+}

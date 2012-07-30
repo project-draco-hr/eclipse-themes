@@ -1,0 +1,12 @@
+{
+  updateEmptyClassIfNeeded();
+  if (part == PART_BODY && !isPreviewingTab()) {
+    if (tabFolder.getItemCount() == 0) {
+      tabFolder.setTabHeight(23);
+    }
+ else {
+      tabFolder.setTabHeight(-1);
+    }
+  }
+  super.draw(part,state,bounds,gc);
+}

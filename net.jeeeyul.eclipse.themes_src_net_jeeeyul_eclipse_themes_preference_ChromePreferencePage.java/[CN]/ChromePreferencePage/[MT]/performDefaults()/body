@@ -1,5 +1,5 @@
 {
-  IPreferenceStore store=getStore();
+  IPreferenceStore store=getPreferenceStore();
   float[] start=new float[3];
   start[0]=store.getDefaultFloat("chrome-active-start-hue");
   start[1]=store.getDefaultFloat("chrome-active-start-saturation");

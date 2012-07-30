@@ -1,3 +1,3 @@
 {
-  ChromeThemeCore.getDefault().getPreferenceStore().addPropertyChangeListener(this);
+  this(ChromeThemeCore.getDefault().getPreferenceStore());
 }

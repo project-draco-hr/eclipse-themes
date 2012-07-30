@@ -1,0 +1,9 @@
+{
+  try {
+    return (Integer)HACK_CTabItem_shortenTextWidth.get(item);
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+    return null;
+  }
+}

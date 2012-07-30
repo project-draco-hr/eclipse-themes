@@ -1,0 +1,9 @@
+{
+  CSSClasses tags=CSSClasses.getStyleClasses(tabFolder);
+  boolean hasEmptyClass=tags.contains("empty");
+  boolean haveToSetEmpty=tabFolder.getItemCount() == 0;
+  if (hasEmptyClass != haveToSetEmpty) {
+    updateTags.schedule();
+  }
+  return tags;
+}

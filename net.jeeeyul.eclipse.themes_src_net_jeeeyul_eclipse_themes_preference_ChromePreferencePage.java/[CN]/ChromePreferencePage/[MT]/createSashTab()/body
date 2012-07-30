@@ -17,7 +17,7 @@
   standardSashButton.setText("Standard");
   manualSashButton=new Button(group,SWT.RADIO);
   manualSashButton.setText("Manual (Advanced)");
-  String preset=getStore().getString(ChromeConstants.CHROME_SASH_PRESET);
+  String preset=getPreferenceStore().getString(ChromeConstants.CHROME_SASH_PRESET);
   if (ChromeConstants.CHROME_SASH_PRESET_THIN.equals(preset)) {
     thinSashButton.setSelection(true);
   }

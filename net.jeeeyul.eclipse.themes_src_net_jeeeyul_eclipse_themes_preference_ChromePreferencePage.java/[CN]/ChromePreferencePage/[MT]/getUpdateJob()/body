@@ -5,17 +5,7 @@
         if (getControl() == null || getControl().isDisposed()) {
           return Status.OK_STATUS;
         }
-        float[] start=decorator.getStartHSB();
-        start[0]=startHueScale.getSelection();
-        start[1]=startSaturationScale.getSelection() / 100f;
-        start[2]=startBrightnessScale.getSelection() / 100f;
-        decorator.setStartHSB(start);
-        float[] end=decorator.getEndHSB();
-        end[0]=endHueScale.getSelection();
-        end[1]=endSaturationScale.getSelection() / 100f;
-        end[2]=endBrightnessScale.getSelection() / 100f;
-        decorator.setEndHSB(end);
-        decorator.apply(folder);
+        doUpdate();
         return Status.OK_STATUS;
       }
     }

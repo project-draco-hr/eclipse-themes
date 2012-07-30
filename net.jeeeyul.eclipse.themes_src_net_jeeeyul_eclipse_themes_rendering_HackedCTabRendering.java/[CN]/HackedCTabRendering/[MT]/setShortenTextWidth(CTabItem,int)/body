@@ -1,0 +1,8 @@
+{
+  try {
+    HACK_CTabItem_shortenTextWidth.set(item,width);
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}

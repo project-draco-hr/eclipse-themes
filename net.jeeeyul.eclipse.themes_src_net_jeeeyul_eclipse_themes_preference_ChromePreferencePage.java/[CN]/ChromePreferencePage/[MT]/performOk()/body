@@ -1,5 +1,5 @@
 {
-  IPreferenceStore store=getStore();
+  IPreferenceStore store=getPreferenceStore();
   float[] start=decorator.getStartHSB();
   store.setValue("chrome-active-start-hue",start[0]);
   store.setValue("chrome-active-start-saturation",start[1]);
@@ -20,6 +20,12 @@
   }
  else {
     store.setValue(ChromeConstants.CHROME_SASH_PRESET,ChromeConstants.CHROME_SASH_PRESET_ADVANCED);
+  }
+  try {
+    workingCopyManager.applyChanges();
+  }
+ catch (  BackingStoreException e) {
+    e.printStackTrace();
   }
   new RewriteChormeCSS().rewrite();
   return super.performOk();

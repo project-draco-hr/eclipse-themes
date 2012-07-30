@@ -56,7 +56,7 @@
   autoEndColorField=new Button(endGroup,SWT.CHECK);
   autoEndColorField.setLayoutData(new GridData(SWT.FILL,SWT.FILL,true,false,2,1));
   autoEndColorField.setText("Choose Automatically");
-  autoEndColorField.setSelection(getStore().getBoolean("chrome-auto-end-color"));
+  autoEndColorField.setSelection(getPreferenceStore().getBoolean("chrome-auto-end-color"));
   autoEndColorField.addListener(SWT.Selection,new Listener(){
     @Override public void handleEvent(    Event event){
       updateAuto();
@@ -65,7 +65,7 @@
 );
   lockHueField=new Button(endGroup,SWT.CHECK);
   lockHueField.setText("Lock Hue");
-  lockHueField.setSelection(getStore().getBoolean("chrome-lock-hue"));
+  lockHueField.setSelection(getPreferenceStore().getBoolean("chrome-lock-hue"));
   lockHueField.addListener(SWT.Selection,new Listener(){
     @Override public void handleEvent(    Event event){
       updateLock();

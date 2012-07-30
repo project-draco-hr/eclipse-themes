@@ -7,6 +7,6 @@
   if (haveToSetEmpty)   classes.add("empty");
  else   classes.remove("empty");
   CSSClasses.setStyleClasses(folder,classes);
-  folder.reskin(SWT.ALL);
+  getThemeEngine().applyStyles(folder,true);
   return Status.OK_STATUS;
 }
