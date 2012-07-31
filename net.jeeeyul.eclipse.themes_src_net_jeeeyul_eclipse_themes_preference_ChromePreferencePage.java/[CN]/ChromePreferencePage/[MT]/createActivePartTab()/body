@@ -5,7 +5,7 @@
   body.setBackgroundMode(SWT.INHERIT_FORCE);
   body.setBackground(folder.getDisplay().getSystemColor(SWT.COLOR_WHITE));
   body.setLayout(new GridLayout());
-  fillContents(body);
+  fillActivePartTab(body);
   item.setControl(body);
   item.setText("Active Gradient");
   return item;

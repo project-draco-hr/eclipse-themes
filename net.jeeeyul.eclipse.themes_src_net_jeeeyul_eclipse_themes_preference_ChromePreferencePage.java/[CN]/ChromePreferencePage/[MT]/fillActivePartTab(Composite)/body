@@ -12,8 +12,14 @@
       if (isAutomaticEndColor()) {
         computeEndColor();
       }
- else       if (isHueSynchronized()) {
+ else       if (isEndHueSynchronized()) {
         endHueScale.setSelection(startHueScale.getSelection());
+      }
+      if (autoOutlineColorField.getSelection()) {
+        computeOutlineColor();
+      }
+ else       if (lockOutlineHueField.getSelection()) {
+        outlineHueScale.setSelection(startHueScale.getSelection());
       }
       update();
     }
@@ -30,6 +36,9 @@
       if (isAutomaticEndColor()) {
         computeEndColor();
       }
+      if (autoOutlineColorField.getSelection()) {
+        computeOutlineColor();
+      }
       update();
     }
   }
@@ -45,6 +54,9 @@
       if (isAutomaticEndColor()) {
         computeEndColor();
       }
+      if (autoOutlineColorField.getSelection()) {
+        computeOutlineColor();
+      }
       update();
     }
   }
@@ -56,23 +68,23 @@
   autoEndColorField=new Button(endGroup,SWT.CHECK);
   autoEndColorField.setLayoutData(new GridData(SWT.FILL,SWT.FILL,true,false,2,1));
   autoEndColorField.setText("Choose Automatically");
-  autoEndColorField.setSelection(getPreferenceStore().getBoolean("chrome-auto-end-color"));
+  autoEndColorField.setSelection(getPreferenceStore().getBoolean(ChromeConstants.CHROME_AUTO_END_COLOR));
   autoEndColorField.addListener(SWT.Selection,new Listener(){
     @Override public void handleEvent(    Event event){
       updateAuto();
     }
   }
 );
-  lockHueField=new Button(endGroup,SWT.CHECK);
-  lockHueField.setText("Lock Hue");
-  lockHueField.setSelection(getPreferenceStore().getBoolean("chrome-lock-hue"));
-  lockHueField.addListener(SWT.Selection,new Listener(){
+  lockEndHueField=new Button(endGroup,SWT.CHECK);
+  lockEndHueField.setText("Lock Hue");
+  lockEndHueField.setSelection(getPreferenceStore().getBoolean(ChromeConstants.CHROME_LOCK_END_HUE));
+  lockEndHueField.addListener(SWT.Selection,new Listener(){
     @Override public void handleEvent(    Event event){
       updateLock();
     }
   }
 );
-  lockHueField.setLayoutData(new GridData(SWT.FILL,SWT.FILL,true,false,2,1));
+  lockEndHueField.setLayoutData(new GridData(SWT.FILL,SWT.FILL,true,false,2,1));
   new org.eclipse.swt.widgets.Label(endGroup,SWT.NORMAL).setText("Hue:");
   endHueScale=new HueScale(endGroup,SWT.NORMAL);
   endHueScale.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
@@ -102,6 +114,64 @@
   endBrightnessScale.setMaximum(100);
   endBrightnessScale.setSelection((int)(decorator.getEndHSB()[2] * 100));
   endBrightnessScale.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      update();
+    }
+  }
+);
+  Group outlineGroup=new Group(body,SWT.NORMAL);
+  outlineGroup.setText("Outline");
+  outlineGroup.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+  outlineGroup.setLayout(new GridLayout(2,false));
+  autoOutlineColorField=new Button(outlineGroup,SWT.CHECK);
+  autoOutlineColorField.setLayoutData(new GridData(SWT.FILL,SWT.FILL,true,false,2,1));
+  autoOutlineColorField.setText("Choose Automatically");
+  autoOutlineColorField.setSelection(getPreferenceStore().getBoolean(ChromeConstants.CHROME_AUTO_OUTLINE_COLOR));
+  autoOutlineColorField.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      updateAuto();
+    }
+  }
+);
+  lockOutlineHueField=new Button(outlineGroup,SWT.CHECK);
+  lockOutlineHueField.setText("Lock Hue");
+  lockOutlineHueField.setSelection(getPreferenceStore().getBoolean(ChromeConstants.CHROME_LOCK_OUTLINE_HUE));
+  lockOutlineHueField.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      updateLock();
+    }
+  }
+);
+  lockOutlineHueField.setLayoutData(new GridData(SWT.FILL,SWT.FILL,true,false,2,1));
+  new org.eclipse.swt.widgets.Label(outlineGroup,SWT.NORMAL).setText("Hue:");
+  outlineHueScale=new HueScale(outlineGroup,SWT.NORMAL);
+  outlineHueScale.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+  outlineHueScale.setSelection(getPreferenceStore().getFloat(ChromeConstants.CHROME_ACTIVE_OUTLINE_HUE));
+  outlineHueScale.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      update();
+    }
+  }
+);
+  new org.eclipse.swt.widgets.Label(outlineGroup,SWT.NORMAL).setText("Saturation:");
+  outlineSaturationScale=new Scale(outlineGroup,SWT.NORMAL);
+  outlineSaturationScale.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+  outlineSaturationScale.setMinimum(0);
+  outlineSaturationScale.setMaximum(100);
+  outlineSaturationScale.setSelection((int)(getPreferenceStore().getFloat(ChromeConstants.CHROME_ACTIVE_OUTLINE_SATURATION) * 100));
+  outlineSaturationScale.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      update();
+    }
+  }
+);
+  new org.eclipse.swt.widgets.Label(outlineGroup,SWT.NORMAL).setText("Brightness:");
+  outlineBrightnessScale=new Scale(outlineGroup,SWT.NORMAL);
+  outlineBrightnessScale.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+  outlineBrightnessScale.setMinimum(0);
+  outlineBrightnessScale.setMaximum(100);
+  outlineBrightnessScale.setSelection((int)(getPreferenceStore().getFloat(ChromeConstants.CHROME_ACTIVE_OUTLINE_BRIGHTNESS) * 100));
+  outlineBrightnessScale.addListener(SWT.Selection,new Listener(){
     @Override public void handleEvent(    Event event){
       update();
     }

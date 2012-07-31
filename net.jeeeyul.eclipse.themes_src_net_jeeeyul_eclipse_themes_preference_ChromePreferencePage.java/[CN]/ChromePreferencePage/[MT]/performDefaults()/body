@@ -16,8 +16,13 @@
   endHueScale.setSelection((int)end[0]);
   endSaturationScale.setSelection((int)(end[1] * 100));
   endBrightnessScale.setSelection((int)(end[2] * 100));
-  autoEndColorField.setSelection(store.getDefaultBoolean("chrome-auto-end-color"));
-  lockHueField.setSelection(store.getDefaultBoolean("chrome-lock-hue"));
+  autoEndColorField.setSelection(store.getDefaultBoolean(ChromeConstants.CHROME_AUTO_END_COLOR));
+  lockEndHueField.setSelection(store.getDefaultBoolean(ChromeConstants.CHROME_LOCK_END_HUE));
+  outlineHueScale.setSelection((int)getPreferenceStore().getDefaultFloat(ChromeConstants.CHROME_ACTIVE_OUTLINE_HUE));
+  outlineSaturationScale.setSelection((int)(getPreferenceStore().getDefaultFloat(ChromeConstants.CHROME_ACTIVE_OUTLINE_SATURATION) * 100));
+  outlineBrightnessScale.setSelection((int)(getPreferenceStore().getDefaultFloat(ChromeConstants.CHROME_ACTIVE_OUTLINE_BRIGHTNESS) * 100));
+  autoOutlineColorField.setSelection(store.getDefaultBoolean(ChromeConstants.CHROME_AUTO_OUTLINE_COLOR));
+  lockOutlineHueField.setSelection(store.getDefaultBoolean(ChromeConstants.CHROME_LOCK_OUTLINE_HUE));
   sashWidthScale.setSelection(store.getDefaultInt(ChromeConstants.CRHOME_PART_CONTAINER_SASH_WIDTH));
   useShadowField.setSelection(store.getDefaultBoolean(ChromeConstants.CRHOME_PART_SHADOW));
   thinSashButton.setSelection(false);

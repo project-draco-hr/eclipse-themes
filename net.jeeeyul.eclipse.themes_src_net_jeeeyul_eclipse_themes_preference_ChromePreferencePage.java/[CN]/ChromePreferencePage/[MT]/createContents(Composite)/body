@@ -13,11 +13,12 @@
   CSSClasses tags=CSSClasses.getStyleClasses(folder);
   tags.add("chrome-tabfolder-preview");
   CSSClasses.setStyleClasses(folder,tags);
-  CTabItem colorTab=createColorTab();
+  CTabItem colorTab=createActivePartTab();
   createSashTab();
   createTitleTab();
   folder.setSelection(colorTab);
   decorator.apply(folder);
   createLink(composite,"Only works with Chrome Theme, You can change on <a href=\"org.eclipse.ui.preferencePages.Views\">Appearance page</a>");
+  getUpdateJob().schedule(100);
   return composite;
 }

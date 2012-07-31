@@ -8,8 +8,13 @@
   store.setValue("chrome-active-end-hue",end[0]);
   store.setValue("chrome-active-end-saturation",end[1]);
   store.setValue("chrome-active-end-brightness",end[2]);
-  store.setValue("chrome-auto-end-color",autoEndColorField.getSelection());
-  store.setValue("chrome-lock-hue",lockHueField.getSelection());
+  store.setValue(ChromeConstants.CHROME_AUTO_END_COLOR,autoEndColorField.getSelection());
+  store.setValue(ChromeConstants.CHROME_LOCK_END_HUE,lockEndHueField.getSelection());
+  store.setValue(ChromeConstants.CHROME_ACTIVE_OUTLINE_HUE,(float)outlineHueScale.getSelection());
+  store.setValue(ChromeConstants.CHROME_ACTIVE_OUTLINE_SATURATION,outlineSaturationScale.getSelection() / 100f);
+  store.setValue(ChromeConstants.CHROME_ACTIVE_OUTLINE_BRIGHTNESS,outlineBrightnessScale.getSelection() / 100f);
+  store.setValue(ChromeConstants.CHROME_AUTO_OUTLINE_COLOR,autoOutlineColorField.getSelection());
+  store.setValue(ChromeConstants.CHROME_LOCK_OUTLINE_HUE,lockOutlineHueField.getSelection());
   store.setValue(ChromeConstants.CRHOME_PART_CONTAINER_SASH_WIDTH,sashWidthScale.getSelection());
   store.setValue(ChromeConstants.CRHOME_PART_SHADOW,useShadowField.getSelection());
   if (thinSashButton.getSelection()) {

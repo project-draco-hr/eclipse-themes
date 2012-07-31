@@ -1,10 +1,17 @@
 {
-  if (isHueSynchronized()) {
+  if (isEndHueSynchronized()) {
     endHueScale.setEnabled(false);
     endHueScale.setSelection(startHueScale.getSelection());
   }
  else {
     endHueScale.setEnabled(true);
+  }
+  if (lockOutlineHueField.getSelection()) {
+    outlineHueScale.setEnabled(false);
+    outlineHueScale.setSelection(startHueScale.getSelection());
+  }
+ else {
+    outlineHueScale.setEnabled(true);
   }
   update();
 }

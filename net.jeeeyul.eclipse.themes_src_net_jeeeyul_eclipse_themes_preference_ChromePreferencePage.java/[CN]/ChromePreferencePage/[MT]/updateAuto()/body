@@ -1,6 +1,6 @@
 {
   boolean isAutomaticEndColor=isAutomaticEndColor();
-  lockHueField.setEnabled(!isAutomaticEndColor);
+  lockEndHueField.setEnabled(!isAutomaticEndColor);
   endBrightnessScale.setEnabled(!isAutomaticEndColor);
   endHueScale.setEnabled(!isAutomaticEndColor);
   endSaturationScale.setEnabled(!isAutomaticEndColor);
@@ -8,4 +8,14 @@
     computeEndColor();
     update();
   }
+  boolean isAutomaticOutlineColor=autoOutlineColorField.getSelection();
+  lockOutlineHueField.setEnabled(!isAutomaticOutlineColor);
+  outlineBrightnessScale.setEnabled(!isAutomaticOutlineColor);
+  outlineHueScale.setEnabled(!isAutomaticOutlineColor);
+  outlineSaturationScale.setEnabled(!isAutomaticOutlineColor);
+  if (isAutomaticOutlineColor) {
+    computeOutlineColor();
+    update();
+  }
+  updateLock();
 }

@@ -1,5 +1,5 @@
 {
-  @SuppressWarnings("unused") ChromeTabRendering rendering=(ChromeTabRendering)folder.getRenderer();
+  ChromeTabRendering rendering=(ChromeTabRendering)folder.getRenderer();
   float[] start=decorator.getStartHSB();
   start[0]=startHueScale.getSelection();
   start[1]=startSaturationScale.getSelection() / 100f;
@@ -10,5 +10,15 @@
   end[1]=endSaturationScale.getSelection() / 100f;
   end[2]=endBrightnessScale.getSelection() / 100f;
   decorator.setEndHSB(end);
+  if (outlineColor != null && !outlineColor.isDisposed()) {
+    outlineColor.dispose();
+  }
+  float[] out=decorator.getEndHSB();
+  out[0]=outlineHueScale.getSelection();
+  out[1]=outlineSaturationScale.getSelection() / 100f;
+  out[2]=outlineBrightnessScale.getSelection() / 100f;
+  outlineColor=new Color(getShell().getDisplay(),new RGB(out[0],out[1],out[2]));
+  rendering.setTabOutline(outlineColor);
+  rendering.setOuterKeyline(outlineColor);
   decorator.apply(folder);
 }

@@ -6,4 +6,5 @@
   partFontData=null;
   partShadow=null;
   partTextShadow=null;
+  activeOulineColor=null;
 }

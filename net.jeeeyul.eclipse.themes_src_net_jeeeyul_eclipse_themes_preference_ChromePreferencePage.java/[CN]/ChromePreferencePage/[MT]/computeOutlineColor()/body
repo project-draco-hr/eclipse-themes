@@ -1,0 +1,5 @@
+{
+  outlineHueScale.setSelection(startHueScale.getSelection());
+  outlineSaturationScale.setSelection(Math.min((int)(startSaturationScale.getSelection() * 3),100));
+  outlineBrightnessScale.setSelection((int)(startBrightnessScale.getSelection() * 0.7));
+}

@@ -1,5 +1,8 @@
 {
   decorator.dispose();
+  if (outlineColor != null && !outlineColor.isDisposed()) {
+    outlineColor.dispose();
+  }
   if (previewFont != null && !previewFont.isDisposed()) {
     previewFont.dispose();
   }
