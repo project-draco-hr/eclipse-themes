@@ -1,4 +1,7 @@
 {
   decorator.dispose();
+  if (previewFont != null && !previewFont.isDisposed()) {
+    previewFont.dispose();
+  }
   super.dispose();
 }
