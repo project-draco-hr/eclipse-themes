@@ -1,0 +1,5 @@
+{
+  Combo combo=new Combo(parent,style);
+  initializer.apply(combo);
+  return combo;
+}

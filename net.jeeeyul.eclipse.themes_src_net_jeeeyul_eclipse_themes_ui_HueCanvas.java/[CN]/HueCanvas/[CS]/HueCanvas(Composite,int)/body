@@ -1,0 +1,22 @@
+{
+  super(parent,style | SWT.DOUBLE_BUFFERED);
+  addListener(SWT.Dispose,new Listener(){
+    @Override public void handleEvent(    Event event){
+      handleDispose();
+    }
+  }
+);
+  addListener(SWT.Paint,new Listener(){
+    @Override public void handleEvent(    Event event){
+      onPaint(event);
+    }
+  }
+);
+  addListener(SWT.Resize,new Listener(){
+    @Override public void handleEvent(    Event event){
+      invalidate();
+    }
+  }
+);
+  setCursor(getDisplay().getSystemCursor(SWT.CURSOR_CROSS));
+}

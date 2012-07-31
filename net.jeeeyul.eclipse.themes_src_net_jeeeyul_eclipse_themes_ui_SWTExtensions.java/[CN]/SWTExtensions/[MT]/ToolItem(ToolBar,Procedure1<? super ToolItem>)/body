@@ -1,0 +1,5 @@
+{
+  ToolItem item=new ToolItem(parent,SWT.FLAT);
+  initializer.apply(item);
+  return item;
+}

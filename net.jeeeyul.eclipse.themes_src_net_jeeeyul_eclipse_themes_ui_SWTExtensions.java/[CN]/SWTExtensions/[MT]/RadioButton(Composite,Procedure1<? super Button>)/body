@@ -1,0 +1,6 @@
+{
+  Button _button=new Button(parent,SWT.RADIO);
+  Button label=_button;
+  initializer.apply(label);
+  return label;
+}

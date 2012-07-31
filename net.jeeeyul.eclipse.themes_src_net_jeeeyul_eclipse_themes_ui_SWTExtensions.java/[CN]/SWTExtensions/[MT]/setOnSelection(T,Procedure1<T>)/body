@@ -1,0 +1,8 @@
+{
+  w.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      handler.apply(w);
+    }
+  }
+);
+}

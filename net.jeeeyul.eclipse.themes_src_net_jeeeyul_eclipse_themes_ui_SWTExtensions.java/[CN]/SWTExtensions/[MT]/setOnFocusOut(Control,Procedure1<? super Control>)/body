@@ -1,0 +1,8 @@
+{
+  control.addListener(SWT.FocusOut,new Listener(){
+    @Override public void handleEvent(    Event event){
+      handler.apply(control);
+    }
+  }
+);
+}

@@ -1,7 +1,7 @@
 {
   Group startGroup=new Group(body,SWT.NORMAL);
   startGroup.setText("Start Color");
-  startGroup.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+  startGroup.setLayoutData(new GridData(SWT.FILL,SWT.FILL,true,false,1,1));
   startGroup.setLayout(new GridLayout(2,false));
   new org.eclipse.swt.widgets.Label(startGroup,SWT.NORMAL).setText("Hue:");
   startHueScale=new HueScale(startGroup,SWT.NORMAL);
@@ -63,7 +63,7 @@
 );
   Group endGroup=new Group(body,SWT.NORMAL);
   endGroup.setText("End Color");
-  endGroup.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+  endGroup.setLayoutData(new GridData(SWT.FILL,SWT.FILL,true,false,1,1));
   endGroup.setLayout(new GridLayout(2,false));
   autoEndColorField=new Button(endGroup,SWT.CHECK);
   autoEndColorField.setLayoutData(new GridData(SWT.FILL,SWT.FILL,true,false,2,1));
@@ -121,7 +121,7 @@
 );
   Group outlineGroup=new Group(body,SWT.NORMAL);
   outlineGroup.setText("Outline");
-  outlineGroup.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+  outlineGroup.setLayoutData(new GridData(SWT.FILL,SWT.FILL,true,false,2,1));
   outlineGroup.setLayout(new GridLayout(2,false));
   autoOutlineColorField=new Button(outlineGroup,SWT.CHECK);
   autoOutlineColorField.setLayoutData(new GridData(SWT.FILL,SWT.FILL,true,false,2,1));

@@ -1,0 +1,6 @@
+{
+  Group _group=new Group(parent,SWT.NORMAL);
+  Group comp=_group;
+  initializer.apply(comp);
+  return comp;
+}

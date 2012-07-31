@@ -1,0 +1,6 @@
+{
+  Text _text=new Text(parent,SWT.BORDER | SWT.SEARCH);
+  Text label=_text;
+  initializer.apply(label);
+  return label;
+}

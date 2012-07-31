@@ -1,0 +1,4 @@
+{
+  Rectangle clientArea=getClientArea();
+  event.gc.drawImage(getHueImage(),clientArea.x,clientArea.y);
+}

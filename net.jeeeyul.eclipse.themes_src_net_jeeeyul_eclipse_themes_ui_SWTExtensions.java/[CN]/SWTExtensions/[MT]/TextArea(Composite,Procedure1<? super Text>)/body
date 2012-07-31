@@ -1,0 +1,7 @@
+{
+  int _bitwiseOr=IntegerExtensions.bitwiseOr(SWT.MULTI,SWT.BORDER);
+  Text _text=new Text(parent,_bitwiseOr);
+  Text label=_text;
+  initializer.apply(label);
+  return label;
+}

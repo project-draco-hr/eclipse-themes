@@ -1,0 +1,4 @@
+{
+  initializer.apply(widget);
+  return widget;
+}

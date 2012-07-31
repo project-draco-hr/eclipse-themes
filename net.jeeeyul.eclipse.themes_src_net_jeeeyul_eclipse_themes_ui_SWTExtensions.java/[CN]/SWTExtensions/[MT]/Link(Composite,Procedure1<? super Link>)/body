@@ -1,0 +1,5 @@
+{
+  Link _link=new Link(parent,SWT.CHECK);
+  initializer.apply(_link);
+  return _link;
+}

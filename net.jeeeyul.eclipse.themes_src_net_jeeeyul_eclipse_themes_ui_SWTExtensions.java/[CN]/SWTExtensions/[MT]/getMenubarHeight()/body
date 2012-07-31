@@ -1,0 +1,17 @@
+{
+  if (MENU_BAR_HEIGHT != null) {
+    return MENU_BAR_HEIGHT;
+  }
+  if (Display.getCurrent() == null) {
+    throw new SWTException("Invalid Thread Exception");
+  }
+  Shell dummy=new Shell();
+  Menu menu=new Menu(dummy,SWT.BAR);
+  dummy.setMenuBar(menu);
+  Rectangle boundsWithMenu=dummy.computeTrim(0,0,0,0);
+  dummy.setMenuBar(null);
+  Rectangle boundsWithoutMenu=dummy.computeTrim(0,0,0,0);
+  dummy.dispose();
+  MENU_BAR_HEIGHT=boundsWithMenu.height - boundsWithoutMenu.height;
+  return MENU_BAR_HEIGHT;
+}

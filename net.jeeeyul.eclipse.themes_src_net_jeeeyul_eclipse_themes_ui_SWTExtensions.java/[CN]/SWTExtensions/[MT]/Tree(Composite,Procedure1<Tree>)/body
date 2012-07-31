@@ -1,0 +1,5 @@
+{
+  Tree tree=new Tree(parent,SWT.BORDER);
+  initializer.apply(tree);
+  return tree;
+}

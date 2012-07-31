@@ -1,0 +1,6 @@
+{
+  Composite _composite=new Composite(parent,SWT.NORMAL);
+  Composite comp=_composite;
+  initializer.apply(comp);
+  return comp;
+}

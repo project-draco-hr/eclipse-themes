@@ -1,0 +1,5 @@
+{
+  TreeItem item=new TreeItem(parent,SWT.NORMAL);
+  initializer.apply(item);
+  return item;
+}

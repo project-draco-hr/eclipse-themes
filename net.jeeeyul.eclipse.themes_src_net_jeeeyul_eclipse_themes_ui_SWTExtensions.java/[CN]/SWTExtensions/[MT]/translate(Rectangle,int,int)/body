@@ -1,0 +1,5 @@
+{
+  rectangle.x+=dx;
+  rectangle.y+=dy;
+  return rectangle;
+}

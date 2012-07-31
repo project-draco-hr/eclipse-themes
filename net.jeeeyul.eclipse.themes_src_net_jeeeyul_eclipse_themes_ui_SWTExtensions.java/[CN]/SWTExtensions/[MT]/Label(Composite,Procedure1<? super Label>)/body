@@ -1,0 +1,6 @@
+{
+  Label _label=new Label(parent,SWT.NORMAL);
+  Label label=_label;
+  initializer.apply(label);
+  return label;
+}
