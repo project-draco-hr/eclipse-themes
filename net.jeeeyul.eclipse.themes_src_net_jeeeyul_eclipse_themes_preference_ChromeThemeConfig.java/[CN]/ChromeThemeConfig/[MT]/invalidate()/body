@@ -5,4 +5,5 @@
   partShadow=null;
   partFontData=null;
   partShadow=null;
+  partTextShadow=null;
 }

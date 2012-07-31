@@ -27,6 +27,7 @@
     store.setValue(ChromeConstants.CHROME_PART_FONT_NAME,fontData.getName());
     store.setValue(ChromeConstants.CHROME_PART_FONT_SIZE,fontData.height);
   }
+  store.setValue(ChromeConstants.CHROME_PART_FONT_SHADOW,usePartTextShadowButton.getSelection());
   try {
     workingCopyManager.applyChanges();
   }

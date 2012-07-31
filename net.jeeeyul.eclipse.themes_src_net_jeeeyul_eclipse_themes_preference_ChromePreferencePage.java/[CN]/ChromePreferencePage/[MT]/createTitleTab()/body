@@ -1,6 +1,6 @@
 {
   CTabItem fontItem=new CTabItem(folder,SWT.CLOSE);
-  fontItem.setText("Font");
+  fontItem.setText("Title");
   fontItem.setImage(SharedImages.getImage(SharedImages.FONT));
   Composite composite=new Composite(folder,SWT.NORMAL);
   composite.setBackground(folder.getDisplay().getSystemColor(SWT.COLOR_WHITE));
@@ -10,14 +10,17 @@
   fontPreviewLabel=new Label(composite,SWT.NORMAL);
   GridData layoutData=new GridData(GridData.FILL_HORIZONTAL);
   fontPreviewLabel.setLayoutData(layoutData);
-  Button b=new Button(composite,SWT.PUSH);
-  b.setText("Change");
-  b.addListener(SWT.Selection,new Listener(){
+  Button changeFontButton=new Button(composite,SWT.PUSH);
+  changeFontButton.setText("Change");
+  changeFontButton.addListener(SWT.Selection,new Listener(){
     @Override public void handleEvent(    Event event){
       openFontDialog();
     }
   }
 );
   fontItem.setControl(composite);
+  usePartTextShadowButton=new Button(composite,SWT.CHECK);
+  usePartTextShadowButton.setText("Cast shiny shadows for unselected tabs");
+  usePartTextShadowButton.setLayoutData(new GridData(SWT.FILL,SWT.FILL,true,false,3,1));
   updateFontTab();
 }

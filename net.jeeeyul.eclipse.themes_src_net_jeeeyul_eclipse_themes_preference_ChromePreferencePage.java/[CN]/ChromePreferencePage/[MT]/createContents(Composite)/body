@@ -15,7 +15,7 @@
   CSSClasses.setStyleClasses(folder,tags);
   CTabItem colorTab=createColorTab();
   createSashTab();
-  createFontTab();
+  createTitleTab();
   folder.setSelection(colorTab);
   decorator.apply(folder);
   createLink(composite,"Only works with Chrome Theme, You can change on <a href=\"org.eclipse.ui.preferencePages.Views\">Appearance page</a>");

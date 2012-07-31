@@ -46,6 +46,7 @@
   previewFont=new Font(getShell().getDisplay(),fontData);
   fontPreviewLabel.setFont(previewFont);
   fontPreviewLabel.getParent().layout(true);
+  usePartTextShadowButton.setSelection(getPreferenceStore().getDefaultBoolean(ChromeConstants.CHROME_PART_FONT_SHADOW));
   updateLock();
   updateAuto();
   update();
