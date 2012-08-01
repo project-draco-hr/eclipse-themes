@@ -1,0 +1,5 @@
+{
+  byte[] data=content.getBytes(encoding);
+  ByteArrayInputStream buffer=new ByteArrayInputStream(data);
+  file.setContents(buffer,true,true,null);
+}

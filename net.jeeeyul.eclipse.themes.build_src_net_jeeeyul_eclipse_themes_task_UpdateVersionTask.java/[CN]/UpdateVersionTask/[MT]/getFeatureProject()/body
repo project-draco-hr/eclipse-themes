@@ -1,0 +1,5 @@
+{
+  IWorkspaceRoot root=ResourcesPlugin.getWorkspace().getRoot();
+  IProject featureProject=root.getProject(this.feature);
+  return featureProject;
+}

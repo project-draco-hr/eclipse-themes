@@ -1,0 +1,4 @@
+{
+  String result=read(file.getContents(),encoding);
+  return result;
+}

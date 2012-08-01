@@ -1,0 +1,4 @@
+{
+  this.keyOrder.remove(key);
+  return super.remove(key);
+}

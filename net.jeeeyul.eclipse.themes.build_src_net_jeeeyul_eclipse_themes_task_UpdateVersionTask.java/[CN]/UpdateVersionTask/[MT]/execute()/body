@@ -1,0 +1,31 @@
+{
+  try {
+    ArrayList<Manifest> manifests=new ArrayList<Manifest>();
+    ArrayList<IProject> projects=getProjects();
+    ArrayList<String> bundleIdList=new ArrayList<String>();
+    for (    IProject eachProject : projects) {
+      if (eachProject.getName().contains("kr.or.eclipse")) {
+        continue;
+      }
+      IFile manifestFile=eachProject.getFile(new Path("META-INF/MANIFEST.MF"));
+      Manifest m=new Manifest(manifestFile);
+      manifests.add(m);
+      bundleIdList.add(m.getBundleId());
+    }
+    for (    Manifest m : manifests) {
+      System.out.println(m.getBundleId() + " ???? ???? > " + this.version+ ".qualifier");
+      m.setBundleVersion(this.version + ".qualifier");
+      m.updateDependencies(bundleIdList,this.version);
+      m.save();
+    }
+    System.out.println("???? ?????? ?????? ???????? ??...");
+    IFile featureFile=getFeatureProject().getFile("feature.xml");
+    String featureContent=read(featureFile.getContents(),featureFile.getCharset());
+    String newcontent=featureContent.replaceAll("version=\"[0-9]+\\.[0-9]+\\.[0-9]+\\.qualifier\"","version=\"" + this.version + ".qualifier\"");
+    write(featureFile,newcontent,featureFile.getCharset());
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+    throw new BuildException(e);
+  }
+}
