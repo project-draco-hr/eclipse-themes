@@ -1,0 +1,4 @@
+{
+  setPreferenceStore(ChromeThemeCore.getDefault().getPreferenceStore());
+  setupPages();
+}

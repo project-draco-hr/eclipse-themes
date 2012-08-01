@@ -18,5 +18,23 @@
     }
   }
 );
+  addListener(SWT.MouseDown,new Listener(){
+    @Override public void handleEvent(    Event event){
+      onMouseDown(event);
+    }
+  }
+);
+  addListener(SWT.MouseMove,new Listener(){
+    @Override public void handleEvent(    Event event){
+      onMouseMove(event);
+    }
+  }
+);
+  addListener(SWT.MouseUp,new Listener(){
+    @Override public void handleEvent(    Event event){
+      onMouseUp(event);
+    }
+  }
+);
   setCursor(getDisplay().getSystemCursor(SWT.CURSOR_CROSS));
 }

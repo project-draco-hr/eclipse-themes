@@ -1,0 +1,5 @@
+{
+  if (event.button == 1) {
+    state=STATE_NONE;
+  }
+}

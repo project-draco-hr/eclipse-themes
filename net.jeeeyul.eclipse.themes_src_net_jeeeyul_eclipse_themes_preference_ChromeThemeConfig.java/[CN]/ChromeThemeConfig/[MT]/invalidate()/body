@@ -1,6 +1,9 @@
 {
   activePartGradientEnd=null;
   activePartGradientStart=null;
+  inactiveOulineColor=null;
+  inactivePartGradientEnd=null;
+  inactivePartGradientStart=null;
   sashWidth=null;
   partShadow=null;
   partFontData=null;

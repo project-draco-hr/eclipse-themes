@@ -1,0 +1,5 @@
+{
+  super();
+  this.title=title;
+  this.image=SharedImages.getImage(imageURI);
+}

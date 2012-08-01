@@ -1,0 +1,11 @@
+{
+  Control[] children=control.getParent().getChildren();
+  List<Control> childList=Arrays.asList(children);
+  int index=childList.indexOf(control);
+  if (index < childList.size() - 1) {
+    return children[index + 1];
+  }
+ else {
+    return null;
+  }
+}

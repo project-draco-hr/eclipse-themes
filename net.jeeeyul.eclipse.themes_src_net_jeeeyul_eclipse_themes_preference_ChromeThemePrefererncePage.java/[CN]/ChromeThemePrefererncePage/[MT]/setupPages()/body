@@ -1,0 +1,6 @@
+{
+  addPage(new GradientPage());
+  addPage(new LayoutPage());
+  addPage(new PartTitlePage());
+  addPage(new ToolbarPage());
+}

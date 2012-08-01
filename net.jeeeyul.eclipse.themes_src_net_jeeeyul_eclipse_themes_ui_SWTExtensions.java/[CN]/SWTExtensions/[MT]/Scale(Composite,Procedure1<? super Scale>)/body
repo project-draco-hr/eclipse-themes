@@ -1,0 +1,5 @@
+{
+  Scale scale=new Scale(parent,SWT.NORMAL);
+  initializer.apply(scale);
+  return scale;
+}

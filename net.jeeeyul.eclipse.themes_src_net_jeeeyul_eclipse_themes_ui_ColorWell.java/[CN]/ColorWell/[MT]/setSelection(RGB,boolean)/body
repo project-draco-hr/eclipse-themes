@@ -1,0 +1,9 @@
+{
+  this.selection=selection;
+  redraw();
+  if (notify) {
+    Event event=new Event();
+    event.widget=this;
+    notifyListeners(SWT.Selection,event);
+  }
+}

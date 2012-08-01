@@ -1,0 +1,5 @@
+{
+  for (  IChromePage page : pages) {
+    page.load(getPreferenceStore());
+  }
+}

@@ -1,0 +1,9 @@
+{
+  if (selection == null) {
+    return;
+  }
+  Color color=new Color(getDisplay(),selection);
+  event.gc.setBackground(color);
+  event.gc.fillRectangle(getClientArea());
+  color.dispose();
+}

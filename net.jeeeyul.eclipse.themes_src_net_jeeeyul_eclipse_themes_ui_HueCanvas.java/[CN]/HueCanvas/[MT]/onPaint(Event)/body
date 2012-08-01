@@ -1,4 +1,18 @@
 {
   Rectangle clientArea=getClientArea();
-  event.gc.drawImage(getHueImage(),clientArea.x,clientArea.y);
+  GC gc=event.gc;
+  gc.drawRectangle(clientArea.x - 1,clientArea.y - 1,clientArea.width + 1,clientArea.height + 1);
+  gc.drawImage(getHueImage(),clientArea.x,clientArea.y);
+  int selectionX=(int)(clientArea.width * saturation + clientArea.x);
+  int selectionY=(int)(clientArea.height * (1f - brightness) + clientArea.y);
+  RGB rgb=new RGB(hue,saturation,brightness);
+  Color selectionColor=new Color(getDisplay(),rgb);
+  gc.setAntialias(SWT.ON);
+  gc.setBackground(selectionColor);
+  gc.fillOval(selectionX - selectionRadius,selectionY - selectionRadius,selectionRadius * 2 + 1,selectionRadius * 2 + 1);
+  gc.setForeground(getDisplay().getSystemColor(SWT.COLOR_WHITE));
+  gc.drawOval(selectionX - selectionRadius,selectionY - selectionRadius,selectionRadius * 2,selectionRadius * 2);
+  gc.setForeground(getDisplay().getSystemColor(SWT.COLOR_BLACK));
+  gc.drawOval(selectionX - selectionRadius - 1,selectionY - selectionRadius - 1,selectionRadius * 2 + 2,selectionRadius * 2 + 2);
+  selectionColor.dispose();
 }

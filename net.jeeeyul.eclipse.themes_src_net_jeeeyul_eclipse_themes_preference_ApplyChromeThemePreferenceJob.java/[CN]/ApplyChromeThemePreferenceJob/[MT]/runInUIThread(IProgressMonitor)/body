@@ -1,4 +1,5 @@
 {
+  new RewriteChormeCSS().rewrite();
   Set<ChromeTabRendering> instances=ChromeTabRendering.getInstances();
   ChromeTabRendering[] renderings=new ChromeTabRendering[instances.size()];
   renderings=instances.toArray(renderings);

@@ -1,0 +1,9 @@
+{
+  if (getShell() == null) {
+    return;
+  }
+  float[] hsb=selection.getHSB();
+  hueCanvas.setSelection(hsb);
+  hueScale.setSelection(hsb[0]);
+  hueScale.setEnabled(!lockHue);
+}

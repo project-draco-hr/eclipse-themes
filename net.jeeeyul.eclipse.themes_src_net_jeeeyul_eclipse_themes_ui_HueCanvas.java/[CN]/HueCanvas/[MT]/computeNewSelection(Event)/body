@@ -1,0 +1,7 @@
+{
+  Rectangle clientArea=getClientArea();
+  float newSaturation=limit((event.x - clientArea.x) / (float)clientArea.width,0f,1f);
+  float newBrightness=limit(1f - (event.y - clientArea.y) / (float)clientArea.height,0f,1f);
+  setSaturation(newSaturation);
+  setBrightness(newBrightness);
+}
