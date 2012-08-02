@@ -1,8 +1,0 @@
-{
-  ImageDescriptor result=REGISTRY.getDescriptor(key);
-  if (result == null) {
-    result=loadImageDescriptor(key);
-    REGISTRY.put(key,result);
-  }
-  return result;
-}
