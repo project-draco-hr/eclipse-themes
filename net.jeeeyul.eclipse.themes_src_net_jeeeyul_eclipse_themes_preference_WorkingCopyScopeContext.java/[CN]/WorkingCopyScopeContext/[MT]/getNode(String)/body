@@ -1,3 +1,0 @@
-{
-  return fWorkingCopyManager.getWorkingCopy(fOriginal.getNode(qualifier));
-}
