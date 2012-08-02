@@ -1,13 +1,18 @@
 {
   activePartGradientEnd=null;
   activePartGradientStart=null;
+  activeOulineColor=null;
+  activeSelectedTitleColor=null;
+  activeUnselectedTitleColor=null;
   inactiveOulineColor=null;
   inactivePartGradientEnd=null;
   inactivePartGradientStart=null;
+  inactiveSelectedTitleColor=null;
+  inactiveUnselectedTitleColor=null;
   sashWidth=null;
   partShadow=null;
   partFontData=null;
   partShadow=null;
-  partTextShadow=null;
-  activeOulineColor=null;
+  activePartTitleShadow=null;
+  inactivePartTitleShadow=null;
 }

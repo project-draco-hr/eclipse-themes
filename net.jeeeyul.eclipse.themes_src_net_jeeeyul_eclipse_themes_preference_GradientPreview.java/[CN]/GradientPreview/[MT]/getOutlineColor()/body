@@ -1,0 +1,6 @@
+{
+  if (outlineColor == null || outlineColor.isDisposed()) {
+    outlineColor=new Color(folder.getDisplay(),outline);
+  }
+  return outlineColor;
+}

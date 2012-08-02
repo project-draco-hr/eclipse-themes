@@ -18,9 +18,7 @@
 );
   hueCanvas.addListener(SWT.Selection,new Listener(){
     @Override public void handleEvent(    Event event){
-      float[] hsb=hueCanvas.getSelection();
-      selection=new RGB(hsb[0],hsb[1],hsb[2]);
-      colorWell.setSelection(new RGB(hsb[0],hsb[1],hsb[2]));
+      handleNewSelection();
     }
   }
 );

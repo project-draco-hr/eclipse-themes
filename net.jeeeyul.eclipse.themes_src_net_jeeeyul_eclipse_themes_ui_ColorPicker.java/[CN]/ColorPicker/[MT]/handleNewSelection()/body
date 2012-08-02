@@ -1,0 +1,7 @@
+{
+  selection=hueCanvas.getSelection();
+  colorWell.setSelection(selection);
+  if (continuosSelectionHandler != null) {
+    continuosSelectionHandler.apply(selection);
+  }
+}

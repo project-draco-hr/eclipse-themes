@@ -2,6 +2,11 @@
   Composite container=new Composite(parent,SWT.NORMAL);
   container.setLayout(new GridLayout());
   folder=new CTabFolder(container,SWT.CLOSE);
+  ChromeTabRendering renderer=new ChromeTabRendering(folder);
+  renderer.setSelectedTabFill(folder.getDisplay().getSystemColor(SWT.COLOR_WHITE));
+  renderer.setOuterKeyline(folder.getDisplay().getSystemColor(SWT.COLOR_BLACK));
+  renderer.setPadding(9,9,0,10);
+  folder.setRenderer(renderer);
   folder.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
   folder.addCTabFolder2Listener(new CTabFolder2Adapter(){
     @Override public void close(    CTabFolderEvent event){
@@ -10,14 +15,12 @@
   }
 );
   folder.setUnselectedCloseVisible(false);
-  CSSClasses tags=CSSClasses.getStyleClasses(folder);
-  tags.add("chrome-tabfolder-preview");
-  CSSClasses.setStyleClasses(folder,tags);
   for (int i=0; i < pages.size(); i++) {
     IChromePage page=pages.get(i);
     Composite control=new Composite(folder,SWT.NORMAL);
     control.setBackgroundMode(SWT.INHERIT_FORCE);
     control.setBackground(getShell().getDisplay().getSystemColor(SWT.COLOR_WHITE));
+    page.setTabFolder(folder);
     page.create(control);
     CTabItem item=new CTabItem(folder,SWT.NORMAL);
     item.setControl(control);

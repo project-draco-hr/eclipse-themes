@@ -1,0 +1,24 @@
+{
+  CTabFolderElement model=(CTabFolderElement)element;
+  CTabFolder folder=(CTabFolder)model.getNativeWidget();
+  CTabFolderRenderer renderer=folder.getRenderer();
+  if (!(renderer instanceof ChromeTabRendering)) {
+    return false;
+  }
+  if (property.equals("chrome-selected-tab-color")) {
+    ChromeTabRendering rendering=(ChromeTabRendering)renderer;
+    Color color=(Color)engine.convert(value,Color.class,folder.getDisplay());
+    rendering.setSelectedTabItemColor(color);
+  }
+ else   if (property.equals("chrome-unselected-tab-color")) {
+    ChromeTabRendering rendering=(ChromeTabRendering)renderer;
+    Color color=(Color)engine.convert(value,Color.class,folder.getDisplay());
+    rendering.setUnselectedTabItemColor(color);
+  }
+ else   if (property.equals("chrome-shiney-shadow")) {
+    ChromeTabRendering rendering=(ChromeTabRendering)renderer;
+    Boolean use=(Boolean)engine.convert(value,Boolean.class,folder.getDisplay());
+    rendering.setShowShineyShadow(use);
+  }
+  return true;
+}

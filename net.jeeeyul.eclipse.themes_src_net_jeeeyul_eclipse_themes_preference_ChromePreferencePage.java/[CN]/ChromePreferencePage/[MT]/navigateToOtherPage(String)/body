@@ -1,3 +1,0 @@
-{
-  PreferencesUtil.createPreferenceDialogOn(getShell(),pageId,null,null);
-}

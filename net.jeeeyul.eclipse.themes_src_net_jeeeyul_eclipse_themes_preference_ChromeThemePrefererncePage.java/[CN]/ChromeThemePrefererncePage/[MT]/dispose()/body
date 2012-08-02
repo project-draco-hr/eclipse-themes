@@ -1,0 +1,6 @@
+{
+  for (  IChromePage page : pages) {
+    page.dispose();
+  }
+  super.dispose();
+}

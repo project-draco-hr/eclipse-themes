@@ -1,0 +1,3 @@
+{
+  return new HSB(hue,saturation,limit(this.brightness * amp,0f,1f));
+}

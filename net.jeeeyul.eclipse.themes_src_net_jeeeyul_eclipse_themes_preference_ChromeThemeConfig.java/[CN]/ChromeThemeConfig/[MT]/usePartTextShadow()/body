@@ -1,6 +1,0 @@
-{
-  if (partTextShadow == null) {
-    partTextShadow=preferenceStore.getBoolean(ChromeConstants.CHROME_PART_FONT_SHADOW);
-  }
-  return partTextShadow;
-}

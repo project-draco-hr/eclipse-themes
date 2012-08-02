@@ -2,8 +2,7 @@
   if (getShell() == null) {
     return;
   }
-  float[] hsb=selection.getHSB();
-  hueCanvas.setSelection(hsb);
-  hueScale.setSelection(hsb[0]);
+  hueCanvas.setSelection(selection.toArray());
+  hueScale.setSelection(selection.hue);
   hueScale.setEnabled(!lockHue);
 }
