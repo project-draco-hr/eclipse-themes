@@ -1,0 +1,5 @@
+{
+  Display.getDefault();
+  HSB result=new PipetteTool(null).open();
+  System.out.println(result);
+}

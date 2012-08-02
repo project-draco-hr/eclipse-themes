@@ -1,0 +1,11 @@
+{
+  int newX=Math.min(this.x,x);
+  int newY=Math.min(this.y,y);
+  int newWidth=Math.max(this.x + this.width,x + width) - newX;
+  int newHeight=Math.max(this.y + this.height,y + height) - newY;
+  this.x=newX;
+  this.y=newY;
+  this.width=newWidth;
+  this.height=newHeight;
+  return this;
+}

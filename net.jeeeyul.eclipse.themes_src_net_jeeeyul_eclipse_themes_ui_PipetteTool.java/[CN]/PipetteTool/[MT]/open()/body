@@ -1,0 +1,16 @@
+{
+  Display display=Display.getCurrent();
+  pipetteColorMask=new ImageData(getClass().getResourceAsStream("pipette-mask.png"));
+  for (  Monitor monitor : display.getMonitors()) {
+    Shell eachPipetteShell=createPipetteShell(monitor);
+    eachPipetteShell.open();
+    pipetteShells.add(eachPipetteShell);
+  }
+  while (!loopExpired) {
+    if (!display.readAndDispatch()) {
+      display.sleep();
+    }
+  }
+  disposeAllShells();
+  return result;
+}

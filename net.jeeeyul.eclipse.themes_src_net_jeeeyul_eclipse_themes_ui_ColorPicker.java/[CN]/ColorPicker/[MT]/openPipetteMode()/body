@@ -1,0 +1,7 @@
+{
+  HSB result=new PipetteTool(getShell()).open();
+  if (result != null) {
+    hueScale.setSelection(result.hue);
+  }
+  hueCanvas.setSelection(result.toArray());
+}

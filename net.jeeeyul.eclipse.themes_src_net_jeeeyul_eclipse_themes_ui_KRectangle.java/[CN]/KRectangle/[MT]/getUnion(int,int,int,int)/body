@@ -1,0 +1,3 @@
+{
+  return getCopy().union(x,y,width,height);
+}

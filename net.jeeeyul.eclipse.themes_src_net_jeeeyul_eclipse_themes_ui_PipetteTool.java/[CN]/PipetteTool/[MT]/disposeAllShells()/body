@@ -1,0 +1,10 @@
+{
+  for (  Shell each : pipetteShells) {
+    if (!each.isDisposed()) {
+      if (each.getCursor() != null) {
+        each.getCursor().dispose();
+      }
+      each.dispose();
+    }
+  }
+}

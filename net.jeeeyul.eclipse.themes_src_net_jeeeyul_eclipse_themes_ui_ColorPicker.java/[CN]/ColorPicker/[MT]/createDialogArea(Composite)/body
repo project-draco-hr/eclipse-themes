@@ -22,6 +22,17 @@
     }
   }
 );
+  Button pipette=new Button(container,SWT.PUSH);
+  pipette.setText("Pipette Tool");
+  pipette.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      if (!isLockHue()) {
+        openPipetteMode();
+      }
+    }
+  }
+);
+  pipette.setLayoutData(new GridData(SWT.RIGHT,SWT.FILL,false,false,2,1));
   update();
   getShell().setText("Jeeeyul's Color Picker");
   return container;
