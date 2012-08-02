@@ -1,0 +1,24 @@
+{
+  if (folder.isDisposed()) {
+    return Status.OK_STATUS;
+  }
+  folder.setBackground(getGradientArray(),new int[]{99,100},true);
+  ChromeTabRendering renderer=(ChromeTabRendering)folder.getRenderer();
+  renderer.setOuterKeyline(getOutlineColor());
+  renderer.setTabOutline(getOutlineColor());
+  renderer.setSelectedTabItemColor(getSelectedTitleColor());
+  renderer.setUnselectedTabItemColor(getUnselectedTitleColor());
+  renderer.setShowShineyShadow(castShinyShadow);
+  try {
+    if (folder.getFont() != getFont()) {
+      folder.setFont(getFont());
+      folder.getParent().layout(new Control[]{folder});
+      folder.getParent().update();
+    }
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+  folder.update();
+  return Status.OK_STATUS;
+}

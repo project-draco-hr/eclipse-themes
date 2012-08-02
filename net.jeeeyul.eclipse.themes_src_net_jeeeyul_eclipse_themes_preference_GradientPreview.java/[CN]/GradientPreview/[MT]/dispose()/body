@@ -1,6 +1,0 @@
-{
-  cancel();
-  dispose(gradientStartColor);
-  dispose(outlineColor);
-  dispose(gradientEndColor);
-}

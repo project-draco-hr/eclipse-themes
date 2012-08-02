@@ -1,0 +1,6 @@
+{
+  Composite _composite=new Composite(parent,style);
+  Composite comp=_composite;
+  initializer.apply(comp);
+  return comp;
+}

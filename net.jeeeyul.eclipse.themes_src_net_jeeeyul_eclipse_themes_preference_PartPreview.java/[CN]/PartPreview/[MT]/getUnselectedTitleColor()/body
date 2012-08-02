@@ -1,0 +1,6 @@
+{
+  if (unselectedTitleColor == null || unselectedTitleColor.isDisposed()) {
+    unselectedTitleColor=new Color(folder.getDisplay(),unselectedTitle);
+  }
+  return unselectedTitleColor;
+}

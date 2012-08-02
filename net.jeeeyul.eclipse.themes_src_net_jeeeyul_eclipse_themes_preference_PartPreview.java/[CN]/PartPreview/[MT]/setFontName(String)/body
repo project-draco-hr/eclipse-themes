@@ -1,0 +1,11 @@
+{
+  if (this.fontName == null && fontName == null) {
+    return;
+  }
+  if (this.fontName != null && this.fontName.equals(fontName)) {
+    return;
+  }
+  dispose(font);
+  this.fontName=fontName;
+  schedule(10);
+}

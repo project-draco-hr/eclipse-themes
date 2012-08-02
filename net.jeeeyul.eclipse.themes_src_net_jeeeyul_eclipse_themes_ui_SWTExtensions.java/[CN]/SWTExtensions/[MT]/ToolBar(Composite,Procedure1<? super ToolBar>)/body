@@ -1,5 +1,5 @@
 {
-  ToolBar toolBar=new ToolBar(parent,SWT.FLAT);
+  ToolBar toolBar=new ToolBar(parent,SWT.NORMAL);
   initializer.apply(toolBar);
   return toolBar;
 }

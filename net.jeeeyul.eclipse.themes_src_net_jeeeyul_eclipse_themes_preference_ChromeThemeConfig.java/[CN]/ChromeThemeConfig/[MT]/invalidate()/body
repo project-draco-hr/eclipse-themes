@@ -15,4 +15,6 @@
   partShadow=null;
   activePartTitleShadow=null;
   inactivePartTitleShadow=null;
+  toolbarGradientEnd=null;
+  toolbarGradientStart=null;
 }

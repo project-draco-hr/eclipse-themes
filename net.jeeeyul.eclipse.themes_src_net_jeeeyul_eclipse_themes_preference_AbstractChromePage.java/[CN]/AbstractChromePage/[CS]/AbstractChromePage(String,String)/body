@@ -1,5 +1,5 @@
 {
   super();
   this.title=title;
-  this.image=SharedImages.getImage(imageURI);
+  this.pageImage=SharedImages.getImage(imageURI);
 }
