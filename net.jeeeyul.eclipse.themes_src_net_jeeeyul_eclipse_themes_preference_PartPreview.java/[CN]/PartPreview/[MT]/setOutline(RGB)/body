@@ -1,5 +1,4 @@
 {
-  dispose(outlineColor);
   this.outline=outline;
-  schedule(10);
+  schedule(delay);
 }

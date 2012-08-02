@@ -1,5 +1,4 @@
 {
-  dispose(gradientStartColor);
   this.gradientStart=gradientStart;
-  schedule(10);
+  schedule(delay);
 }

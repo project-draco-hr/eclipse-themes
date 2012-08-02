@@ -5,4 +5,5 @@
   dispose(gradientEndColor);
   dispose(selectedTitleColor);
   dispose(unselectedTitleColor);
+  dispose(font);
 }

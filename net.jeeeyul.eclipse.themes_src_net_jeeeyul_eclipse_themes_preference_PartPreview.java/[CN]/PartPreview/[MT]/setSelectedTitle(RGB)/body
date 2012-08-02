@@ -1,5 +1,4 @@
 {
-  dispose(selectedTitleColor);
   this.selectedTitle=selectedTitle;
-  schedule(10);
+  schedule(delay);
 }

@@ -8,4 +8,5 @@
   }
 );
   setSystem(true);
+  setDisplay(folder.getDisplay());
 }

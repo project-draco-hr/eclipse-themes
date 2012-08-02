@@ -1,5 +1,4 @@
 {
-  dispose(gradientEndColor);
   this.gradientEnd=gradientEnd;
-  schedule(10);
+  schedule(delay);
 }

@@ -2,7 +2,6 @@
   if (this.fontSize == fontSize) {
     return;
   }
-  dispose(font);
   this.fontSize=fontSize;
-  schedule(10);
+  schedule(delay);
 }

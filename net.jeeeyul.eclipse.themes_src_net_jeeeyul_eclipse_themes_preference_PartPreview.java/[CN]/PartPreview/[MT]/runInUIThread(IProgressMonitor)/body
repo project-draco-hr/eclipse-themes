@@ -2,6 +2,7 @@
   if (folder.isDisposed()) {
     return Status.OK_STATUS;
   }
+  dispose();
   folder.setBackground(getGradientArray(),new int[]{99,100},true);
   ChromeTabRendering renderer=(ChromeTabRendering)folder.getRenderer();
   renderer.setOuterKeyline(getOutlineColor());
