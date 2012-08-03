@@ -2,11 +2,11 @@
   if (folder.isDisposed()) {
     return Status.OK_STATUS;
   }
-  dispose();
   folder.setBackground(getGradientArray(),new int[]{99,100},true);
   ChromeTabRendering renderer=(ChromeTabRendering)folder.getRenderer();
-  renderer.setOuterKeyline(getOutlineColor());
-  renderer.setTabOutline(getOutlineColor());
+  Color outlineColor=getOutlineColor();
+  renderer.setOuterKeyline(outlineColor);
+  renderer.setTabOutline(outlineColor);
   renderer.setSelectedTabItemColor(getSelectedTitleColor());
   renderer.setUnselectedTabItemColor(getUnselectedTitleColor());
   renderer.setShowShineyShadow(castShinyShadow);
@@ -17,12 +17,12 @@
     try {
       folder.setFont(getFont());
       folder.getParent().layout(new Control[]{folder});
-      folder.getParent().update();
     }
  catch (    Exception e) {
       e.printStackTrace();
     }
   }
   folder.update();
+  flush();
   return Status.OK_STATUS;
 }

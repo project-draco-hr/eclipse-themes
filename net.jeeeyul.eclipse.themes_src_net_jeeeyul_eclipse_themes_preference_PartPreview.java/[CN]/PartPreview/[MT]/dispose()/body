@@ -1,9 +1,8 @@
 {
-  cancel();
-  dispose(gradientStartColor);
-  dispose(outlineColor);
-  dispose(gradientEndColor);
-  dispose(selectedTitleColor);
-  dispose(unselectedTitleColor);
-  dispose(font);
+  safeDispose(font);
+  safeDispose(gradientEndColor);
+  safeDispose(gradientStartColor);
+  safeDispose(outlineColor);
+  safeDispose(selectedTitleColor);
+  safeDispose(unselectedTitleColor);
 }

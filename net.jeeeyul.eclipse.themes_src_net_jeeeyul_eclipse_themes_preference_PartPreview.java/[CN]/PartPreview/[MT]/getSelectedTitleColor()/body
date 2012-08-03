@@ -1,6 +1,5 @@
 {
-  if (selectedTitleColor == null || selectedTitleColor.isDisposed()) {
-    selectedTitleColor=new Color(folder.getDisplay(),selectedTitle);
-  }
+  scheduleDispose(selectedTitleColor);
+  selectedTitleColor=new Color(folder.getDisplay(),selectedTitle);
   return selectedTitleColor;
 }

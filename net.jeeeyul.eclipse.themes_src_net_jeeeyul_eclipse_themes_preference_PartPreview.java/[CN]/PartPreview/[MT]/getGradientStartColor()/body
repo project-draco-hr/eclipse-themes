@@ -1,6 +1,5 @@
 {
-  if (gradientStartColor == null || gradientStartColor.isDisposed()) {
-    gradientStartColor=new Color(folder.getDisplay(),gradientStart);
-  }
+  scheduleDispose(gradientStartColor);
+  gradientStartColor=new Color(folder.getDisplay(),gradientStart);
   return gradientStartColor;
 }

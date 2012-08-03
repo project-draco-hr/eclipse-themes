@@ -1,6 +1,5 @@
 {
-  if (outlineColor == null || outlineColor.isDisposed()) {
-    outlineColor=new Color(folder.getDisplay(),outline);
-  }
+  scheduleDispose(outlineColor);
+  outlineColor=new Color(folder.getDisplay(),outline);
   return outlineColor;
 }

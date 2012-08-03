@@ -1,15 +1,14 @@
 {
-  if (font == null || font.isDisposed()) {
-    try {
-      FontData data=new FontData();
-      data.setName(fontName);
-      data.height=fontSize;
-      font=new Font(folder.getDisplay(),data);
-    }
- catch (    Exception e) {
-      FontData[] fallbackDatas=folder.getDisplay().getSystemFont().getFontData();
-      font=new Font(folder.getDisplay(),fallbackDatas);
-    }
+  scheduleDispose(font);
+  try {
+    FontData data=new FontData();
+    data.setName(fontName);
+    data.height=fontSize;
+    font=new Font(folder.getDisplay(),data);
+  }
+ catch (  Exception e) {
+    FontData[] fallbackDatas=folder.getDisplay().getSystemFont().getFontData();
+    font=new Font(folder.getDisplay(),fallbackDatas);
   }
   return font;
 }

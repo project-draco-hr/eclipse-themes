@@ -1,6 +1,5 @@
 {
-  if (gradientEndColor == null || gradientEndColor.isDisposed()) {
-    gradientEndColor=new Color(folder.getDisplay(),gradientEnd);
-  }
+  scheduleDispose(gradientEndColor);
+  gradientEndColor=new Color(folder.getDisplay(),gradientEnd);
   return gradientEndColor;
 }
