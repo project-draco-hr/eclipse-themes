@@ -1,5 +1,5 @@
 {
-  for (  IChromePage page : pages) {
+  for (  ChromePage page : pages) {
     page.load(getPreferenceStore());
   }
 }

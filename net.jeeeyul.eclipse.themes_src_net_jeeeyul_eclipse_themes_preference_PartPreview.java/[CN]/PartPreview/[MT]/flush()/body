@@ -1,6 +1,0 @@
-{
-  for (  Resource each : disposeQueue) {
-    safeDispose(each);
-  }
-  disposeQueue.clear();
-}

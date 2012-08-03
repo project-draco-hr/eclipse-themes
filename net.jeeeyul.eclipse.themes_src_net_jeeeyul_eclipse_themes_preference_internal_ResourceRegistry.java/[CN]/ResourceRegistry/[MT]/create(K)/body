@@ -1,0 +1,4 @@
+{
+  Assert.isNotNull(resourceFactory);
+  return resourceFactory.apply(key);
+}

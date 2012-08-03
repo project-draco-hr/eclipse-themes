@@ -17,4 +17,9 @@
   inactivePartTitleShadow=null;
   toolbarGradientEnd=null;
   toolbarGradientStart=null;
+  partShadowColor=null;
+  perspectiveStartColor=null;
+  perspectiveEndColor=null;
+  perspectiveOutlineColor=null;
+  windowBackgroundColor=null;
 }

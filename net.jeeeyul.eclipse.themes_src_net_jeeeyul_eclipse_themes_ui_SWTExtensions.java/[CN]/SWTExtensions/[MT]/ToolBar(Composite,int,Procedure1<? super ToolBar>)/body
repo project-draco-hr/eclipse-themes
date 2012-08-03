@@ -1,0 +1,5 @@
+{
+  ToolBar toolBar=new ToolBar(parent,style);
+  initializer.apply(toolBar);
+  return toolBar;
+}

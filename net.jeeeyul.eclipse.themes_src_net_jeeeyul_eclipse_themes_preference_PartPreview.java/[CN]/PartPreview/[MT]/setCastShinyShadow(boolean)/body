@@ -1,4 +1,3 @@
 {
   this.castShinyShadow=castShinyShadow;
-  schedule(delay);
 }

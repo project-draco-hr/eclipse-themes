@@ -16,7 +16,7 @@
 );
   folder.setUnselectedCloseVisible(false);
   for (int i=0; i < pages.size(); i++) {
-    IChromePage page=pages.get(i);
+    ChromePage page=pages.get(i);
     Composite control=new Composite(folder,SWT.NORMAL);
     control.setBackgroundMode(SWT.INHERIT_FORCE);
     control.setBackground(getShell().getDisplay().getSystemColor(SWT.COLOR_WHITE));

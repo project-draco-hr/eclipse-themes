@@ -1,5 +1,0 @@
-{
-  scheduleDispose(gradientEndColor);
-  gradientEndColor=new Color(folder.getDisplay(),gradientEnd);
-  return gradientEndColor;
-}

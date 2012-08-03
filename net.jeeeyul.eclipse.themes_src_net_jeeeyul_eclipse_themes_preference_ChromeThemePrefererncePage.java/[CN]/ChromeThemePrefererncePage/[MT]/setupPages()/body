@@ -1,5 +1,5 @@
 {
   addPage(new PartPage());
-  addPage(new LayoutPage());
+  addPage(new WindowPage());
   addPage(new ToolbarPage());
 }

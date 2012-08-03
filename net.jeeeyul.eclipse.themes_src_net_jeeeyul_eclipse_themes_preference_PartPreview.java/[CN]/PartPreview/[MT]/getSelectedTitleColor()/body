@@ -1,5 +1,0 @@
-{
-  scheduleDispose(selectedTitleColor);
-  selectedTitleColor=new Color(folder.getDisplay(),selectedTitle);
-  return selectedTitleColor;
-}

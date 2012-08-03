@@ -1,0 +1,8 @@
+{
+  for (  T each : data.values()) {
+    if (each != null && !each.isDisposed()) {
+      each.dispose();
+    }
+  }
+  data.clear();
+}

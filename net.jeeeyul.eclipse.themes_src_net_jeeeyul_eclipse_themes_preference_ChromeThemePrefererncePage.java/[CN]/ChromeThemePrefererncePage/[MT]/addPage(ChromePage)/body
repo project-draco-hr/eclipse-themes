@@ -1,0 +1,4 @@
+{
+  pages.add(page);
+  page.setParentPage(this);
+}

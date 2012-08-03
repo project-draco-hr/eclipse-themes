@@ -1,0 +1,8 @@
+{
+  T result=data.get(key);
+  if (result == null || result.isDisposed()) {
+    result=create(key);
+    data.put(key,result);
+  }
+  return result;
+}

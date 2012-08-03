@@ -1,3 +1,0 @@
-{
-  if (each != null && !each.isDisposed())   each.dispose();
-}

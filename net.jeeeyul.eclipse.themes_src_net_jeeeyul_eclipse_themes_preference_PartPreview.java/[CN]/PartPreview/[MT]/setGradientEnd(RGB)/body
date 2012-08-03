@@ -1,4 +1,3 @@
 {
   this.gradientEnd=gradientEnd;
-  schedule(delay);
 }

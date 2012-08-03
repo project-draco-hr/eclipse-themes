@@ -1,6 +1,3 @@
 {
-  super("Preview Gradient");
   this.folder=folder;
-  setSystem(true);
-  setDisplay(folder.getDisplay());
 }

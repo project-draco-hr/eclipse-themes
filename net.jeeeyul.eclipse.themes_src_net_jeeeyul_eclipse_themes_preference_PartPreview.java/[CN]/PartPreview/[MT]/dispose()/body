@@ -1,8 +1,4 @@
 {
-  safeDispose(font);
-  safeDispose(gradientEndColor);
-  safeDispose(gradientStartColor);
-  safeDispose(outlineColor);
-  safeDispose(selectedTitleColor);
-  safeDispose(unselectedTitleColor);
+  colorRegistry.dispose();
+  fontRegistry.dispose();
 }

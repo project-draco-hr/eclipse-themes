@@ -1,10 +1,6 @@
 {
-  if (this.fontName == null && fontName == null) {
-    return;
-  }
-  if (this.fontName != null && this.fontName.equals(fontName)) {
-    return;
+  if (fontName == null) {
+    fontName=Display.getCurrent().getSystemFont().getFontData()[0].getName();
   }
   this.fontName=fontName;
-  schedule(delay);
 }
