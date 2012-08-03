@@ -10,15 +10,18 @@
   renderer.setSelectedTabItemColor(getSelectedTitleColor());
   renderer.setUnselectedTabItemColor(getUnselectedTitleColor());
   renderer.setShowShineyShadow(castShinyShadow);
-  try {
-    if (folder.getFont() != getFont()) {
+  boolean hasToUpdateFont=false;
+  FontData current=folder.getFont().getFontData()[0];
+  hasToUpdateFont=!current.getName().equals(fontName) || current.height != fontSize;
+  if (hasToUpdateFont) {
+    try {
       folder.setFont(getFont());
       folder.getParent().layout(new Control[]{folder});
       folder.getParent().update();
     }
-  }
- catch (  Exception e) {
-    e.printStackTrace();
+ catch (    Exception e) {
+      e.printStackTrace();
+    }
   }
   folder.update();
   return Status.OK_STATUS;
