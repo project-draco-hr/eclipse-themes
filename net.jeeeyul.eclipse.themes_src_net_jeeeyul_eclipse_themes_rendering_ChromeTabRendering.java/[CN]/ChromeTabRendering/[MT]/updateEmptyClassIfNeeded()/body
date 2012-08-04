@@ -1,7 +1,5 @@
 {
   CSSClasses tags=CSSClasses.getStyleClasses(tabFolder);
-  if (tags.contains("EditorStack")) {
-  }
   boolean haveToSetEmpty=tabFolder.getItemCount() == 0;
   if (haveToSetEmpty && !tags.contains("empty")) {
     updateTags.schedule();

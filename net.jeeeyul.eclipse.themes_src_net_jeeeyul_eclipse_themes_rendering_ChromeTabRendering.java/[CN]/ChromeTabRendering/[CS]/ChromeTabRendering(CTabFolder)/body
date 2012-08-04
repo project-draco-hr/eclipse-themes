@@ -15,5 +15,4 @@
   }
 );
   INSTANCES.add(this);
-  updateTags.schedule();
 }

@@ -14,9 +14,14 @@
   }
  else   if (event.getProperty(UIEvents.EventTags.ELEMENT) instanceof MTrimmedWindow) {
     if (widget instanceof Shell) {
-      trackTopWindowShell((Shell)widget);
+      Shell shell=(Shell)widget;
+      boolean isTopLevel=CSSClasses.getStyleClasses(shell).contains("topLevel");
+      if (!isTopLevel) {
+        return;
+      }
+      trackTopWindowShell(shell);
       if (isChromeThemeActive()) {
-        updateMargin((Shell)widget);
+        updateMargin(shell);
       }
     }
   }
