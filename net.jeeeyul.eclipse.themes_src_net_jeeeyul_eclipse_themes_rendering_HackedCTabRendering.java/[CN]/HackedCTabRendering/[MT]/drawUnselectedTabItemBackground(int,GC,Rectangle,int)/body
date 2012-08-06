@@ -71,8 +71,5 @@
     gc.drawPolygon(tmpPoints);
     tempBorder.dispose();
     gc.setAlpha(255);
-    Rectangle rect=null;
-    gc.setClipping(rect);
-    if (outerKeyline == null)     outerKeyline=gc.getDevice().getSystemColor(SWT.COLOR_BLACK);
   }
 }
