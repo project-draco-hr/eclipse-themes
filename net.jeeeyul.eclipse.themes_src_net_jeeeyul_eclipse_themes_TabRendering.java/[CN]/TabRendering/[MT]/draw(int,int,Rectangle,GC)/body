@@ -1,9 +1,0 @@
-{
-  CSSClasses oldClasses=CSSClasses.getStyleClasses(tabFolder);
-  boolean hasEmptyClass=oldClasses.contains("empty");
-  boolean haveToSetEmpty=tabFolder.getItemCount() == 0;
-  if (hasEmptyClass != haveToSetEmpty) {
-    updateClassesJob.schedule();
-  }
-  super.draw(part,state,bounds,gc);
-}

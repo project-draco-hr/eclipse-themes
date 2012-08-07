@@ -1,5 +1,0 @@
-{
-  super(tabFolder);
-  this.tabFolder=tabFolder;
-  this.updateClassesJob=new UpdateCTabFolderClassesJob(tabFolder);
-}
