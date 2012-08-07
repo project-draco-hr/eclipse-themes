@@ -22,4 +22,6 @@
   perspectiveEndColor=null;
   perspectiveOutlineColor=null;
   windowBackgroundColor=null;
+  emptyPartBackgroundColor=null;
+  emptyPartOutloneColor=null;
 }
