@@ -1,0 +1,29 @@
+{
+  MenuManager manager=new MenuManager();
+  Action label=new Action(){
+  }
+;
+  label.setText("Editor's Presets");
+  label.setEnabled(false);
+  manager.add(label);
+  manager.add(new Separator());
+  Enumeration<URL> presets=ChromeThemeCore.getDefault().getBundle().findEntries("presets/","*.epf",false);
+  while (presets.hasMoreElements()) {
+    URL url=presets.nextElement();
+    IPath path=new Path(url.getFile());
+    LoadPresetAction loadPresetAction=new LoadPresetAction(this,url);
+    loadPresetAction.setText(path.removeFileExtension().lastSegment());
+    manager.add(loadPresetAction);
+  }
+  final Menu menu=manager.createContextMenu(getShell());
+  presetItem.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      Rectangle rect=presetItem.getBounds();
+      Point pt=new Point(rect.x,rect.y + rect.height);
+      pt=presetItem.getParent().toDisplay(pt);
+      menu.setLocation(pt.x,pt.y);
+      menu.setVisible(true);
+    }
+  }
+);
+}

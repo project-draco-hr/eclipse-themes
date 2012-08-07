@@ -1,0 +1,19 @@
+{
+  String fontName=store.getString(ChromeConstants.CHROME_PART_FONT_NAME);
+  FontData[] fontList=Display.getDefault().getFontList(fontName,true);
+  if (fontList.length == 0) {
+    String os=Platform.getOS();
+    if (os.equals(Platform.OS_WIN32)) {
+      store.setValue(ChromeConstants.CHROME_PART_FONT_NAME,"Segoe UI");
+      store.setValue(ChromeConstants.CHROME_PART_FONT_SIZE,9f);
+    }
+ else     if (os.equals(Platform.OS_MACOSX)) {
+      store.setValue(ChromeConstants.CHROME_PART_FONT_NAME,"Helvetica");
+      store.setValue(ChromeConstants.CHROME_PART_FONT_SIZE,12f);
+    }
+ else {
+      store.setValue(ChromeConstants.CHROME_PART_FONT_NAME,"Arial");
+      store.setValue(ChromeConstants.CHROME_PART_FONT_SIZE,11f);
+    }
+  }
+}
