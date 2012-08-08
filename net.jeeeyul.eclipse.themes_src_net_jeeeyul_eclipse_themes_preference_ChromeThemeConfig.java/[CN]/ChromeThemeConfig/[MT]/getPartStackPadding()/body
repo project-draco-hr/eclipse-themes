@@ -1,0 +1,7 @@
+{
+  if (partStackPadding == null) {
+    IPreferenceStore store=ChromeThemeCore.getDefault().getPreferenceStore();
+    partStackPadding=store.getInt(ChromeConstants.CHROME_PART_STACK_PADDING);
+  }
+  return partStackPadding;
+}

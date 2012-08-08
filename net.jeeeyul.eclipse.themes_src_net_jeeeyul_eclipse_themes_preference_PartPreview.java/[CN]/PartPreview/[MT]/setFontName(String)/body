@@ -1,6 +1,0 @@
-{
-  if (fontName == null) {
-    fontName=Display.getCurrent().getSystemFont().getFontData()[0].getName();
-  }
-  this.fontName=fontName;
-}

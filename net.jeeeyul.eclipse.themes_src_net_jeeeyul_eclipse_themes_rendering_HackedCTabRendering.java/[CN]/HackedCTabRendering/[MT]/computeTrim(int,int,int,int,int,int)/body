@@ -3,33 +3,17 @@
   gc.dispose();
   int borderTop=TOP_KEYLINE + OUTER_KEYLINE;
   int borderBottom=INNER_KEYLINE + OUTER_KEYLINE;
-  int marginWidth=parent.marginWidth;
   int marginHeight=parent.marginHeight;
   int sideDropWidth=shadowEnabled ? SIDE_DROP_WIDTH : 0;
 switch (part) {
 case PART_BODY:
-    if (state == SWT.FILL) {
-      x=-1 - paddingLeft;
-      int tabHeight=parent.getTabHeight() + 1;
-      y=y - paddingTop - marginHeight- tabHeight- borderTop- (cornerSize / 4);
-      width=2 + paddingLeft + paddingRight;
-      height+=paddingTop + paddingBottom;
-      height+=tabHeight + (cornerSize / 4) + borderBottom+ borderTop;
-    }
- else {
-      x=x - marginWidth - OUTER_KEYLINE- INNER_KEYLINE- sideDropWidth- (cornerSize / 2);
-      width=width + 2 * OUTER_KEYLINE + 2 * INNER_KEYLINE + 2 * marginWidth + 2 * sideDropWidth + cornerSize;
-      int tabHeight=parent.getTabHeight() + 1;
-      if (parent.getMinimized()) {
-        y=y - tabHeight - borderTop- 5;
-        height=borderTop + borderBottom + tabHeight;
-      }
- else {
-        y=y - marginHeight - tabHeight- borderTop- (cornerSize / 4);
-        height=height + borderBottom + borderTop+ 2 * marginHeight + tabHeight + cornerSize / 2 + cornerSize / 4 + (shadowEnabled ? BOTTOM_DROP_WIDTH : 0);
-      }
-    }
-  break;
+    x=-1 - paddingLeft;
+  int tabHeight=parent.getTabHeight() + 1;
+y=y - paddingTop - marginHeight- tabHeight- borderTop- (cornerSize / 4);
+width=2 + paddingLeft + paddingRight;
+height+=paddingTop + paddingBottom;
+height+=tabHeight + (cornerSize / 4) + borderBottom+ borderTop;
+break;
 case PART_HEADER:
 x=x - (INNER_KEYLINE + OUTER_KEYLINE) - sideDropWidth;
 width=width + 2 * (INNER_KEYLINE + OUTER_KEYLINE + sideDropWidth);

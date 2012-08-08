@@ -1,6 +1,0 @@
-{
-  FontData data=new FontData();
-  data.setName(fontName);
-  data.height=fontSize;
-  return data;
-}

@@ -24,4 +24,9 @@
   windowBackgroundColor=null;
   emptyPartBackgroundColor=null;
   emptyPartOutloneColor=null;
+  activeSelectedTabEndColor=null;
+  activeSelectedTabStartColor=null;
+  inactiveSelectedTabStartColor=null;
+  inactiveSelectedTabEndColor=null;
+  partStackPadding=null;
 }

@@ -8,20 +8,9 @@
   renderer.setTabOutline(getColor(outline));
   renderer.setSelectedTabItemColor(getColor(selectedTitle));
   renderer.setUnselectedTabItemColor(getColor(unselectedTitle));
+  renderer.setSelectedTabFill(getColor(selectedTabEnd));
+  renderer.setSelectedTabFillHighlightColor(getColor(selectedTabStart));
   Color[] gradient=new Color[]{getColor(gradientStart),getColor(gradientEnd),folder.getDisplay().getSystemColor(SWT.COLOR_WHITE)};
   folder.setBackground(gradient,new int[]{99,100},true);
-  FontData oldFont=folder.getFont().getFontData()[0];
-  FontData newFont=getFontData();
-  boolean updateFont=!oldFont.getName().equals(newFont.getName()) || oldFont.height != newFont.height;
-  if (updateFont) {
-    Font font=fontRegistry.get(newFont);
-    folder.setFont(font);
-    try {
-      HackedCTabRendering.HACK_CTabFolder_updateItems.invoke(folder);
-    }
- catch (    Exception e) {
-      e.printStackTrace();
-    }
-    folder.getParent().layout(new Control[]{folder});
-  }
+  folder.setBackground(getColor(selectedTabEnd));
 }
