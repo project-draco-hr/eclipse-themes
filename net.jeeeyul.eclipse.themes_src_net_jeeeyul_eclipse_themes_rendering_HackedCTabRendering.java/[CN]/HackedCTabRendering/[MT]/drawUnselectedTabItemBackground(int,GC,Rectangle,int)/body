@@ -1,7 +1,7 @@
 {
   if ((state & SWT.HOT) != 0) {
     KRectangle rect=new KRectangle(bounds).expand(-1,1).translate(0,-1);
-    if (itemIndex == 0) {
+    if (itemIndex == 0 || bounds.x <= 4) {
       rect.translate(-1,0).expand(1,0);
     }
     KPoint topLeft=rect.getTopLeft();
