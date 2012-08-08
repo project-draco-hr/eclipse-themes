@@ -1,0 +1,22 @@
+{
+  if (folder.isDisposed()) {
+    return;
+  }
+  FontData data=new FontData();
+  try {
+    data.setName(fontName);
+    data.height=fontHeight;
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+    data=Display.getDefault().getSystemFont().getFontData()[0];
+  }
+  folder.setFont(fontRegistry.get(data));
+  try {
+    HackedCTabRendering.HACK_CTabFolder_updateItems.invoke(folder);
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+  folder.getParent().layout(true,true);
+}

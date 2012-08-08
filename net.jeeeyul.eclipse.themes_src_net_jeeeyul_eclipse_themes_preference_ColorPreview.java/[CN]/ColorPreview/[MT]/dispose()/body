@@ -1,4 +1,3 @@
 {
   colorRegistry.dispose();
-  fontRegistry.dispose();
 }
