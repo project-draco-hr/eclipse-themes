@@ -1,25 +1,93 @@
 {
   if (parent.getSingle() && parent.getItem(itemIndex).isShowing())   return;
-  KRectangle rect=new KRectangle(bounds).expand(-1,1).translate(0,-1);
-  if (itemIndex == 0 || bounds.x <= 4) {
-    rect.translate(-1,0).expand(1,0);
+  int width=bounds.width;
+  int[] points=new int[1024];
+  int index=0;
+  int radius=cornerSize / 2;
+  int circX=bounds.x + radius;
+  int circY=bounds.y - 1 + radius;
+  int selectionX1, selectionY1, selectionX2, selectionY2;
+  if ((itemIndex == 0 || bounds.x <= 5) && bounds.x == -computeTrim(CTabFolderRenderer.PART_HEADER,SWT.NONE,0,0,0,0).x) {
+    circX-=1;
+    points[index++]=circX - radius;
+    points[index++]=bounds.y + bounds.height;
+    points[index++]=selectionX1=circX - radius;
+    points[index++]=selectionY1=bounds.y + bounds.height;
   }
-  KPoint topLeft=rect.getTopLeft();
-  KPoint topRight=rect.getTopRight();
-  KPoint bottomLeft=rect.getBottomLeft();
-  KPoint bottomRight=rect.getBottomRight();
-  Path path=new Path(parent.getDisplay());
-  path.moveTo(bottomLeft.x,bottomLeft.y);
-  path.lineTo(topLeft.x,topLeft.y + cornerSize / 2);
-  path.addArc(topLeft.x,topLeft.y,cornerSize,cornerSize,180,-90);
-  path.lineTo(topRight.x - cornerSize / 2,topRight.y);
-  path.addArc(topRight.x - cornerSize,topRight.y,cornerSize,cornerSize,90,-90);
-  path.lineTo(bottomRight.x,bottomRight.y);
-  gc.setBackground(parent.getDisplay().getSystemColor(SWT.COLOR_WHITE));
-  gc.fillPath(path);
-  gc.setForeground(outerKeyline);
-  gc.drawPath(path);
-  gc.setForeground(parent.getDisplay().getSystemColor(SWT.COLOR_WHITE));
-  gc.drawLine(bottomLeft.x + 1,bottomLeft.y,bottomRight.x - 1,bottomRight.y);
-  path.dispose();
+ else {
+    if (active) {
+      points[index++]=shadowEnabled ? SIDE_DROP_WIDTH : 0 + INNER_KEYLINE + OUTER_KEYLINE;
+      points[index++]=bounds.y + bounds.height;
+    }
+    points[index++]=selectionX1=bounds.x;
+    points[index++]=selectionY1=bounds.y + bounds.height;
+  }
+  int[] ltt=drawCircle(circX,circY,radius,LEFT_TOP);
+  int startX=ltt[6];
+  for (int i=0; i < ltt.length / 2; i+=2) {
+    int tmp=ltt[i];
+    ltt[i]=ltt[ltt.length - i - 2];
+    ltt[ltt.length - i - 2]=tmp;
+    tmp=ltt[i + 1];
+    ltt[i + 1]=ltt[ltt.length - i - 1];
+    ltt[ltt.length - i - 1]=tmp;
+  }
+  System.arraycopy(ltt,0,points,index,ltt.length);
+  index+=ltt.length;
+  int[] rt=drawCircle(circX + width - (radius * 2),circY,radius,RIGHT_TOP);
+  int endX=rt[rt.length - 4];
+  for (int i=0; i < rt.length / 2; i+=2) {
+    int tmp=rt[i];
+    rt[i]=rt[rt.length - i - 2];
+    rt[rt.length - i - 2]=tmp;
+    tmp=rt[i + 1];
+    rt[i + 1]=rt[rt.length - i - 1];
+    rt[rt.length - i - 1]=tmp;
+  }
+  System.arraycopy(rt,0,points,index,rt.length);
+  index+=rt.length;
+  points[index++]=selectionX2=bounds.width + circX - radius;
+  points[index++]=selectionY2=bounds.y + bounds.height;
+  if (active) {
+    points[index++]=parent.getSize().x - (shadowEnabled ? SIDE_DROP_WIDTH : 0 + INNER_KEYLINE + OUTER_KEYLINE);
+    points[index++]=bounds.y + bounds.height;
+  }
+  gc.setClipping(0,bounds.y,parent.getSize().x - (shadowEnabled ? SIDE_DROP_WIDTH : 0 + INNER_KEYLINE + OUTER_KEYLINE),bounds.y + bounds.height);
+  if (selectedTabFillColor == null)   selectedTabFillColor=gc.getDevice().getSystemColor(SWT.COLOR_WHITE);
+  gc.setBackground(selectedTabFillColor);
+  gc.setForeground(selectedTabFillColor);
+  Pattern backgroundPattern=null;
+  if (selectedTabFillHighlightColor != null) {
+    backgroundPattern=new Pattern(gc.getDevice(),0,0,0,bounds.height + 1,selectedTabFillHighlightColor,selectedTabFillColor);
+    gc.setBackgroundPattern(backgroundPattern);
+  }
+  int[] tmpPoints=new int[index];
+  System.arraycopy(points,0,tmpPoints,0,index);
+  gc.fillPolygon(translate(tmpPoints,1,1));
+  gc.drawLine(selectionX1,selectionY1,selectionX2,selectionY2);
+  if (tabOutlineColor == null)   tabOutlineColor=gc.getDevice().getSystemColor(SWT.COLOR_BLACK);
+  gc.setForeground(tabOutlineColor);
+  Color gradientLineTop=null;
+  Pattern foregroundPattern=null;
+  if (!active) {
+    RGB blendColor=gc.getDevice().getSystemColor(SWT.COLOR_WIDGET_LIGHT_SHADOW).getRGB();
+    RGB topGradient=blend(blendColor,tabOutlineColor.getRGB(),40);
+    gradientLineTop=new Color(gc.getDevice(),topGradient);
+    foregroundPattern=new Pattern(gc.getDevice(),0,0,0,bounds.height + 1,gradientLineTop,gc.getDevice().getSystemColor(SWT.COLOR_WHITE));
+    gc.setForegroundPattern(foregroundPattern);
+  }
+  gc.drawPolyline(tmpPoints);
+  Rectangle rect=null;
+  gc.setClipping(rect);
+  if (active) {
+    if (outerKeyline == null)     outerKeyline=gc.getDevice().getSystemColor(SWT.COLOR_RED);
+    gc.setForeground(outerKeyline);
+    gc.drawPolyline(shape);
+  }
+ else {
+    gc.drawLine(startX,0,endX,0);
+    if (backgroundPattern != null)     backgroundPattern.dispose();
+    if (gradientLineTop != null)     gradientLineTop.dispose();
+    if (foregroundPattern != null)     foregroundPattern.dispose();
+  }
 }
