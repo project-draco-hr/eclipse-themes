@@ -1,0 +1,23 @@
+{
+  Display display=Display.getDefault();
+  Shell shell=new Shell(display);
+  shell.setLayout(new FillLayout());
+  CTabFolder folder=new CTabFolder(shell,SWT.CLOSE);
+  folder.setRenderer(new KultokiTabRenderer(folder));
+  folder.setBorderVisible(true);
+  for (int i=0; i < 5; i++) {
+    CTabItem item=new CTabItem(folder,SWT.NORMAL);
+    Label label=new Label(folder,SWT.NORMAL);
+    label.setText("content");
+    item.setControl(label);
+    item.setText("Tab");
+  }
+  folder.setSelection(0);
+  shell.pack();
+  shell.open();
+  while (!shell.isDisposed()) {
+    if (!display.readAndDispatch()) {
+      display.sleep();
+    }
+  }
+}

@@ -1,0 +1,4 @@
+int part
+int state
+Rectangle bounds
+GC gc

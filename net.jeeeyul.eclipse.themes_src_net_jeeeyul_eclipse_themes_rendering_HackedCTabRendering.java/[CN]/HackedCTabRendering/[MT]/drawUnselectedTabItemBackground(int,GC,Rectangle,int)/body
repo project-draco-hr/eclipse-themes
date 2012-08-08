@@ -1,75 +1,26 @@
 {
   if ((state & SWT.HOT) != 0) {
-    int width=bounds.width;
-    int[] points=new int[1024];
-    int[] inactive=new int[8];
-    int index=0, inactive_index=0;
-    int radius=cornerSize / 2;
-    int circX=bounds.x + radius;
-    int circY=bounds.y - 1 + radius;
-    int leftIndex=circX;
+    KRectangle rect=new KRectangle(bounds).expand(-1,1).translate(0,-1);
     if (itemIndex == 0) {
-      if (parent.getSelectionIndex() != 0)       leftIndex-=1;
-      points[index++]=leftIndex - radius;
-      points[index++]=bounds.y + bounds.height;
+      rect.translate(-1,0).expand(1,0);
     }
- else {
-      points[index++]=bounds.x;
-      points[index++]=bounds.y + bounds.height;
-    }
-    if (!active) {
-      System.arraycopy(points,0,inactive,0,index);
-      inactive_index+=2;
-    }
-    int[] ltt=drawCircle(leftIndex,circY,radius,LEFT_TOP);
-    for (int i=0; i < ltt.length / 2; i+=2) {
-      int tmp=ltt[i];
-      ltt[i]=ltt[ltt.length - i - 2];
-      ltt[ltt.length - i - 2]=tmp;
-      tmp=ltt[i + 1];
-      ltt[i + 1]=ltt[ltt.length - i - 1];
-      ltt[ltt.length - i - 1]=tmp;
-    }
-    System.arraycopy(ltt,0,points,index,ltt.length);
-    index+=ltt.length;
-    if (!active) {
-      System.arraycopy(ltt,0,inactive,inactive_index,2);
-      inactive_index+=2;
-    }
-    int rightIndex=circX - 1;
-    int[] rt=drawCircle(rightIndex + width - (radius * 2),circY,radius,RIGHT_TOP);
-    for (int i=0; i < rt.length / 2; i+=2) {
-      int tmp=rt[i];
-      rt[i]=rt[rt.length - i - 2];
-      rt[rt.length - i - 2]=tmp;
-      tmp=rt[i + 1];
-      rt[i + 1]=rt[rt.length - i - 1];
-      rt[rt.length - i - 1]=tmp;
-    }
-    System.arraycopy(rt,0,points,index,rt.length);
-    index+=rt.length;
-    if (!active) {
-      System.arraycopy(rt,rt.length - 4,inactive,inactive_index,2);
-      inactive[inactive_index]-=1;
-      inactive_index+=2;
-    }
-    points[index++]=bounds.width + rightIndex - radius;
-    points[index++]=bounds.y + bounds.height;
-    if (!active) {
-      System.arraycopy(points,index - 2,inactive,inactive_index,2);
-      inactive[inactive_index]-=1;
-      inactive_index+=2;
-    }
-    gc.setClipping(points[0],bounds.y,parent.getSize().x - (shadowEnabled ? SIDE_DROP_WIDTH : 0 + INNER_KEYLINE + OUTER_KEYLINE),bounds.y + bounds.height);
-    gc.setBackground(gc.getDevice().getSystemColor(SWT.COLOR_WHITE));
-    int[] tmpPoints=new int[index];
-    System.arraycopy(points,0,tmpPoints,0,index);
-    gc.setAlpha(160);
-    gc.fillPolygon(translate(tmpPoints,1,1));
-    Color tempBorder=new Color(gc.getDevice(),182,188,204);
-    gc.setForeground(tempBorder);
-    gc.drawPolygon(tmpPoints);
-    tempBorder.dispose();
+    KPoint topLeft=rect.getTopLeft();
+    KPoint topRight=rect.getTopRight();
+    KPoint bottomLeft=rect.getBottomLeft();
+    KPoint bottomRight=rect.getBottomRight();
+    Path path=new Path(parent.getDisplay());
+    path.moveTo(bottomLeft.x,bottomLeft.y);
+    path.lineTo(topLeft.x,topLeft.y + cornerSize / 2);
+    path.addArc(topLeft.x,topLeft.y,cornerSize,cornerSize,180,-90);
+    path.lineTo(topRight.x - cornerSize / 2,topRight.y);
+    path.addArc(topRight.x - cornerSize,topRight.y,cornerSize,cornerSize,90,-90);
+    path.lineTo(bottomRight.x,bottomRight.y);
+    gc.setBackground(parent.getDisplay().getSystemColor(SWT.COLOR_WHITE));
+    gc.setAlpha(100);
+    gc.fillPath(path);
+    gc.setForeground(outerKeyline);
+    gc.drawPath(path);
     gc.setAlpha(255);
+    path.dispose();
   }
 }

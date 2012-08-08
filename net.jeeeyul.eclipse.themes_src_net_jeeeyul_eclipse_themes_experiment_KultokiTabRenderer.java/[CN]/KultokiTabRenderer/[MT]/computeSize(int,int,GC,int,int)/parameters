@@ -1,0 +1,5 @@
+int part
+int state
+GC gc
+int wHint
+int hHint

@@ -1,0 +1,14 @@
+{
+  if (part >= 0 && (state & SWT.FOREGROUND) != 0) {
+    gc.getClipping(oldClip);
+    gc.setClipping(bounds);
+    gc.drawRoundRectangle(bounds.x,bounds.y,bounds.width - 1,bounds.height + 10,10,10);
+    gc.setClipping(oldClip);
+    CTabItem item=parent.getItem(part);
+    if (item.getText() != null) {
+      gc.drawString(item.getText(),bounds.x,bounds.y,true);
+    }
+    super.draw(part,state,bounds,gc);
+  }
+ else   super.draw(part,state,bounds,gc);
+}

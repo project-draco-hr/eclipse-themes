@@ -44,4 +44,5 @@
   if (outerKeyline == null)   outerKeyline=gc.getDevice().getSystemColor(SWT.COLOR_BLACK);
   gc.setForeground(outerKeyline);
   gc.drawPolyline(shape);
+  gc.drawLine(trim.x,trim.y + trim.height - 2,trim.x + trim.width,trim.y + trim.height - 2);
 }
