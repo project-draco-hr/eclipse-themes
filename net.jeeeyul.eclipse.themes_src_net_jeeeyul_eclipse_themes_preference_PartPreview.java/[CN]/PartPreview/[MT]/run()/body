@@ -10,7 +10,6 @@
   renderer.setUnselectedTabItemColor(getColor(unselectedTitle));
   renderer.setSelectedTabFill(getColor(selectedTabEnd));
   renderer.setSelectedTabFillHighlightColor(getColor(selectedTabStart));
-  Color[] gradient=new Color[]{getColor(gradientStart),getColor(gradientEnd),folder.getDisplay().getSystemColor(SWT.COLOR_WHITE)};
+  Color[] gradient=new Color[]{getColor(gradientStart),getColor(gradientEnd),getColor(selectedTabEnd)};
   folder.setBackground(gradient,new int[]{99,100},true);
-  folder.setBackground(getColor(selectedTabEnd));
 }

@@ -1,11 +1,11 @@
 {
   Composite container=new Composite(parent,SWT.NORMAL);
   container.setLayout(new GridLayout());
-  folder=new CTabFolder(container,SWT.MULTI);
+  folder=new CTabFolder(container,SWT.NORMAL);
   ChromeTabRendering renderer=new ChromeTabRendering(folder);
   renderer.setSelectedTabFill(folder.getDisplay().getSystemColor(SWT.COLOR_WHITE));
   renderer.setOuterKeyline(folder.getDisplay().getSystemColor(SWT.COLOR_BLACK));
-  renderer.setPadding(9,9,0,10);
+  renderer.setPadding(5,5,0,7);
   folder.setRenderer(renderer);
   GridData layoutData=new GridData(GridData.FILL_HORIZONTAL);
   folder.setLayoutData(layoutData);
@@ -17,7 +17,7 @@
 );
   folder.addListener(SWT.Selection,new Listener(){
     @Override public void handleEvent(    Event event){
-      getPages().get(folder.getSelectionIndex()).onPageSelected();
+      handleTabSwitching();
     }
   }
 );

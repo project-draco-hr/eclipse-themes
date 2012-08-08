@@ -1,7 +1,7 @@
 {
-  addPage(new PartPage("Active Part",true));
-  addPage(new PartPage("Inactive Part",false));
+  addPage(new PartPage("Active",true));
+  addPage(new PartPage("Inactive",false));
   addPage(new CommonPartPage());
-  addPage(new WindowPage());
   addPage(new ToolbarPage());
+  addPage(new ETCPage());
 }
