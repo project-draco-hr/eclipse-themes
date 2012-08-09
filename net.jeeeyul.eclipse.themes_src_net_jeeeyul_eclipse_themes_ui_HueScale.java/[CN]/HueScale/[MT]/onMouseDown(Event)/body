@@ -1,4 +1,5 @@
 {
+  setFocus();
 switch (state) {
 case STATE_HOVER:
     setState(STATE_DRAGGING);

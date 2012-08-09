@@ -1,3 +1,6 @@
 {
-  new ColorPicker(null).open();
+  ColorPicker picker=new ColorPicker(null);
+  picker.setSelection(new HSB(255,0,0));
+  picker.setLockHue(true);
+  picker.open();
 }

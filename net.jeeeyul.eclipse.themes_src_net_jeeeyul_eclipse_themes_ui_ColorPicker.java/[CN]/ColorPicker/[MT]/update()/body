@@ -5,4 +5,6 @@
   hueCanvas.setSelection(selection.toArray());
   hueScale.setSelection(selection.hue);
   hueScale.setEnabled(!lockHue);
+  pipette.setEnabled(!lockHue);
+  fieldSet.setSelection(selection);
 }

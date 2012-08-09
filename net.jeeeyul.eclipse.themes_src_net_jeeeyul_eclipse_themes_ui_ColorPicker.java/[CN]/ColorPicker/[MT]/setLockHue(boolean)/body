@@ -1,3 +1,4 @@
 {
   this.lockHue=lockHue;
+  update();
 }

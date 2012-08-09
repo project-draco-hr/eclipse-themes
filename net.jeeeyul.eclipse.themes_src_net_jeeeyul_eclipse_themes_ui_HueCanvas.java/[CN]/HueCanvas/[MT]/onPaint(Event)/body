@@ -15,4 +15,8 @@
   gc.setForeground(getDisplay().getSystemColor(SWT.COLOR_BLACK));
   gc.drawOval(selectionX - selectionRadius - 1,selectionY - selectionRadius - 1,selectionRadius * 2 + 2,selectionRadius * 2 + 2);
   selectionColor.dispose();
+  if (isFocusControl()) {
+    Point size=getSize();
+    gc.drawFocus(0,0,size.x,size.y);
+  }
 }
