@@ -7,7 +7,7 @@
     final IProvisioningAgent agent=agentProvider.createAgent(p2InstanceURI);
     IProfileRegistry regProfile=(IProfileRegistry)agent.getService(IProfileRegistry.SERVICE_NAME);
     IProfile profileSelf=regProfile.getProfile(IProfileRegistry.SELF);
-    IQuery<IInstallableUnit> query=QueryUtil.createIUQuery("?????????? ???? ID");
+    IQuery<IInstallableUnit> query=QueryUtil.createIUQuery("net.jeeeyul.eclipse.themes.feature");
     IQueryResult<IInstallableUnit> result=profileSelf.query(query,new NullProgressMonitor());
     UpdateOperation operation=new UpdateOperation(ProvisioningUI.getDefaultUI().getSession(),result.toSet());
     IStatus resolveResult=operation.resolveModal(new NullProgressMonitor());
