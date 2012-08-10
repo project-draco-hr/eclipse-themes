@@ -1,0 +1,26 @@
+{
+  try {
+    BundleContext context=ChromeThemeCore.getDefault().getBundle().getBundleContext();
+    ServiceReference<IProvisioningAgentProvider> sr=context.getServiceReference(IProvisioningAgentProvider.class);
+    IProvisioningAgentProvider agentProvider=context.getService(sr);
+    URI p2InstanceURI=null;
+    final IProvisioningAgent agent=agentProvider.createAgent(p2InstanceURI);
+    IProfileRegistry regProfile=(IProfileRegistry)agent.getService(IProfileRegistry.SERVICE_NAME);
+    IProfile profileSelf=regProfile.getProfile(IProfileRegistry.SELF);
+    IQuery<IInstallableUnit> query=QueryUtil.createIUQuery("?????????? ???? ID");
+    IQueryResult<IInstallableUnit> result=profileSelf.query(query,new NullProgressMonitor());
+    UpdateOperation operation=new UpdateOperation(ProvisioningUI.getDefaultUI().getSession(),result.toSet());
+    IStatus resolveResult=operation.resolveModal(new NullProgressMonitor());
+    if (resolveResult.isOK()) {
+      ChromeUpdateNotificationPopup popup=new ChromeUpdateNotificationPopup(Display.getDefault(),operation);
+      popup.open();
+    }
+ else {
+      System.out.println(resolveResult.getMessage());
+    }
+  }
+ catch (  Exception e) {
+    return new Status(IStatus.WARNING,ChromeThemeCore.PLUGIN_ID,"Could not check new update.",e);
+  }
+  return Status.OK_STATUS;
+}
