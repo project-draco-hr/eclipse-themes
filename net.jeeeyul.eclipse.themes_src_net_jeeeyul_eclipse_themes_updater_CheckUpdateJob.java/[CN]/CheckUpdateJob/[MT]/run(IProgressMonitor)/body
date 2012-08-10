@@ -1,8 +1,8 @@
 {
+  monitor.beginTask("Check Updates for Chrome Theme",1000);
   try {
     URI updateSite=new URI("https://raw.github.com/jeeeyul/eclipse-themes/master/net.jeeeyul.eclipse.themes.updatesite/");
-    ProvisioningUI.getDefaultUI().loadMetadataRepository(updateSite,true,null);
-    ProvisioningUI.getDefaultUI().loadArtifactRepository(updateSite,true,null);
+    ProvisioningUI.getDefaultUI().loadArtifactRepository(updateSite,false,new SubProgressMonitor(monitor,100));
     BundleContext context=ChromeThemeCore.getDefault().getBundle().getBundleContext();
     ServiceReference<IProvisioningAgentProvider> sr=context.getServiceReference(IProvisioningAgentProvider.class);
     IProvisioningAgentProvider agentProvider=context.getService(sr);
@@ -11,22 +11,21 @@
     IProfileRegistry regProfile=(IProfileRegistry)agent.getService(IProfileRegistry.SERVICE_NAME);
     IProfile profileSelf=regProfile.getProfile(IProfileRegistry.SELF);
     IQuery<IInstallableUnit> query=QueryUtil.createIUQuery("net.jeeeyul.eclipse.themes.feature.feature.group");
-    IQueryResult<IInstallableUnit> result=profileSelf.query(query,new NullProgressMonitor());
-    Iterator<IInstallableUnit> iter=result.iterator();
-    while (iter.hasNext()) {
-      System.out.println(iter.next().getId());
-    }
+    IQueryResult<IInstallableUnit> result=profileSelf.query(query,new SubProgressMonitor(monitor,100));
     UpdateOperation operation=new UpdateOperation(ProvisioningUI.getDefaultUI().getSession(),result.toSet());
-    IStatus resolveResult=operation.resolveModal(monitor);
+    IStatus resolveResult=operation.resolveModal(new SubProgressMonitor(monitor,800));
     if (resolveResult.isOK()) {
       showNotification(operation);
     }
  else {
-      System.out.println(resolveResult.getMessage());
+      return new Status(IStatus.INFO,ChromeThemeCore.PLUGIN_ID,resolveResult.getMessage());
     }
   }
  catch (  Exception e) {
     return new Status(IStatus.WARNING,ChromeThemeCore.PLUGIN_ID,"Could not check new update.",e);
+  }
+ finally {
+    monitor.done();
   }
   return Status.OK_STATUS;
 }
