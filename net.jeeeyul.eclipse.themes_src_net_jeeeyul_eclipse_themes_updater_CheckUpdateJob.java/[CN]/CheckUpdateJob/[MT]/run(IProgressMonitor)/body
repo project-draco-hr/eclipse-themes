@@ -1,5 +1,8 @@
 {
   try {
+    URI updateSite=new URI("https://raw.github.com/jeeeyul/eclipse-themes/master/net.jeeeyul.eclipse.themes.updatesite/");
+    ProvisioningUI.getDefaultUI().loadMetadataRepository(updateSite,true,null);
+    ProvisioningUI.getDefaultUI().loadArtifactRepository(updateSite,true,null);
     BundleContext context=ChromeThemeCore.getDefault().getBundle().getBundleContext();
     ServiceReference<IProvisioningAgentProvider> sr=context.getServiceReference(IProvisioningAgentProvider.class);
     IProvisioningAgentProvider agentProvider=context.getService(sr);
@@ -16,8 +19,7 @@
     UpdateOperation operation=new UpdateOperation(ProvisioningUI.getDefaultUI().getSession(),result.toSet());
     IStatus resolveResult=operation.resolveModal(monitor);
     if (resolveResult.isOK()) {
-      ChromeUpdateNotificationPopup popup=new ChromeUpdateNotificationPopup(Display.getDefault(),operation);
-      popup.open();
+      showNotification(operation);
     }
  else {
       System.out.println(resolveResult.getMessage());
