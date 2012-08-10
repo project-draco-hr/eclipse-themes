@@ -1,9 +1,0 @@
-{
-  Display.getDefault().asyncExec(new Runnable(){
-    @Override public void run(){
-      ChromeUpdateNotificationPopup popup=new ChromeUpdateNotificationPopup(Display.getDefault(),operation);
-      popup.open();
-    }
-  }
-);
-}

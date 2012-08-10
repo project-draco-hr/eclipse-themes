@@ -1,4 +1,0 @@
-{
-  ProvisioningUI.getDefaultUI().openUpdateWizard(false,operation,null);
-  return Status.OK_STATUS;
-}

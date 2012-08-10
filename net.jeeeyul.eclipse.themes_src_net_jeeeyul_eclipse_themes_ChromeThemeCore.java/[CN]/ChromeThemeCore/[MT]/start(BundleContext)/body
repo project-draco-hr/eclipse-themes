@@ -1,5 +1,4 @@
 {
   super.start(context);
   plugin=this;
-  new CheckUpdateJob().schedule(20000);
 }

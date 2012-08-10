@@ -15,6 +15,7 @@
     loadPresetAction.setText(path.removeFileExtension().lastSegment());
     manager.add(loadPresetAction);
   }
+  manager.add(new Separator());
   final Menu menu=manager.createContextMenu(getShell());
   presetItem.addListener(SWT.Selection,new Listener(){
     @Override public void handleEvent(    Event event){
