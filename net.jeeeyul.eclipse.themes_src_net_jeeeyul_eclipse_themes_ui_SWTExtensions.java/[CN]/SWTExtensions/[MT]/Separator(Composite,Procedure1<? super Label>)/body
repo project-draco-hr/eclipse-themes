@@ -1,0 +1,10 @@
+{
+  Label separator=new Label(parent,SWT.SEPARATOR | SWT.HORIZONTAL);
+  initializer.apply(separator);
+  Layout layout=parent.getLayout();
+  if (layout instanceof GridLayout) {
+    GridLayout gridLayout=(GridLayout)layout;
+    separator.setLayoutData(new GridData(SWT.FILL,SWT.FILL,true,false,gridLayout.numColumns,1));
+  }
+  return separator;
+}
