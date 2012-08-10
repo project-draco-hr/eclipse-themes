@@ -7,10 +7,14 @@
     final IProvisioningAgent agent=agentProvider.createAgent(p2InstanceURI);
     IProfileRegistry regProfile=(IProfileRegistry)agent.getService(IProfileRegistry.SERVICE_NAME);
     IProfile profileSelf=regProfile.getProfile(IProfileRegistry.SELF);
-    IQuery<IInstallableUnit> query=QueryUtil.createIUQuery("net.jeeeyul.eclipse.themes.feature");
+    IQuery<IInstallableUnit> query=QueryUtil.createIUQuery("net.jeeeyul.eclipse.themes.feature.feature.group");
     IQueryResult<IInstallableUnit> result=profileSelf.query(query,new NullProgressMonitor());
+    Iterator<IInstallableUnit> iter=result.iterator();
+    while (iter.hasNext()) {
+      System.out.println(iter.next().getId());
+    }
     UpdateOperation operation=new UpdateOperation(ProvisioningUI.getDefaultUI().getSession(),result.toSet());
-    IStatus resolveResult=operation.resolveModal(new NullProgressMonitor());
+    IStatus resolveResult=operation.resolveModal(monitor);
     if (resolveResult.isOK()) {
       ChromeUpdateNotificationPopup popup=new ChromeUpdateNotificationPopup(Display.getDefault(),operation);
       popup.open();

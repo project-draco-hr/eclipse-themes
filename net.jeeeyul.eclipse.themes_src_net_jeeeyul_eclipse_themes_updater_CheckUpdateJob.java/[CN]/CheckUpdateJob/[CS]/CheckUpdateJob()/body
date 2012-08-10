@@ -1,4 +1,3 @@
 {
   super("Check update for Jeeeyul's eclipse 4 themes");
-  setSystem(true);
 }
