@@ -1,7 +1,0 @@
-{
-  Gradient g=new Gradient();
-  g.add(new ColorStop(360f,0f,0f,0f));
-  g.add(new ColorStop(170f,0f,1f,1f));
-  String notaion=g.getCopy().toString();
-  System.out.println(Gradient.createFromString(notaion));
-}
