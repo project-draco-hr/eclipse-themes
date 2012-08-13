@@ -1,0 +1,9 @@
+{
+  for (  GradientItem each : getSortedItems()) {
+    if (each.getBounds().contains(event.x,event.y)) {
+      setHotItem(each);
+      return;
+    }
+  }
+  setHotItem(null);
+}

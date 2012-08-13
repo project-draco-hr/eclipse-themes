@@ -1,0 +1,23 @@
+{
+  if ((detail & SWT.SELECTED) != 0) {
+    gc.setBackground(this.parent.getDisplay().getSystemColor(SWT.COLOR_LIST_SELECTION));
+  }
+ else   if ((detail & SWT.HOT) != 0) {
+    gc.setBackground(this.parent.getHotItemColor());
+  }
+ else {
+    gc.setBackground(this.parent.getDisplay().getSystemColor(SWT.COLOR_WHITE));
+  }
+  gc.setForeground(this.parent.getDisplay().getSystemColor(SWT.COLOR_WIDGET_BORDER));
+  KRectangle bounds=getBounds();
+  int[] polygon=toArrow(bounds);
+  gc.fillPolygon(polygon);
+  gc.drawPolygon(polygon);
+  KRectangle inner=bounds.getCopy().translate(2,2 + this.arrowHeight).expand(-3,-3 - this.arrowHeight);
+  Color color=new Color(this.parent.getDisplay(),this.color.toRGB());
+  gc.setBackground(color);
+  gc.fillRectangle(inner.toRectangle());
+  gc.setForeground(this.parent.getDisplay().getSystemColor(SWT.COLOR_WIDGET_BORDER));
+  gc.drawRectangle(inner.expand(-1,-1).toRectangle());
+  color.dispose();
+}

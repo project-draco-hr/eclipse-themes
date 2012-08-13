@@ -1,0 +1,44 @@
+{
+  List<GradientItem> sortedItems=getSortedItems();
+  if (sortedItems.size() == 0) {
+    return;
+  }
+  KRectangle gradientArea=getGradientArea();
+  for (int i=0; i <= sortedItems.size(); i++) {
+    HSB start=i > 0 ? sortedItems.get(i - 1).getColor() : sortedItems.get(i).getColor();
+    float startPercent=i > 0 ? sortedItems.get(i - 1).getPercent() : 0f;
+    HSB end=i < sortedItems.size() ? sortedItems.get(i).getColor() : sortedItems.get(i - 1).getColor();
+    float endPercent=i < sortedItems.size() ? sortedItems.get(i).getPercent() : 1f;
+    int x=(int)(gradientArea.width * startPercent + gradientArea.x + .5f);
+    int width=(int)(gradientArea.width * endPercent + gradientArea.x + .5f) - x;
+    Color foreground=new Color(getDisplay(),start.toRGB());
+    Color background=new Color(getDisplay(),end.toRGB());
+    event.gc.setForeground(foreground);
+    event.gc.setBackground(background);
+    event.gc.fillGradientRectangle(x,gradientArea.y,width,gradientArea.height,false);
+    foreground.dispose();
+    background.dispose();
+  }
+  event.gc.setForeground(getDisplay().getSystemColor(SWT.COLOR_WIDGET_BORDER));
+  event.gc.drawRectangle(gradientArea.toRectangle());
+  for (  GradientItem each : sortedItems) {
+    int detail=0;
+    if (this.selectedItem == each) {
+      detail|=SWT.SELECTED;
+    }
+    if (this.hotItem == each) {
+      detail|=SWT.HOT;
+    }
+    each.draw(event.gc,detail);
+  }
+  if (isFocusControl()) {
+    if (this.selectedItem != null) {
+      Rectangle bounds=this.selectedItem.getBounds().toRectangle();
+      event.gc.drawFocus(bounds.x,bounds.y,bounds.width,bounds.height);
+    }
+ else {
+      Rectangle bounds=getClientArea();
+      event.gc.drawFocus(bounds.x,bounds.y,bounds.width,bounds.height);
+    }
+  }
+}

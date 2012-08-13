@@ -1,0 +1,3 @@
+{
+  return new KRectangle(getClientArea()).translate(this.marginWidth,this.marginHeight).expand(-this.marginWidth * 2,-this.marginHeight * 2 - this.itemAreaHeight + this.itemOverlap);
+}

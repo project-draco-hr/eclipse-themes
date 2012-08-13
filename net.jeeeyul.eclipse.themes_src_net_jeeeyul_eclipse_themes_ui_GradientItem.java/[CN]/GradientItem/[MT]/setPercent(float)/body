@@ -1,0 +1,9 @@
+{
+  if (this.percent == percent) {
+    return;
+  }
+  invalidate();
+  this.percent=percent;
+  redraw();
+  this.parent.notifyModification();
+}

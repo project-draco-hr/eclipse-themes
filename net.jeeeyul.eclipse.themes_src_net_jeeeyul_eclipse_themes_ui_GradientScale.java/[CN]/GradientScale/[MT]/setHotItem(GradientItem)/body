@@ -1,0 +1,7 @@
+{
+  if (this.hotItem == each) {
+    return;
+  }
+  this.hotItem=each;
+  redraw();
+}

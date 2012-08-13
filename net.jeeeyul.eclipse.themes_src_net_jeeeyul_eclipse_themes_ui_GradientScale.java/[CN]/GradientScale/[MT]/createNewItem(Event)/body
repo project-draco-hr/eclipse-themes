@@ -1,0 +1,22 @@
+{
+  GradientItem newItem=new GradientItem(this,SWT.NORMAL);
+  KRectangle gradientArea=getGradientArea();
+  float percent=Math.max(Math.min((event.x - gradientArea.x) / (float)gradientArea.width,1f),0f);
+  newItem.setPercent(percent);
+  redraw();
+  setHotItem(newItem);
+  List<GradientItem> sortedItems=getSortedItems();
+  int index=sortedItems.indexOf(newItem);
+  if (index == 0 && sortedItems.size() > index) {
+    newItem.setColor(sortedItems.get(index + 1).getColor().getCopy());
+  }
+ else   if (sortedItems.size() > index + 1) {
+    GradientItem prev=sortedItems.get(index - 1);
+    GradientItem next=sortedItems.get(index + 1);
+    newItem.setColor(prev.getColor().getCopy().mixWith(next.getColor(),.5f));
+  }
+ else {
+    newItem.setColor(sortedItems.get(index - 1).getColor().getCopy());
+  }
+  setSelectedItem(newItem);
+}

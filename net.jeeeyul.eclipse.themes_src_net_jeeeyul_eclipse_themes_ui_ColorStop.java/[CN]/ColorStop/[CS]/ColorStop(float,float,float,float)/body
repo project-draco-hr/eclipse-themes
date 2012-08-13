@@ -1,0 +1,4 @@
+{
+  this.color=new HSB(h,s,b);
+  this.percent=percent;
+}

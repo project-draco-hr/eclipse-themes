@@ -1,0 +1,15 @@
+{
+switch (this.state) {
+case STATE_NONE:
+    updateHotItem(event);
+  break;
+case STATE_DRAGGING_ITEM:
+KRectangle gradientArea=getGradientArea();
+float newPercent=Math.max(Math.min((event.x - gradientArea.x) / (float)gradientArea.width,1f),0f);
+this.selectedItem.setPercent(newPercent);
+redraw();
+break;
+default :
+break;
+}
+}

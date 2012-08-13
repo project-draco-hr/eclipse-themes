@@ -1,0 +1,12 @@
+{
+  this.control=new GradientScale(parent,SWT.NORMAL);
+  updateView();
+  this.control.addListener(SWT.Modify,new Listener(){
+    @Override public void handleEvent(    Event event){
+      if (!GradientViewer.this.ignoreModify) {
+        updateInput();
+      }
+    }
+  }
+);
+}

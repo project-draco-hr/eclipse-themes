@@ -1,0 +1,78 @@
+{
+  super(parent,style | SWT.DOUBLE_BUFFERED);
+  addListener(SWT.Paint,new Listener(){
+    @Override public void handleEvent(    Event event){
+      onPaint(event);
+    }
+  }
+);
+  addListener(SWT.Resize,new Listener(){
+    @Override public void handleEvent(    Event event){
+      onResize(event);
+    }
+  }
+);
+  addListener(SWT.MouseMove,new Listener(){
+    @Override public void handleEvent(    Event event){
+      onMouseMove(event);
+    }
+  }
+);
+  addListener(SWT.MouseDown,new Listener(){
+    @Override public void handleEvent(    Event event){
+      onMouseDown(event);
+    }
+  }
+);
+  addListener(SWT.MouseUp,new Listener(){
+    @Override public void handleEvent(    Event event){
+      onMouseUp(event);
+    }
+  }
+);
+  addListener(SWT.FocusIn,new Listener(){
+    @Override public void handleEvent(    Event event){
+      redraw();
+    }
+  }
+);
+  addListener(SWT.FocusOut,new Listener(){
+    @Override public void handleEvent(    Event event){
+      redraw();
+    }
+  }
+);
+  addListener(SWT.KeyDown,new Listener(){
+    @Override public void handleEvent(    Event event){
+      onKeyDown(event);
+    }
+  }
+);
+  addListener(SWT.Dispose,new Listener(){
+    @Override public void handleEvent(    Event event){
+      onDispose(event);
+    }
+  }
+);
+  Menu menu=new Menu(this);
+  this.addColorStop=new MenuItem(menu,SWT.PUSH);
+  this.addColorStop.setText("Add Color Stop");
+  this.addColorStop.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      event.x=GradientScale.this.popupPosition.x;
+      event.y=GradientScale.this.popupPosition.y;
+      createNewItem(event);
+    }
+  }
+);
+  this.removeColorStop=new MenuItem(menu,SWT.PUSH);
+  this.removeColorStop.setText("Remove Color Stop");
+  this.removeColorStop.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      removeSelectedItem();
+    }
+  }
+);
+  setMenu(menu);
+  updateMenu();
+}

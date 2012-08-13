@@ -1,0 +1,3 @@
+{
+  store.setDefault(key,gradient.toString());
+}

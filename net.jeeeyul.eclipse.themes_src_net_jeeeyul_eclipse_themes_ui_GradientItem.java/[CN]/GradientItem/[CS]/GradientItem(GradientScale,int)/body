@@ -1,0 +1,12 @@
+{
+  super(parent,style);
+  this.parent=parent;
+  parent.items.add(this);
+  addListener(SWT.Dispose,new Listener(){
+    @Override public void handleEvent(    Event event){
+      onDispose();
+    }
+  }
+);
+  this.parent.notifyModification();
+}

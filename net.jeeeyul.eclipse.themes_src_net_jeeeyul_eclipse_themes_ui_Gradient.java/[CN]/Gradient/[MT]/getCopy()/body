@@ -1,0 +1,7 @@
+{
+  Gradient copy=new Gradient();
+  for (  ColorStop each : this) {
+    copy.add(each.getCopy());
+  }
+  return copy;
+}

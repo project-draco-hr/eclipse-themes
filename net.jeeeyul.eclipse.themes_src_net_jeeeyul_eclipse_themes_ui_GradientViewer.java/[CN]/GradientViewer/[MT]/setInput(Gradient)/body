@@ -1,0 +1,7 @@
+{
+  if (this.input == input) {
+    return;
+  }
+  this.input=input;
+  updateView();
+}

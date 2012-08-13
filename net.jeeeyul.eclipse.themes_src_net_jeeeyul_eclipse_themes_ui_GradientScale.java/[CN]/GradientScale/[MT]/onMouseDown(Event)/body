@@ -1,0 +1,32 @@
+{
+  if (event.button == 3) {
+    this.popupPosition=new KPoint(event);
+  }
+  boolean doubleClick=System.currentTimeMillis() - this.lastPressTime < this.clickSpeed;
+switch (this.state) {
+case STATE_NONE:
+    if (this.hotItem != null) {
+      setSelectedItem(this.hotItem);
+      if (event.button == 1) {
+        this.state=STATE_DRAGGING_ITEM;
+      }
+ else {
+        this.state=STATE_NONE;
+        setHotItem(null);
+      }
+    }
+  if (event.button == 1) {
+    if (this.selectedItem != null && this.selectedItem == this.hotItem && doubleClick) {
+      showColorPicker();
+      this.state=STATE_NONE;
+    }
+    if (this.hotItem == null && doubleClick) {
+      createNewItem(event);
+    }
+  }
+this.lastPressTime=System.currentTimeMillis();
+break;
+default :
+break;
+}
+}

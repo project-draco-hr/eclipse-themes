@@ -1,0 +1,7 @@
+{
+  this.selectedItem.dispose();
+  if (this.hotItem == this.selectedItem) {
+    setHotItem(null);
+  }
+  setSelectedItem(null);
+}

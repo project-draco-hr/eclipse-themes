@@ -1,0 +1,5 @@
+{
+  System.out.println(key);
+  System.out.println(gradient.toString());
+  store.setValue(key,gradient.toString());
+}

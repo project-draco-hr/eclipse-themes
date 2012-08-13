@@ -1,0 +1,16 @@
+{
+  Gradient result=new Gradient();
+  String[] segments=str.split("\\|");
+  for (  String each : segments) {
+    Scanner scanner=new Scanner(each);
+    scanner.useDelimiter(",");
+    ColorStop stop=new ColorStop();
+    stop.color=new HSB();
+    stop.color.hue=scanner.nextFloat();
+    stop.color.saturation=scanner.nextFloat();
+    stop.color.brightness=scanner.nextFloat();
+    stop.percent=scanner.nextFloat();
+    result.add(stop);
+  }
+  return result;
+}

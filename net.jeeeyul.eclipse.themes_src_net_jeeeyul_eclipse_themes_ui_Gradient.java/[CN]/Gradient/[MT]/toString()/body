@@ -1,0 +1,8 @@
+{
+  return IterableExtensions.join(this,"|",new Functions.Function1<ColorStop,CharSequence>(){
+    @Override public CharSequence apply(    ColorStop stop){
+      return String.format("%f,%f,%f,%f",stop.color.hue,stop.color.saturation,stop.color.brightness,stop.percent);
+    }
+  }
+);
+}
