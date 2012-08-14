@@ -1,0 +1,15 @@
+{
+  PreferenceStore store=new PreferenceStore();
+  new ChromePreferenceInitializer().initializeDefaultPreferences(store);
+  for (  ChromePage each : getPrefererncePage().getPages()) {
+    each.save(store);
+  }
+  ChromeThemeConfig config=new ChromeThemeConfig(store);
+  ChromeCSSGenerator generator=new ChromeCSSGenerator();
+  generator.setConfig(config);
+  String cssContents=generator.generate().toString();
+  Shell activeShell=Display.getDefault().getActiveShell();
+  CSSDialog dialog=new CSSDialog(activeShell);
+  dialog.setCssContent(cssContents);
+  dialog.open();
+}

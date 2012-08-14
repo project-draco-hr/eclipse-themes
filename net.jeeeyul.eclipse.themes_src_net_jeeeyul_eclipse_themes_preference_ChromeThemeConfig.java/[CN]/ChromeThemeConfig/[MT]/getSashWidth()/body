@@ -1,6 +1,6 @@
 {
   if (sashWidth == null) {
-    IPreferenceStore store=preferenceStore;
+    IPreferenceStore store=getStore();
     String sashPreset=store.getString(ChromeConstants.CHROME_SASH_PRESET);
     if (ChromeConstants.CHROME_SASH_PRESET_ADVANCED.equals(sashPreset)) {
       sashWidth=store.getInt(ChromeConstants.CHROME_PART_CONTAINER_SASH_WIDTH);

@@ -1,0 +1,9 @@
+{
+  if (cssContent == null) {
+    cssContent="";
+  }
+  this.cssContent=cssContent;
+  if (text != null && !text.isDisposed()) {
+    text.setText(cssContent);
+  }
+}

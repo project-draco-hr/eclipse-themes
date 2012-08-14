@@ -1,6 +1,6 @@
 {
   if (partShadow == null) {
-    IPreferenceStore store=preferenceStore;
+    IPreferenceStore store=getStore();
     String sashPreset=store.getString(ChromeConstants.CHROME_SASH_PRESET);
     if (ChromeConstants.CHROME_SASH_PRESET_ADVANCED.equals(sashPreset)) {
       partShadow=store.getBoolean(ChromeConstants.CHROME_PART_SHADOW);

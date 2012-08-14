@@ -29,4 +29,5 @@
   inactiveSelectedTabStartColor=null;
   inactiveSelectedTabEndColor=null;
   partStackPadding=null;
+  mruVisible=null;
 }

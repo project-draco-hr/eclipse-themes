@@ -16,6 +16,7 @@
     manager.add(loadPresetAction);
   }
   manager.add(new Separator());
+  manager.add(new ShowCurrentCSSAction(this));
   final Menu menu=manager.createContextMenu(getShell());
   presetItem.addListener(SWT.Selection,new Listener(){
     @Override public void handleEvent(    Event event){
