@@ -1,0 +1,9 @@
+{
+  Scanner scanner=new Scanner(literal);
+  scanner.useDelimiter(",");
+  HSB result=new HSB();
+  result.hue=scanner.nextFloat();
+  result.saturation=scanner.nextFloat();
+  result.brightness=scanner.nextFloat();
+  return result;
+}

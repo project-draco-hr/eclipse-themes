@@ -1,0 +1,6 @@
+{
+  if (element instanceof Section) {
+    return new SectionElement((Composite)element,engine);
+  }
+  return null;
+}
