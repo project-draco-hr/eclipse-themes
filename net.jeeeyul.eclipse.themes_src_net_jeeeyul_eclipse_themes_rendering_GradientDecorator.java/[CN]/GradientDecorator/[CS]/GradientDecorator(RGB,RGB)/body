@@ -1,3 +1,0 @@
-{
-  this(startRGB.getHSB(),endRGB.getHSB());
-}

@@ -1,6 +1,0 @@
-{
-  if (endColor != null && !endColor.isDisposed()) {
-    endColor.dispose();
-    endColor=null;
-  }
-}

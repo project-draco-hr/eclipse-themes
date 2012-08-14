@@ -1,6 +1,0 @@
-{
-  if (startColor != null && !startColor.isDisposed()) {
-    startColor.dispose();
-    startColor=null;
-  }
-}

@@ -1,6 +1,0 @@
-{
-  if (endColor == null || endColor.isDisposed()) {
-    endColor=new Color(display,new RGB(endHSB[0],endHSB[1],endHSB[2]));
-  }
-  return endColor;
-}

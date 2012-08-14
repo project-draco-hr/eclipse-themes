@@ -1,5 +1,0 @@
-{
-  display=tabFolder.getDisplay();
-  Color white=display.getSystemColor(SWT.COLOR_WHITE);
-  tabFolder.setBackground(new Color[]{getStartColor(),getEndColor(),white},new int[]{99,100},true);
-}

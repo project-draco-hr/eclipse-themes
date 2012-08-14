@@ -1,3 +1,0 @@
-{
-  return Arrays.copyOf(endHSB,3);
-}

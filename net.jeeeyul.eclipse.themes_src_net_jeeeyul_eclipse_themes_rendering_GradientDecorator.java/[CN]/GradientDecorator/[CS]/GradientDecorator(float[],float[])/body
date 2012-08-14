@@ -1,5 +1,0 @@
-{
-  super();
-  this.startHSB=startHSB;
-  this.endHSB=endHSB;
-}

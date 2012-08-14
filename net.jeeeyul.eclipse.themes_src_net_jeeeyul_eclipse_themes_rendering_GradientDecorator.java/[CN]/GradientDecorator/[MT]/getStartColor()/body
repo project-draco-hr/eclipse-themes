@@ -1,6 +1,0 @@
-{
-  if (startColor == null || startColor.isDisposed()) {
-    startColor=new Color(display,new RGB(startHSB[0],startHSB[1],startHSB[2]));
-  }
-  return startColor;
-}

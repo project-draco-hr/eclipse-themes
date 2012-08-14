@@ -1,4 +1,0 @@
-{
-  disposeStartColor();
-  disposeEndColor();
-}
