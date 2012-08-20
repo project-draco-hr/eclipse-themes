@@ -37,6 +37,7 @@
   folder.setSelection(0);
   createToolbar();
   createLink(container,"Only works with Chrome Theme, You can change on <a href=\"org.eclipse.ui.preferencePages.Views\">Appearance page</a>");
+  createGitHubLink(container);
   load();
   return container;
 }
