@@ -1,0 +1,5 @@
+{
+  for (  ChromeEditorLiner each : instances.toArray(new ChromeEditorLiner[instances.size()])) {
+    each.dispose();
+  }
+}

@@ -1,0 +1,4 @@
+{
+  this.dash=dash;
+  update();
+}

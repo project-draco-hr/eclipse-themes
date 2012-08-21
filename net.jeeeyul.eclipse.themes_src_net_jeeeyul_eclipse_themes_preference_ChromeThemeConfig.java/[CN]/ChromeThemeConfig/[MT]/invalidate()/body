@@ -30,4 +30,7 @@
   inactiveSelectedTabEndColor=null;
   partStackPadding=null;
   mruVisible=null;
+  editorLineColor=null;
+  editorLineDashed=null;
+  editorLineVisible=null;
 }

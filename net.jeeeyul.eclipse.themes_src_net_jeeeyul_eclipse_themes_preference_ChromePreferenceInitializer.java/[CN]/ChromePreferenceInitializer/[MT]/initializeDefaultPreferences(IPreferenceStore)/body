@@ -97,4 +97,7 @@
   store.setDefault(ChromeConstants.CHROME_INACTIVE_SELECTED_TAB_END_BRIGHTNESS,1f);
   store.setDefault(ChromeConstants.CHROME_PART_STACK_PADDING,1);
   store.setDefault(ChromeConstants.CHROME_PART_STACK_USE_MRU,true);
+  store.setDefault(ChromeConstants.CHROME_EDITOR_LINE_VISIBLE,false);
+  store.setDefault(ChromeConstants.CHROME_EDITOR_LINE_DASH,true);
+  store.setDefault(ChromeConstants.CHROME_EDITOR_LINE_COLOR,"0,0,0.9");
 }

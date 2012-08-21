@@ -1,0 +1,19 @@
+{
+  this.text=text;
+  disposer=new Listener(){
+    @Override public void handleEvent(    Event event){
+      handleDispose();
+    }
+  }
+;
+  text.addListener(SWT.Dispose,disposer);
+  invalidator=new Listener(){
+    @Override public void handleEvent(    Event event){
+      handleVerticalScroll();
+    }
+  }
+;
+  text.getVerticalBar().addListener(SWT.Selection,invalidator);
+  instances.add(this);
+  update();
+}

@@ -1,0 +1,8 @@
+{
+  ChromeEditorLiner liner=(ChromeEditorLiner)text.getData("chrome-liner");
+  if (liner == null) {
+    liner=new ChromeEditorLiner(text);
+    text.setData("chrome-liner",liner);
+  }
+  return liner;
+}

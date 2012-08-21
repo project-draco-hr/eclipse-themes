@@ -1,0 +1,7 @@
+{
+  if (editorLineColor == null) {
+    String exp=getStore().getString(ChromeConstants.CHROME_EDITOR_LINE_COLOR);
+    editorLineColor=HSB.createFromString(exp).toRGB();
+  }
+  return editorLineColor;
+}
