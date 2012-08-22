@@ -1,8 +1,14 @@
 {
   if (partFontData == null) {
     partFontData=new FontData();
-    partFontData.setName(getStore().getString(ChromeConstants.CHROME_PART_FONT_NAME));
-    partFontData.height=getStore().getFloat(ChromeConstants.CHROME_PART_FONT_SIZE);
+    try {
+      partFontData.setName(getStore().getString(ChromeConstants.CHROME_PART_FONT_NAME));
+      partFontData.height=getStore().getFloat(ChromeConstants.CHROME_PART_FONT_SIZE);
+    }
+ catch (    Exception e) {
+      partFontData=Display.getDefault().getSystemFont().getFontData()[0];
+      partFontData.height=getStore().getFloat(ChromeConstants.CHROME_PART_FONT_SIZE);
+    }
   }
   return partFontData;
 }
