@@ -1,6 +1,6 @@
 {
   Scanner scanner=new Scanner(literal);
-  scanner.useDelimiter(",");
+  scanner.useDelimiter("\\|");
   scanner.useLocale(Locale.US);
   HSB result=new HSB();
   result.hue=scanner.nextFloat();
