@@ -1,0 +1,7 @@
+{
+  if (!visible) {
+    return false;
+  }
+  int offset=computeLineOffset();
+  return imageInfo.isUseDash() != dash || imageInfo.getOffset() != offset || imageInfo.getColor() != lineColor || lineImage == null || lineImage.isDisposed();
+}

@@ -1,4 +1,7 @@
 {
+  if (this.lineColor == lineColor) {
+    return;
+  }
   this.lineColor=lineColor;
   update();
 }

@@ -1,14 +1,19 @@
 {
   Image oldImage=lineImage;
   if (visible) {
-    Image newImage=computeNewImage();
-    text.setBackgroundImage(newImage);
-    lineImage=newImage;
+    if (hasToCreateNewImage()) {
+      Image newImage=computeNewImage();
+      text.setBackgroundImage(newImage);
+      lineImage=newImage;
+      if (oldImage != null && !oldImage.isDisposed()) {
+        oldImage.dispose();
+      }
+    }
   }
  else {
     text.setBackgroundImage(null);
-  }
-  if (oldImage != null && !oldImage.isDisposed()) {
-    oldImage.dispose();
+    if (oldImage != null && !oldImage.isDisposed()) {
+      oldImage.dispose();
+    }
   }
 }

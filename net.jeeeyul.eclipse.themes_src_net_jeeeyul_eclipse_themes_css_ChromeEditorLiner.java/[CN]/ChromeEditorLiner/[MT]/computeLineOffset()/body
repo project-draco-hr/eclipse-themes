@@ -1,0 +1,4 @@
+{
+  int offset=text.getLineHeight() - (text.getVerticalBar().getSelection() % text.getLineHeight());
+  return offset;
+}
