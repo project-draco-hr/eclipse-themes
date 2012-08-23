@@ -1,9 +1,10 @@
 {
   Gradient result=new Gradient();
-  String[] segments=str.split("\\|");
+  String[] segments=str.split("/");
   for (  String each : segments) {
     Scanner scanner=new Scanner(each);
-    scanner.useDelimiter(",");
+    scanner.useDelimiter("\\|");
+    scanner.useLocale(Locale.ENGLISH);
     ColorStop stop=new ColorStop();
     stop.color=new HSB();
     stop.color.hue=scanner.nextFloat();
