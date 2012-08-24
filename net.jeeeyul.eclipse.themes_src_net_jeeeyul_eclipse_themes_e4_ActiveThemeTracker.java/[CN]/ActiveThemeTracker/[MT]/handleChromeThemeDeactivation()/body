@@ -1,0 +1,4 @@
+{
+  WidgetTracker.getInstance().restoreAllSashContainers();
+  ChromeEditorLiner.disposeAll();
+}

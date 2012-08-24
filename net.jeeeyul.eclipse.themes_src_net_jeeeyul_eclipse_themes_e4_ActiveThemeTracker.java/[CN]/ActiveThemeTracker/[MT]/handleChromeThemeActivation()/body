@@ -1,0 +1,4 @@
+{
+  new RewriteChormeCSS().rewrite();
+  new ApplyChromeThemePreferenceJob().schedule();
+}
