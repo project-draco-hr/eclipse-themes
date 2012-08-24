@@ -9,12 +9,12 @@
     StyleSheetList oldSheetList=documentCSS.getStyleSheets();
     List<StyleSheet> newSheetList=new ArrayList<StyleSheet>();
     for (int i=0; i < oldSheetList.getLength(); i++) {
-      StyleSheet sheet=oldSheetList.item(i);
-      if (sheet != chromeSheet) {
-        newSheetList.add(sheet);
+      StyleSheet oldSheet=oldSheetList.item(i);
+      if (oldSheet != chromeSheet) {
+        if (!newSheetList.contains(oldSheet))         newSheetList.add(oldSheet);
       }
  else {
-        newSheetList.add(newSheet);
+        if (!newSheetList.contains(newSheet))         newSheetList.add(newSheet);
       }
     }
     documentCSS.removeAllStyleSheets();
