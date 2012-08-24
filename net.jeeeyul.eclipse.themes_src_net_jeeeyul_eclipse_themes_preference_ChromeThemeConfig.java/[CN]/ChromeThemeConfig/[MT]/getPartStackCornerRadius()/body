@@ -1,0 +1,7 @@
+{
+  if (partStackCornerRadius == null) {
+    IPreferenceStore store=getStore();
+    partStackCornerRadius=store.getInt(ChromeConstants.CHROME_PART_STACK_CORNER_RADIUS);
+  }
+  return partStackCornerRadius;
+}

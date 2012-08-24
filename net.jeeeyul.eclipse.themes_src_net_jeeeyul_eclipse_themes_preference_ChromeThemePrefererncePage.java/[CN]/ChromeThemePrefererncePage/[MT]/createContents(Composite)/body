@@ -1,7 +1,7 @@
 {
   Composite container=new Composite(parent,SWT.NORMAL);
   container.setLayout(new GridLayout());
-  folder=new CTabFolder(container,SWT.NORMAL);
+  folder=new CTabFolder(container,SWT.MULTI);
   ChromeTabRendering renderer=new ChromeTabRendering(folder);
   renderer.setSelectedTabFill(folder.getDisplay().getSystemColor(SWT.COLOR_WHITE));
   renderer.setOuterKeyline(folder.getDisplay().getSystemColor(SWT.COLOR_BLACK));

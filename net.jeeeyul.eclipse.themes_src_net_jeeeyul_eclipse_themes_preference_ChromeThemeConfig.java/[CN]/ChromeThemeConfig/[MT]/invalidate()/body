@@ -33,4 +33,5 @@
   editorLineColor=null;
   editorLineDashed=null;
   editorLineVisible=null;
+  partStackCornerRadius=null;
 }
