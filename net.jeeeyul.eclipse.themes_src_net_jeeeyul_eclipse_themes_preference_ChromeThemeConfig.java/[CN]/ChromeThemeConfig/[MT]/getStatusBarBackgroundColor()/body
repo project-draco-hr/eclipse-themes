@@ -1,0 +1,11 @@
+{
+  if (statusBarBackgroundColor == null) {
+    if (getUseWindowBackgroundAsStatusBarBackground()) {
+      statusBarBackgroundColor=getWindowBackgroundColor();
+    }
+ else {
+      statusBarBackgroundColor=HSB.createFromString(getStore().getString(ChromeConstants.CHROME_STATUS_BAR_BACKGROUND_COLOR)).toRGB();
+    }
+  }
+  return statusBarBackgroundColor;
+}

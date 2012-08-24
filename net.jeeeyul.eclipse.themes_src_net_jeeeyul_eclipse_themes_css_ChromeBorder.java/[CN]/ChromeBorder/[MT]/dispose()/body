@@ -1,0 +1,7 @@
+{
+  if (!parent.isDisposed()) {
+    parent.removeListener(SWT.Paint,controlHook);
+    parent.removeListener(SWT.Dispose,controlHook);
+  }
+  INSTANCES.remove(this);
+}

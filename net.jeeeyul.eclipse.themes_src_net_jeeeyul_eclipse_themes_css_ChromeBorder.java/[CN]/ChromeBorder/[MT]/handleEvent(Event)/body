@@ -1,0 +1,10 @@
+{
+switch (event.type) {
+case SWT.Paint:
+    onPaint(event);
+  break;
+case SWT.Dispose:
+dispose();
+break;
+}
+}

@@ -1,0 +1,6 @@
+{
+  if (useWindowBackgroundAsStatusBarBackground == null) {
+    useWindowBackgroundAsStatusBarBackground=getStore().getBoolean(ChromeConstants.CHROME_USE_WINDOW_BACKGROUND_AS_STATUS_BAR_BACKGROUND);
+  }
+  return useWindowBackgroundAsStatusBarBackground;
+}
