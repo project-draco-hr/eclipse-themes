@@ -13,7 +13,10 @@
     }
   }
 ;
-  text.getVerticalBar().addListener(SWT.Selection,invalidator);
+  ScrollBar verticalBar=text.getVerticalBar();
+  if (verticalBar != null) {
+    verticalBar.addListener(SWT.Selection,invalidator);
+  }
   instances.add(this);
   update();
 }

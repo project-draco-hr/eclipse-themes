@@ -1,7 +1,7 @@
 {
   if (text != null || !text.isDisposed()) {
     text.removeListener(SWT.Dispose,disposer);
-    text.getVerticalBar().removeListener(SWT.Selection,invalidator);
+    if (text != null && text.getVerticalBar() != null)     text.getVerticalBar().removeListener(SWT.Selection,invalidator);
     text.setBackgroundImage(null);
     text.setData("chrome-liner",null);
   }
