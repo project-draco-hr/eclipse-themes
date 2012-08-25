@@ -1,11 +1,6 @@
 {
   if (useStatusBarOutline == null) {
-    if (getUseWindowBackgroundAsStatusBarBackground()) {
-      useStatusBarOutline=Boolean.FALSE;
-    }
- else {
-      useStatusBarOutline=getStore().getBoolean(ChromeConstants.CHROME_USE_STATUS_BAR_OUTLINE);
-    }
+    useStatusBarOutline=getStore().getBoolean(ChromeConstants.CHROME_USE_STATUS_BAR_OUTLINE);
   }
   return useStatusBarOutline;
 }
