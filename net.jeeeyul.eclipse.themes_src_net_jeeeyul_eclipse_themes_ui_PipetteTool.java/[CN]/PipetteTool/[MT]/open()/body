@@ -3,8 +3,10 @@
   pipetteColorMask=new ImageData(getClass().getResourceAsStream("pipette-mask.png"));
   for (  Monitor monitor : display.getMonitors()) {
     Shell eachPipetteShell=createPipetteShell(monitor);
-    eachPipetteShell.open();
     pipetteShells.add(eachPipetteShell);
+  }
+  for (  Shell each : pipetteShells) {
+    each.setVisible(true);
   }
   while (!loopExpired) {
     if (!display.readAndDispatch()) {
