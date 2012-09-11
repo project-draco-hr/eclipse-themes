@@ -1,0 +1,8 @@
+{
+  PreferenceStore originalStore=new PreferenceStore();
+  new ChromePreferenceInitializer().initializeDefaultPreferences(originalStore);
+  for (  ChromePage each : getPrefererncePage().getPages()) {
+    each.save(originalStore);
+  }
+  return originalStore;
+}

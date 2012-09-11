@@ -1,0 +1,9 @@
+{
+  PreferenceStore originalStore=createBackup();
+  int result=new GlobalAdjustmentDialog(getPrefererncePage()).open();
+  if (result != IDialogConstants.OK_ID) {
+    for (    ChromePage each : getPrefererncePage().getPages()) {
+      each.load(originalStore);
+    }
+  }
+}
