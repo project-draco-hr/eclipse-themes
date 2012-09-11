@@ -1,5 +1,4 @@
 {
   super(prefererncePage);
   setText("Adjust Colors Globally");
-  setImageDescriptor(SharedImages.getImageDescriptor(SharedImages.ADJUST));
 }
