@@ -38,4 +38,5 @@
   useStatusBarOutline=null;
   statusBarBackgroundColor=null;
   statusBarOutlineColor=null;
+  useTrimStackImageBorder=null;
 }
