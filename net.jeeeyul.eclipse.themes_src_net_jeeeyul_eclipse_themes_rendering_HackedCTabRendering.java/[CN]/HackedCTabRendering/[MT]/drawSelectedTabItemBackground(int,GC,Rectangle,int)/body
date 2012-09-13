@@ -63,7 +63,12 @@
   }
   int[] tmpPoints=new int[index];
   System.arraycopy(points,0,tmpPoints,0,index);
-  gc.fillPolygon(translate(tmpPoints,1,1));
+  if (Platform.getOS().equals(Platform.OS_LINUX)) {
+    gc.fillPolygon(tmpPoints);
+  }
+ else {
+    gc.fillPolygon(translate(tmpPoints,1,1));
+  }
   gc.drawLine(selectionX1,selectionY1,selectionX2,selectionY2);
   if (tabOutlineColor == null)   tabOutlineColor=gc.getDevice().getSystemColor(SWT.COLOR_BLACK);
   gc.setForeground(tabOutlineColor);
