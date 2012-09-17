@@ -1,5 +1,4 @@
 {
-  MenuManager manager=new MenuManager();
   MenuManager presetMenu=new MenuManager("Editor's Presets",SharedImages.getImageDescriptor(SharedImages.PRESET),"preset");
   Enumeration<URL> presets=ChromeThemeCore.getDefault().getBundle().findEntries("presets/","*.epf",false);
   while (presets.hasMoreElements()) {
@@ -10,18 +9,15 @@
     presetMenu.add(loadPresetAction);
   }
   manager.add(presetMenu);
+  MenuManager userPresetMenu=new MenuManager("User's Presets",SharedImages.getImageDescriptor(SharedImages.PRESET),"preset");
+  userPresetMenu.add(new ManageUserPresetAction(this));
+  userPresetMenu.add(new AddUserPresetAction(this));
+  userPresetMenu.add(new Separator());
+  for (  UserPreset each : UserPresetRepository.INSTANCE.getUserPresets()) {
+    userPresetMenu.add(new LoadUserPresetAction(this,each));
+  }
+  manager.add(userPresetMenu);
   manager.add(new GlobalAdjustmentAction(this));
   manager.add(new Separator());
   manager.add(new ShowCurrentCSSAction(this));
-  final Menu menu=manager.createContextMenu(getShell());
-  presetItem.addListener(SWT.Selection,new Listener(){
-    @Override public void handleEvent(    Event event){
-      Rectangle rect=presetItem.getBounds();
-      Point pt=new Point(rect.x,rect.y + rect.height);
-      pt=presetItem.getParent().toDisplay(pt);
-      menu.setLocation(pt.x,pt.y);
-      menu.setVisible(true);
-    }
-  }
-);
 }

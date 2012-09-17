@@ -1,0 +1,5 @@
+{
+  super(prefererncePage);
+  this.userPreset=userPreset;
+  setText(userPreset.getName());
+}

@@ -1,0 +1,7 @@
+{
+  IPreferenceStore store=ChromeThemeCore.getDefault().getPreferenceStore();
+  ArrayList<ChromePage> pages=getPrefererncePage().getPages();
+  for (  ChromePage each : pages) {
+    each.setToDefault(store);
+  }
+}

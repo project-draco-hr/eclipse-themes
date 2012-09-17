@@ -1,0 +1,10 @@
+{
+  List<UserPreset> workingCopy=new ArrayList<UserPreset>(UserPresetRepository.INSTANCE.getUserPresets());
+  UserPresetDialog dialog=new UserPresetDialog(getPrefererncePage().getShell(),workingCopy);
+  if (dialog.open() == IDialogConstants.OK_ID) {
+    UserPresetRepository repo=UserPresetRepository.INSTANCE;
+    repo.getUserPresets().clear();
+    repo.getUserPresets().addAll(dialog.getWorkingCopy());
+    repo.save();
+  }
+}

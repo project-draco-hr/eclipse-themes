@@ -1,0 +1,5 @@
+{
+  super(parentShell);
+  this.model=workingcopy;
+  setShellStyle(SWT.SHELL_TRIM | SWT.APPLICATION_MODAL);
+}

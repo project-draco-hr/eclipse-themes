@@ -1,0 +1,7 @@
+{
+  if (current != null) {
+    StringBuffer buffer=new StringBuffer();
+    buffer.append(ch,start,length);
+    current.setContents(buffer.toString());
+  }
+}

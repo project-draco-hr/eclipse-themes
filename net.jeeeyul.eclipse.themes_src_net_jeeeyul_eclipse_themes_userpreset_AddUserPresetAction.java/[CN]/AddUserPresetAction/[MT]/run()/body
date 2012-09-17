@@ -1,0 +1,12 @@
+{
+  PreferenceStore store=new PreferenceStore();
+  new ChromePreferenceInitializer().initializeDefaultPreferences(store);
+  for (  ChromePage eachPage : getPrefererncePage().getPages()) {
+    eachPage.save(store);
+  }
+  InputDialog dialog=new InputDialog(getPrefererncePage().getShell(),"Jeeeyul's Eclipse Themes","Enter a preset's name:","My preset",null);
+  if (dialog.open() == IDialogConstants.OK_ID) {
+    UserPresetRepository.INSTANCE.addPreset(dialog.getValue(),store);
+    UserPresetRepository.INSTANCE.save();
+  }
+}

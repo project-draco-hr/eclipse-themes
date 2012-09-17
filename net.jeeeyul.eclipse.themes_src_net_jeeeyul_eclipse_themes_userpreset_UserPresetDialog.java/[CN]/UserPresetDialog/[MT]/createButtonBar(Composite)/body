@@ -1,0 +1,4 @@
+{
+  new Label(parent,SWT.SEPARATOR | SWT.HORIZONTAL).setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+  return super.createButtonBar(parent);
+}

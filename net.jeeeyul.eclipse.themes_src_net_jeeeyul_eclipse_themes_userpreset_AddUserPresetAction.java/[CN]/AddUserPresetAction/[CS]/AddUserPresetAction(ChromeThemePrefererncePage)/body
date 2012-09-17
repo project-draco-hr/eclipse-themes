@@ -1,0 +1,4 @@
+{
+  super(prefererncePage);
+  setText("Adds an user preset with current settings");
+}

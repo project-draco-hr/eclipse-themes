@@ -1,0 +1,7 @@
+{
+  if (qName.equals("preset")) {
+    result.add(current);
+    System.out.println(current.getName());
+    current=null;
+  }
+}

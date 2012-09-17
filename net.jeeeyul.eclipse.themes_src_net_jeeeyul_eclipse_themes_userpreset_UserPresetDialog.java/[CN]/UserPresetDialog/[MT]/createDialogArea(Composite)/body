@@ -1,0 +1,7 @@
+{
+  Composite control=(Composite)super.createDialogArea(parent);
+  UserPresetEditor editor=new UserPresetEditor(control);
+  editor.setModel(model);
+  parent.getShell().setText("Presets");
+  return control;
+}

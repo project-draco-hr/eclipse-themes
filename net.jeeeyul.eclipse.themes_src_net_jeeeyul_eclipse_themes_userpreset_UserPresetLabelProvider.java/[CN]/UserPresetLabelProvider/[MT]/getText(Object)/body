@@ -1,0 +1,6 @@
+{
+  if (element instanceof UserPreset) {
+    return ((UserPreset)element).getName();
+  }
+  return super.getText(element);
+}
