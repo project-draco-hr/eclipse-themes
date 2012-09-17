@@ -12,8 +12,8 @@
     }
   }
  catch (  IOException e) {
-    ChromeThemeCore.getDefault().getLog().log(new Status(IStatus.ERROR,ChromeThemeCore.PLUGIN_ID,e.getLocalizedMessage(),e));
-    e.printStackTrace();
+    ChromeThemeCore.getDefault().getLog().log(new Status(IStatus.ERROR,ChromeThemeCore.PLUGIN_ID,"Applying preset results some errors, default settings was applied.",e));
+    fallBackToDefaults();
   }
   super.run();
 }
