@@ -1,4 +1,5 @@
 {
   super(prefererncePage);
   setText("Adds an user preset with current settings");
+  setImageDescriptor(SharedImages.getImageDescriptor(SharedImages.ADD));
 }
