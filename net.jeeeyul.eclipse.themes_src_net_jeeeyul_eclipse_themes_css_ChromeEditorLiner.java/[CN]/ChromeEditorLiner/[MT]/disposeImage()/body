@@ -1,6 +1,0 @@
-{
-  if (lineImage != null && !lineImage.isDisposed()) {
-    lineImage.dispose();
-    lineImage=null;
-  }
-}

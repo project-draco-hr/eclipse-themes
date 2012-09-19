@@ -1,7 +1,0 @@
-{
-  if (this.dash == dash) {
-    return;
-  }
-  this.dash=dash;
-  update();
-}

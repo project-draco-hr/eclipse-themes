@@ -1,7 +1,0 @@
-{
-  if (this.visible == visible) {
-    return;
-  }
-  this.visible=visible;
-  update();
-}

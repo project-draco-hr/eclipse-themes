@@ -1,6 +1,0 @@
-{
-  if (!visible) {
-    return;
-  }
-  update();
-}
