@@ -1,6 +1,0 @@
-{
-  if (editorLineVisible == null) {
-    editorLineVisible=getStore().getBoolean(ChromeConstants.CHROME_EDITOR_LINE_VISIBLE);
-  }
-  return editorLineVisible;
-}

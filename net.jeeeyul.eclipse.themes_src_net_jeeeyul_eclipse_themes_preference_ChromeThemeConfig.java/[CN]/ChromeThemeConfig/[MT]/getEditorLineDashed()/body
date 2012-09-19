@@ -1,6 +1,0 @@
-{
-  if (editorLineDashed == null) {
-    editorLineDashed=getStore().getBoolean(ChromeConstants.CHROME_EDITOR_LINE_DASH);
-  }
-  return editorLineDashed;
-}
