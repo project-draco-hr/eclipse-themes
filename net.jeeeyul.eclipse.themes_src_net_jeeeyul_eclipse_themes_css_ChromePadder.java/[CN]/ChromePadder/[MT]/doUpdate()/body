@@ -1,0 +1,19 @@
+{
+  Layout layout=parent.getLayout();
+  if (layout instanceof GridLayout) {
+    GridLayout gridLayout=(GridLayout)layout;
+    gridLayout.marginTop=top;
+    gridLayout.marginBottom=bottom;
+    gridLayout.marginLeft=left;
+    gridLayout.marginRight=right;
+    parent.layout(true);
+  }
+ else   if (layout instanceof TrimBarLayout) {
+    TrimBarLayout tbLayout=(TrimBarLayout)layout;
+    tbLayout.marginLeft=left;
+    tbLayout.marginRight=right;
+    tbLayout.marginTop=top;
+    tbLayout.marginBottom=bottom;
+    parent.layout(true);
+  }
+}

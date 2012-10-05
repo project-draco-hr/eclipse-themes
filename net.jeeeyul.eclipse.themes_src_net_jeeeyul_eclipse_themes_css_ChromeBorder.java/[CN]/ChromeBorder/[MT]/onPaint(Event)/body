@@ -4,4 +4,8 @@
     event.gc.setForeground(topColor);
     event.gc.drawLine(bounds.x,bounds.y,bounds.x + bounds.width,bounds.y);
   }
+  if (bottomVisible && bottomColor != null) {
+    event.gc.setForeground(bottomColor);
+    event.gc.drawLine(bounds.x,bounds.y + bounds.height - 1,bounds.x + bounds.width,bounds.y + bounds.height - 1);
+  }
 }

@@ -1,3 +1,4 @@
 {
   this.leftVisible=leftVisible;
+  parent.redraw();
 }

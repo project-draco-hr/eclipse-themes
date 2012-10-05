@@ -1,0 +1,25 @@
+{
+  if (!(element instanceof CompositeElement)) {
+    return false;
+  }
+  CompositeElement compositeElement=(CompositeElement)element;
+  Composite comp=(Composite)compositeElement.getNativeWidget();
+  int pixelValue=(int)((CSSPrimitiveValue)value).getFloatValue(CSSPrimitiveValue.CSS_PX);
+  if (property.equals("chrome-padding-top")) {
+    ChromePadder.get(comp).setTop(pixelValue);
+    return true;
+  }
+  if (property.equals("chrome-padding-left")) {
+    ChromePadder.get(comp).setLeft(pixelValue);
+    return true;
+  }
+  if (property.equals("chrome-padding-right")) {
+    ChromePadder.get(comp).setRight(pixelValue);
+    return true;
+  }
+  if (property.equals("chrome-padding-bottom")) {
+    ChromePadder.get(comp).setBottom(pixelValue);
+    return true;
+  }
+  return false;
+}

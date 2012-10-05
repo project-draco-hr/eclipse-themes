@@ -1,0 +1,7 @@
+{
+  ChromePadder padder=(ChromePadder)control.getData(ChromePadder.class.getName());
+  if (padder == null) {
+    padder=new ChromePadder(control);
+  }
+  return padder;
+}

@@ -1,3 +1,4 @@
 {
   this.bottomColor=bottom;
+  parent.redraw();
 }

@@ -1,3 +1,4 @@
 {
   this.rightColor=right;
+  parent.redraw();
 }

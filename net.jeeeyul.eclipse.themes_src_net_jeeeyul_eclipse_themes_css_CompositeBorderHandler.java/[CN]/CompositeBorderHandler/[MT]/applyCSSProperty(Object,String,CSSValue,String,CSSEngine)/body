@@ -4,19 +4,24 @@
   }
   CompositeElement compositeElement=(CompositeElement)element;
   Composite comp=(Composite)compositeElement.getNativeWidget();
-  if (!"org-eclipse-ui-trim-status".equals(WidgetElement.getID(comp))) {
-    return false;
-  }
-  TrimBarLayout trimLayout=(TrimBarLayout)comp.getLayout();
   if (property.equals("chrome-border-top-visible")) {
     Boolean visible=(Boolean)engine.convert(value,Boolean.class,comp.getDisplay());
-    trimLayout.marginTop=visible ? 1 : 0;
     ChromeBorder.get(comp).setTopVisible(visible);
     return true;
   }
   if (property.equals("chrome-border-top-color")) {
     Color color=(Color)engine.convert(value,Color.class,comp.getDisplay());
     ChromeBorder.get(comp).setTopColor(color);
+    return true;
+  }
+  if (property.equals("chrome-border-bottom-visible")) {
+    Boolean visible=(Boolean)engine.convert(value,Boolean.class,comp.getDisplay());
+    ChromeBorder.get(comp).setBottomVisible(visible);
+    return true;
+  }
+  if (property.equals("chrome-border-bottom-color")) {
+    Color color=(Color)engine.convert(value,Color.class,comp.getDisplay());
+    ChromeBorder.get(comp).setBottomColor(color);
     return true;
   }
   return false;

@@ -1,0 +1,7 @@
+{
+  if (this.top == top) {
+    return;
+  }
+  this.top=top;
+  update();
+}
