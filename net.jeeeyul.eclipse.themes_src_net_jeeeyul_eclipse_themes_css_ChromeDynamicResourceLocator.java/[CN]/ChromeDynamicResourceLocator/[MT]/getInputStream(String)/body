@@ -1,0 +1,23 @@
+{
+  String[] segments=uri.substring(9).split("/");
+  if (segments[0].equals("drag-handle")) {
+    int height=Integer.parseInt(segments[1].trim());
+    HSB hue=HSB.createFromString(segments[2].trim());
+    ImageData image=dragHandleFactory.create(height,hue);
+    ImageLoader save=new ImageLoader();
+    ByteArrayOutputStream baos=new ByteArrayOutputStream();
+    save.data=new ImageData[]{image};
+    save.save(baos,SWT.IMAGE_GIF);
+    return new ByteArrayInputStream(baos.toByteArray());
+  }
+ else   if (segments[0].equals("frame")) {
+    HSB hue=HSB.createFromString(segments[1].trim());
+    ImageData image=frameFactory.create(hue);
+    ImageLoader save=new ImageLoader();
+    ByteArrayOutputStream baos=new ByteArrayOutputStream();
+    save.data=new ImageData[]{image};
+    save.save(baos,SWT.IMAGE_GIF);
+    return new ByteArrayInputStream(baos.toByteArray());
+  }
+  return null;
+}

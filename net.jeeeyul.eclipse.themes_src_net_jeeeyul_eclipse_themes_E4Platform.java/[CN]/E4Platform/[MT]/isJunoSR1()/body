@@ -1,0 +1,3 @@
+{
+  return JUNO_SR1_RANGE.isIncluded(getVersion());
+}

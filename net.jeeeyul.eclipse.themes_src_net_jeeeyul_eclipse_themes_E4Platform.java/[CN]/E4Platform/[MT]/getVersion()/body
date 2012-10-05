@@ -1,0 +1,8 @@
+{
+  if (version == null) {
+    Bundle bundle=Platform.getBundle("org.eclipse.platform");
+    String versionString=bundle.getHeaders().get(Constants.BUNDLE_VERSION);
+    version=new Version(versionString);
+  }
+  return version;
+}

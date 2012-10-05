@@ -1,4 +1,11 @@
 {
   super.start(context);
   plugin=this;
+  if (E4Platform.INSTANCE.isJunoSR1()) {
+    ServiceReference<IThemeManager> serviceReference=context.getServiceReference(IThemeManager.class);
+    IThemeManager manager=context.getService(serviceReference);
+    IThemeEngine engine=manager.getEngineForDisplay(Display.getDefault());
+    engine.registerResourceLocator(new ChromeDynamicResourceLocator());
+    System.out.println("Chrome Resource Locator was installed.");
+  }
 }
