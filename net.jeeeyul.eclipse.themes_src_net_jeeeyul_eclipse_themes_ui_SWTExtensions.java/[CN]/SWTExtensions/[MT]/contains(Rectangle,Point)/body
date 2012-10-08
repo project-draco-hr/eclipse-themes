@@ -1,0 +1,3 @@
+{
+  return rect.x <= point.x && rect.y <= point.y && point.x <= rect.x + rect.width && point.y <= rect.y + rect.height;
+}

@@ -1,0 +1,13 @@
+{
+  this();
+  String substring=uri.substring(PREFIX.length());
+  String[] split=substring.split("\\?");
+  setCommand(split[0].trim());
+  if (split[1] != null) {
+    String[] pairs=split[1].split("&");
+    for (    String each : pairs) {
+      String[] keyValue=each.split("=");
+      addArgument(keyValue[0].trim(),keyValue[1].trim());
+    }
+  }
+}

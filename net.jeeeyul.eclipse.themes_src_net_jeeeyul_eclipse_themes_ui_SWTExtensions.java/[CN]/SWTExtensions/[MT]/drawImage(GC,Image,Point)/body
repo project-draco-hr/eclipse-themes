@@ -1,0 +1,4 @@
+{
+  gc.drawImage(image,location.x,location.y);
+  return gc;
+}

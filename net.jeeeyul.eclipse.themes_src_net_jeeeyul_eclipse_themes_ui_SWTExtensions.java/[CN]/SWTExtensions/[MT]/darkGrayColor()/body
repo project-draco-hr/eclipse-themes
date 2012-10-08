@@ -1,0 +1,3 @@
+{
+  return display().getSystemColor(SWT.COLOR_DARK_GRAY);
+}

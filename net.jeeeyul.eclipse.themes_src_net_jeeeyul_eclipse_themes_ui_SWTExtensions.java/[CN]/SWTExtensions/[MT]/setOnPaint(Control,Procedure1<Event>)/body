@@ -1,7 +1,7 @@
 {
   control.addListener(SWT.Paint,new Listener(){
     @Override public void handleEvent(    Event event){
-      handler.apply(event);
+      renderer.apply(event);
     }
   }
 );

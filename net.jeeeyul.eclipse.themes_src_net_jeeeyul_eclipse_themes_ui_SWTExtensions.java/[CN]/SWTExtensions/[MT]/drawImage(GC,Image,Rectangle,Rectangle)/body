@@ -1,0 +1,3 @@
+{
+  gc.drawImage(image,sourceArea.x,sourceArea.y,sourceArea.width,sourceArea.height,targetArea.x,targetArea.y,targetArea.width,targetArea.height);
+}

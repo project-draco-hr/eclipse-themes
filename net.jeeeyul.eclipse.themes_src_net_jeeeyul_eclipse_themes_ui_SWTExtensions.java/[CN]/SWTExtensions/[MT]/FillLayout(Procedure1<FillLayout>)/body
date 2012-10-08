@@ -1,5 +1,0 @@
-{
-  FillLayout fillLayout=new FillLayout();
-  initializer.apply(fillLayout);
-  return fillLayout;
-}

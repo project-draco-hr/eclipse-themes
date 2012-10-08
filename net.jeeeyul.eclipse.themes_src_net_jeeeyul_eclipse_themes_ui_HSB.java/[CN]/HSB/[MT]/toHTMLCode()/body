@@ -1,0 +1,4 @@
+{
+  RGB rgb=toRGB();
+  return String.format("#%02x%02x%02x",rgb.red,rgb.green,rgb.blue);
+}

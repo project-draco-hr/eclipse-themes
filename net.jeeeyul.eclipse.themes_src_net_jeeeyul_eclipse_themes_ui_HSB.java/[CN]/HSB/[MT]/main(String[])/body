@@ -1,0 +1,4 @@
+{
+  HSB hsb=new HSB(0,1f,1f);
+  System.out.println(hsb.toHTMLCode());
+}

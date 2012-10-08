@@ -1,6 +1,6 @@
 {
   if (statusBarOutlineColor == null) {
-    statusBarOutlineColor=HSB.createFromString(getStore().getString(ChromeConstants.CHROME_STATUS_BAR_OUTLINE_COLOR)).toRGB();
+    statusBarOutlineColor=HSB.deserialize(getStore().getString(ChromeConstants.CHROME_STATUS_BAR_OUTLINE_COLOR)).toRGB();
   }
   return statusBarOutlineColor;
 }

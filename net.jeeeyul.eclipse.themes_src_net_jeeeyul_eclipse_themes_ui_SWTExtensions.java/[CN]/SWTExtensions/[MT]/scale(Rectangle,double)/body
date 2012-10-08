@@ -1,0 +1,7 @@
+{
+  p.x*=scale;
+  p.y*=scale;
+  p.width*=scale;
+  p.height*=scale;
+  return p;
+}

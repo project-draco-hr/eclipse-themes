@@ -1,0 +1,4 @@
+GC gc
+Image image
+Rectangle sourceArea
+Rectangle targetArea

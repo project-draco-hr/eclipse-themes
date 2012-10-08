@@ -1,0 +1,5 @@
+{
+  TableItem tableItem=new TableItem(parent,SWT.NORMAL);
+  initializer.apply(tableItem);
+  return tableItem;
+}

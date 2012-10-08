@@ -4,4 +4,5 @@
   addPage(new PartPage("Inactive",false));
   addPage(new CommonPartPage());
   addPage(new ToolbarPage());
+  addPage(new OtherPage());
 }
