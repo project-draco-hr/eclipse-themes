@@ -37,4 +37,5 @@
   statusBarOutlineColor=null;
   useTrimStackImageBorder=null;
   useEmbossedDragHandle=null;
+  userCSS=null;
 }

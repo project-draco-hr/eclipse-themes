@@ -1,0 +1,6 @@
+{
+  if (userCSS == null) {
+    userCSS=getStore().getString(ChromeConstants.CHROME_USER_CSS);
+  }
+  return userCSS;
+}

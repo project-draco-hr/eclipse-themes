@@ -113,4 +113,5 @@
     store.setDefault(ChromeConstants.CHROME_USE_TRIMSTACK_IMAGE_BORDER,true);
   }
   store.setDefault(ChromeConstants.CHROME_USE_EMBOSSED_DRAG_HANDLE,false);
+  store.setDefault(ChromeConstants.CHROME_USER_CSS,"");
 }

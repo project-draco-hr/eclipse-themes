@@ -1,0 +1,5 @@
+{
+  PageBook pageBook=new PageBook(parent,SWT.NORMAL);
+  initializer.apply(pageBook);
+  return pageBook;
+}

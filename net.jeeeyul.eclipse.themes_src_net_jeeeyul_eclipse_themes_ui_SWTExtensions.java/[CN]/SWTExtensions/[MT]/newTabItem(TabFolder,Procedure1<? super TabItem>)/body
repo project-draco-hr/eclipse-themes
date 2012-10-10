@@ -1,0 +1,5 @@
+{
+  TabItem item=new TabItem(tabFolder,SWT.NORMAL);
+  initializer.apply(item);
+  return item;
+}
