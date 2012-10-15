@@ -1,0 +1,6 @@
+{
+  if (showTextOnPerspectiveSwitcher == null) {
+    showTextOnPerspectiveSwitcher=getStore().getBoolean(ChromeConstants.CHROME_SHOW_TEXT_ON_PERSPECTIVE_SWITCHER);
+  }
+  return showTextOnPerspectiveSwitcher;
+}

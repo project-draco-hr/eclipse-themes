@@ -1,0 +1,15 @@
+{
+  if (!(element instanceof WidgetElement)) {
+    return null;
+  }
+  WidgetElement model=(WidgetElement)element;
+  Widget nativeWidget=(Widget)model.getNativeWidget();
+  String id=WidgetElement.getID(nativeWidget);
+  if (id == null || !id.equals("PerspectiveSwitcher")) {
+    return null;
+  }
+  if (property.equals("chrome-show-perspective-name")) {
+    return Boolean.toString(PrefUtil.getAPIPreferenceStore().getBoolean(IWorkbenchPreferenceConstants.SHOW_TEXT_ON_PERSPECTIVE_BAR));
+  }
+  return null;
+}

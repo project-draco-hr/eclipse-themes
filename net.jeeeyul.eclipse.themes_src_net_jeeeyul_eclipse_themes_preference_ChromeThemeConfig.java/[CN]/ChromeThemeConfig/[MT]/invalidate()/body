@@ -38,4 +38,5 @@
   useTrimStackImageBorder=null;
   useEmbossedDragHandle=null;
   userCSS=null;
+  showTextOnPerspectiveSwitcher=null;
 }

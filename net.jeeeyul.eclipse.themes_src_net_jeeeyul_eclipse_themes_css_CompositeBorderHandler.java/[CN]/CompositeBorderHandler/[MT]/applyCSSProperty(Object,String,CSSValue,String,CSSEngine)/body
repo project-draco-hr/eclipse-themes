@@ -24,5 +24,25 @@
     ChromeBorder.get(comp).setBottomColor(color);
     return true;
   }
+  if (property.equals("chrome-border-left-visible")) {
+    Boolean visible=(Boolean)engine.convert(value,Boolean.class,comp.getDisplay());
+    ChromeBorder.get(comp).setLeftVisible(visible);
+    return true;
+  }
+  if (property.equals("chrome-border-left-color")) {
+    Color color=(Color)engine.convert(value,Color.class,comp.getDisplay());
+    ChromeBorder.get(comp).setLeftColor(color);
+    return true;
+  }
+  if (property.equals("chrome-border-right-visible")) {
+    Boolean visible=(Boolean)engine.convert(value,Boolean.class,comp.getDisplay());
+    ChromeBorder.get(comp).setRightVisible(visible);
+    return true;
+  }
+  if (property.equals("chrome-border-right-color")) {
+    Color color=(Color)engine.convert(value,Color.class,comp.getDisplay());
+    ChromeBorder.get(comp).setRightColor(color);
+    return true;
+  }
   return false;
 }

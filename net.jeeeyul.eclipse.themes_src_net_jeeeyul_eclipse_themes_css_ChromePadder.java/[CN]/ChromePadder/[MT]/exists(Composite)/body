@@ -1,0 +1,4 @@
+{
+  ChromePadder padder=(ChromePadder)comp.getData(ChromePadder.class.getName());
+  return padder != null;
+}

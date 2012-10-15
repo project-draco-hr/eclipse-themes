@@ -8,4 +8,12 @@
     event.gc.setForeground(bottomColor);
     event.gc.drawLine(bounds.x,bounds.y + bounds.height - 1,bounds.x + bounds.width,bounds.y + bounds.height - 1);
   }
+  if (leftVisible && leftColor != null) {
+    event.gc.setForeground(leftColor);
+    event.gc.drawLine(bounds.x,bounds.y,bounds.x,bounds.y + bounds.height);
+  }
+  if (rightVisible && rightColor != null) {
+    event.gc.setForeground(rightColor);
+    event.gc.drawLine(bounds.x + bounds.width - 1,bounds.y + bounds.height - 1,bounds.x + bounds.width - 1,bounds.y);
+  }
 }
