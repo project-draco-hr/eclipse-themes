@@ -1,0 +1,5 @@
+{
+  CTabItem item=new CTabItem(tabFolder,SWT.NORMAL);
+  initializer.apply(item);
+  return item;
+}
