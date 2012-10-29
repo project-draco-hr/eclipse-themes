@@ -1,4 +1,4 @@
 {
   super(prefererncePage);
-  setText("Manage user presets");
+  setText(Messages.MANAGE_USER_PRESET);
 }

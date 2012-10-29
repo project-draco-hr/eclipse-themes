@@ -1,4 +1,4 @@
 {
   super(prefererncePage);
-  setText("Adjust Colors Globally");
+  setText(Messages.ADJUST_COLORS_GLOBALLY);
 }
