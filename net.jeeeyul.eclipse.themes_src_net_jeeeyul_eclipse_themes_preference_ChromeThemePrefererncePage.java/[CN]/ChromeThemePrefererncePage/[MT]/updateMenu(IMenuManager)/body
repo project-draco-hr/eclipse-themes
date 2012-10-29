@@ -1,5 +1,5 @@
 {
-  MenuManager presetMenu=new MenuManager("Editor's Presets",SharedImages.getImageDescriptor(SharedImages.PRESET),"preset");
+  MenuManager presetMenu=new MenuManager(Messages.EDITORS_PRESET,SharedImages.getImageDescriptor(SharedImages.PRESET),"preset");
   Enumeration<URL> presets=ChromeThemeCore.getDefault().getBundle().findEntries("presets/","*.epf",false);
   while (presets.hasMoreElements()) {
     URL url=presets.nextElement();
@@ -9,7 +9,7 @@
     presetMenu.add(loadPresetAction);
   }
   manager.add(presetMenu);
-  MenuManager userPresetMenu=new MenuManager("User's Presets",SharedImages.getImageDescriptor(SharedImages.PRESET),"preset");
+  MenuManager userPresetMenu=new MenuManager(Messages.USERS_PRESET,SharedImages.getImageDescriptor(SharedImages.PRESET),"preset");
   userPresetMenu.add(new ManageUserPresetAction(this));
   userPresetMenu.add(new AddUserPresetAction(this));
   userPresetMenu.add(new Separator());

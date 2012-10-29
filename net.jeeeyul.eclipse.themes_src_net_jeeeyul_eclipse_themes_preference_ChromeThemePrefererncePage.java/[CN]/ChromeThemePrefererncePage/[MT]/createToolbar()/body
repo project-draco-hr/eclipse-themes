@@ -3,7 +3,7 @@
   folder.setTopRight(toolBar);
   presetItem=new ToolItem(toolBar,SWT.DROP_DOWN);
   presetItem.setImage(SharedImages.getImage(SharedImages.PALETTE));
-  presetItem.setToolTipText("Preset");
+  presetItem.setToolTipText(Messages.PRESET);
   presetItem.addListener(SWT.Selection,new Listener(){
     @Override public void handleEvent(    Event event){
     }
