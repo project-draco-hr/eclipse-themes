@@ -1,4 +1,4 @@
 {
   super(prefererncePage);
-  setText("Show CSS");
+  setText(Messages.SHOW_CSS);
 }
