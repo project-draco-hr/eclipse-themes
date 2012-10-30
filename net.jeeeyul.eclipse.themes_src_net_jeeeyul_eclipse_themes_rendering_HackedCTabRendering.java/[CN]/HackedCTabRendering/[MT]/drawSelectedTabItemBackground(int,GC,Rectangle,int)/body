@@ -91,8 +91,8 @@
   }
  else {
     gc.drawLine(startX,0,endX,0);
-    if (backgroundPattern != null)     backgroundPattern.dispose();
-    if (gradientLineTop != null)     gradientLineTop.dispose();
-    if (foregroundPattern != null)     foregroundPattern.dispose();
   }
+  if (backgroundPattern != null)   backgroundPattern.dispose();
+  if (gradientLineTop != null)   gradientLineTop.dispose();
+  if (foregroundPattern != null)   foregroundPattern.dispose();
 }

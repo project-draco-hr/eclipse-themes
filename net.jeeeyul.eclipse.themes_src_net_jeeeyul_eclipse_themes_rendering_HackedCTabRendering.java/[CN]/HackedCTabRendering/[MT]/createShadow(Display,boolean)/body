@@ -1,29 +1,16 @@
 {
-  Object obj=display.getData(E4_SHADOW_IMAGE);
-  if (obj != null && !recreate) {
-    shadowImage=(Image)obj;
+  if (shadowImage != null && !shadowImage.isDisposed()) {
+    shadowImage.dispose();
+    shadowImage=null;
   }
- else {
-    ImageData data=new ImageData(60,60,32,new PaletteData(0xFF0000,0xFF00,0xFF));
-    Image tmpImage=shadowImage=new Image(display,data);
-    GC gc=new GC(tmpImage);
-    if (shadowColor == null)     shadowColor=gc.getDevice().getSystemColor(SWT.COLOR_GRAY);
-    gc.setBackground(shadowColor);
-    drawTabBody(gc,new Rectangle(0,0,60,60),SWT.None);
-    ImageData blured=blur(tmpImage,5,25);
-    shadowImage=new Image(display,blured);
-    display.setData(E4_SHADOW_IMAGE,shadowImage);
-    tmpImage.dispose();
-    display.disposeExec(new Runnable(){
-      public void run(){
-        Object obj=display.getData(E4_SHADOW_IMAGE);
-        if (obj != null) {
-          Image tmp=(Image)obj;
-          tmp.dispose();
-          display.setData(E4_SHADOW_IMAGE,null);
-        }
-      }
-    }
-);
-  }
+  ImageData data=new ImageData(60,60,32,new PaletteData(0xFF0000,0xFF00,0xFF));
+  Image tmpImage=shadowImage=new Image(display,data);
+  GC gc=new GC(tmpImage);
+  if (shadowColor == null)   shadowColor=gc.getDevice().getSystemColor(SWT.COLOR_GRAY);
+  gc.setBackground(shadowColor);
+  drawTabBody(gc,new Rectangle(0,0,60,60),SWT.None);
+  ImageData blured=blur(tmpImage,5,25);
+  shadowImage=new Image(display,blured);
+  display.setData(E4_SHADOW_IMAGE,shadowImage);
+  tmpImage.dispose();
 }
