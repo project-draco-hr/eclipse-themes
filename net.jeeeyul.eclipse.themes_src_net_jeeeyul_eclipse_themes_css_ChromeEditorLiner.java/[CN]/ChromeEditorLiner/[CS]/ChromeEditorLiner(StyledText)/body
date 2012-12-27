@@ -1,0 +1,5 @@
+{
+  this.client=client;
+  client.setData(ChromeEditorLiner.class.getCanonicalName(),this);
+  hook();
+}

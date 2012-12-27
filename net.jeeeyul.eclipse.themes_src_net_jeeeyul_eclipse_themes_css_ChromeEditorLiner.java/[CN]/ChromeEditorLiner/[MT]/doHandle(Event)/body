@@ -1,0 +1,10 @@
+{
+switch (event.type) {
+case SWT.Dispose:
+    dispose();
+  break;
+case SWT.Selection:
+invalidate();
+break;
+}
+}

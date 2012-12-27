@@ -1,0 +1,4 @@
+{
+  client.addListener(SWT.Dispose,listener);
+  client.getVerticalBar().addListener(SWT.Selection,listener);
+}

@@ -1,0 +1,18 @@
+{
+  if (!(element instanceof CompositeElement)) {
+    return false;
+  }
+  CompositeElement compositeElement=(CompositeElement)element;
+  StyledText styledText=(StyledText)compositeElement.getNativeWidget();
+  if (property.equals("chrome-line-style")) {
+    String lineStyle=value.getCssText();
+    ChromeEditorLiner.get(styledText).setLineStyle(lineStyle);
+    return true;
+  }
+  if (property.equals("chrome-line-color")) {
+    Color color=(Color)engine.convert(value,Color.class,styledText.getDisplay());
+    ChromeEditorLiner.get(styledText).setColor(color);
+    return true;
+  }
+  return false;
+}

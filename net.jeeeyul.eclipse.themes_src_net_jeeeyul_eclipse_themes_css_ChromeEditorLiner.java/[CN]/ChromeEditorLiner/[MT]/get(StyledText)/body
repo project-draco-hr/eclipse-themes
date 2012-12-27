@@ -1,0 +1,7 @@
+{
+  ChromeEditorLiner liner=(ChromeEditorLiner)client.getData(ChromeEditorLiner.class.getCanonicalName());
+  if (liner == null) {
+    liner=new ChromeEditorLiner(client);
+  }
+  return liner;
+}

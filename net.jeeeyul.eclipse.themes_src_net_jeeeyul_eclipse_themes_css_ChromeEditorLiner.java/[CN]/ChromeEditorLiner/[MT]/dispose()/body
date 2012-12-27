@@ -1,0 +1,10 @@
+{
+  if (client != null && !client.isDisposed()) {
+    client.setBackgroundImage(null);
+    client.setData(ChromeEditorLiner.class.getCanonicalName(),null);
+    unhook();
+  }
+  if (backgroundImage != null && !backgroundImage.isDisposed()) {
+    backgroundImage.dispose();
+  }
+}

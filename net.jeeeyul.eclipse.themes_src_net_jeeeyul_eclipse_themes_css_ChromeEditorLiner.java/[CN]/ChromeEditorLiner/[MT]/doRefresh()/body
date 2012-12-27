@@ -1,0 +1,7 @@
+{
+  if (backgroundImage != null && !backgroundImage.isDisposed()) {
+    backgroundImage.dispose();
+  }
+  backgroundImage=createNewBackgroundImage();
+  client.setBackgroundImage(backgroundImage);
+}

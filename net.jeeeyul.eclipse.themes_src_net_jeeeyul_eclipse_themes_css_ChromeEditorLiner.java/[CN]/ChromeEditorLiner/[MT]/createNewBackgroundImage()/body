@@ -1,0 +1,19 @@
+{
+  if (lineStyle == SWT.NONE) {
+    return null;
+  }
+  int width=36;
+  int height=client.getLineHeight();
+  int offset=height - (client.getVerticalBar().getSelection() % height) - 1;
+  Image image=new Image(client.getDisplay(),width,height);
+  GC gc=new GC(image);
+  gc.setBackground(client.getBackground());
+  gc.fillRectangle(0,0,width,height);
+  gc.setForeground(color);
+  gc.setLineDash(new int[]{2,2});
+  gc.setLineStyle(lineStyle);
+  gc.drawLine(0,offset,width,offset);
+  gc.dispose();
+  gc.dispose();
+  return image;
+}
