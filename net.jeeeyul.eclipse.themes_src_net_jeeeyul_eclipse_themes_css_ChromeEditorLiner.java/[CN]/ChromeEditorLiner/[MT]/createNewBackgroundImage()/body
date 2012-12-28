@@ -1,5 +1,5 @@
 {
-  if (lineStyle == SWT.NONE) {
+  if (lineStyle == LineStyle.NONE || isDisposed) {
     return null;
   }
   int width=36;
@@ -10,10 +10,19 @@
   gc.setBackground(client.getBackground());
   gc.fillRectangle(0,0,width,height);
   gc.setForeground(color);
-  gc.setLineDash(new int[]{2,2});
-  gc.setLineStyle(lineStyle);
-  gc.drawLine(0,offset,width,offset);
-  gc.dispose();
-  gc.dispose();
-  return image;
+switch (lineStyle) {
+case DASH:
+    gc.setLineDash(new int[]{2,2});
+  break;
+case SOLID:
+break;
+case NONE:
+break;
+default :
+break;
+}
+gc.drawLine(0,offset,width,offset);
+gc.dispose();
+gc.dispose();
+return image;
 }

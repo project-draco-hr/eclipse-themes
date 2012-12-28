@@ -1,7 +1,9 @@
 {
+  GLOBAL_LOCK.acquire();
   ChromeEditorLiner liner=(ChromeEditorLiner)client.getData(ChromeEditorLiner.class.getCanonicalName());
   if (liner == null) {
     liner=new ChromeEditorLiner(client);
   }
+  GLOBAL_LOCK.release();
   return liner;
 }

@@ -1,20 +1,3 @@
 {
-  if (lineStyleString.equalsIgnoreCase("solid")) {
-    setLineStyle(SWT.LINE_SOLID);
-  }
- else   if (lineStyleString.equalsIgnoreCase("dash")) {
-    setLineStyle(SWT.LINE_DASH);
-  }
- else   if (lineStyleString.equalsIgnoreCase("dash-dot")) {
-    setLineStyle(SWT.LINE_DASHDOT);
-  }
- else   if (lineStyleString.equalsIgnoreCase("dash-dot-dot")) {
-    setLineStyle(SWT.LINE_DASHDOTDOT);
-  }
- else   if (lineStyleString.equalsIgnoreCase("dot")) {
-    setLineStyle(SWT.LINE_DOT);
-  }
- else {
-    setLineStyle(SWT.NONE);
-  }
+  setLineStyle(LineStyle.getByLiteral(lineStyleString));
 }

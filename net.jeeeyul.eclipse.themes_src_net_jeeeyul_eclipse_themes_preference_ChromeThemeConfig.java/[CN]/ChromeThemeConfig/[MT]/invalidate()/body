@@ -39,4 +39,6 @@
   useEmbossedDragHandle=null;
   userCSS=null;
   showTextOnPerspectiveSwitcher=null;
+  editorLineColor=null;
+  editorLineStyle=null;
 }

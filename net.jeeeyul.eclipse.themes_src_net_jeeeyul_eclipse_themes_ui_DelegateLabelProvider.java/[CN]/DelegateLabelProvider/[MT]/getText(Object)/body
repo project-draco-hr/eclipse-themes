@@ -1,0 +1,8 @@
+{
+  if (textGetter != null) {
+    return textGetter.apply((T)element);
+  }
+ else {
+    return null;
+  }
+}
