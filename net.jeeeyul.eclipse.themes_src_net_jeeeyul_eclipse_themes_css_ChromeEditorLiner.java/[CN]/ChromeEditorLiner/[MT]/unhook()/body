@@ -1,4 +1,4 @@
 {
   client.removeListener(SWT.Dispose,listener);
-  client.getVerticalBar().removeListener(SWT.Selection,listener);
+  if (client.getVerticalBar() != null)   client.getVerticalBar().removeListener(SWT.Selection,listener);
 }
