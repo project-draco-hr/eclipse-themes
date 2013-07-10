@@ -3,17 +3,5 @@
     return;
   }
   updateEmptyClassIfNeeded();
-  if (part == PART_BODY && !isPreviewingTab()) {
-    if (tabFolder.getItemCount() == 0) {
-      if (lastKnownTabHeight < 0) {
-        lastKnownTabHeight=tabFolder.getFont().getFontData()[0].getHeight() + 19;
-      }
-      tabFolder.setTabHeight(lastKnownTabHeight);
-    }
- else {
-      tabFolder.setTabHeight(-1);
-      lastKnownTabHeight=tabFolder.getTabHeight();
-    }
-  }
   super.draw(part,state,bounds,gc);
 }

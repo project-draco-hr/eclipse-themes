@@ -1,4 +1,0 @@
-{
-  CSSClasses tags=CSSClasses.getStyleClasses(tabFolder);
-  return tags.contains("chrome-tabfolder-preview");
-}
