@@ -1,6 +1,4 @@
 {
-  GC gc=new GC(parent);
-  gc.dispose();
   int borderTop=TOP_KEYLINE + OUTER_KEYLINE;
   int borderBottom=INNER_KEYLINE + OUTER_KEYLINE;
   int marginHeight=parent.marginHeight;
