@@ -101,6 +101,7 @@
   store.setDefault(ChromeConstants.CHROME_INACTIVE_SELECTED_TAB_END_BRIGHTNESS,1f);
   store.setDefault(ChromeConstants.CHROME_PART_STACK_PADDING,1);
   store.setDefault(ChromeConstants.CHROME_PART_STACK_USE_MRU,true);
+  store.setDefault(ChromeConstants.CHROME_PART_SHOW_CLOSE_TAB_BUTTON,true);
   store.setDefault(ChromeConstants.CHROME_PART_STACK_CORNER_RADIUS,14);
   store.setDefault(ChromeConstants.CHROME_USE_WINDOW_BACKGROUND_AS_STATUS_BAR_BACKGROUND,true);
   store.setDefault(ChromeConstants.CHROME_USE_STATUS_BAR_OUTLINE,false);

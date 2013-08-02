@@ -30,6 +30,7 @@
   inactiveSelectedTabEndColor=null;
   partStackPadding=null;
   mruVisible=null;
+  showCloseTabButton=null;
   partStackCornerRadius=null;
   useWindowBackgroundAsStatusBarBackground=null;
   useStatusBarOutline=null;
