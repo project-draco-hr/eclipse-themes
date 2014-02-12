@@ -1,0 +1,3 @@
+{
+  return String.format(RGB_AS_HEX,rgb.red,rgb.green,rgb.blue);
+}

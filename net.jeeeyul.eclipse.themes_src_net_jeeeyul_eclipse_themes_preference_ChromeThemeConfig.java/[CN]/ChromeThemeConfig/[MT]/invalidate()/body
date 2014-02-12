@@ -1,10 +1,10 @@
 {
   activePartGradientEnd=null;
   activePartGradientStart=null;
-  activeOulineColor=null;
+  activeOutlineColor=null;
   activeSelectedTitleColor=null;
   activeUnselectedTitleColor=null;
-  inactiveOulineColor=null;
+  inactiveOutlineColor=null;
   inactivePartGradientEnd=null;
   inactivePartGradientStart=null;
   inactiveSelectedTitleColor=null;
@@ -23,7 +23,7 @@
   perspectiveOutlineColor=null;
   windowBackgroundColor=null;
   emptyPartBackgroundColor=null;
-  emptyPartOutloneColor=null;
+  emptyPartOutlineColor=null;
   activeSelectedTabEndColor=null;
   activeSelectedTabStartColor=null;
   inactiveSelectedTabStartColor=null;

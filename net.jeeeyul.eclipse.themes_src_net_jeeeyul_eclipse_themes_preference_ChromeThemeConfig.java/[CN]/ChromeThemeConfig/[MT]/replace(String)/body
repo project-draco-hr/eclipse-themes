@@ -1,0 +1,31 @@
+{
+  Method[] methods=getClass().getSuperclass().getDeclaredMethods();
+  for (int i=0; i < methods.length; i++) {
+    Method method=methods[i];
+    String name=method.getName();
+    if (isCompatibleSignature(method,name)) {
+      name=tokenForReplacement(name);
+      boolean accessible=method.isAccessible();
+      try {
+        if (accessible == false) {
+          method.setAccessible(true);
+        }
+        RGB result=(RGB)method.invoke(this);
+        String replacement=toHtmlColor(result);
+        css=css.replace(name,replacement);
+      }
+ catch (      IllegalAccessException e) {
+      }
+catch (      IllegalArgumentException e) {
+      }
+catch (      InvocationTargetException e) {
+      }
+ finally {
+        if (accessible == false) {
+          method.setAccessible(false);
+        }
+      }
+    }
+  }
+  return css;
+}
