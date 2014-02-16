@@ -13,6 +13,7 @@
       stop.color.brightness=scanner.nextFloat();
       stop.percent=scanner.nextFloat();
       result.add(stop);
+      scanner.close();
     }
   }
  catch (  Exception e) {

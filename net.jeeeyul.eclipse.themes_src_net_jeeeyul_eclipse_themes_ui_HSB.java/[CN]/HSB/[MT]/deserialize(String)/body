@@ -1,7 +1,8 @@
 {
   HSB result=new HSB();
+  Scanner scanner=null;
   try {
-    Scanner scanner=new Scanner(literal);
+    scanner=new Scanner(literal);
     scanner.useDelimiter("\\|");
     scanner.useLocale(Locale.US);
     result.hue=scanner.nextFloat();
@@ -10,6 +11,11 @@
   }
  catch (  Exception e) {
     result=new HSB(0f,1f,1f);
+  }
+ finally {
+    if (scanner != null) {
+      scanner.close();
+    }
   }
   return result;
 }
