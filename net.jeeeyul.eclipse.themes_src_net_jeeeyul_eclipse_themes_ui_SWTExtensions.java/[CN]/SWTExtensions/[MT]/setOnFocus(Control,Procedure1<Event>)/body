@@ -1,7 +1,7 @@
 {
   control.addListener(SWT.FocusIn,new Listener(){
     @Override public void handleEvent(    Event event){
-      handler.apply(control);
+      handler.apply(event);
     }
   }
 );
