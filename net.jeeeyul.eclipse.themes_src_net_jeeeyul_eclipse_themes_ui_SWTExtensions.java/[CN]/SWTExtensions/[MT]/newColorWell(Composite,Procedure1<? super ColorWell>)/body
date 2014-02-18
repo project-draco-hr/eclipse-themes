@@ -1,5 +1,0 @@
-{
-  ColorWell colorWell=new ColorWell(parent,SWT.NORMAL);
-  initializer.apply(colorWell);
-  return colorWell;
-}

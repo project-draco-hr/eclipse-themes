@@ -1,5 +1,0 @@
-{
-  GridLayout gridLayout=new GridLayout();
-  initializer.apply(gridLayout);
-  return gridLayout;
-}

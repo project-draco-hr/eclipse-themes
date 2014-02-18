@@ -1,5 +1,0 @@
-{
-  p.x*=scale;
-  p.y*=scale;
-  return p;
-}

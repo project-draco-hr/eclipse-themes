@@ -1,6 +1,0 @@
-{
-  Shell _shell=new Shell();
-  Shell s=_shell;
-  initializer.apply(s);
-  return s;
-}

@@ -1,6 +1,0 @@
-{
-  if (object instanceof Composite) {
-    return Arrays.asList(((Composite)object).getChildren()).iterator();
-  }
-  return Collections.EMPTY_LIST.iterator();
-}

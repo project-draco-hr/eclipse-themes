@@ -1,5 +1,0 @@
-{
-  rectangle.width+=width;
-  rectangle.height+=height;
-  return rectangle;
-}

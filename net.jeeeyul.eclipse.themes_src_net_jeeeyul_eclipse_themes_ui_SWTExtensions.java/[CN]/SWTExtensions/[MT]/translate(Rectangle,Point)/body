@@ -1,3 +1,0 @@
-{
-  return translate(rectangle,delta.x,delta.y);
-}

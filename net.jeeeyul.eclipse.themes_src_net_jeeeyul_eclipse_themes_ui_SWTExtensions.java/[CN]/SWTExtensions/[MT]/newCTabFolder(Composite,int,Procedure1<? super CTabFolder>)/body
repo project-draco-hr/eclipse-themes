@@ -1,5 +1,0 @@
-{
-  CTabFolder tabFolder=new CTabFolder(parent,style);
-  initializer.apply(tabFolder);
-  return tabFolder;
-}

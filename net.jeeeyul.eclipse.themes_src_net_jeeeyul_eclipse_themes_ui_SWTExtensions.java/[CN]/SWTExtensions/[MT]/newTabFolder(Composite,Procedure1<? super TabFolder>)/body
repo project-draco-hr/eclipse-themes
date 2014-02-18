@@ -1,5 +1,0 @@
-{
-  TabFolder tabFolder=new TabFolder(parent,SWT.NORMAL);
-  initializer.apply(tabFolder);
-  return tabFolder;
-}

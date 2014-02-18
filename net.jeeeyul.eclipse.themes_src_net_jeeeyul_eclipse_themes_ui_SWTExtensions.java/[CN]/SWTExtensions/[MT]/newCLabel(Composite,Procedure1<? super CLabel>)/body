@@ -1,6 +1,0 @@
-{
-  CLabel _label=new CLabel(parent,SWT.NORMAL);
-  CLabel label=_label;
-  initializer.apply(label);
-  return label;
-}

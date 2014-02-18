@@ -1,5 +1,0 @@
-{
-  GridData _gridData=new GridData(GridData.FILL_HORIZONTAL);
-  GridData gd=_gridData;
-  return gd;
-}

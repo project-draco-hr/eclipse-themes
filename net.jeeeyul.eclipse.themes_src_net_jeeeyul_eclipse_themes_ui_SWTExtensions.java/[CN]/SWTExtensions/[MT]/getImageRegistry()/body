@@ -1,8 +1,0 @@
-{
-  ImageRegistry result=(ImageRegistry)Display.getDefault().getData("imageRegistry");
-  if (result == null) {
-    result=new ImageRegistry();
-    Display.getDefault().setData("imageRegistry",result);
-  }
-  return result;
-}

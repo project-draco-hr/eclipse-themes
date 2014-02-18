@@ -1,6 +1,0 @@
-{
-  Label _label=new Label(parent,SWT.SEPARATOR | SWT.HORIZONTAL);
-  Label label=_label;
-  initializer.apply(label);
-  return label;
-}

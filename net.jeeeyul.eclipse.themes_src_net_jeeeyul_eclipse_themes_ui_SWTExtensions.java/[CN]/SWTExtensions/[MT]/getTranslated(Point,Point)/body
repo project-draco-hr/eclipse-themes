@@ -1,3 +1,0 @@
-{
-  return getTranslated(point,delta.x,delta.y);
-}

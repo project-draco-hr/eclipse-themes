@@ -1,3 +1,0 @@
-{
-  return getExpanded(rectangle,delta.x,delta.y);
-}

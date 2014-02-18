@@ -1,6 +1,0 @@
-{
-  Button _button=new Button(parent,SWT.CHECK);
-  Button label=_button;
-  initializer.apply(label);
-  return label;
-}

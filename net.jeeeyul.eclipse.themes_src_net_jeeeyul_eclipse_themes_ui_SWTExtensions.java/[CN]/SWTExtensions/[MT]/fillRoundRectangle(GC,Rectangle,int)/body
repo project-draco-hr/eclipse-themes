@@ -1,4 +1,0 @@
-{
-  gc.fillRoundRectangle(rectangle.x,rectangle.y,rectangle.width,rectangle.height,radius,radius);
-  return gc;
-}

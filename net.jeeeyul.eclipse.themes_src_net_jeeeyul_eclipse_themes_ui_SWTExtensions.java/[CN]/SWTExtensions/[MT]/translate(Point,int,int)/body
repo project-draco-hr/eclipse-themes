@@ -1,5 +1,0 @@
-{
-  point.x+=dx;
-  point.y+=dy;
-  return point;
-}

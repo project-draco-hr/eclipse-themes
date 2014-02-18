@@ -1,4 +1,0 @@
-{
-  Display _default=Display.getDefault();
-  return _default;
-}

@@ -1,5 +1,0 @@
-{
-  rectangle.width=size.x;
-  rectangle.height=size.y;
-  return rectangle;
-}

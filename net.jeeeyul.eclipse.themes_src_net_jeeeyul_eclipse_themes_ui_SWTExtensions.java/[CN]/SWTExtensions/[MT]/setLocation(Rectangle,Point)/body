@@ -1,5 +1,0 @@
-{
-  rectangle.x=location.x;
-  rectangle.y=location.y;
-  return rectangle;
-}

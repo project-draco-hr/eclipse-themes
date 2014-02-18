@@ -1,3 +1,0 @@
-{
-  return size.x >= targetSize.x && size.y >= targetSize.y;
-}
