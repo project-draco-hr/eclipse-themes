@@ -1,5 +1,0 @@
-{
-  for (  GradientItem each : getItems()) {
-    each.invalidate();
-  }
-}

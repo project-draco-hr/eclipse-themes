@@ -1,7 +1,0 @@
-{
-  if (getData("notify-selection") != null) {
-    return;
-  }
-  setData("notify-selection",true);
-  getDisplay().asyncExec(notifySelection);
-}

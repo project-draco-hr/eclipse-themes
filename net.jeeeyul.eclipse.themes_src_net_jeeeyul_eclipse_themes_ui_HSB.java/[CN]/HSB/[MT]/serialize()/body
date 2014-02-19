@@ -1,3 +1,0 @@
-{
-  return String.format(Locale.ENGLISH,"%f|%f|%f",hue,saturation,brightness);
-}

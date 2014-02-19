@@ -1,7 +1,0 @@
-{
-  if (this.parent == null || this.parent.isDisposed()) {
-    return;
-  }
-  this.parent.items.remove(this);
-  this.parent.notifyModification();
-}

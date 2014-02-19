@@ -1,8 +1,0 @@
-{
-  selection=hueCanvas.getSelection();
-  colorWell.setSelection(selection);
-  fieldSet.setSelection(selection);
-  if (continuosSelectionHandler != null) {
-    continuosSelectionHandler.apply(selection);
-  }
-}

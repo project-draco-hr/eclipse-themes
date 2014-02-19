@@ -1,3 +1,0 @@
-{
-  return new ColorStop(this.color.getCopy(),this.percent);
-}

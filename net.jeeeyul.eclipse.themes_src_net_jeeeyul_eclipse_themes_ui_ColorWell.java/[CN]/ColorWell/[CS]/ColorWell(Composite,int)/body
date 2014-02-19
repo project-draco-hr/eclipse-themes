@@ -1,9 +1,0 @@
-{
-  super(parent,style | SWT.BORDER);
-  addListener(SWT.Paint,new Listener(){
-    @Override public void handleEvent(    Event event){
-      onPaint(event);
-    }
-  }
-);
-}

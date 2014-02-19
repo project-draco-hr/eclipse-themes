@@ -1,3 +1,0 @@
-{
-  this.removeColorStop.setEnabled(this.items.size() > 1 && this.selectedItem != null);
-}

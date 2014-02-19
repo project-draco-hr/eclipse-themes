@@ -1,3 +1,0 @@
-{
-  return new RGB(hue,saturation,brightness);
-}

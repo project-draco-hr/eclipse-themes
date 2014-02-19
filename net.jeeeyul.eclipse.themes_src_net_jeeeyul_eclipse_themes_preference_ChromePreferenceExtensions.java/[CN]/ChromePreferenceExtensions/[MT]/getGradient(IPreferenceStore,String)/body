@@ -1,3 +1,0 @@
-{
-  return Gradient.createFromString(store.getString(key));
-}

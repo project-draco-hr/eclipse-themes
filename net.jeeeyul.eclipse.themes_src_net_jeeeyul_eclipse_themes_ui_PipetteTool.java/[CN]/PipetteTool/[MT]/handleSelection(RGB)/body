@@ -1,4 +1,0 @@
-{
-  result=new HSB(rgb);
-  loopExpired=true;
-}

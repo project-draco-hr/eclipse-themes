@@ -1,3 +1,0 @@
-{
-  return String.format("%f|%f|%f",hue,saturation,brightness);
-}

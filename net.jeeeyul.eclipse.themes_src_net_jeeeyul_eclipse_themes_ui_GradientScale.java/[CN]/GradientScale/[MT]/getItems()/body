@@ -1,3 +1,0 @@
-{
-  return this.items.toArray(new GradientItem[this.items.size()]);
-}

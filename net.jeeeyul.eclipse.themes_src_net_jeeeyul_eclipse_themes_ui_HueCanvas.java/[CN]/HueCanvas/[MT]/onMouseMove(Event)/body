@@ -1,5 +1,0 @@
-{
-  if (state == STATE_DRAGGING) {
-    computeNewSelection(event);
-  }
-}

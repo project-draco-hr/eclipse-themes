@@ -1,3 +1,0 @@
-{
-  store.setValue(key,gradient.serialize());
-}

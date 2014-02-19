@@ -1,7 +1,0 @@
-{
-  this.hue=selection[0];
-  this.saturation=selection[1];
-  this.brightness=selection[2];
-  invalidate();
-  if (notify)   scheduleNotifySelection();
-}

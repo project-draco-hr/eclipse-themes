@@ -1,4 +1,0 @@
-{
-  KRectangle bounds=getBounds();
-  this.parent.redraw(bounds.x,bounds.y,bounds.width,bounds.height,false);
-}

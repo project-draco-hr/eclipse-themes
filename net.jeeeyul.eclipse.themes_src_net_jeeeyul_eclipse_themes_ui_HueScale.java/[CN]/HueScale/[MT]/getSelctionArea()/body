@@ -1,6 +1,0 @@
-{
-  Rectangle gradientArea=getGradientArea();
-  int selectionOffset=(int)((gradientArea.width / 360f) * selection + gradientArea.x);
-  Rectangle selectionBox=new Rectangle(selectionOffset - 5,gradientArea.y - 5,10,gradientArea.height + 10);
-  return selectionBox;
-}

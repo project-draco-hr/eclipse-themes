@@ -1,4 +1,0 @@
-{
-  int[] polygon=new int[]{bounds.getTop().x,bounds.getTop().y,bounds.x,bounds.y + this.arrowHeight,bounds.x,bounds.y + bounds.height,bounds.x + bounds.width,bounds.y + bounds.height,bounds.x + bounds.width,bounds.y + this.arrowHeight};
-  return polygon;
-}

@@ -1,5 +1,0 @@
-{
-  this.x+=dx;
-  this.y+=dy;
-  return this;
-}

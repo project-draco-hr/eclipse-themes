@@ -1,5 +1,0 @@
-{
-  setFocus();
-  computeNewSelection(event);
-  if (event.button == 1)   state=STATE_DRAGGING;
-}

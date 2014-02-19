@@ -1,8 +1,0 @@
-{
-  if (this.selectedItem == selectedItem) {
-    return;
-  }
-  this.selectedItem=selectedItem;
-  updateMenu();
-  redraw();
-}

@@ -1,8 +1,0 @@
-{
-  Rectangle clientArea=super.getClientArea();
-  clientArea.x+=padding;
-  clientArea.y+=padding;
-  clientArea.width-=padding * 2;
-  clientArea.height-=padding * 2;
-  return clientArea;
-}

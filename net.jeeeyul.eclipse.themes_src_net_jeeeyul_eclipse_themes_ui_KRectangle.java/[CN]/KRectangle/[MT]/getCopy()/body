@@ -1,3 +1,0 @@
-{
-  return new KRectangle(x,y,width,height);
-}

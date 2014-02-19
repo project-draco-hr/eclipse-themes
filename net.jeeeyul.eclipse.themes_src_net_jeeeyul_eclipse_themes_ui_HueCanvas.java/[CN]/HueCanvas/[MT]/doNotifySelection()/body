@@ -1,6 +1,0 @@
-{
-  Event e=new Event();
-  e.widget=this;
-  notifyListeners(SWT.Selection,e);
-  setData("notify-selection",null);
-}

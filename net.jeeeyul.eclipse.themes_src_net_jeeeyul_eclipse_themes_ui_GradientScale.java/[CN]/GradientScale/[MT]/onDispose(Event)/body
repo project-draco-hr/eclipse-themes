@@ -1,5 +1,0 @@
-{
-  if (this.hotItemColor != null && !this.hotItemColor.isDisposed()) {
-    this.hotItemColor.dispose();
-  }
-}

@@ -1,5 +1,0 @@
-{
-  this.color=hsb;
-  this.parent.redraw();
-  this.parent.notifyModification();
-}

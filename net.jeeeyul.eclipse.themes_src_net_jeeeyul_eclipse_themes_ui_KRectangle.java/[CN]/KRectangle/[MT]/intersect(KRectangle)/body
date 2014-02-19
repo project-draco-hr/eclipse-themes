@@ -1,3 +1,0 @@
-{
-  return intersect(rectangle.x,rectangle.y,rectangle.width,rectangle.height);
-}

@@ -1,8 +1,0 @@
-{
-  Gradient g=new Gradient();
-  g.add(new ColorStop(1f,0f,0f,0.3f));
-  g.add(new ColorStop(1f,0f,0f,0.3f));
-  g.add(new ColorStop(1f,0f,0f,0.3f));
-  System.out.println(g.serialize());
-  System.out.println(Gradient.createFromString(g.serialize()).serialize());
-}

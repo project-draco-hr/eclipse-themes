@@ -1,3 +1,0 @@
-{
-  return getUnion(other.x,other.y,other.width,other.height);
-}

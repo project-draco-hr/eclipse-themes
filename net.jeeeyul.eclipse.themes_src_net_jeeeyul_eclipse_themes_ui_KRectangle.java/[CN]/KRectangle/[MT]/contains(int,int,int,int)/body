@@ -1,3 +1,0 @@
-{
-  return this.x <= x && this.y <= y && x + width <= this.x + this.width && y + height < this.y + this.height;
-}

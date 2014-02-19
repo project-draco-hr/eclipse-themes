@@ -1,5 +1,0 @@
-{
-  if (event.keyCode == SWT.DEL && this.selectedItem != null && this.items.size() > 1) {
-    removeSelectedItem();
-  }
-}

@@ -1,7 +1,0 @@
-{
-  KRectangle gradientArea=getGradientArea();
-  KRectangle result=gradientArea.getCopy();
-  result.height=this.itemAreaHeight;
-  result.y=gradientArea.y + gradientArea.height - this.itemOverlap;
-  return result;
-}

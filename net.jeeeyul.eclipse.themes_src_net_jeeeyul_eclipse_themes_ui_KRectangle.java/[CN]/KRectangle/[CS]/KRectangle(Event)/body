@@ -1,3 +1,0 @@
-{
-  this(event.x,event.y,event.width,event.height);
-}

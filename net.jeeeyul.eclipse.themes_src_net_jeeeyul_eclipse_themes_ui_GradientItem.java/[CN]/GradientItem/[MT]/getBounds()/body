@@ -1,6 +1,0 @@
-{
-  if (this.bounds == null) {
-    this.bounds=computeBounds();
-  }
-  return this.bounds;
-}

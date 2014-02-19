@@ -1,5 +1,0 @@
-{
-  this.brightness=brightness;
-  invalidate();
-  scheduleNotifySelection();
-}

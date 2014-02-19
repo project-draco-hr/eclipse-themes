@@ -1,6 +1,0 @@
-{
-  if (hueImage != null && !hueImage.isDisposed()) {
-    hueImage.dispose();
-  }
-  hueImage=null;
-}

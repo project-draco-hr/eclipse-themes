@@ -1,5 +1,0 @@
-{
-  this.hue=hue;
-  invalidate();
-  scheduleNotifySelection();
-}

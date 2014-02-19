@@ -1,8 +1,0 @@
-{
-  if (this.hotItemColor == null) {
-    HSB hsb=new HSB(getDisplay().getSystemColor(SWT.COLOR_LIST_SELECTION).getRGB());
-    hsb.mixWith(new HSB(0f,0f,1f),0.5f);
-    this.hotItemColor=new Color(getDisplay(),hsb.toRGB());
-  }
-  return this.hotItemColor;
-}

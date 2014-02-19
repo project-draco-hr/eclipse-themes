@@ -1,3 +1,0 @@
-{
-  return new KPoint(x + width,y + height / 2);
-}

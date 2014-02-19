@@ -1,4 +1,0 @@
-{
-  super(parentShell);
-  setShellStyle(SWT.TITLE | SWT.CLOSE | SWT.APPLICATION_MODAL);
-}
