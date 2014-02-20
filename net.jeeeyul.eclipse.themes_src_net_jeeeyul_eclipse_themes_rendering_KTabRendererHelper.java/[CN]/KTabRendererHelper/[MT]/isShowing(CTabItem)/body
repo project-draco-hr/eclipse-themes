@@ -1,0 +1,3 @@
+{
+  return hack.CTabItem.showing.get(me);
+}

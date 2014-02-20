@@ -1,0 +1,12 @@
+{
+  if (field == null) {
+    try {
+      field=type.getDeclaredField(name);
+      field.setAccessible(true);
+    }
+ catch (    Exception e) {
+      throw new RuntimeException(e);
+    }
+  }
+  return field;
+}
