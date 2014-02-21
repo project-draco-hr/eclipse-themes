@@ -1,0 +1,11 @@
+{
+  if (method == null) {
+    try {
+      method=type.getDeclaredMethod(name,argumentType1);
+    }
+ catch (    Exception e) {
+      throw new RuntimeException(e);
+    }
+  }
+  return method;
+}

@@ -1,0 +1,9 @@
+{
+  try {
+    getField().set(obj,value);
+    return value;
+  }
+ catch (  Exception e) {
+    throw new RuntimeException(e);
+  }
+}

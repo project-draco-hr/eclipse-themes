@@ -1,0 +1,8 @@
+{
+  try {
+    return (R)getMethod().invoke(object,argument);
+  }
+ catch (  Exception e) {
+    throw new RuntimeException(e);
+  }
+}

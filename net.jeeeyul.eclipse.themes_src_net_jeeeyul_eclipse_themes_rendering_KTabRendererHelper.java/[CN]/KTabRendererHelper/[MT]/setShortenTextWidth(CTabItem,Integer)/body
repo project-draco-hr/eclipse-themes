@@ -1,0 +1,3 @@
+{
+  return _CTabItem.shortenedTextWidth.set(me,width);
+}

@@ -1,0 +1,12 @@
+{
+  if (method == null) {
+    try {
+      method=type.getDeclaredMethod(name);
+      method.setAccessible(true);
+    }
+ catch (    Exception e) {
+      throw new RuntimeException(e);
+    }
+  }
+  return method;
+}

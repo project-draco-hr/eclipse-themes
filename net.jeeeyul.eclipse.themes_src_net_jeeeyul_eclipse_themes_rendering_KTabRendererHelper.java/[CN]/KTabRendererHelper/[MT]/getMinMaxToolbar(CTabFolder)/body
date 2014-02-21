@@ -1,0 +1,3 @@
+{
+  return _CTabFolder.minMaxTb.get(me);
+}

@@ -2,25 +2,12 @@
   Display display=Display.getDefault();
   Shell shell=new Shell(display);
   FillLayout layout=new FillLayout();
-  layout.marginWidth=layout.marginHeight=0;
+  layout.marginWidth=layout.marginHeight=10;
+  layout.spacing=10;
   shell.setLayout(layout);
-  CTabFolder tabFolder=new CTabFolder(shell,SWT.NORMAL);
-  tabFolder.setRenderer(new KTabRenderer(tabFolder));
-  tabFolder.setMaximizeVisible(true);
-  tabFolder.setMinimizeVisible(true);
-  tabFolder.setMRUVisible(true);
-  tabFolder.setBorderVisible(true);
-  for (int i=0; i < 20; i++) {
-    CTabItem item=new CTabItem(tabFolder,SWT.CLOSE);
-    item.setText("item" + i);
-    item.setImage(SharedImages.getImage(SharedImages.PALETTE));
-    SizeBox content=new SizeBox(tabFolder,SWT.NORMAL);
-    content.setSize(200,200);
-    content.setBackground(display.getSystemColor(SWT.COLOR_CYAN));
-    item.setControl(content);
-  }
-  tabFolder.setInsertMark(tabFolder.getItem(0),true);
-  shell.setSize(400,300);
+  SWTExtensions.INSTANCE.showTestGrid(shell);
+  createExampleTab(shell,SWT.TOP);
+  createExampleTab(shell,SWT.BOTTOM);
   shell.open();
   while (!shell.isDisposed()) {
     if (!display.readAndDispatch()) {
