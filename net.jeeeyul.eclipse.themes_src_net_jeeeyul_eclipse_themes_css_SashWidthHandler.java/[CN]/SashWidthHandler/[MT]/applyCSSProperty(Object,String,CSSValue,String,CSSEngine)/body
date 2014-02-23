@@ -1,0 +1,22 @@
+{
+  if (!(element instanceof CompositeElement)) {
+    return false;
+  }
+  CompositeElement compositeElement=(CompositeElement)element;
+  Object nativeWidget=compositeElement.getNativeWidget();
+  if (!(nativeWidget instanceof Composite)) {
+    return false;
+  }
+  Composite composite=(Composite)nativeWidget;
+  Layout layout=composite.getLayout();
+  if (!(layout instanceof SashLayout)) {
+    return false;
+  }
+  if (!(value instanceof CSSPrimitiveValue)) {
+    return false;
+  }
+  int newWidth=(int)((CSSPrimitiveValue)value).getFloatValue(CSSPrimitiveValue.CSS_PX);
+  sashWidth.set(layout,newWidth);
+  composite.layout(true,true);
+  return true;
+}
