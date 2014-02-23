@@ -1,0 +1,38 @@
+{
+  CTabFolderElement tabFolderElement=(CTabFolderElement)element;
+  CTabFolder folder=(CTabFolder)tabFolderElement.getNativeWidget();
+  CTabFolderRenderer renderer=folder.getRenderer();
+  if (!(renderer instanceof KTabRenderer)) {
+    return false;
+  }
+  KTabRenderer kTabRenderer=(KTabRenderer)renderer;
+  if (property.equals("jeeeyul-tab-border-color")) {
+    Color color=(Color)engine.convert(value,Color.class,folder.getDisplay());
+    if (color == null) {
+      color=folder.getDisplay().getSystemColor(SWT.COLOR_BLACK);
+    }
+    kTabRenderer.getSettings().setBorderColor(new HSB(color.getRGB()));
+    folder.redraw();
+    return true;
+  }
+ else   if (property.equals("jeeeyul-tab-inner-border-color")) {
+    Color color=(Color)engine.convert(value,Color.class,folder.getDisplay());
+    if (color == null) {
+      color=folder.getDisplay().getSystemColor(SWT.COLOR_BLACK);
+    }
+    kTabRenderer.getSettings().setInnerBorderColor(new HSB(color.getRGB()));
+    folder.redraw();
+    return true;
+  }
+ else   if (property.equals("jeeeyul-tab-border-radius")) {
+    if (value instanceof CSSPrimitiveValue) {
+      int border=(int)((CSSPrimitiveValue)value).getFloatValue(CSSPrimitiveValue.CSS_PX);
+      kTabRenderer.getSettings().setBorderRadius(border);
+      folder.redraw();
+    }
+ else {
+      return false;
+    }
+  }
+  return false;
+}
