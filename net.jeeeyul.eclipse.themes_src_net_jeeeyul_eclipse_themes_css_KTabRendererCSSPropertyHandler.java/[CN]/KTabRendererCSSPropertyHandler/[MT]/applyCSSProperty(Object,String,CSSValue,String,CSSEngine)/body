@@ -15,12 +15,21 @@
     folder.redraw();
     return true;
   }
- else   if (property.equals("jeeeyul-tab-inner-border-color")) {
+ else   if (property.equals("jeeeyul-tab-selected-border-color")) {
     Color color=(Color)engine.convert(value,Color.class,folder.getDisplay());
     if (color == null) {
       color=folder.getDisplay().getSystemColor(SWT.COLOR_BLACK);
     }
-    kTabRenderer.getSettings().setInnerBorderColor(new HSB(color.getRGB()));
+    kTabRenderer.getSettings().setSelectedBorderColor(new HSB(color.getRGB()));
+    folder.redraw();
+    return true;
+  }
+ else   if (property.equals("jeeeyul-tab-unselected-border-color")) {
+    Color color=(Color)engine.convert(value,Color.class,folder.getDisplay());
+    if (color == null) {
+      color=folder.getDisplay().getSystemColor(SWT.COLOR_BLACK);
+    }
+    kTabRenderer.getSettings().setUnselectedBorderColor(new HSB(color.getRGB()));
     folder.redraw();
     return true;
   }
@@ -86,6 +95,24 @@
       int lineWidth=(int)((CSSPrimitiveValue)value).getFloatValue(CSSPrimitiveValue.CSS_PX);
       kTabRenderer.getSettings().setCloseButtonLineWidth(lineWidth);
       folder.redraw();
+    }
+ else {
+      return false;
+    }
+  }
+ else   if (property.equals("jeeeyul-tab-unselected-tabs-background")) {
+    if (value.getCssValueType() == CSSValue.CSS_VALUE_LIST) {
+      Gradient grad=(Gradient)engine.convert(value,Gradient.class,folder.getDisplay());
+      HSB[] hsb=new HSB[grad.getRGBs().size()];
+      for (int i=0; i < hsb.length; i++) {
+        RGB rgb=(RGB)grad.getRGBs().get(i);
+        hsb[i]=new HSB(rgb);
+      }
+      int[] percents=CSSSWTColorHelper.getPercents(grad);
+      kTabRenderer.getSettings().setUnselectedBackgroundColors(hsb);
+      kTabRenderer.getSettings().setUnselectedBackgroundPercents(percents);
+      folder.redraw();
+      return true;
     }
  else {
       return false;

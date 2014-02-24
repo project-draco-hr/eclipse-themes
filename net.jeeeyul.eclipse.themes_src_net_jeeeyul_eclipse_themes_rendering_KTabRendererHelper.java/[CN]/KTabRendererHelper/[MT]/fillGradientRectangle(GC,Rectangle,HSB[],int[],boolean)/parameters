@@ -1,0 +1,5 @@
+GC gc
+Rectangle bounds
+HSB[] hsbs
+int[] percents
+boolean vertical
