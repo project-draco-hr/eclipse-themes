@@ -1,0 +1,7 @@
+int width
+int height
+RGB background
+Rectangle rectangle
+int cornerRadius
+RGB shadowColor
+int shadowRadius

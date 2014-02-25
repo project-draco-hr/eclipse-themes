@@ -1,0 +1,5 @@
+{
+  x=Math.min(Math.max(0,x),data.width - 1);
+  y=Math.min(Math.max(0,y),data.height - 1);
+  return data.palette.getRGB(data.getPixel(x,y));
+}

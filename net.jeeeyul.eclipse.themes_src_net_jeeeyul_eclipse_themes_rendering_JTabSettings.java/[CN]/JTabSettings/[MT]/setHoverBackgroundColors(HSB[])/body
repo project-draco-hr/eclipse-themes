@@ -1,0 +1,8 @@
+{
+  if (areSame(this.hoverBackgroundColors,hoverBackgroundColors)) {
+    return;
+  }
+  HSB[] old=this.hoverBackgroundColors;
+  this.hoverBackgroundColors=hoverBackgroundColors;
+  pcs.firePropertyChange("hover-background-colors",old,hoverBackgroundColors);
+}

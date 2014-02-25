@@ -1,0 +1,8 @@
+{
+  if (areSame(this.shadowPosition,shadowPosition)) {
+    return;
+  }
+  Point old=this.shadowPosition;
+  this.shadowPosition=shadowPosition;
+  pcs.firePropertyChange("shadow-position",old,shadowPosition);
+}

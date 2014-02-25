@@ -1,0 +1,8 @@
+{
+  if (areSame(this.unselectedBackgroundColors,unselectedBackgroundColors)) {
+    return;
+  }
+  HSB[] old=this.unselectedBackgroundColors;
+  this.unselectedBackgroundColors=unselectedBackgroundColors;
+  pcs.firePropertyChange("unselected-background-colors",old,unselectedBackgroundColors);
+}

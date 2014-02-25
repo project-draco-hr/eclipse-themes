@@ -1,0 +1,8 @@
+{
+  if (areSame(this.margins,margins)) {
+    return;
+  }
+  Rectangle old=this.margins;
+  this.margins=margins;
+  pcs.firePropertyChange("margins",old,margins);
+}

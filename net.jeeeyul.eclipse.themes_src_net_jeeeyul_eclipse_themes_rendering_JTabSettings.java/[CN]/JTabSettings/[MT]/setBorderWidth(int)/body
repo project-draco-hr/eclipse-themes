@@ -1,0 +1,8 @@
+{
+  if (this.borderWidth == borderWidth) {
+    return;
+  }
+  int old=this.borderWidth;
+  this.borderWidth=borderWidth;
+  pcs.firePropertyChange("border-width",old,borderWidth);
+}

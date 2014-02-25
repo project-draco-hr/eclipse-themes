@@ -1,0 +1,8 @@
+{
+  if (this.shadowRadius == shadowRadius) {
+    return;
+  }
+  int old=this.shadowRadius;
+  this.shadowRadius=shadowRadius;
+  pcs.firePropertyChange("shadow-radius",old,shadowRadius);
+}

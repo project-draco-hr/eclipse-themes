@@ -1,0 +1,8 @@
+{
+  if (this.tabSpacing == tabSpacing) {
+    return;
+  }
+  int old=this.tabSpacing;
+  this.tabSpacing=tabSpacing;
+  pcs.firePropertyChange("tab-spacing",old,tabSpacing);
+}

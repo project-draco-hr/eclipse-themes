@@ -1,0 +1,8 @@
+{
+  if (this.tabItemHorizontalSpacing == tabItemHorizontalSpacing) {
+    return;
+  }
+  int old=this.tabItemHorizontalSpacing;
+  this.tabItemHorizontalSpacing=tabItemHorizontalSpacing;
+  pcs.firePropertyChange("tab-item-horizontal-spacing",old,tabItemHorizontalSpacing);
+}

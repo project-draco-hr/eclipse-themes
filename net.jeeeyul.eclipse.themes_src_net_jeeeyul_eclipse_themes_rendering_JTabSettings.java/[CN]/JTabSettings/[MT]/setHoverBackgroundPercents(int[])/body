@@ -1,0 +1,8 @@
+{
+  if (areSame(this.hoverBackgroundPercents,hoverBackgroundPercents)) {
+    return;
+  }
+  int[] old=this.hoverBackgroundPercents;
+  this.hoverBackgroundPercents=hoverBackgroundPercents;
+  pcs.firePropertyChange("hover-background-percents",old,hoverBackgroundPercents);
+}

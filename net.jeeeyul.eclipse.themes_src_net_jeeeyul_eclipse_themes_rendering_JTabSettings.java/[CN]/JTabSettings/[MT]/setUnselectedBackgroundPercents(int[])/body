@@ -1,0 +1,8 @@
+{
+  if (areSame(this.unselectedBackgroundPercents,unselectedBackgroundPercents)) {
+    return;
+  }
+  int[] old=this.unselectedBackgroundPercents;
+  this.unselectedBackgroundPercents=unselectedBackgroundPercents;
+  this.pcs.firePropertyChange("unselected-background-percents",old,unselectedBackgroundPercents);
+}

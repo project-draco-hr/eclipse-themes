@@ -1,0 +1,8 @@
+{
+  if (areSame(this.closeButtonHotColor,closeButtonHotColor)) {
+    return;
+  }
+  HSB old=this.closeButtonHotColor;
+  this.closeButtonHotColor=closeButtonHotColor;
+  pcs.firePropertyChange("close-button-hot-color",old,closeButtonHotColor);
+}

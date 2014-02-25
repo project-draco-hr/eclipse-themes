@@ -1,0 +1,10 @@
+{
+  Iterator<T> iter=items.iterator();
+  while (iter.hasNext()) {
+    T next=iter.next();
+    if (next != null) {
+      return next;
+    }
+  }
+  return null;
+}

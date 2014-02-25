@@ -1,0 +1,4 @@
+ImageData data
+int x
+int y
+RGB rgb

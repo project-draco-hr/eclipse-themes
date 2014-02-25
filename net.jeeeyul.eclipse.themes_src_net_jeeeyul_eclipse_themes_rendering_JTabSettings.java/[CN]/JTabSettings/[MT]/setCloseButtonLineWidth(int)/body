@@ -1,0 +1,8 @@
+{
+  if (this.closeButtonLineWidth == closeButtonLineWidth) {
+    return;
+  }
+  int old=this.closeButtonLineWidth;
+  this.closeButtonLineWidth=closeButtonLineWidth;
+  pcs.firePropertyChange("close-button-line-width",old,closeButtonLineWidth);
+}

@@ -1,0 +1,8 @@
+{
+  if (areSame(this.shadowColor,shadowColor)) {
+    return;
+  }
+  HSB old=this.shadowColor;
+  this.shadowColor=shadowColor;
+  pcs.firePropertyChange("shadow-color",old,shadowColor);
+}

@@ -1,0 +1,8 @@
+{
+  if (areSame(this.hoverForgroundColor,hoverForgroundColor)) {
+    return;
+  }
+  HSB old=this.hoverForgroundColor;
+  this.hoverForgroundColor=hoverForgroundColor;
+  pcs.firePropertyChange("hover-forground-color",old,hoverForgroundColor);
+}

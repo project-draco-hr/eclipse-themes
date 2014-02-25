@@ -1,0 +1,8 @@
+{
+  if (this.borderRadius == borderRadius) {
+    return;
+  }
+  int old=this.borderRadius;
+  this.borderRadius=borderRadius;
+  pcs.firePropertyChange("border-radius",old,borderRadius);
+}

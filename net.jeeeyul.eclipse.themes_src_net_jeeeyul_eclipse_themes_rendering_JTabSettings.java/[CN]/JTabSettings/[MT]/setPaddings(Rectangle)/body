@@ -1,0 +1,8 @@
+{
+  if (areSame(this.paddings,paddings)) {
+    return;
+  }
+  Rectangle old=this.paddings;
+  this.paddings=paddings;
+  pcs.firePropertyChange("paddings",old,paddings);
+}
