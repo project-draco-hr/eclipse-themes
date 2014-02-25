@@ -1,0 +1,8 @@
+{
+  if (areSame(this.tabItemPaddings,tabItemPaddings)) {
+    return;
+  }
+  Rectangle old=this.tabItemPaddings;
+  this.tabItemPaddings=tabItemPaddings;
+  pcs.firePropertyChange("tab-item-paddings",old,tabItemPaddings);
+}
