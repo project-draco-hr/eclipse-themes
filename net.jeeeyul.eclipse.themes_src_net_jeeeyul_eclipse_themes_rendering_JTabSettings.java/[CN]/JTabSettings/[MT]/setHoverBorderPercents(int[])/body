@@ -1,0 +1,8 @@
+{
+  if (areSame(this.hoverBorderPercents,hoverBorderPercents)) {
+    return;
+  }
+  int[] old=this.hoverBorderPercents;
+  this.hoverBorderPercents=hoverBorderPercents;
+  pcs.firePropertyChange("hover-border-percents",old,hoverBorderPercents);
+}

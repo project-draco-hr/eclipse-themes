@@ -1,8 +1,0 @@
-{
-  if (areSame(this.selectedBorderColor,selectedBorderColor)) {
-    return;
-  }
-  HSB old=this.selectedBorderColor;
-  this.selectedBorderColor=selectedBorderColor;
-  pcs.firePropertyChange("selected-border-color",old,selectedBorderColor);
-}

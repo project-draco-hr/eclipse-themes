@@ -1,0 +1,8 @@
+{
+  if (areSame(this.unselectedTextShadowPosition,unselectedTextShadowPosition)) {
+    return;
+  }
+  Point old=this.unselectedTextShadowPosition;
+  this.unselectedTextShadowPosition=unselectedTextShadowPosition;
+  pcs.firePropertyChange("unselected-text-shadow-position",old,unselectedTextShadowPosition);
+}

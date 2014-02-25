@@ -1,0 +1,8 @@
+{
+  if (areSame(this.hoverBorderColors,hoverBorderColors)) {
+    return;
+  }
+  HSB[] old=hoverBorderColors;
+  this.hoverBorderColors=hoverBorderColors;
+  pcs.firePropertyChange("hover-border-colors",old,hoverBorderColors);
+}

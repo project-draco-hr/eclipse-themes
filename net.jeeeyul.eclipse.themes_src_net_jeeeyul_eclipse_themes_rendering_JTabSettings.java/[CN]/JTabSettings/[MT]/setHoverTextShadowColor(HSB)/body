@@ -1,0 +1,8 @@
+{
+  if (areSame(this.hoverTextShadowColor,hoverTextShadowColor)) {
+    return;
+  }
+  HSB old=this.hoverTextShadowColor;
+  this.hoverTextShadowColor=hoverTextShadowColor;
+  pcs.firePropertyChange("hover-text-shadow-color",old,hoverTextShadowColor);
+}

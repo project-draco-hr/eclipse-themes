@@ -1,0 +1,8 @@
+{
+  if (areSame(this.borderPercents,borderPercents)) {
+    return;
+  }
+  int[] old=this.borderPercents;
+  this.borderPercents=borderPercents;
+  pcs.firePropertyChange("border-percents",old,borderPercents);
+}

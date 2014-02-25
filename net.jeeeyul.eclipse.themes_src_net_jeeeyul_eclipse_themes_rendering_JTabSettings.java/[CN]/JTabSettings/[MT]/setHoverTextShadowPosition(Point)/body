@@ -1,0 +1,8 @@
+{
+  if (areSame(this.hoverTextShadowPosition,hoverTextShadowPosition)) {
+    return;
+  }
+  Point old=this.hoverTextShadowPosition;
+  this.hoverTextShadowPosition=hoverTextShadowPosition;
+  pcs.firePropertyChange("hover-text-shadow-position",old,hoverTextShadowPosition);
+}

@@ -1,0 +1,8 @@
+{
+  if (areSame(this.selectedTextShadowColor,selectedTextShadowColor)) {
+    return;
+  }
+  HSB old=selectedTextShadowColor;
+  this.selectedTextShadowColor=selectedTextShadowColor;
+  pcs.firePropertyChange("selected-text-shadow-color",old,selectedTextShadowColor);
+}

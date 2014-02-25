@@ -1,0 +1,11 @@
+{
+  if ((state & SWT.SELECTED) != 0) {
+    return me.getSelectedTextShadowPosition();
+  }
+ else   if ((state & SWT.HOT) != 0) {
+    return me.getHoverTextShadowPosition();
+  }
+ else {
+    return me.getUnselectedTextShadowPosition();
+  }
+}

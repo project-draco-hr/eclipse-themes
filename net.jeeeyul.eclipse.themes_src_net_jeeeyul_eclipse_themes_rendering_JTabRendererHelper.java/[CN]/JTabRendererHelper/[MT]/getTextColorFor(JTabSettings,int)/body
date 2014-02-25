@@ -1,0 +1,17 @@
+{
+  if ((state & SWT.SELECTED) != 0) {
+    return new HSB(me.getRenderer().getTabFolder().getSelectionForeground().getRGB());
+  }
+ else   if ((state & SWT.HOT) != 0) {
+    HSB hoverForgroundColor=me.getHoverForgroundColor();
+    if (hoverForgroundColor == null) {
+      return getTextColorFor(me,SWT.NONE);
+    }
+ else {
+      return hoverForgroundColor;
+    }
+  }
+ else {
+    return new HSB(me.getRenderer().getTabFolder().getForeground().getRGB());
+  }
+}

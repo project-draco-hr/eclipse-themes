@@ -1,0 +1,11 @@
+{
+  if ((state & SWT.SELECTED) != 0) {
+    return me.getSelectedBorderPercents();
+  }
+ else   if ((state & SWT.HOT) != 0) {
+    return me.getHoverBorderPercents();
+  }
+ else {
+    return me.getUnselectedBorderPercents();
+  }
+}

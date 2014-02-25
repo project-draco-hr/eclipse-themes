@@ -1,0 +1,8 @@
+{
+  if (areSame(this.unselectedBorderPercents,unselectedBorderPercents)) {
+    return;
+  }
+  int[] old=this.unselectedBorderPercents;
+  this.unselectedBorderPercents=unselectedBorderPercents;
+  pcs.firePropertyChange("unselected-border-percents",old,unselectedBorderPercents);
+}
