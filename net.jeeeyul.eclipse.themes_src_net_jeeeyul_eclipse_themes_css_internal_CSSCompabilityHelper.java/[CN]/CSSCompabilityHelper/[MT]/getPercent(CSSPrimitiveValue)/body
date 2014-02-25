@@ -1,0 +1,8 @@
+{
+  int percent=0;
+switch (value.getPrimitiveType()) {
+case CSSPrimitiveValue.CSS_PERCENTAGE:
+    percent=(int)value.getFloatValue(CSSPrimitiveValue.CSS_PERCENTAGE);
+}
+return new Integer(percent);
+}

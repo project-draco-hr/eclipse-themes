@@ -1,0 +1,39 @@
+{
+  Gradient gradient=new Gradient();
+  for (int i=0; i < list.getLength(); i++) {
+    CSSValue value=list.item(i);
+    if (value.getCssValueType() == CSSValue.CSS_PRIMITIVE_VALUE) {
+      short primType=((CSSPrimitiveValue)value).getPrimitiveType();
+      if (primType == CSSPrimitiveValue.CSS_IDENT) {
+        if (value.getCssText().equals("gradient")) {
+          continue;
+        }
+ else         if (value.getCssText().equals("linear")) {
+          gradient.setLinear(true);
+          continue;
+        }
+ else         if (value.getCssText().equals("radial")) {
+          gradient.setLinear(false);
+          continue;
+        }
+      }
+switch (primType) {
+case CSSPrimitiveValue.CSS_IDENT:
+case CSSPrimitiveValue.CSS_STRING:
+case CSSPrimitiveValue.CSS_RGBCOLOR:
+        RGB rgb=CSSSWTColorHelper.getRGB(value);
+      if (rgb != null) {
+        gradient.addRGB(rgb,(CSSPrimitiveValue)value);
+      }
+ else {
+        gradient.setVertical(!value.getCssText().equals("false"));
+      }
+    break;
+case CSSPrimitiveValue.CSS_PERCENTAGE:
+  gradient.addPercent(getPercent((CSSPrimitiveValue)value));
+break;
+}
+}
+}
+return gradient;
+}
