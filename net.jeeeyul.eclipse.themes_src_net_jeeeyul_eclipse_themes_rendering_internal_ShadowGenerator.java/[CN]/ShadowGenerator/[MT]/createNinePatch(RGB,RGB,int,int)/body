@@ -1,4 +1,6 @@
 {
+  radius=Math.max(radius,2);
+  shadowRadius=Math.max(shadowRadius,2);
   Rectangle shadow=new Rectangle(0,0,radius * 3 + shadowRadius * 2,radius * 3 + shadowRadius * 2);
   Rectangle shadowShape=SWTExtensions.INSTANCE.getShrinked(shadow,shadowRadius);
   ImageData shadowData=generate(shadow.width,shadow.height,background,shadowShape,radius,foreground,shadowRadius);

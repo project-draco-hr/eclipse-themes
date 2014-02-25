@@ -3,37 +3,46 @@
   Rectangle topRight=new Rectangle(x + w - radius,y,radius,radius);
   Rectangle bottomLeft=new Rectangle(x,y + h - radius,radius,radius);
   Rectangle bottomRight=new Rectangle(x + w - radius,y + h - radius,radius,radius);
-  for (int cx=x; cx < x + w; cx++) {
-    for (int cy=y; cy < y + h; cy++) {
-      if (SWTExtensions.INSTANCE.contains(topLeft,cx,cy)) {
-        int ox=topLeft.x + topLeft.width;
-        int oy=topLeft.y + topLeft.height;
-        if (getDistance(cx,cy,ox,oy) <= radius) {
-          setRGB(data,cx,cy,color);
+  if (radius > 0) {
+    for (int cx=x; cx < x + w; cx++) {
+      for (int cy=y; cy < y + h; cy++) {
+        if (SWTExtensions.INSTANCE.contains(topLeft,cx,cy)) {
+          int ox=topLeft.x + topLeft.width;
+          int oy=topLeft.y + topLeft.height;
+          if (getDistance(cx,cy,ox,oy) <= radius) {
+            setRGB(data,cx,cy,color);
+          }
         }
-      }
- else       if (SWTExtensions.INSTANCE.contains(topRight,cx,cy)) {
-        int ox=topRight.x;
-        int oy=topRight.y + topRight.height;
-        if (getDistance(cx,cy,ox,oy) <= radius) {
-          setRGB(data,cx,cy,color);
+ else         if (SWTExtensions.INSTANCE.contains(topRight,cx,cy)) {
+          int ox=topRight.x;
+          int oy=topRight.y + topRight.height;
+          if (getDistance(cx,cy,ox,oy) <= radius) {
+            setRGB(data,cx,cy,color);
+          }
         }
-      }
- else       if (SWTExtensions.INSTANCE.contains(bottomLeft,cx,cy)) {
-        int ox=bottomLeft.x + bottomLeft.width;
-        int oy=bottomLeft.y;
-        if (getDistance(cx,cy,ox,oy) <= radius) {
-          setRGB(data,cx,cy,color);
+ else         if (SWTExtensions.INSTANCE.contains(bottomLeft,cx,cy)) {
+          int ox=bottomLeft.x + bottomLeft.width;
+          int oy=bottomLeft.y;
+          if (getDistance(cx,cy,ox,oy) <= radius) {
+            setRGB(data,cx,cy,color);
+          }
         }
-      }
- else       if (SWTExtensions.INSTANCE.contains(bottomRight,cx,cy)) {
-        int ox=bottomRight.x;
-        int oy=bottomRight.y;
-        if (getDistance(cx,cy,ox,oy) <= radius) {
-          setRGB(data,cx,cy,color);
+ else         if (SWTExtensions.INSTANCE.contains(bottomRight,cx,cy)) {
+          int ox=bottomRight.x;
+          int oy=bottomRight.y;
+          if (getDistance(cx,cy,ox,oy) <= radius) {
+            setRGB(data,cx,cy,color);
+          }
         }
-      }
  else {
+          setRGB(data,cx,cy,color);
+        }
+      }
+    }
+  }
+ else {
+    for (int cx=x; cx < x + w; cx++) {
+      for (int cy=y; cy < y + h; cy++) {
         setRGB(data,cx,cy,color);
       }
     }

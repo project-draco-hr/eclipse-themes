@@ -1,0 +1,18 @@
+{
+  Display display=Display.getDefault();
+  final NinePatch patch=createNinePatch(new RGB(255,255,255),new RGB(255,0,0),0,0);
+  Shell shell=new Shell(display);
+  shell.addListener(SWT.Paint,new Listener(){
+    @Override public void handleEvent(    Event event){
+      event.gc.drawImage(patch.getImage(),0,0);
+      patch.fill(event.gc,new Rectangle(100,100,100,100));
+    }
+  }
+);
+  shell.open();
+  while (!shell.isDisposed()) {
+    if (!display.readAndDispatch()) {
+      display.sleep();
+    }
+  }
+}
