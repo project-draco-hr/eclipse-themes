@@ -1,8 +1,0 @@
-{
-  if (areSame(this.backgroundColor,backgroundColor)) {
-    return;
-  }
-  HSB old=this.backgroundColor;
-  this.backgroundColor=backgroundColor;
-  pcs.firePropertyChange("background-color",old,backgroundColor);
-}

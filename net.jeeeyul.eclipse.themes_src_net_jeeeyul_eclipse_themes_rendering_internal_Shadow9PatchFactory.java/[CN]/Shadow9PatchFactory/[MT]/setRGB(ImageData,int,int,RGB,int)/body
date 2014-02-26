@@ -1,0 +1,4 @@
+{
+  data.setPixel(x,y,data.palette.getPixel(rgb));
+  data.setAlpha(x,y,alpha);
+}

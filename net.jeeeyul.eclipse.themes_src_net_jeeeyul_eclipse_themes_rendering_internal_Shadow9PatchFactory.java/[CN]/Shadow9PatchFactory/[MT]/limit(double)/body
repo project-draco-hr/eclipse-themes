@@ -1,0 +1,3 @@
+{
+  return (int)Math.min(Math.max(v,0),255);
+}

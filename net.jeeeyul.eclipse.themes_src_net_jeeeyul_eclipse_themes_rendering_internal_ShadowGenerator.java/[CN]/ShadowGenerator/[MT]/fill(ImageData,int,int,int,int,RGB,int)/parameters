@@ -1,7 +1,0 @@
-ImageData data
-int x
-int y
-int w
-int h
-RGB color
-int radius

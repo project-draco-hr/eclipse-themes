@@ -1,0 +1,10 @@
+{
+  radius=Math.max(radius,5);
+  shadowRadius=Math.max(shadowRadius,1);
+  Rectangle shadow=new Rectangle(0,0,radius * 3 + shadowRadius * 2,radius * 3 + shadowRadius * 2);
+  Rectangle shadowShape=SWTExtensions.INSTANCE.getShrinked(shadow,shadowRadius);
+  ImageData shadowData=generateShadowImageData(shadow.width,shadow.height,shadowShape,radius,foreground,shadowRadius);
+  Image image=new Image(Display.getDefault(),shadowData);
+  NinePatch patch=new NinePatch(image,SWTExtensions.INSTANCE.getShrinked(shadowShape,radius));
+  return patch;
+}

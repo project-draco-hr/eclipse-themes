@@ -1,3 +1,0 @@
-{
-  data.setPixel(x,y,data.palette.getPixel(rgb));
-}

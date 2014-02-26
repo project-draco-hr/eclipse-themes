@@ -1,9 +1,0 @@
-{
-  ImageData result=new ImageData(width,height,24,new PaletteData(0xff0000,0xff00,0xff));
-  fill(result,0,0,width,height,background);
-  fill(result,rectangle.x,rectangle.y,rectangle.width,rectangle.height,shadowColor,cornerRadius);
-  for (int i=0; i < shadowRadius; i++) {
-    result=blur(result);
-  }
-  return result;
-}

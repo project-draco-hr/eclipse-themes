@@ -1,0 +1,18 @@
+{
+  ImageData dest=new ImageData(src.width,src.height,src.depth,src.palette);
+  for (int x=0; x < src.width; x++) {
+    for (int y=0; y < src.height; y++) {
+      dest.setPixel(x,y,src.getPixel(x,y));
+      double a=0;
+      for (int dx=-1; dx <= 1; dx++) {
+        for (int dy=-1; dy <= 1; dy++) {
+          int rx=x + dx;
+          int ry=y + dy;
+          a=a + getAlpha(src,rx,ry);
+        }
+      }
+      dest.setAlpha(x,y,limit(a / 9d));
+    }
+  }
+  return dest;
+}

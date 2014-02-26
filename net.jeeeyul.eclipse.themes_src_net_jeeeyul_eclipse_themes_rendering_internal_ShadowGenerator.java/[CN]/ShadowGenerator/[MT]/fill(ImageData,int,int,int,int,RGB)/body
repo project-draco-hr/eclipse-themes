@@ -1,7 +1,0 @@
-{
-  for (int cx=x; cx < x + w; cx++) {
-    for (int cy=y; cy < y + h; cy++) {
-      setRGB(data,cx,cy,color);
-    }
-  }
-}
