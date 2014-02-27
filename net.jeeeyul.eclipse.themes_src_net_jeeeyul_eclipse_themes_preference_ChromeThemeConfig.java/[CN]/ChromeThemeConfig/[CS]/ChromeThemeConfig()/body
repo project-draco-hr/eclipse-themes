@@ -1,3 +1,0 @@
-{
-  this(ChromeThemeCore.getDefault().getPreferenceStore());
-}

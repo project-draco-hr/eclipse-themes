@@ -1,0 +1,7 @@
+{
+  String exp=originalStore.getDefaultString(name);
+  if (exp == null) {
+    return null;
+  }
+  return serializeUtil.deserializeGradient(exp);
+}

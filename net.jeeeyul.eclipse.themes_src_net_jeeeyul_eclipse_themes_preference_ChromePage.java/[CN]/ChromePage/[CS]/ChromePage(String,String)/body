@@ -1,5 +1,0 @@
-{
-  super();
-  this.title=title;
-  if (imageURI != null)   this.pageImage=SharedImages.getImage(imageURI);
-}

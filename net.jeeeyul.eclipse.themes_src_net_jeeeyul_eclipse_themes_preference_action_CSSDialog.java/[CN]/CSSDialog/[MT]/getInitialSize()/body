@@ -1,3 +1,0 @@
-{
-  return new Point(500,600);
-}

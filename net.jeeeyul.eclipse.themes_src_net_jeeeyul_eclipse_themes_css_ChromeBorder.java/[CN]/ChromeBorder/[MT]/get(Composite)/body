@@ -1,7 +1,0 @@
-{
-  ChromeBorder border=(ChromeBorder)control.getData(ChromeBorder.class.getName());
-  if (border == null) {
-    border=new ChromeBorder(control);
-  }
-  return border;
-}

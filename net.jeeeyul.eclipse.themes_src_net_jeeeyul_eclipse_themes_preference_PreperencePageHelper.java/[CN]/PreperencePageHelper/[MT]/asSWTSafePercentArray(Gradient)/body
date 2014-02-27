@@ -1,0 +1,16 @@
+{
+  ArrayList<Integer> result=new ArrayList<Integer>();
+  ColorStop first=gradient.get(0);
+  if (first.percent != 0) {
+    result.add(first.percent);
+  }
+  for (int i=1; i < gradient.size(); i++) {
+    ColorStop each=gradient.get(i);
+    result.add(each.percent);
+  }
+  ColorStop last=gradient.get(gradient.size() - 1);
+  if (last.percent != 100) {
+    result.add(100);
+  }
+  return result;
+}

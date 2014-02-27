@@ -1,3 +1,0 @@
-{
-  return name.startsWith(GET) && method.getReturnType() == RGB.class && Modifier.isStatic(method.getModifiers()) == false && method.getParameterTypes().length == 0;
-}

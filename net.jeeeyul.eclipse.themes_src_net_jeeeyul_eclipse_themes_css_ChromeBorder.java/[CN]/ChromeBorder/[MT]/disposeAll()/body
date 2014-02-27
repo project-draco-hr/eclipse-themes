@@ -1,6 +1,0 @@
-{
-  ChromeBorder[] array=INSTANCES.toArray(new ChromeBorder[INSTANCES.size()]);
-  for (  ChromeBorder each : array) {
-    each.dispose();
-  }
-}

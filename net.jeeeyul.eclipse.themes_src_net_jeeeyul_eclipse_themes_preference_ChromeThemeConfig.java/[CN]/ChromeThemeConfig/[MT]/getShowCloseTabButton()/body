@@ -1,6 +1,0 @@
-{
-  if (showCloseTabButton == null) {
-    showCloseTabButton=getStore().getBoolean(ChromeConstants.CHROME_PART_SHOW_CLOSE_TAB_BUTTON);
-  }
-  return showCloseTabButton;
-}

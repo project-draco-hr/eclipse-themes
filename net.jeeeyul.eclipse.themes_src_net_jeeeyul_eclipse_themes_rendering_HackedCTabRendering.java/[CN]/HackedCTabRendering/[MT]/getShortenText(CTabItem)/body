@@ -1,9 +1,0 @@
-{
-  try {
-    return (String)HACK_CTabItem_shortenText.get(item);
-  }
- catch (  Exception e) {
-    e.printStackTrace();
-    return null;
-  }
-}

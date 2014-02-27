@@ -1,4 +1,0 @@
-{
-  super(prefererncePage);
-  setText(Messages.SHOW_CSS);
-}

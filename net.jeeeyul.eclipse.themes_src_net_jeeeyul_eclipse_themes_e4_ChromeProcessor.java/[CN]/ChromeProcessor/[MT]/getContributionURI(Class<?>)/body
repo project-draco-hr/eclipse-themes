@@ -1,3 +1,0 @@
-{
-  return MessageFormat.format("bundleclass://{0}/{1}",ChromeThemeCore.getDefault().getBundle().getSymbolicName(),addonClass.getCanonicalName());
-}

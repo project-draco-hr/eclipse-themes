@@ -1,5 +1,0 @@
-{
-  super(prefererncePage);
-  setText(Messages.ADD_USER_PRESET);
-  setImageDescriptor(SharedImages.getImageDescriptor(SharedImages.ADD));
-}

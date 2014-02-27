@@ -1,4 +1,0 @@
-{
-  int b=(ratio * v1 + (100 - ratio) * v2) / 100;
-  return Math.min(255,b);
-}

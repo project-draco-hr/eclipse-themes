@@ -1,7 +1,0 @@
-{
-  if (parent.isDisposed() || gc.isDisposed()) {
-    return;
-  }
-  updateEmptyClassIfNeeded();
-  super.draw(part,state,bounds,gc);
-}

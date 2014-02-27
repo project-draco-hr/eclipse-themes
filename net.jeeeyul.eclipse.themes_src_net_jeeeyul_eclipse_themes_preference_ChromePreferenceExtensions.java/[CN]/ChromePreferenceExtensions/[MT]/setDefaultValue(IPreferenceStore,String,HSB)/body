@@ -1,3 +1,0 @@
-{
-  store.setDefault(key,value.serialize());
-}

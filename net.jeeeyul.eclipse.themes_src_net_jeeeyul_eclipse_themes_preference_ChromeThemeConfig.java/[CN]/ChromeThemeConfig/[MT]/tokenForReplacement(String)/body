@@ -1,3 +1,0 @@
-{
-  return TOKEN_PREFIX + name.replace(GET,EMPTY_REPLACEMENT) + TOKEN_SUFFIX;
-}

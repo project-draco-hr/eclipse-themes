@@ -1,7 +1,0 @@
-{
-  if (!parent.isDisposed()) {
-    parent.removeListener(SWT.Dispose,controlHook);
-    parent.setData(ChromePadder.class.getName(),null);
-  }
-  INSTANCES.remove(this);
-}

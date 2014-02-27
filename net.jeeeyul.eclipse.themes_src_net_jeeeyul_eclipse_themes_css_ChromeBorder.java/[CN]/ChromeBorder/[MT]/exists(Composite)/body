@@ -1,4 +1,0 @@
-{
-  ChromeBorder border=(ChromeBorder)comp.getData(ChromeBorder.class.getName());
-  return border != null;
-}

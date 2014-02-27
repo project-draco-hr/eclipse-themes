@@ -1,6 +1,0 @@
-{
-  if (useStatusBarOutline == null) {
-    useStatusBarOutline=getStore().getBoolean(ChromeConstants.CHROME_USE_STATUS_BAR_OUTLINE);
-  }
-  return useStatusBarOutline;
-}

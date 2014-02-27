@@ -1,4 +1,0 @@
-{
-  this.topColor=top;
-  parent.redraw();
-}

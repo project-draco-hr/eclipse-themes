@@ -1,6 +1,0 @@
-{
-  int r=blend(c1.red,c2.red,ratio);
-  int g=blend(c1.green,c2.green,ratio);
-  int b=blend(c1.blue,c2.blue,ratio);
-  return new RGB(r,g,b);
-}

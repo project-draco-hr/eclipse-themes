@@ -1,6 +1,0 @@
-{
-  ChromePadder[] array=INSTANCES.toArray(new ChromePadder[INSTANCES.size()]);
-  for (  ChromePadder each : array) {
-    each.dispose();
-  }
-}

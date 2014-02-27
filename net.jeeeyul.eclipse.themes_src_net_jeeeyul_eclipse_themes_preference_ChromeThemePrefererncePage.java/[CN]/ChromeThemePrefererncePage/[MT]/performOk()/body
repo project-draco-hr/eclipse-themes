@@ -1,6 +1,0 @@
-{
-  for (  ChromePage page : pages) {
-    page.save(getPreferenceStore());
-  }
-  return true;
-}

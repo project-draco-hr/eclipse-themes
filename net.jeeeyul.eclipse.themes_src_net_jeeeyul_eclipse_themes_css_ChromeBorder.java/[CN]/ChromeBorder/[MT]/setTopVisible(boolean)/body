@@ -1,4 +1,0 @@
-{
-  this.topVisible=topVisible;
-  parent.redraw();
-}

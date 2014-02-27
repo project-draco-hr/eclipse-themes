@@ -1,6 +1,0 @@
-float[] kernel
-int[] inPixels
-int[] outPixels
-int width
-int height
-boolean alpha

@@ -1,4 +1,0 @@
-{
-  this.leftColor=left;
-  parent.redraw();
-}

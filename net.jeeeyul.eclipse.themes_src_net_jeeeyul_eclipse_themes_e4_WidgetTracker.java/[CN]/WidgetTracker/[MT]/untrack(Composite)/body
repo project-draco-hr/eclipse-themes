@@ -1,5 +1,0 @@
-{
-  lock.acquire();
-  sashContainers.remove(composite);
-  lock.release();
-}

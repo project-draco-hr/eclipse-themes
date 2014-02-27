@@ -1,3 +1,0 @@
-{
-  return HSB.deserialize(store.getString(key));
-}

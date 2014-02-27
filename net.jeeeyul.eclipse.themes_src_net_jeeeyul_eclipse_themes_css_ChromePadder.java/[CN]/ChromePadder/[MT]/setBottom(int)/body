@@ -1,7 +1,0 @@
-{
-  if (this.bottom == bottom) {
-    return;
-  }
-  this.bottom=bottom;
-  update();
-}

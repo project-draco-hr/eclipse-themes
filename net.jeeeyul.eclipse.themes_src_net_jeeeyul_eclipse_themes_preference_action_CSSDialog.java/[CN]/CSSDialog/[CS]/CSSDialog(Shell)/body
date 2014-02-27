@@ -1,4 +1,0 @@
-{
-  super(parentShell);
-  setShellStyle(SWT.SHELL_TRIM);
-}

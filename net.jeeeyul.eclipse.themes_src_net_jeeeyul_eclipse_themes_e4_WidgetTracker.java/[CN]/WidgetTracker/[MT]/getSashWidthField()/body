@@ -1,7 +1,0 @@
-{
-  if (sashWidthField == null) {
-    sashWidthField=SashLayout.class.getDeclaredField("sashWidth");
-    sashWidthField.setAccessible(true);
-  }
-  return sashWidthField;
-}

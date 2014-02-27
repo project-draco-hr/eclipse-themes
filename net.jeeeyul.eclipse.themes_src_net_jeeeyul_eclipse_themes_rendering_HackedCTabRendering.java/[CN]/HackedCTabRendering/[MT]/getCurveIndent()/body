@@ -1,9 +1,0 @@
-{
-  try {
-    return (Integer)HACK_CTabFolder_curveIndent.get(this);
-  }
- catch (  Exception e) {
-    e.printStackTrace();
-    return null;
-  }
-}

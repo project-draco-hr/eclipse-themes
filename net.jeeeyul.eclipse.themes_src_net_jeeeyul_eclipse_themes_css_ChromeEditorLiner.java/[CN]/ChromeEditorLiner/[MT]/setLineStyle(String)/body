@@ -1,3 +1,0 @@
-{
-  setLineStyle(LineStyle.getByLiteral(lineStyleString));
-}

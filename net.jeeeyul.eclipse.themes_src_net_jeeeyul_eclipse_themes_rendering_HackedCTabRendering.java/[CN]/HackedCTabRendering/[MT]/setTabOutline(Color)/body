@@ -1,4 +1,0 @@
-{
-  this.tabOutlineColor=color;
-  parent.redraw();
-}

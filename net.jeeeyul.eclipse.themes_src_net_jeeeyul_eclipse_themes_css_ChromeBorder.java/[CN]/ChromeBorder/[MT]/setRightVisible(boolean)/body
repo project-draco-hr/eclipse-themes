@@ -1,4 +1,0 @@
-{
-  this.rightVisible=rightVisible;
-  parent.redraw();
-}

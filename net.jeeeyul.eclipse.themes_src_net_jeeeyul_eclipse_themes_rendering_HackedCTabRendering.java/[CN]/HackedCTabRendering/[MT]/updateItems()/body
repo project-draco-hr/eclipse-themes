@@ -1,8 +1,0 @@
-{
-  try {
-    HACK_CTabFolder_updateItems.invoke(parent);
-  }
- catch (  Exception e) {
-    e.printStackTrace();
-  }
-}

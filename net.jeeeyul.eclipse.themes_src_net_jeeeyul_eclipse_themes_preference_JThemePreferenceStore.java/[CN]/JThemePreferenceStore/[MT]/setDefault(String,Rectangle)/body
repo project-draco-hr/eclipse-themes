@@ -1,0 +1,3 @@
+{
+  originalStore.setDefault(name,serializeUtil.serialize(rect));
+}

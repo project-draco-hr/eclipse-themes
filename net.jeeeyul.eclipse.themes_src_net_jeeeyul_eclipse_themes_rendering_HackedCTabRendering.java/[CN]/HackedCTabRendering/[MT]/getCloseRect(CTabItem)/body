@@ -1,9 +1,0 @@
-{
-  try {
-    return (Rectangle)HACK_CTabItem_closeRect.get(item);
-  }
- catch (  Exception e) {
-    e.printStackTrace();
-    return null;
-  }
-}

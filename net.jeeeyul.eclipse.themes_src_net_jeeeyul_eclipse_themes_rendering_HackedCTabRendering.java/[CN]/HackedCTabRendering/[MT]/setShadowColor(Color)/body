@@ -1,5 +1,0 @@
-{
-  this.shadowColor=color;
-  createShadow(parent.getDisplay(),true);
-  parent.redraw();
-}

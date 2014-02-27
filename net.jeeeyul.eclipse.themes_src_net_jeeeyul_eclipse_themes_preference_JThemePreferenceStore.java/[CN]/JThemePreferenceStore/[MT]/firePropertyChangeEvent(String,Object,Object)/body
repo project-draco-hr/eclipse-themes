@@ -1,0 +1,3 @@
+{
+  originalStore.firePropertyChangeEvent(name,oldValue,newValue);
+}

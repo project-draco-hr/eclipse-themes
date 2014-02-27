@@ -1,7 +1,0 @@
-{
-  if (this.left == left) {
-    return;
-  }
-  this.left=left;
-  update();
-}

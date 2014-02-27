@@ -1,7 +1,0 @@
-{
-  if (shadowImage != null && !shadowImage.isDisposed()) {
-    shadowImage.dispose();
-    shadowImage=null;
-  }
-  super.dispose();
-}

@@ -1,7 +1,0 @@
-{
-  addPage(new GeneralPage());
-  addPage(new PartPage());
-  addPage(new ToolbarPage());
-  addPage(new OtherPage());
-  addPage(new UserCSSPage());
-}

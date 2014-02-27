@@ -1,6 +1,0 @@
-{
-  if (editorLineStyle == null) {
-    editorLineStyle=getStore().getString(ChromeConstants.CHROME_EDITOR_LINE_STYLE);
-  }
-  return editorLineStyle;
-}

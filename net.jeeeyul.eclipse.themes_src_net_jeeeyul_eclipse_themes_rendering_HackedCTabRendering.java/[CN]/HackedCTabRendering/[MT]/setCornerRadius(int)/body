@@ -1,4 +1,0 @@
-{
-  cornerSize=radius;
-  parent.redraw();
-}

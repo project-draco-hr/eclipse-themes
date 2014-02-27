@@ -1,4 +1,0 @@
-{
-  IPreferenceStore store=ChromeThemeCore.getDefault().getPreferenceStore();
-  initializeDefaultPreferences(store);
-}

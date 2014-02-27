@@ -1,4 +1,0 @@
-{
-  super(prefererncePage);
-  setText(Messages.ADJUST_COLORS_GLOBALLY);
-}

@@ -1,6 +1,0 @@
-{
-  if (mruVisible == null) {
-    mruVisible=getStore().getBoolean(ChromeConstants.CHROME_PART_STACK_USE_MRU);
-  }
-  return mruVisible;
-}

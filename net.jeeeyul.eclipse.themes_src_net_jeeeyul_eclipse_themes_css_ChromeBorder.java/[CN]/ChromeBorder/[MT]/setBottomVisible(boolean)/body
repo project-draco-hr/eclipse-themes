@@ -1,4 +1,0 @@
-{
-  this.bottomVisible=bottomVisible;
-  parent.redraw();
-}

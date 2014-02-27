@@ -1,0 +1,3 @@
+{
+  originalStore.putValue(name,value);
+}

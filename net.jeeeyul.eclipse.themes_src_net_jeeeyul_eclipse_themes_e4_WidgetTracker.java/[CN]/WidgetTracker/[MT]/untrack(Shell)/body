@@ -1,5 +1,0 @@
-{
-  lock.acquire();
-  topWindows.remove(shell);
-  lock.release();
-}

@@ -1,4 +1,0 @@
-{
-  super(prefererncePage);
-  setText(Messages.MANAGE_USER_PRESET);
-}

@@ -1,9 +1,0 @@
-{
-  try {
-    return (Integer)HACK_CTabFolder_getRightItemEdge.invoke(folder,gc);
-  }
- catch (  Exception e) {
-    e.printStackTrace();
-    return null;
-  }
-}

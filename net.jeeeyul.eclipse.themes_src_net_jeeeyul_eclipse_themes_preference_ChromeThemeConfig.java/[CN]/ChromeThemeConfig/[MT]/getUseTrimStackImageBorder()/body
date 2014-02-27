@@ -1,6 +1,0 @@
-{
-  if (useTrimStackImageBorder == null) {
-    useTrimStackImageBorder=getStore().getBoolean(ChromeConstants.CHROME_USE_TRIMSTACK_IMAGE_BORDER);
-  }
-  return useTrimStackImageBorder;
-}

@@ -1,9 +1,0 @@
-{
-  GLOBAL_LOCK.acquire();
-  ChromeEditorLiner[] array=INSTANCES.toArray(new ChromeEditorLiner[INSTANCES.size()]);
-  for (  ChromeEditorLiner each : array) {
-    each.dispose();
-  }
-  INSTANCES.clear();
-  GLOBAL_LOCK.release();
-}

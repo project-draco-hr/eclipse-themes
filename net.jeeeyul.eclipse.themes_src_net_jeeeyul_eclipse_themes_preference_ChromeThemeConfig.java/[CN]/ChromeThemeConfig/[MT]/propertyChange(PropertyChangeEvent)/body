@@ -1,7 +1,0 @@
-{
-  invalidate();
-  if (ActiveThemeTracker.getInstance().isChromeThemeActive()) {
-    new RewriteChormeCSS().rewrite();
-    updateJob.schedule();
-  }
-}

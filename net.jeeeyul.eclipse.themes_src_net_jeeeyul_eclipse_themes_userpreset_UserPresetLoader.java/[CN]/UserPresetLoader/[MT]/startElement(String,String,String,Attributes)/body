@@ -1,6 +1,0 @@
-{
-  if (qName.equals("preset")) {
-    current=new UserPreset();
-    current.setName(attributes.getValue("name"));
-  }
-}

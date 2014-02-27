@@ -1,6 +1,0 @@
-{
-  if (inactivePartTitleShadow == null) {
-    inactivePartTitleShadow=getStore().getBoolean(ChromeConstants.CHROME_INACTIVE_UNSELECTED_TITLE_SHINY_SHADOW);
-  }
-  return inactivePartTitleShadow;
-}

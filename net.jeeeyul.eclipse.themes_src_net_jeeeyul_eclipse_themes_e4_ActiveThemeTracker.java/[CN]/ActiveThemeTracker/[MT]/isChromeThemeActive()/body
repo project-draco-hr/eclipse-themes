@@ -1,8 +1,0 @@
-{
-  if (getActiveTheme() == null) {
-    return false;
-  }
- else {
-    return getActiveTheme().getId().equals(ChromeConstants.CHROME_THEME_ID);
-  }
-}

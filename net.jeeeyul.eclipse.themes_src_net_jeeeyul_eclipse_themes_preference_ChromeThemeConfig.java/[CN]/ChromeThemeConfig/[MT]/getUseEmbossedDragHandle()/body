@@ -1,6 +1,0 @@
-{
-  if (useEmbossedDragHandle == null) {
-    useEmbossedDragHandle=getStore().getBoolean(ChromeConstants.CHROME_USE_EMBOSSED_DRAG_HANDLE);
-  }
-  return useEmbossedDragHandle;
-}

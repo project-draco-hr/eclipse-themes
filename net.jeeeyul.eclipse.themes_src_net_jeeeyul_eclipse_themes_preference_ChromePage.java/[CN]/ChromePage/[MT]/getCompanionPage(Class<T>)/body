@@ -1,8 +1,0 @@
-{
-  for (  ChromePage each : getParentPage().getPages()) {
-    if (each.getClass() == type) {
-      return (T)each;
-    }
-  }
-  return null;
-}
