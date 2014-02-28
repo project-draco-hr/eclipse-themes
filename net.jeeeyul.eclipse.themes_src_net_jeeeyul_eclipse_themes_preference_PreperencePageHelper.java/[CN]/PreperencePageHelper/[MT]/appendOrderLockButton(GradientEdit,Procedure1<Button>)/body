@@ -1,0 +1,14 @@
+{
+  final Button button=new Button(gradEdit.getParent(),SWT.CHECK);
+  button.setText("Lock Order");
+  button.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      gradEdit.setLockOrder(button.getSelection());
+    }
+  }
+);
+  if (initializer != null) {
+    initializer.apply(button);
+  }
+  return button;
+}

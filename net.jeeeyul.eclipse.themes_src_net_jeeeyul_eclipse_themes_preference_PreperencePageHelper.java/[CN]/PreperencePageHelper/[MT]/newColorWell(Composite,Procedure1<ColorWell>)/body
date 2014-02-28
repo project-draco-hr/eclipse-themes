@@ -1,0 +1,26 @@
+{
+  final ColorWell result=new ColorWell(parent,SWT.NORMAL);
+  result.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      HSB original=result.getSelection();
+      ColorPicker picker=new ColorPicker(result.getShell());
+      picker.setContinuosSelectionHandler(new Procedure1<HSB>(){
+        @Override public void apply(        HSB t){
+          result.setSelection(t);
+        }
+      }
+);
+      if (picker.open() == IDialogConstants.OK_ID) {
+        result.setSelection(picker.getSelection());
+      }
+ else {
+        result.setSelection(original);
+      }
+    }
+  }
+);
+  if (initializer != null) {
+    initializer.apply(result);
+  }
+  return result;
+}
