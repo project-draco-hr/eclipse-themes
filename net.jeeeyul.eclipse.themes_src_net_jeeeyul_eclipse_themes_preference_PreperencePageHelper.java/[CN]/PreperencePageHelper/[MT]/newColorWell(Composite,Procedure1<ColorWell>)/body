@@ -4,6 +4,7 @@
     @Override public void handleEvent(    Event event){
       HSB original=result.getSelection();
       ColorPicker picker=new ColorPicker(result.getShell());
+      picker.setSelection(original);
       picker.setContinuosSelectionHandler(new Procedure1<HSB>(){
         @Override public void apply(        HSB t){
           result.setSelection(t);

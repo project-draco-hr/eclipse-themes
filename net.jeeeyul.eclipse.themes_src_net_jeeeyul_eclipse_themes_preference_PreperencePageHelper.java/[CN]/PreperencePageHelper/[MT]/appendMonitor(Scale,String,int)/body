@@ -1,0 +1,11 @@
+{
+  final Label label=new Label(scale.getParent(),SWT.NORMAL);
+  scale.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      label.setText((scale.getSelection() + delta) + unit);
+    }
+  }
+);
+  label.setLayoutData(new GridData(40,-1));
+  return label;
+}
