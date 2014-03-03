@@ -1,0 +1,24 @@
+{
+  CTabFolder tabFolder=me.getRenderer().getTabFolder();
+  if ((state & SWT.SELECTED) != 0) {
+    int[] percents=_CTabFolder.selectionGradientPercents.get(tabFolder);
+    if (percents != null) {
+      return percents;
+    }
+ else {
+      return new int[]{100};
+    }
+  }
+ else   if ((state & SWT.HOT) != 0) {
+    int[] percents=me.getHoverBackgroundPercents();
+    if (percents != null) {
+      return percents;
+    }
+ else {
+      return getItemFillPercentsFor(me,SWT.NONE);
+    }
+  }
+ else {
+    return me.getUnselectedBackgroundPercents();
+  }
+}

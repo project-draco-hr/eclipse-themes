@@ -1,0 +1,11 @@
+{
+  if (point.y < 0) {
+    upperButton.setSelection(true);
+  }
+ else   if (point.y > 0) {
+    belowButton.setSelection(true);
+  }
+ else {
+    noneButton.setSelection(true);
+  }
+}

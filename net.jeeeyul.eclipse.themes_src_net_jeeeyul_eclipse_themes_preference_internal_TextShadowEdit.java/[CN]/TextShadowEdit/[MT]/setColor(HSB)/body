@@ -1,0 +1,3 @@
+{
+  colorWell.setSelection(color,false);
+}

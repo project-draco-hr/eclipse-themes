@@ -1,0 +1,11 @@
+{
+  if (noneButton.getSelection()) {
+    return new Point(0,0);
+  }
+ else   if (belowButton.getSelection()) {
+    return new Point(0,1);
+  }
+ else {
+    return new Point(0,-1);
+  }
+}

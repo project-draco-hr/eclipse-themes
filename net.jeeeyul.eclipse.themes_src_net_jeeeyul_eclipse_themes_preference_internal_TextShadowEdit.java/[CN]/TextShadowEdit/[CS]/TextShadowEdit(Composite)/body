@@ -1,0 +1,45 @@
+{
+  control=new Composite(composite,SWT.NORMAL);
+  GridLayout layout=new GridLayout(4,false);
+  layout.marginWidth=layout.marginHeight=0;
+  control.setLayout(layout);
+  colorWell=new ColorWell(control,SWT.NORMAL);
+  noneButton=new Button(control,SWT.RADIO);
+  noneButton.setText("None");
+  belowButton=new Button(control,SWT.RADIO);
+  belowButton.setText("Below");
+  upperButton=new Button(control,SWT.RADIO);
+  upperButton.setText("Upper");
+  colorWell.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      ColorPicker picker=new ColorPicker(control.getShell());
+      HSB original=colorWell.getSelection();
+      picker.setSelection(original);
+      picker.setContinuosSelectionHandler(new Procedure1<HSB>(){
+        @Override public void apply(        HSB t){
+          colorWell.setSelection(t,true);
+        }
+      }
+);
+      if (picker.open() == IDialogConstants.OK_ID) {
+        colorWell.setSelection(picker.getSelection(),true);
+      }
+ else {
+        colorWell.setSelection(original,true);
+      }
+    }
+  }
+);
+  Listener dispatchModify=new Listener(){
+    @Override public void handleEvent(    Event event){
+      if (modifyHandler != null) {
+        modifyHandler.apply(TextShadowEdit.this);
+      }
+    }
+  }
+;
+  noneButton.addListener(SWT.Selection,dispatchModify);
+  belowButton.addListener(SWT.Selection,dispatchModify);
+  upperButton.addListener(SWT.Selection,dispatchModify);
+  colorWell.addListener(SWT.Modify,dispatchModify);
+}

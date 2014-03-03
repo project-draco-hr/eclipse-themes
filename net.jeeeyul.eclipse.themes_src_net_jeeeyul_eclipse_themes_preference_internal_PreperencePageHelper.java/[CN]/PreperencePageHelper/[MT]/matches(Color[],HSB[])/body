@@ -1,0 +1,17 @@
+{
+  if (colors == null) {
+    return false;
+  }
+  if (colors.length != hsbArray.length) {
+    return false;
+  }
+  for (int i=0; i < colors.length; i++) {
+    if (colors[i].isDisposed()) {
+      return false;
+    }
+    if (!colors[i].getRGB().equals(hsbArray[i].toRGB())) {
+      return false;
+    }
+  }
+  return true;
+}

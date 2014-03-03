@@ -1,6 +1,6 @@
 {
   if (preferenceStore == null) {
-    preferenceStore=new JThemePreferenceStore(super.getPreferenceStore());
+    preferenceStore=new JThemePreferenceStore((PreferenceStore)super.getPreferenceStore());
   }
   return preferenceStore;
 }
