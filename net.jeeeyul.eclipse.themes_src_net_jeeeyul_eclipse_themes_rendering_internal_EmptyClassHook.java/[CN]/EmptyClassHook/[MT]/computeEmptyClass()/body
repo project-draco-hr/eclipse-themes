@@ -1,0 +1,22 @@
+{
+  IThemeEngine engine=getThemeEngine();
+  if (engine == null) {
+    return;
+  }
+  CSSClasses styleClasses=CSSClasses.getStyleClasses(folder);
+  boolean isEmpty=folder.getItemCount() == 0;
+  if (isEmpty) {
+    if (!styleClasses.contains("empty")) {
+      styleClasses.add("empty");
+      CSSClasses.setStyleClasses(folder,styleClasses);
+      engine.applyStyles(folder,true);
+    }
+  }
+ else {
+    if (styleClasses.contains("empty")) {
+      styleClasses.remove("empty");
+      CSSClasses.setStyleClasses(folder,styleClasses);
+      engine.applyStyles(folder,true);
+    }
+  }
+}

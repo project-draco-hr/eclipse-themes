@@ -1,0 +1,6 @@
+{
+  String oldContext=getContext();
+  setContext(context);
+  work.apply(this);
+  setContext(oldContext);
+}

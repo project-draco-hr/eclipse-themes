@@ -1,0 +1,6 @@
+{
+  this.folder=folder;
+  folder.addCTabFolder2Listener(adapter);
+  folder.addListener(SWT.Selection,selectionHook);
+  compute.schedule();
+}

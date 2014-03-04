@@ -1,0 +1,8 @@
+{
+  if (this.context != null) {
+    return context + JTPConstants.CATEGORY_SEPARATOR + name;
+  }
+ else {
+    return name;
+  }
+}

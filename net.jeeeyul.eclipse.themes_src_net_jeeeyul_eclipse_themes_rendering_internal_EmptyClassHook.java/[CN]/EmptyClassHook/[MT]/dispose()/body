@@ -1,0 +1,10 @@
+{
+  if (isDisposed) {
+    return;
+  }
+  if (folder != null && !folder.isDisposed()) {
+    folder.removeCTabFolder2Listener(adapter);
+    folder.removeListener(SWT.Selection,selectionHook);
+  }
+  isDisposed=true;
+}
