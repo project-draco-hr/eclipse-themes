@@ -1,0 +1,23 @@
+{
+  ArrayList<String> result=new ArrayList<String>();
+  for (  Class<?> category : JTPConstants.class.getDeclaredClasses()) {
+    if (category.getAnnotation(Ignore.class) != null) {
+      continue;
+    }
+    for (    Field f : category.getDeclaredFields()) {
+      if (f.getAnnotation(Ignore.class) != null) {
+        continue;
+      }
+      try {
+        result.add((String)f.get(category));
+      }
+ catch (      IllegalArgumentException e) {
+        e.printStackTrace();
+      }
+catch (      IllegalAccessException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+  return result;
+}
