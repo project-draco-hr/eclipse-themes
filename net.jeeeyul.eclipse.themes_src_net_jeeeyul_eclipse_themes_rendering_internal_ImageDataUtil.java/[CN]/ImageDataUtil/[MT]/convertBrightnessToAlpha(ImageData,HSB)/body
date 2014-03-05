@@ -1,0 +1,13 @@
+{
+  for (int x=0; x < data.width; x++) {
+    for (int y=0; y < data.height; y++) {
+      int pixel=data.getPixel(x,y);
+      RGB rgb=data.palette.getRGB(pixel);
+      HSB hsb=new HSB(rgb);
+      int alpha=(int)(hsb.brightness * 255);
+      data.setPixel(x,y,data.palette.getPixel(foregroundColor.toRGB()));
+      data.setAlpha(x,y,alpha);
+    }
+  }
+  return data;
+}

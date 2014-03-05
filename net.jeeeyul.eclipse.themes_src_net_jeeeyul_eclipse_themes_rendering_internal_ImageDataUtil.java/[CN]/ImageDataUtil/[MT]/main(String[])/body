@@ -1,0 +1,16 @@
+{
+  Display display=Display.getDefault();
+  ImageData data=convertBrightnessToAlpha(SharedImages.getImage(SharedImages.ACTIVE_PART).getImageData(),HSB.RED);
+  Image image=new Image(display,data);
+  Shell shell=new Shell(display,SWT.DIALOG_TRIM | SWT.PRIMARY_MODAL);
+  shell.setLayout(new FillLayout());
+  Button button=new Button(shell,SWT.PUSH);
+  button.setImage(image);
+  shell.pack();
+  shell.open();
+  while (!shell.isDisposed()) {
+    if (!display.readAndDispatch()) {
+      display.sleep();
+    }
+  }
+}

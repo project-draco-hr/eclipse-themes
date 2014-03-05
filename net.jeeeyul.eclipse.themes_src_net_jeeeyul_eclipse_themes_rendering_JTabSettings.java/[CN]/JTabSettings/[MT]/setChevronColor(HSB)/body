@@ -1,0 +1,8 @@
+{
+  if (areSame(this.chevronColor,chrveronColor)) {
+    return;
+  }
+  HSB old=this.chevronColor;
+  this.chevronColor=chrveronColor;
+  pcs.firePropertyChange("chevron-color",old,chrveronColor);
+}
