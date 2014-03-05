@@ -1,0 +1,11 @@
+{
+  if (boldButton.getSelection()) {
+    return 3;
+  }
+ else   if (thinButton.getSelection()) {
+    return 1;
+  }
+ else {
+    return 2;
+  }
+}

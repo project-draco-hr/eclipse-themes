@@ -1,0 +1,18 @@
+{
+  if (getSelection() == selection) {
+    return;
+  }
+  thinButton.setSelection(false);
+  normalButton.setSelection(false);
+  boldButton.setSelection(false);
+switch (selection) {
+case 3:
+    boldButton.setSelection(true);
+  break;
+case 1:
+thinButton.setSelection(true);
+break;
+default :
+normalButton.setSelection(true);
+}
+}
