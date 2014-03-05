@@ -1,9 +1,0 @@
-{
-  ITheme activeTheme=getActiveTheme();
-  if (activeTheme == null) {
-    return false;
-  }
- else {
-    return JThemesCore.CUSTOM_THEME_ID.equals(activeTheme.getId());
-  }
-}

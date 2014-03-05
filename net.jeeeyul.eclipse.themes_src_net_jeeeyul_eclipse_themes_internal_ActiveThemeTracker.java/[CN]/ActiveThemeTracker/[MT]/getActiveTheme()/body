@@ -1,7 +1,0 @@
-{
-  if (activeTheme == null) {
-    IThemeEngine engine=getThemeEngine();
-    activeTheme=engine.getActiveTheme();
-  }
-  return activeTheme;
-}

@@ -1,3 +1,0 @@
-{
-  return version.compareTo(range.getMinimum()) >= 0;
-}

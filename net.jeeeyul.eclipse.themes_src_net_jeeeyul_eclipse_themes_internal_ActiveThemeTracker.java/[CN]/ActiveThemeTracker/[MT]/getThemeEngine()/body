@@ -1,4 +1,0 @@
-{
-  IThemeEngine engine=(IThemeEngine)Display.getDefault().getData("org.eclipse.e4.ui.css.swt.theme");
-  return engine;
-}

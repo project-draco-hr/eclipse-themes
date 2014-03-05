@@ -1,4 +1,7 @@
 {
+  if (folder == null || folder.isDisposed()) {
+    return;
+  }
   IThemeEngine engine=getThemeEngine();
   if (engine == null) {
     return;

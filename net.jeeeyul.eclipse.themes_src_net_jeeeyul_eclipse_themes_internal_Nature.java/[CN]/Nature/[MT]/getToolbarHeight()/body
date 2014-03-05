@@ -1,8 +1,0 @@
-{
-  if (Platform.getOS().equals(Platform.OS_LINUX)) {
-    return 30;
-  }
- else {
-    return 22;
-  }
-}

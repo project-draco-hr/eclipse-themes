@@ -1,0 +1,9 @@
+{
+  if (uri.startsWith("jeeeyul://")) {
+    String[] segments=uri.substring(9).split("/");
+    if (segments.length > 0) {
+      return uri;
+    }
+  }
+  return null;
+}

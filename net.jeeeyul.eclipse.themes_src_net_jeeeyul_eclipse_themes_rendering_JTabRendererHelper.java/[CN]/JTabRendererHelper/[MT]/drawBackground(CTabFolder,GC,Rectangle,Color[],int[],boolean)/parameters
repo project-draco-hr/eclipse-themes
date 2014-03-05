@@ -1,6 +1,0 @@
-CTabFolder me
-GC gc
-Rectangle bounds
-Color[] colors
-int[] percents
-boolean vertical

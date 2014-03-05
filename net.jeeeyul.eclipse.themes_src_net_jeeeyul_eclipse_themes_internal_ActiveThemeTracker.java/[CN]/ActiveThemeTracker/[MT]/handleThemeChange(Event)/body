@@ -3,9 +3,8 @@
   if (theme == null) {
     return;
   }
-  activeTheme=theme;
-  boolean isChromeThemeActivated=JThemesCore.CUSTOM_THEME_ID.equals(theme.getId());
-  if (isChromeThemeActivated) {
+  boolean isCustomThemeActivated=JThemesCore.CUSTOM_THEME_ID.equals(theme.getId());
+  if (isCustomThemeActivated) {
     onCustomThemeActivativation();
   }
  else {

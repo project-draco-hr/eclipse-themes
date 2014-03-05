@@ -1,11 +1,8 @@
 {
   super.start(context);
   plugin=this;
-  Version version=Nature.INSTANCE.getVersion();
-  if (Nature.INSTANCE.isAfter(version,Nature.INSTANCE.JUNO_SR1_RANGE)) {
-    ServiceReference<IThemeManager> serviceReference=context.getServiceReference(IThemeManager.class);
-    IThemeManager manager=context.getService(serviceReference);
-    IThemeEngine engine=manager.getEngineForDisplay(Display.getDefault());
-    engine.registerResourceLocator(new ChromeDynamicResourceLocator());
-  }
+  ServiceReference<IThemeManager> serviceReference=context.getServiceReference(IThemeManager.class);
+  IThemeManager manager=context.getService(serviceReference);
+  IThemeEngine engine=manager.getEngineForDisplay(Display.getDefault());
+  engine.registerResourceLocator(new JTDynamicResourceLocator());
 }
