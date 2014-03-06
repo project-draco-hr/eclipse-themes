@@ -1,0 +1,6 @@
+{
+  if (contributedPresets == null) {
+    loadPresetExtensions();
+  }
+  return contributedPresets;
+}

@@ -1,0 +1,6 @@
+{
+  if (presetManager == null) {
+    presetManager=new JTPresetManager();
+  }
+  return presetManager;
+}

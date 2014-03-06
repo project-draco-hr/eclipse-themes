@@ -1,0 +1,13 @@
+{
+  properties=new Properties();
+  try {
+    String path=element.getAttribute(ATTR_EPF);
+    String contributor=element.getContributor().getName();
+    Bundle bundle=Platform.getBundle(contributor);
+    URL resource=bundle.getResource(path);
+    properties.load(resource.openStream());
+  }
+ catch (  IOException e) {
+    e.printStackTrace();
+  }
+}

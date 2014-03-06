@@ -1,0 +1,19 @@
+{
+  JThemePreferenceStore store=JThemesCore.getDefault().getPreferenceStore();
+  Properties properties=preset.getProperties();
+  for (  Object keyObj : properties.keySet()) {
+    String key=(String)keyObj;
+    store.setValue(key,properties.getProperty(key));
+  }
+  new RewriteCustomTheme().rewrite();
+  IThemeManager themeManager=PlatformUI.getWorkbench().getThemeManager();
+  ITheme currentTheme=themeManager.getCurrentTheme();
+  if (currentTheme == null || !currentTheme.getId().equals(JThemesCore.CUSTOM_THEME_ID)) {
+    MApplication application=(MApplication)PlatformUI.getWorkbench().getService(MApplication.class);
+    IEclipseContext context=application.getContext();
+    IThemeEngine engine=context.get(IThemeEngine.class);
+    engine.setTheme(JThemesCore.CUSTOM_THEME_ID,true);
+    themeManager.setCurrentTheme(JThemesCore.CUSTOM_THEME_ID);
+    MessageDialog.openWarning(Display.getDefault().getActiveShell(),"Jeeeyul's Themes","A restart or opening new window is required for the theme change to full effect.");
+  }
+}

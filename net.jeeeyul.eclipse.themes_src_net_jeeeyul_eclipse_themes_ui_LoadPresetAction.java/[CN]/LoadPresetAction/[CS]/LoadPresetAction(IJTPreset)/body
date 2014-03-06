@@ -1,0 +1,4 @@
+{
+  this.preset=preset;
+  this.setText(preset.getName());
+}
