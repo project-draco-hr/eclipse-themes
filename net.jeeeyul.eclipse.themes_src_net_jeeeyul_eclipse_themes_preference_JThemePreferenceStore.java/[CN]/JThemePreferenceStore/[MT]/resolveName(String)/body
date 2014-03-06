@@ -1,4 +1,7 @@
 {
+  if (customKeyResolver != null) {
+    return customKeyResolver.apply(name);
+  }
   if (this.context != null) {
     return context + JTPConstants.CATEGORY_SEPARATOR + name;
   }

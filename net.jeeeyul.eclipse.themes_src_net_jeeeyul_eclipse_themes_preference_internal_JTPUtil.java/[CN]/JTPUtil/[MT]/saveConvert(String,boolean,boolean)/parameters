@@ -1,0 +1,3 @@
+String theString
+boolean escapeSpace
+boolean escapeUnicode

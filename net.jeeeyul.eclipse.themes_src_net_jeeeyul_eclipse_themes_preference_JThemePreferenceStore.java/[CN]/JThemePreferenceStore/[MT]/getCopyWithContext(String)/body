@@ -1,0 +1,10 @@
+{
+  JThemePreferenceStore result=new JThemePreferenceStore(originalStore);
+  if (this.context == null) {
+    result.setContext(contenxt);
+  }
+ else {
+    result.setContext(this.context + JTPConstants.CATEGORY_SEPARATOR + contenxt);
+  }
+  return result;
+}

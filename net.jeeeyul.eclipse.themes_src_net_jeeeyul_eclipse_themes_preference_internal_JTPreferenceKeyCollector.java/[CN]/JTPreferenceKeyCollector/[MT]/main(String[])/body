@@ -1,5 +1,0 @@
-{
-  for (  String e : new JTPreferenceKeyCollector().collect()) {
-    System.out.println(e);
-  }
-}

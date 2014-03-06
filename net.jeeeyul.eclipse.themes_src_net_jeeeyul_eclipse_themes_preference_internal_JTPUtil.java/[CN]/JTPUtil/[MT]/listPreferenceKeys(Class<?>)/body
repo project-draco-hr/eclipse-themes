@@ -1,0 +1,18 @@
+{
+  ArrayList<String> result=new ArrayList<String>();
+  for (  Field f : category.getDeclaredFields()) {
+    if (f.getAnnotation(Ignore.class) != null) {
+      continue;
+    }
+    try {
+      result.add((String)f.get(category));
+    }
+ catch (    IllegalArgumentException e) {
+      e.printStackTrace();
+    }
+catch (    IllegalAccessException e) {
+      e.printStackTrace();
+    }
+  }
+  return result;
+}
