@@ -1,0 +1,7 @@
+{
+  String url=event.getParameter("url");
+  if (url != null) {
+    Program.launch(url);
+  }
+  return null;
+}
