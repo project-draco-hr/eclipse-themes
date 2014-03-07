@@ -1,0 +1,3 @@
+{
+  PreferencesUtil.createPreferenceDialogOn(getPage().getShell(),JTPresetPreferencePage.ID,null,null);
+}

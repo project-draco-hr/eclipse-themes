@@ -1,0 +1,9 @@
+{
+  Matcher matcher=Pattern.compile("[\\/:*?\"<>|]").matcher(name);
+  if (matcher.find()) {
+    return false;
+  }
+ else {
+    return true;
+  }
+}

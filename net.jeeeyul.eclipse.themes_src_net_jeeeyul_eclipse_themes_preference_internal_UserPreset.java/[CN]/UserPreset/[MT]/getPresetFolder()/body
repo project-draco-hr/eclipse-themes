@@ -1,0 +1,3 @@
+{
+  return JThemesCore.getDefault().getPresetManager().getUserPresetFolder();
+}

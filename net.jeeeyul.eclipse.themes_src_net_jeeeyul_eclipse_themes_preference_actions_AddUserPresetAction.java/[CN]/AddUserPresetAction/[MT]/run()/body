@@ -1,0 +1,38 @@
+{
+  IInputValidator presetNameValidator=new IInputValidator(){
+    @Override public String isValid(    String newText){
+      if (newText.trim().length() == 0) {
+        return "Not entered.";
+      }
+      IJTPresetManager presetManager=getPage().getPresetManager();
+      for (      UserPreset each : presetManager.getUserPresets()) {
+        if (each.getName().equalsIgnoreCase(newText)) {
+          return "Already exist name";
+        }
+      }
+      if (!UserPreset.isSafeName(newText)) {
+        return "Unsafe characters are contained.";
+      }
+      return null;
+    }
+  }
+;
+  InputDialog dialog=new InputDialog(Display.getDefault().getActiveShell(),"New Preset","Enter a new preset name:",null,presetNameValidator);
+  if (dialog.open() != IDialogConstants.OK_ID) {
+    return;
+  }
+  UserPreset userPreset=new UserPreset(dialog.getValue().trim());
+  Properties presetProps=userPreset.getProperties();
+  JThemePreferenceStore store=new JThemePreferenceStore(new PreferenceStore());
+  getPage().saveTo(store);
+  for (  String key : JTPUtil.listPreferenceKeys()) {
+    presetProps.setProperty(key,store.getString(key));
+  }
+  try {
+    userPreset.save();
+  }
+ catch (  IOException e) {
+    e.printStackTrace();
+  }
+  getPage().getPresetManager().invalidateUserPreset();
+}

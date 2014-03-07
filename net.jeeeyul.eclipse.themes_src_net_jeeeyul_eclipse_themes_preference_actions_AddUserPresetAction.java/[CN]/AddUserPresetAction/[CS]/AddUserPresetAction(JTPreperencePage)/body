@@ -1,0 +1,4 @@
+{
+  super(page);
+  setText("Save as new preset");
+}

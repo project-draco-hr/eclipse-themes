@@ -1,0 +1,12 @@
+{
+  IPath path=JThemesCore.getDefault().getStateLocation();
+  File stateFolder=path.toFile();
+  File presetFolder=new File(stateFolder,"user-presets");
+  if (presetFolder.exists() && !presetFolder.isDirectory()) {
+    presetFolder.delete();
+  }
+  if (!presetFolder.exists()) {
+    presetFolder.mkdir();
+  }
+  return presetFolder;
+}

@@ -1,0 +1,7 @@
+{
+  this.name=file.getName().substring(0,file.getName().length() - 4);
+  this.file=file;
+  FileInputStream is=new FileInputStream(file);
+  properties.load(is);
+  is.close();
+}

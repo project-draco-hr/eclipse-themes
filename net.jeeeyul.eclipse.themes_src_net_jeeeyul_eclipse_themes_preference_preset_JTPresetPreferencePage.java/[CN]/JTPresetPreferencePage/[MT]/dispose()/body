@@ -1,0 +1,4 @@
+{
+  JThemesCore.getDefault().getPresetManager().removeListener(this);
+  super.dispose();
+}

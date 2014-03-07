@@ -1,0 +1,14 @@
+{
+  if (userPresets != null) {
+    userPresets.clear();
+    userPresets=null;
+  }
+  for (  IUserPresetChangeListener each : listeners) {
+    try {
+      each.userPresetModified();
+    }
+ catch (    Exception e) {
+      e.printStackTrace();
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  if (file != null && file.exists()) {
+    file.delete();
+  }
+  file=new File(getPresetFolder(),this.getName() + ".epf");
+  FileOutputStream os=new FileOutputStream(file);
+  properties.store(os,"Jeeeyul's Eclipse Themes Custom Preset File");
+  os.close();
+  JThemesCore.getDefault().getPresetManager().invalidateUserPreset();
+}

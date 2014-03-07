@@ -1,0 +1,10 @@
+{
+  contributedPresets=new ArrayList<ContributedPreset>();
+  IConfigurationElement[] elements=Platform.getExtensionRegistry().getExtensionPoint(ContributedPreset.EXTENSION_POINT).getConfigurationElements();
+  for (  IConfigurationElement each : elements) {
+    if (each.getName().equals(ContributedPreset.ELEMENT_PRESET)) {
+      contributedPresets.add(new ContributedPreset(each));
+    }
+  }
+  Collections.sort(contributedPresets,getPresetComparator());
+}

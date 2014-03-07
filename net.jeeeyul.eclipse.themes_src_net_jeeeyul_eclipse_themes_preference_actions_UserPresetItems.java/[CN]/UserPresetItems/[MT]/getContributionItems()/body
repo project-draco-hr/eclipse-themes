@@ -1,0 +1,13 @@
+{
+  List<UserPreset> userPresets=page.getPresetManager().getUserPresets();
+  if (userPresets.size() == 0) {
+    return new IContributionItem[0];
+  }
+  IContributionItem[] result=new IContributionItem[userPresets.size() + 1];
+  result[0]=new Separator();
+  for (int i=0; i < userPresets.size(); i++) {
+    LoadPresetAction action=new LoadPresetAction(page,userPresets.get(i));
+    result[i + 1]=new ActionContributionItem(action);
+  }
+  return result;
+}

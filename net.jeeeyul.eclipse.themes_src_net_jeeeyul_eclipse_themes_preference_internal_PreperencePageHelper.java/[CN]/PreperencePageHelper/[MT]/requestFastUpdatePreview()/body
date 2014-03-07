@@ -1,0 +1,6 @@
+{
+  CTabFolder folder=getRootPage().getFolder();
+  JeeeyulsTabRenderer renderer=(JeeeyulsTabRenderer)folder.getRenderer();
+  JTabSettings settings=renderer.getSettings();
+  client.updatePreview(folder,settings,SWTExtensions.INSTANCE,this);
+}

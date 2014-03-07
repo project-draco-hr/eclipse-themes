@@ -1,0 +1,6 @@
+{
+  if (!isSafeName(newName)) {
+    throw new IllegalArgumentException("Name must not contains: \\/:*?\"<>|");
+  }
+  this.name=newName;
+}

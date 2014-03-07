@@ -1,0 +1,10 @@
+{
+  PreferenceStore store=new PreferenceStore();
+  Properties props=preset.getProperties();
+  for (  Object kObj : props.keySet()) {
+    String key=(String)kObj;
+    store.setValue(key,props.getProperty(key));
+  }
+  JThemePreferenceStore jtStore=new JThemePreferenceStore(store);
+  getPage().loadFrom(jtStore);
+}

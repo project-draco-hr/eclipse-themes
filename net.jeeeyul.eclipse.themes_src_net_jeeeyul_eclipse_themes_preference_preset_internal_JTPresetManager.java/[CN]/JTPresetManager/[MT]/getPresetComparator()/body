@@ -1,0 +1,8 @@
+{
+  return new Comparator<IJTPreset>(){
+    @Override public int compare(    IJTPreset o1,    IJTPreset o2){
+      return o1.getName().compareTo(o2.getName());
+    }
+  }
+;
+}

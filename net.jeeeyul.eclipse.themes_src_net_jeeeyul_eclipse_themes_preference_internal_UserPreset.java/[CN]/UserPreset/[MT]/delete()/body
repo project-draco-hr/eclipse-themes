@@ -1,0 +1,6 @@
+{
+  if (file.exists()) {
+    file.delete();
+  }
+  JThemesCore.getDefault().getPresetManager().invalidateUserPreset();
+}

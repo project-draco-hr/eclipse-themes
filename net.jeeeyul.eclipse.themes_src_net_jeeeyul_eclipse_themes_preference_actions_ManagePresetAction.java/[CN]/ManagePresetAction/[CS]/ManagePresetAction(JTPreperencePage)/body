@@ -1,0 +1,4 @@
+{
+  super(page);
+  setText("Mange Presets...");
+}
