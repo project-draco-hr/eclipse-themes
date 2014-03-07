@@ -1,0 +1,13 @@
+{
+  InputDialog dialog=new InputDialog(Display.getDefault().getActiveShell(),"New Preset","Enter a new preset name:",null,JTPUtil.getPresetNameValidator());
+  if (dialog.open() != IDialogConstants.OK_ID) {
+    return;
+  }
+  preset.setName(dialog.getValue().trim());
+  try {
+    preset.save();
+  }
+ catch (  IOException e) {
+    e.printStackTrace();
+  }
+}

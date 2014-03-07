@@ -9,17 +9,18 @@
   }
 );
   viewer.setContentProvider(new IStructuredContentProvider(){
-    @Override public void inputChanged(    Viewer viewer,    Object oldInput,    Object newInput){
-    }
     @Override public void dispose(){
     }
     @Override public Object[] getElements(    Object inputElement){
       return JThemesCore.getDefault().getPresetManager().getUserPresets().toArray();
     }
+    @Override public void inputChanged(    Viewer viewer,    Object oldInput,    Object newInput){
+    }
   }
 );
   viewer.setInput(JThemesCore.getDefault().getPresetManager().getUserPresets());
   GridData viewerLayoutData=new GridData(SWT.FILL,SWT.FILL,true,false);
+  viewerLayoutData.grabExcessVerticalSpace=true;
   viewerLayoutData.widthHint=200;
   viewerLayoutData.heightHint=200;
   viewerLayoutData.verticalSpan=2;
@@ -39,5 +40,14 @@
   renameButton=new Button(container,SWT.PUSH);
   renameButton.setText("Rename");
   renameButton.setLayoutData(new GridData(SWT.FILL,SWT.TOP,false,false));
+  renameButton.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      UserPreset preset=(UserPreset)((IStructuredSelection)viewer.getSelection()).getFirstElement();
+      if (preset != null) {
+        rename(preset);
+      }
+    }
+  }
+);
   return container;
 }

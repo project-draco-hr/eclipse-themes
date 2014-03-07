@@ -1,0 +1,12 @@
+{
+  if (this.lineColor == lineColor) {
+    return;
+  }
+ else   if (this.lineColor != null) {
+    if (this.lineColor.equals(lineColor)) {
+      return;
+    }
+  }
+  this.lineColor=lineColor;
+  invalidate();
+}

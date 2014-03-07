@@ -1,0 +1,31 @@
+{
+  int width=24;
+  int height=client.getLineHeight();
+  int offset=height - 1;
+  if (client.getVerticalBar() != null) {
+    offset=height - (client.getVerticalBar().getSelection() % height) - 1;
+  }
+  Image image=new Image(client.getDisplay(),width,height);
+  GC gc=new GC(image);
+  gc.setBackground(client.getBackground());
+  gc.fillRectangle(0,0,width,height);
+  gc.setForeground(SWTExtensions.INSTANCE.toAutoReleaseColor(lineColor));
+  gc.setAntialias(SWT.OFF);
+switch (lineStyle) {
+case SWT.LINE_DASH:
+    gc.setLineStyle(SWT.LINE_DASH);
+  gc.setLineDash(new int[]{2,1});
+break;
+case SWT.LINE_DOT:
+gc.setLineStyle(SWT.LINE_DOT);
+gc.setLineDash(new int[]{1,2});
+break;
+case SWT.LINE_SOLID:
+break;
+default :
+break;
+}
+gc.drawLine(0,offset,width,offset);
+gc.dispose();
+return image;
+}

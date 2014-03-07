@@ -1,0 +1,7 @@
+{
+  if (this.lineStyle == lineStyle) {
+    return;
+  }
+  this.lineStyle=lineStyle;
+  invalidate();
+}

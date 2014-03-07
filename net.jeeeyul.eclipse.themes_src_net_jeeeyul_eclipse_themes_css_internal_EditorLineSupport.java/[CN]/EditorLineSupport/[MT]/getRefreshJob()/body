@@ -1,0 +1,12 @@
+{
+  if (refreshJob == null) {
+    refreshJob=new UIJob(Display.getDefault(),"Refersh Editor Line"){
+      @Override public IStatus runInUIThread(      IProgressMonitor monitor){
+        doRefresh();
+        return Status.OK_STATUS;
+      }
+    }
+;
+  }
+  return refreshJob;
+}

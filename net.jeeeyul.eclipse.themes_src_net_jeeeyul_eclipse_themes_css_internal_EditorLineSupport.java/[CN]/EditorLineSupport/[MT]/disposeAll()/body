@@ -1,0 +1,9 @@
+{
+  GLOBAL_LOCK.acquire();
+  EditorLineSupport[] array=INSTANCES.toArray(new EditorLineSupport[INSTANCES.size()]);
+  for (  EditorLineSupport each : array) {
+    each.dispose();
+  }
+  INSTANCES.clear();
+  GLOBAL_LOCK.release();
+}

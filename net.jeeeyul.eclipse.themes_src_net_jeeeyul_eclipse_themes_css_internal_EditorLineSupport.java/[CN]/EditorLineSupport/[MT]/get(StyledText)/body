@@ -1,0 +1,9 @@
+{
+  GLOBAL_LOCK.acquire();
+  EditorLineSupport liner=(EditorLineSupport)client.getData(EditorLineSupport.class.getCanonicalName());
+  if (liner == null) {
+    liner=new EditorLineSupport(client);
+  }
+  GLOBAL_LOCK.release();
+  return liner;
+}

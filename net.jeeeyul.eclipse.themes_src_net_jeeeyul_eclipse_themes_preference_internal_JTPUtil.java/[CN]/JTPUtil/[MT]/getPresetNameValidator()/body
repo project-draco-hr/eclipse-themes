@@ -1,0 +1,21 @@
+{
+  IInputValidator presetNameValidator=new IInputValidator(){
+    @Override public String isValid(    String newText){
+      if (newText.trim().length() == 0) {
+        return "Name must be specified.";
+      }
+      IJTPresetManager presetManager=JThemesCore.getDefault().getPresetManager();
+      for (      UserPreset each : presetManager.getUserPresets()) {
+        if (each.getName().equalsIgnoreCase(newText)) {
+          return "Already exist name.";
+        }
+      }
+      if (!UserPreset.isSafeName(newText)) {
+        return "Unsafe characters are contained.";
+      }
+      return null;
+    }
+  }
+;
+  return presetNameValidator;
+}

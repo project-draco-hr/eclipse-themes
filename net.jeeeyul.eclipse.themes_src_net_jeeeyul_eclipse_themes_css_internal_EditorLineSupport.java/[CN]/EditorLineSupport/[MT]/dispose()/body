@@ -1,0 +1,15 @@
+{
+  if (isDisposed) {
+    return;
+  }
+  GLOBAL_LOCK.acquire();
+  if (client != null && !client.isDisposed()) {
+    client.setBackgroundImage(null);
+    client.setData(EditorLineSupport.class.getCanonicalName(),null);
+    unhook();
+  }
+  swtToolkit.safeDispose(backgroundImage);
+  INSTANCES.remove(this);
+  isDisposed=true;
+  GLOBAL_LOCK.release();
+}

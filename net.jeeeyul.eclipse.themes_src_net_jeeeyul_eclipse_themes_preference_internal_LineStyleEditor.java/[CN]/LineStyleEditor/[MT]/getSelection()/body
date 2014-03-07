@@ -1,0 +1,8 @@
+{
+  for (  Button each : buttons) {
+    if (each.getSelection()) {
+      return (Integer)each.getData();
+    }
+  }
+  return SWT.NONE;
+}

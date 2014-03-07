@@ -1,0 +1,6 @@
+{
+  for (  Button each : buttons) {
+    int data=(Integer)each.getData();
+    each.setSelection(data == lineStyle);
+  }
+}

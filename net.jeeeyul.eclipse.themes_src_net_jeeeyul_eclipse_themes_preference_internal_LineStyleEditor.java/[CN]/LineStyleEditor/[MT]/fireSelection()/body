@@ -1,0 +1,5 @@
+{
+  if (selectionHandler != null) {
+    selectionHandler.apply(this);
+  }
+}

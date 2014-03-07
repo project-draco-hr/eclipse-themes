@@ -1,0 +1,6 @@
+{
+  this.client=client;
+  INSTANCES.add(this);
+  client.setData(EditorLineSupport.class.getCanonicalName(),this);
+  hook();
+}
