@@ -1,5 +1,5 @@
 {
-  for (  String e : JTPUtil.listPreferenceKeys()) {
+  for (  String e : JTPUtil.listPreferenceKeys(JTPConstants.ActivePartStack.class,HSB.class)) {
     System.out.println(e);
   }
 }

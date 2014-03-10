@@ -1,0 +1,34 @@
+{
+  ArrayList<String> result=new ArrayList<String>();
+  if (category == null) {
+    for (    Class<?> eachCategory : listCategories()) {
+      result.addAll(listPreferenceKeys(eachCategory,valueType));
+    }
+    return result;
+  }
+ else {
+    for (    Field f : category.getDeclaredFields()) {
+      if (f.getAnnotation(Ignore.class) != null) {
+        continue;
+      }
+      try {
+        if (valueType != null) {
+          TypeHint thAnno=f.getAnnotation(TypeHint.class);
+          if (thAnno.value() == valueType) {
+            result.add((String)f.get(category));
+          }
+        }
+ else {
+          result.add((String)f.get(category));
+        }
+      }
+ catch (      IllegalArgumentException e) {
+        e.printStackTrace();
+      }
+catch (      IllegalAccessException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+  return result;
+}
