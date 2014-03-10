@@ -1,3 +1,3 @@
 {
-  return System.getProperty("os.name").startsWith("Windows");
+  return getOSName().startsWith("Windows");
 }
