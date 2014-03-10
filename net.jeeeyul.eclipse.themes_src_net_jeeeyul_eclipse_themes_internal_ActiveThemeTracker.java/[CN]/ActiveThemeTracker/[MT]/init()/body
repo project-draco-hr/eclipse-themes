@@ -1,9 +1,3 @@
 {
   eventBroker.subscribe(IThemeEngine.Events.THEME_CHANGED,themeChangeHandler);
-  IThemeEngine themeEngine=getThemeEngine();
-  if (themeEngine != null && themeEngine.getActiveTheme() != null) {
-    if (themeEngine.getActiveTheme().getId().equals(JThemesCore.CUSTOM_THEME_ID)) {
-      onCustomThemeActivativation();
-    }
-  }
 }
