@@ -3,7 +3,14 @@
   Properties props=preset.getProperties();
   for (  Object kObj : props.keySet()) {
     String key=(String)kObj;
-    store.setValue(key,props.getProperty(key));
+    String value=props.getProperty(key);
+    if (key.equals(JTPConstants.Layout.TAB_HEIGHT)) {
+      int intValue=Integer.parseInt(value);
+      store.setValue(key,Math.max(intValue,OSHelper.INSTANCE.getMinimumTabHeight()));
+    }
+ else {
+      store.setValue(key,value);
+    }
   }
   JThemePreferenceStore jtStore=new JThemePreferenceStore(store);
   getPage().loadFrom(jtStore);

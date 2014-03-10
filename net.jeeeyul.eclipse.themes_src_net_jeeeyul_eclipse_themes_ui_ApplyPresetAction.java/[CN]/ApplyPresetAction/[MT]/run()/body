@@ -3,7 +3,14 @@
   Properties properties=preset.getProperties();
   for (  Object keyObj : properties.keySet()) {
     String key=(String)keyObj;
-    store.setValue(key,properties.getProperty(key));
+    String value=properties.getProperty(key);
+    if (key.equals(JTPConstants.Layout.TAB_HEIGHT)) {
+      int intValue=Integer.parseInt(value);
+      store.setValue(key,Math.max(intValue,OSHelper.INSTANCE.getMinimumTabHeight()));
+    }
+ else {
+      store.setValue(key,value);
+    }
   }
   new RewriteCustomTheme().rewrite();
   MApplication application=(MApplication)PlatformUI.getWorkbench().getService(MApplication.class);

@@ -1,0 +1,8 @@
+{
+  if (isLinux()) {
+    return 30;
+  }
+ else {
+    return 22;
+  }
+}
