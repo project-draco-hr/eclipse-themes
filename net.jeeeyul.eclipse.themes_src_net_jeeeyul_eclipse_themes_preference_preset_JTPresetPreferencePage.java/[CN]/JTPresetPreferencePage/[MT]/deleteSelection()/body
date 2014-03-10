@@ -1,0 +1,12 @@
+{
+  List<UserPreset> selection=getSelection();
+  if (selection.isEmpty()) {
+    return;
+  }
+  boolean confirmed=MessageDialog.openQuestion(getShell(),"Jeeeyul's Eclipse Themes","Are you sure to remove selected use presets?");
+  if (confirmed) {
+    for (    UserPreset each : selection) {
+      each.delete();
+    }
+  }
+}

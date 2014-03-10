@@ -1,0 +1,10 @@
+{
+  ArrayList<UserPreset> selection=new ArrayList<UserPreset>();
+  Object[] array=((IStructuredSelection)viewer.getSelection()).toArray();
+  for (  Object each : array) {
+    if (each instanceof UserPreset) {
+      selection.add((UserPreset)each);
+    }
+  }
+  return selection;
+}

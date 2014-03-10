@@ -1,7 +1,7 @@
 {
   Composite container=new Composite(parent,SWT.NORMAL);
   container.setLayout(new GridLayout(2,false));
-  viewer=new TableViewer(container,SWT.FULL_SELECTION | SWT.BORDER);
+  viewer=new TableViewer(container,SWT.FULL_SELECTION | SWT.BORDER | SWT.MULTI);
   viewer.setLabelProvider(new LabelProvider(){
     @Override public String getText(    Object element){
       return ((IJTPreset)element).getName();
@@ -30,10 +30,7 @@
   deleteButton.setLayoutData(new GridData(SWT.FILL,SWT.TOP,false,false));
   deleteButton.addListener(SWT.Selection,new Listener(){
     @Override public void handleEvent(    Event event){
-      UserPreset preset=(UserPreset)((IStructuredSelection)viewer.getSelection()).getFirstElement();
-      if (preset != null) {
-        preset.delete();
-      }
+      deleteSelection();
     }
   }
 );
