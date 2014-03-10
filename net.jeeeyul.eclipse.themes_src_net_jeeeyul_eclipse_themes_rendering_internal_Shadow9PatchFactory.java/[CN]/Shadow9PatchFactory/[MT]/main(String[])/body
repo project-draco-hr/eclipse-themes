@@ -4,7 +4,6 @@
   Shell shell=new Shell(display);
   shell.addListener(SWT.Paint,new Listener(){
     @Override public void handleEvent(    Event event){
-      event.gc.drawImage(patch.getImage(),0,0);
       patch.fill(event.gc,new Rectangle(200,0,300,300));
       event.gc.drawRectangle(new Rectangle(200,0,300,300));
     }
