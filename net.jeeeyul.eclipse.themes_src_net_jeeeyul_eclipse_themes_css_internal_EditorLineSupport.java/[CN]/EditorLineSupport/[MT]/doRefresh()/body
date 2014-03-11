@@ -1,4 +1,7 @@
 {
+  if (client.isDisposed()) {
+    return;
+  }
   swtToolkit.safeDispose(backgroundImage);
   if (lineStyle == SWT.NONE) {
     client.setBackgroundImage(null);
