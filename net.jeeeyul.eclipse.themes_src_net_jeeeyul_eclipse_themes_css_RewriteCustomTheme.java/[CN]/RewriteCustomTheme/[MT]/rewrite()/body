@@ -2,7 +2,7 @@
   try {
     CSSEngine cssEngine=WidgetElement.getEngine(display);
     ExtendedDocumentCSS documentCSS=(ExtendedDocumentCSS)cssEngine.getDocumentCSS();
-    StyleSheet chromeSheet=findChromeSheet(documentCSS);
+    StyleSheet customThemeSheet=findCustomThemeSheet(documentCSS);
     CustomThemeGenerator generator=new CustomThemeGenerator(JThemesCore.getDefault().getPreferenceStore());
     String newCSSContent=generator.generate().toString();
     StyleSheet newSheet=cssEngine.parseStyleSheet(new StringReader(newCSSContent));
@@ -10,7 +10,7 @@
     List<StyleSheet> newSheetList=new ArrayList<StyleSheet>();
     for (int i=0; i < oldSheetList.getLength(); i++) {
       StyleSheet oldSheet=oldSheetList.item(i);
-      if (oldSheet != chromeSheet) {
+      if (oldSheet != customThemeSheet) {
         if (!newSheetList.contains(oldSheet))         newSheetList.add(oldSheet);
       }
  else {
