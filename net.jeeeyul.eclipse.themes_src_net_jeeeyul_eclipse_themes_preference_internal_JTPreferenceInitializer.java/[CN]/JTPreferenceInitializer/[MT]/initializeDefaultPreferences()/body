@@ -1,0 +1,12 @@
+{
+  JThemePreferenceStore store=JThemesCore.getDefault().getPreferenceStore();
+  IJTPreset defaultPreset=JThemesCore.getDefault().getPresetManager().getDefaultPreset();
+  if (defaultPreset == null) {
+    throw new IllegalStateException("Default Preset is not found!");
+  }
+  Properties props=defaultPreset.getProperties();
+  for (  Object kObj : props.keySet()) {
+    String key=(String)kObj;
+    store.setDefault(key,props.getProperty(key));
+  }
+}

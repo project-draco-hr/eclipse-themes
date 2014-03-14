@@ -1,0 +1,11 @@
+{
+  if (contributedPresets == null) {
+    loadPresetExtensions();
+  }
+  for (  ContributedPreset each : contributedPresets) {
+    if (DEFAULT_PRESET_ID.equals(each.getId())) {
+      return each;
+    }
+  }
+  return null;
+}
