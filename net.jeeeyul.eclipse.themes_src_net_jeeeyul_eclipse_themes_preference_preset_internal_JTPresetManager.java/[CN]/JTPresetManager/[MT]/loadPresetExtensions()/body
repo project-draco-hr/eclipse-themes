@@ -7,4 +7,9 @@
     }
   }
   Collections.sort(contributedPresets,getPresetComparator());
+  ContributedPreset defaultPreset=getDefaultPreset();
+  if (defaultPreset != null) {
+    contributedPresets.remove(defaultPreset);
+    contributedPresets.add(0,defaultPreset);
+  }
 }
