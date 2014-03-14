@@ -1,0 +1,16 @@
+{
+  if (grad.getRGBs().size() == grad.getPercents().size() + 1) {
+    int[] percents=new int[grad.getPercents().size()];
+    for (int i=0; i < percents.length; i++) {
+      int value=((Integer)grad.getPercents().get(i)).intValue();
+      if (value < 0 || value > 100) {
+        return getDefaultPercents(grad);
+      }
+      percents[i]=value;
+    }
+    return percents;
+  }
+ else {
+    return getDefaultPercents(grad);
+  }
+}

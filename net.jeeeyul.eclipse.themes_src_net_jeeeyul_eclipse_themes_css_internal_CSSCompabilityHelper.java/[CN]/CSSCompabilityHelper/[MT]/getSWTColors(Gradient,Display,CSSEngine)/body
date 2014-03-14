@@ -1,0 +1,10 @@
+{
+  List values=grad.getValues();
+  Color[] colors=new Color[values.size()];
+  for (int i=0; i < values.size(); i++) {
+    CSSPrimitiveValue value=(CSSPrimitiveValue)values.get(i);
+    Color color=(Color)engine.convert(value,Color.class,display);
+    colors[i]=color;
+  }
+  return colors;
+}
