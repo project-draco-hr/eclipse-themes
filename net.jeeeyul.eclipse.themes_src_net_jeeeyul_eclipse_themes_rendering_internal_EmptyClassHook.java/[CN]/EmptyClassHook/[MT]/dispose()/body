@@ -3,8 +3,7 @@
     return;
   }
   if (folder != null && !folder.isDisposed()) {
-    folder.removeCTabFolder2Listener(adapter);
-    folder.removeListener(SWT.Selection,selectionHook);
+    folder.removeListener(SWT.Paint,selectionHook);
   }
   isDisposed=true;
 }
