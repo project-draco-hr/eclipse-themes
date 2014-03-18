@@ -1,7 +1,7 @@
 {
   String exp=originalStore.getDefaultString(resolveName(name));
-  if (exp == null) {
-    return null;
+  if (exp == null || exp.isEmpty()) {
+    return HSB.WHITE;
   }
   return serializeUtil.desrializeHSB(exp);
 }

@@ -1,7 +1,7 @@
 {
   String exp=originalStore.getString(resolveName(name));
-  if (exp == null) {
-    return null;
+  if (exp == null || exp.isEmpty()) {
+    return new Rectangle(0,0,0,0);
   }
   return serializeUtil.desrializeRectangle(exp);
 }

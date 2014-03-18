@@ -1,4 +1,5 @@
 {
   this.preset=preset;
   this.setText(preset.getName());
+  this.setImageDescriptor(preset.getImageDescriptor());
 }

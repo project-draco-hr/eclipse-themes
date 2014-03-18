@@ -1,0 +1,6 @@
+{
+  if (imageDescriptor == null) {
+    imageDescriptor=new PresetIconGenerator().generatedDescriptor(this);
+  }
+  return imageDescriptor;
+}

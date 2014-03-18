@@ -1,4 +1,5 @@
 {
   super(page);
   setText("Save as new preset");
+  setImageDescriptor(SharedImages.getImageDescriptor(SharedImages.ADD));
 }

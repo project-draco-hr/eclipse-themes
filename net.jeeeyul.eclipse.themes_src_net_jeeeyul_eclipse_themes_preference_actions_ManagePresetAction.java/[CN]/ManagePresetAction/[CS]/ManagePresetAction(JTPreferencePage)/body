@@ -1,4 +1,5 @@
 {
   super(page);
   setText("Mange Presets...");
+  setImageDescriptor(SharedImages.getImageDescriptor(SharedImages.CONFIGS));
 }

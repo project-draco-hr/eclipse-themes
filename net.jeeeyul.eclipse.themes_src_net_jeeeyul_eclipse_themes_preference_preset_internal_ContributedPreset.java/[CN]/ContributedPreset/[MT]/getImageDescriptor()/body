@@ -1,0 +1,14 @@
+{
+  if (descriptor == null) {
+    String iconAttr=element.getAttribute(ATTR_ICON);
+    if (iconAttr != null && !iconAttr.isEmpty()) {
+      String contributor=element.getContributor().getName();
+      Bundle bundle=Platform.getBundle(contributor);
+      descriptor=ImageDescriptor.createFromURL(bundle.getResource(iconAttr));
+    }
+ else {
+      descriptor=new PresetIconGenerator().generatedDescriptor(this);
+    }
+  }
+  return descriptor;
+}
