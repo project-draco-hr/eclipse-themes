@@ -6,6 +6,12 @@
     @Override public String getText(    Object element){
       return ((IJTPreset)element).getName();
     }
+    @Override public Image getImage(    Object element){
+      IJTPreset preset=(IJTPreset)element;
+      Image image=preset.getImageDescriptor().createImage();
+      $.shouldDisposeWith(image,viewer.getControl());
+      return image;
+    }
   }
 );
   viewer.setContentProvider(new IStructuredContentProvider(){
@@ -23,7 +29,7 @@
   viewerLayoutData.grabExcessVerticalSpace=true;
   viewerLayoutData.widthHint=200;
   viewerLayoutData.heightHint=200;
-  viewerLayoutData.verticalSpan=2;
+  viewerLayoutData.verticalSpan=4;
   viewer.getControl().setLayoutData(viewerLayoutData);
   deleteButton=new Button(container,SWT.PUSH);
   deleteButton.setText("Delete");
@@ -46,5 +52,30 @@
     }
   }
 );
+  importButton=new Button(container,SWT.PUSH);
+  importButton.setText("Import...");
+  importButton.setLayoutData(new GridData(SWT.FILL,SWT.TOP,false,false));
+  importButton.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      doImport();
+    }
+  }
+);
+  exportButton=new Button(container,SWT.PUSH);
+  exportButton.setText("Export...");
+  exportButton.setLayoutData(new GridData(SWT.FILL,SWT.TOP,false,false));
+  exportButton.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      doExport();
+    }
+  }
+);
+  viewer.addSelectionChangedListener(new ISelectionChangedListener(){
+    @Override public void selectionChanged(    SelectionChangedEvent event){
+      updateButtons();
+    }
+  }
+);
+  updateButtons();
   return container;
 }

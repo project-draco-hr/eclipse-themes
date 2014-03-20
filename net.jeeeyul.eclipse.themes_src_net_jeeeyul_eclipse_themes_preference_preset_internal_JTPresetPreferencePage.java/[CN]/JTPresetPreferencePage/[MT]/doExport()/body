@@ -1,0 +1,20 @@
+{
+  FileDialog dialog=new FileDialog(getShell(),SWT.SAVE);
+  UserPreset userPreset=getSelection().get(0);
+  dialog.setFileName(userPreset.getName() + ".epf");
+  dialog.setOverwrite(true);
+  dialog.setFilterExtensions(new String[]{"*.epf"});
+  dialog.setFilterNames(new String[]{"Eclipse Preference File"});
+  String target=dialog.open();
+  if (target != null) {
+    FileOutputStream fos;
+    try {
+      fos=new FileOutputStream(target);
+      userPreset.getProperties().store(fos,"Jeeeyul's Eclipse Themes Preset");
+      fos.close();
+    }
+ catch (    IOException e) {
+      e.printStackTrace();
+    }
+  }
+}

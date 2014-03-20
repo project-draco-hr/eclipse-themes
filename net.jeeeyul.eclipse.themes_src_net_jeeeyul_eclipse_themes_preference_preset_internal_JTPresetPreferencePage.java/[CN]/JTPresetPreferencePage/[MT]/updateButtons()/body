@@ -1,0 +1,7 @@
+{
+  List<UserPreset> selection=getSelection();
+  deleteButton.setEnabled(selection.size() > 0);
+  renameButton.setEnabled(selection.size() == 1);
+  exportButton.setEnabled(selection.size() == 1);
+  importButton.setEnabled(true);
+}
