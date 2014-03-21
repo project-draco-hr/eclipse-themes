@@ -1,0 +1,3 @@
+{
+  PreferencesUtil.createPreferenceDialogOn(root.getShell(),id,null,null);
+}
