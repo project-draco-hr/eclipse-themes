@@ -1,0 +1,6 @@
+{
+  if (color == null || color.isDisposed()) {
+    return false;
+  }
+  return new HSB(color.getRGB()).equals(hsb);
+}
