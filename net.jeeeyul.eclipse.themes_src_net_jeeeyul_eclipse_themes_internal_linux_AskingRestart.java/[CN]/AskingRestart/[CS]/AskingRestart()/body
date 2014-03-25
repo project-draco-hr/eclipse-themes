@@ -1,0 +1,5 @@
+{
+  super("Restart Eclipse");
+  setSystem(true);
+  setUser(false);
+}

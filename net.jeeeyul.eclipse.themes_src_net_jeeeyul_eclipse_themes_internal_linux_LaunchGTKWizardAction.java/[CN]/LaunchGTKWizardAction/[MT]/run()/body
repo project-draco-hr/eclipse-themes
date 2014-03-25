@@ -1,0 +1,3 @@
+{
+  LaunchGTKWizardJob.INSTANCE.schedule(500);
+}

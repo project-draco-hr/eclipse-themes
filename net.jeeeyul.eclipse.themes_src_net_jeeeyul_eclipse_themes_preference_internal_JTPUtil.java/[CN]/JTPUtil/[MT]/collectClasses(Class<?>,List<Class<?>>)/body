@@ -1,0 +1,9 @@
+{
+  if (root == null || result == null) {
+    throw new IllegalArgumentException();
+  }
+  result.add(root);
+  for (  Class<?> each : root.getDeclaredClasses()) {
+    collectClasses(each,result);
+  }
+}

@@ -1,0 +1,6 @@
+{
+  if (OSHelper.INSTANCE.isLinux() == false || SWTExtensions.INSTANCE.getMinimumToolBarHeight() < 30) {
+    return new IContributionItem[0];
+  }
+  return new IContributionItem[]{new ActionContributionItem(new LaunchGTKWizardAction())};
+}

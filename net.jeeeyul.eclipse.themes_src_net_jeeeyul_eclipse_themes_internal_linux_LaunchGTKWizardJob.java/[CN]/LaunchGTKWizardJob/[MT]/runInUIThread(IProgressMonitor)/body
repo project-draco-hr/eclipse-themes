@@ -1,0 +1,4 @@
+{
+  new WizardDialog(Display.getDefault().getActiveShell(),new DownloadGTKRC2Wizard()).open();
+  return Status.OK_STATUS;
+}

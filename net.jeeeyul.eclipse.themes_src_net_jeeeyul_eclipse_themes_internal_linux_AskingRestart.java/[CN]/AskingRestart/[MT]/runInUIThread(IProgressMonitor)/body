@@ -1,0 +1,12 @@
+{
+  if (MessageDialog.openQuestion(Display.getDefault().getActiveShell(),"Jeeeyul's Eclipse Themes","Do you want to restart eclipse now?")) {
+    IHandlerService hs=(IHandlerService)PlatformUI.getWorkbench().getService(IHandlerService.class);
+    try {
+      hs.executeCommand("org.eclipse.ui.file.restartWorkbench",null);
+    }
+ catch (    Exception e) {
+      e.printStackTrace();
+    }
+  }
+  return Status.OK_STATUS;
+}

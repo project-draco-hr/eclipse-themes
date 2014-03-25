@@ -1,4 +1,4 @@
 {
   JThemePreferenceStore store=JThemesCore.getDefault().getPreferenceStore();
-  initializeDefault(store);
+  initializeDefaultPreset(store);
 }

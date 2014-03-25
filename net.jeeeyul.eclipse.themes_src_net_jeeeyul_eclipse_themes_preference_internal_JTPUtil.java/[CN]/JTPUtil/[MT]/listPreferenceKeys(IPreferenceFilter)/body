@@ -1,0 +1,29 @@
+{
+  ArrayList<String> result=new ArrayList<String>();
+  List<Class<?>> allCategories=new ArrayList<Class<?>>();
+  collectClasses(JTPConstants.class,allCategories);
+  for (  Class<?> eachCategory : allCategories) {
+    if (eachCategory.getAnnotation(Ignore.class) != null) {
+      continue;
+    }
+    if (filter.acceptCategory(eachCategory)) {
+      for (      Field eachField : eachCategory.getDeclaredFields()) {
+        if (eachField.getAnnotation(Ignore.class) != null) {
+          continue;
+        }
+        if (filter.acceptKey(eachField)) {
+          try {
+            result.add((String)eachField.get(eachCategory));
+          }
+ catch (          IllegalArgumentException e) {
+            e.printStackTrace();
+          }
+catch (          IllegalAccessException e) {
+            e.printStackTrace();
+          }
+        }
+      }
+    }
+  }
+  return result;
+}

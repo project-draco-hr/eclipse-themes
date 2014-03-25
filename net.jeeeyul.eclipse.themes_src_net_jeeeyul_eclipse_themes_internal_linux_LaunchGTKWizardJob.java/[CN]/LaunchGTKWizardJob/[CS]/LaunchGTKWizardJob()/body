@@ -1,0 +1,5 @@
+{
+  super("Download GTKRC");
+  setSystem(true);
+  setUser(false);
+}
