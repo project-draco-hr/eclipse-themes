@@ -1,3 +1,4 @@
 {
   setText("Launch GTK2.0 RC Wizard");
+  setImageDescriptor(SharedImages.getImageDescriptor(SharedImages.DOWNLOAD));
 }
