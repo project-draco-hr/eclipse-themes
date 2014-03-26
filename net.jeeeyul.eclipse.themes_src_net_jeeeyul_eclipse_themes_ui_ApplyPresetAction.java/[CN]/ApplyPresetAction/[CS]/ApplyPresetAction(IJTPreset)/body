@@ -1,5 +1,5 @@
 {
-  super(preset.getName(),SWT.RADIO);
+  super(preset.getName(),SWT.CHECK);
   this.preset=preset;
   this.setImageDescriptor(preset.getImageDescriptor());
   if (getThemeEngine().getActiveTheme().getId().equals(JThemesCore.CUSTOM_THEME_ID)) {

@@ -1,4 +1,5 @@
 {
   JThemePreferenceStore store=JThemesCore.getDefault().getPreferenceStore();
   initializeDefaultPreset(store);
+  store.setDefault(JTPConstants.Memento.LAST_CHOOSED_PRESET,IJTPresetManager.DEFAULT_PRESET_ID);
 }
