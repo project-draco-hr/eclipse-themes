@@ -14,4 +14,5 @@
   }
   JThemePreferenceStore jtStore=new JThemePreferenceStore(store);
   getPage().loadFrom(jtStore);
+  getPage().setLastChoosedPresetId(preset.getId());
 }
