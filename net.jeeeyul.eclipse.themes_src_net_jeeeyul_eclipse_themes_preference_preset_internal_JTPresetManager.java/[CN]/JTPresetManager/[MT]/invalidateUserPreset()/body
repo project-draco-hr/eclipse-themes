@@ -3,7 +3,7 @@
     userPresets.clear();
     userPresets=null;
   }
-  for (  IUserPresetChangeListener each : listeners) {
+  for (  IJTPresetManagerListener each : listeners) {
     try {
       each.userPresetModified();
     }
