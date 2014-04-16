@@ -1,5 +1,5 @@
 {
-  String exp=originalStore.getDefaultString(resolveName(name));
+  String exp=originalStore.getDefaultString(resolveKey(name));
   if (exp == null) {
     return null;
   }

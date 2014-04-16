@@ -1,3 +1,3 @@
 {
-  originalStore.setDefault(resolveName(name),serializeUtil.serialize(point));
+  originalStore.setDefault(resolveKey(name),serializeUtil.serialize(point));
 }

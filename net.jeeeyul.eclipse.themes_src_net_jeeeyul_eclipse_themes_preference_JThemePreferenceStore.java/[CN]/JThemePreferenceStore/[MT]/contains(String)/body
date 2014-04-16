@@ -1,3 +1,3 @@
 {
-  return originalStore.contains(resolveName(name));
+  return originalStore.contains(resolveKey(name));
 }

@@ -1,3 +1,3 @@
 {
-  originalStore.setValue(resolveName(name),value);
+  originalStore.setValue(resolveKey(name),value);
 }

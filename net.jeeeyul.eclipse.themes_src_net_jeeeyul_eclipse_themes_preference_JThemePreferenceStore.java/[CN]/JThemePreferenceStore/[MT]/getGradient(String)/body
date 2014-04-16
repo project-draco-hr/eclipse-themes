@@ -1,5 +1,5 @@
 {
-  String exp=originalStore.getString(resolveName(name));
+  String exp=originalStore.getString(resolveKey(name));
   if (exp == null || exp.isEmpty()) {
     return new Gradient(HSB.WHITE,HSB.WHITE);
   }

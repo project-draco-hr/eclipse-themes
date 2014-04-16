@@ -1,6 +1,0 @@
-{
-  if (imageGetter != null) {
-    return imageGetter.apply((T)element);
-  }
- else   return null;
-}

@@ -1,3 +1,3 @@
 {
-  return originalStore.getDefaultBoolean(resolveName(name));
+  return originalStore.getDefaultBoolean(resolveKey(name));
 }

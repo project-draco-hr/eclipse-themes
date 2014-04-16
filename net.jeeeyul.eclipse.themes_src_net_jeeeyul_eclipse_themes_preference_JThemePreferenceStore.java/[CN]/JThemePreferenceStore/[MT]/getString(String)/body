@@ -1,3 +1,3 @@
 {
-  return originalStore.getString(resolveName(name));
+  return originalStore.getString(resolveKey(name));
 }

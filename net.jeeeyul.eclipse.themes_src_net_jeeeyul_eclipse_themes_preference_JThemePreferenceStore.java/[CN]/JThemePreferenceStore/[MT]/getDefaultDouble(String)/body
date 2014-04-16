@@ -1,3 +1,3 @@
 {
-  return originalStore.getDefaultDouble(resolveName(name));
+  return originalStore.getDefaultDouble(resolveKey(name));
 }
