@@ -1,4 +1,0 @@
-{
-  String result=arguments.get(argName);
-  return result != null ? result : defaultValue;
-}

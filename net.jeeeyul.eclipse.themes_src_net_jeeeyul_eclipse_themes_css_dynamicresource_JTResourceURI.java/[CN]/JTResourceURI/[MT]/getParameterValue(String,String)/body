@@ -1,0 +1,4 @@
+{
+  String result=parameters.get(name);
+  return result != null ? result : fallbackValue;
+}

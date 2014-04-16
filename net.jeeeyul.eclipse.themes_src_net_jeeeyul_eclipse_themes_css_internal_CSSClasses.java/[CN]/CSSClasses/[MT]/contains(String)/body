@@ -1,3 +1,6 @@
 {
-  return classes.contains(className);
+  if (className == null) {
+    throw new IllegalArgumentException();
+  }
+  return classes.contains(className.trim());
 }

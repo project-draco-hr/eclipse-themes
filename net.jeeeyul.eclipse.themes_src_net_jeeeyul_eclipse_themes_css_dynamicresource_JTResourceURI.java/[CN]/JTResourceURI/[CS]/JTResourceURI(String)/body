@@ -7,7 +7,7 @@
     String[] pairs=split[1].split("&");
     for (    String each : pairs) {
       String[] keyValue=each.split("=");
-      addArgument(keyValue[0].trim(),keyValue[1].trim());
+      addParameter(keyValue[0].trim(),keyValue[1].trim());
     }
   }
 }

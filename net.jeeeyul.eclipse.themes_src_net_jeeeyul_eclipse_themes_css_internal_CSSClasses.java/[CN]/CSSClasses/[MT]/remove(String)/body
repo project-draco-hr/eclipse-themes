@@ -1,3 +1,9 @@
 {
-  return classes.remove(className);
+  if (classNames == null) {
+    throw new IllegalArgumentException();
+  }
+  for (  String each : classNames) {
+    String trimmed=each.trim();
+    classes.remove(trimmed);
+  }
 }
