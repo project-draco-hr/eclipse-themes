@@ -1,0 +1,6 @@
+{
+  if (!(renderer instanceof JeeeyulsTabRenderer)) {
+    return;
+  }
+  super.setRenderer(renderer);
+}
