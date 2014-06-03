@@ -3,12 +3,14 @@
     return;
   }
   swtToolkit.safeDispose(backgroundImage);
-  if (lineStyle == SWT.NONE) {
-    client.setBackgroundImage(null);
-    dispose();
-  }
+  if (!EditBoxTracker.INSTANCE.isEditBoxActive()) {
+    if (lineStyle == SWT.NONE) {
+      client.setBackgroundImage(null);
+      dispose();
+    }
  else {
-    backgroundImage=createNewBackgroundImage();
-    client.setBackgroundImage(backgroundImage);
+      backgroundImage=createNewBackgroundImage();
+      client.setBackgroundImage(backgroundImage);
+    }
   }
 }

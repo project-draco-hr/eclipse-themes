@@ -1,0 +1,4 @@
+{
+  IPreferenceStore store=getEditBoxPreferenceStore();
+  store.addPropertyChangeListener(fEditBoxPreferenceStoreListener);
+}

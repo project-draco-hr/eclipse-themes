@@ -1,0 +1,7 @@
+{
+  if (fIsTracking != true) {
+    return;
+  }
+  unhookEditBoxPreference();
+  fIsTracking=false;
+}

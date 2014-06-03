@@ -1,0 +1,20 @@
+{
+  ResolveEditBox:   if (fEditBoxInstalled == null) {
+    Bundle bundle=Platform.getBundle(PLUGINID_EDITBOX);
+    if (bundle == null) {
+      fEditBoxInstalled=false;
+      break ResolveEditBox;
+    }
+switch (bundle.getState()) {
+case Bundle.RESOLVED:
+case Bundle.STARTING:
+case Bundle.ACTIVE:
+      fEditBoxInstalled=true;
+    break;
+default :
+  fEditBoxInstalled=false;
+break;
+}
+}
+return fEditBoxInstalled;
+}

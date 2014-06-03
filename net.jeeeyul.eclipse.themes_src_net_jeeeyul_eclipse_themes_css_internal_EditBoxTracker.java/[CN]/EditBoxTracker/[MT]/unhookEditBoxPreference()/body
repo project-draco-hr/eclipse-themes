@@ -1,0 +1,3 @@
+{
+  getEditBoxPreferenceStore().removePropertyChangeListener(fEditBoxPreferenceStoreListener);
+}

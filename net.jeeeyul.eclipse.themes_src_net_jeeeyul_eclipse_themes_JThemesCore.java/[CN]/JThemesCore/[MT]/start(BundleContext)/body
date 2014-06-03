@@ -5,4 +5,5 @@
   IThemeManager manager=context.getService(serviceReference);
   IThemeEngine engine=manager.getEngineForDisplay(Display.getDefault());
   engine.registerResourceLocator(new JTDynamicResourceLocator());
+  EditBoxTracker.INSTANCE.beginTrack();
 }

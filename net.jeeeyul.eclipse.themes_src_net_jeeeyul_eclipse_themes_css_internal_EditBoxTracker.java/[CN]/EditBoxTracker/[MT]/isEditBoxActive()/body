@@ -1,0 +1,11 @@
+{
+  if (fEditBoxIsActive == null) {
+    if (isEditBoxInstalled() == false) {
+      fEditBoxIsActive=false;
+    }
+ else {
+      fEditBoxIsActive=getEditBoxPreferenceStore().getBoolean(KEY_EDITBOX_ENABLEMENT);
+    }
+  }
+  return fEditBoxIsActive;
+}

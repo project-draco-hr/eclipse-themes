@@ -1,0 +1,6 @@
+{
+  if (fEditBoxPreferenceStore == null) {
+    fEditBoxPreferenceStore=new ScopedPreferenceStore(InstanceScope.INSTANCE,PLUGINID_EDITBOX);
+  }
+  return fEditBoxPreferenceStore;
+}

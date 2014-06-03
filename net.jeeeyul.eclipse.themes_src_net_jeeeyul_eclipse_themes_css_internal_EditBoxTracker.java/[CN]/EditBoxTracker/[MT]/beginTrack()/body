@@ -1,0 +1,9 @@
+{
+  if (fIsTracking) {
+    return;
+  }
+  if (isEditBoxInstalled()) {
+    hookEditBoxPreference();
+  }
+  fIsTracking=true;
+}
