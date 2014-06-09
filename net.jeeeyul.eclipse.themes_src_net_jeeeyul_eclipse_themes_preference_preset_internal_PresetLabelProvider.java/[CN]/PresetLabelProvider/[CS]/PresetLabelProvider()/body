@@ -1,0 +1,8 @@
+{
+  imageRegistry=new ResourceRegistry<IJTPreset,Image>(new Function1<IJTPreset,Image>(){
+    @Override public Image apply(    IJTPreset t){
+      return t.getImageDescriptor().createImage();
+    }
+  }
+);
+}

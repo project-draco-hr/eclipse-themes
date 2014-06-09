@@ -1,0 +1,4 @@
+{
+  IJTPreset preset=(IJTPreset)element;
+  return imageRegistry.get(preset);
+}

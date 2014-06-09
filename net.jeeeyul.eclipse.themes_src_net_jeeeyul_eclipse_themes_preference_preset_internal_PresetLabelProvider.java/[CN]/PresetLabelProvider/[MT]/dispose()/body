@@ -1,0 +1,4 @@
+{
+  imageRegistry.dispose();
+  super.dispose();
+}
