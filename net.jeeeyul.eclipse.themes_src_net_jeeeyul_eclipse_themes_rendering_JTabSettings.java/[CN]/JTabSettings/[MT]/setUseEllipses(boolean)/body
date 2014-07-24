@@ -1,0 +1,8 @@
+{
+  if (this.useEllipses == useEllipses) {
+    return;
+  }
+  boolean old=this.useEllipses;
+  this.useEllipses=useEllipses;
+  pcs.firePropertyChange("use-ellipses",old,this.useEllipses);
+}
