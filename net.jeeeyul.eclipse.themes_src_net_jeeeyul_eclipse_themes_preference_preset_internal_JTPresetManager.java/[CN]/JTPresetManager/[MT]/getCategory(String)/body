@@ -1,0 +1,9 @@
+{
+  if (id.equals(IJTPresetCategory.USER_CATEGORY_ID)) {
+    return getUserCategory();
+  }
+  if (!isLoaded) {
+    loadPresetExtensions();
+  }
+  return categories.get(id);
+}

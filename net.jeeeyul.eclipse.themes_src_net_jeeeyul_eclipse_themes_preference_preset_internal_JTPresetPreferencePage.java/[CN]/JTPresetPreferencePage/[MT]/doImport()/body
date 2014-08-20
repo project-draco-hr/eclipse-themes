@@ -1,30 +1,12 @@
 {
-  FileDialog dialog=new FileDialog(getShell(),SWT.OPEN);
+  FileDialog dialog=new FileDialog(getShell(),SWT.OPEN | SWT.MULTI | SWT.SHEET);
   dialog.setFilterExtensions(new String[]{"*.epf"});
   dialog.setFilterNames(new String[]{"Eclipse Preference File"});
-  String target=dialog.open();
-  if (target != null) {
-    File file=new File(target);
-    try {
-      String name=file.getName().replaceFirst("[.][^.]+$","");
-      IInputValidator nameValidator=JTPUtil.getPresetNameValidator();
-      if (nameValidator.isValid(name) != null) {
-        InputDialog nameDialog=new InputDialog(getShell(),"New Preset","Enter a new preset name:",null,nameValidator);
-        if (nameDialog.open() != IDialogConstants.OK_ID) {
-          return;
-        }
- else {
-          name=nameDialog.getValue().trim();
-        }
-      }
-      UserPreset newPreset=new UserPreset(name);
-      FileInputStream fis=new FileInputStream(file);
-      newPreset.getProperties().load(fis);
-      fis.close();
-      newPreset.save();
-    }
- catch (    IOException e) {
-      e.printStackTrace();
+  String firstFile=dialog.open();
+  if (firstFile != null) {
+    File dir=new File(firstFile).getParentFile();
+    for (    String each : dialog.getFileNames()) {
+      importEPF(new File(dir,each));
     }
   }
 }

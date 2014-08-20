@@ -1,0 +1,6 @@
+{
+  if (!isLoaded) {
+    loadPresetExtensions();
+  }
+  return defaultCategory;
+}

@@ -1,0 +1,6 @@
+{
+  if (needToLoadUserCategory) {
+    loadUserPresets();
+  }
+  return userCategory;
+}

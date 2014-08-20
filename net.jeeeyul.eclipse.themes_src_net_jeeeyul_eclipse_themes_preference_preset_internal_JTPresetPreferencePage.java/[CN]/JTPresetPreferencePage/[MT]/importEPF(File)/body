@@ -1,0 +1,30 @@
+{
+  try {
+    String name=file.getName().replaceFirst("[.][^.]+$","");
+    IInputValidator nameValidator=JTPUtil.getPresetNameValidator();
+    String error=nameValidator.isValid(name);
+    if (error != null) {
+      String initialInput;
+      int number=2;
+      do {
+        initialInput=MessageFormat.format("{0}({1})",name,number);
+      }
+ while (nameValidator.isValid(initialInput) != null);
+      InputDialog nameDialog=new InputDialog(getShell(),"Import Preset",MessageFormat.format("{0} Enter a new preset name:",error),initialInput,nameValidator);
+      if (nameDialog.open() != IDialogConstants.OK_ID) {
+        return;
+      }
+ else {
+        name=nameDialog.getValue().trim();
+      }
+    }
+    UserPreset newPreset=new UserPreset(name);
+    FileInputStream fis=new FileInputStream(file);
+    newPreset.getProperties().load(fis);
+    fis.close();
+    newPreset.save();
+  }
+ catch (  IOException e) {
+    e.printStackTrace();
+  }
+}

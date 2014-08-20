@@ -1,2 +1,7 @@
 {
+  categories=new HashMap<String,IJTPresetCategory>();
+  defaultCategory=new PresetCategoryImpl("Default Presets",IJTPresetCategory.DEFAULT_CATEGORY_ID);
+  userCategory=new PresetCategoryImpl("User Presets",IJTPresetCategory.USER_CATEGORY_ID);
+  categories.put(defaultCategory.getID(),defaultCategory);
+  categories.put(userCategory.getID(),userCategory);
 }

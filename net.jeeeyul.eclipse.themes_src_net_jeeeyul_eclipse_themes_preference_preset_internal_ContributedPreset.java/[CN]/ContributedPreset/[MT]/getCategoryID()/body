@@ -1,0 +1,9 @@
+{
+  if (categoryId == null) {
+    categoryId=element.getAttribute(ATTR_CATEGORY);
+    if (categoryId == null) {
+      categoryId=IJTPresetCategory.DEFAULT_CATEGORY_ID;
+    }
+  }
+  return categoryId;
+}

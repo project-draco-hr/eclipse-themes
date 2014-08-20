@@ -1,5 +1,4 @@
 {
-  userPresets=new ArrayList<UserPreset>();
   File[] files=getUserPresetFolder().listFiles(new FilenameFilter(){
     @Override public boolean accept(    File dir,    String filename){
       return filename.endsWith(".epf");
@@ -8,11 +7,12 @@
 );
   for (  File each : files) {
     try {
-      userPresets.add(new UserPreset(each));
+      userCategory.getPresets().add(new UserPreset(each));
     }
  catch (    IOException e) {
       e.printStackTrace();
     }
   }
-  Collections.sort(userPresets,getPresetComparator());
+  Collections.sort(userCategory.getPresets(),getPresetComparator());
+  needToLoadUserCategory=false;
 }

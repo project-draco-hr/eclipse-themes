@@ -1,5 +1,5 @@
 {
-  List<UserPreset> userPresets=page.getPresetManager().getUserPresets();
+  List<IJTPreset> userPresets=page.getPresetManager().getUserCategory().getPresets();
   if (userPresets.size() == 0) {
     return new IContributionItem[0];
   }

@@ -1,7 +1,7 @@
 {
-  if (userPresets != null) {
-    userPresets.clear();
-    userPresets=null;
+  if (userCategory.getPresets() != null) {
+    userCategory.getPresets().clear();
+    needToLoadUserCategory=true;
   }
   for (  IJTPresetManagerListener each : listeners) {
     try {

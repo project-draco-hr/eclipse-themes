@@ -1,15 +1,29 @@
 {
-  contributedPresets=new ArrayList<ContributedPreset>();
-  IConfigurationElement[] elements=Platform.getExtensionRegistry().getExtensionPoint(ContributedPreset.EXTENSION_POINT).getConfigurationElements();
+  if (isLoaded) {
+    return;
+  }
+  IExtensionPoint extensionPoint=Platform.getExtensionRegistry().getExtensionPoint(ContributedPreset.EXTENSION_POINT);
+  IConfigurationElement[] elements=extensionPoint.getConfigurationElements();
   for (  IConfigurationElement each : elements) {
-    if (each.getName().equals(ContributedPreset.ELEMENT_PRESET)) {
-      contributedPresets.add(new ContributedPreset(each));
+    if (each.getName().equals(PresetCategoryImpl.ELEMENT_PRESET_CATEGORY)) {
+      PresetCategoryImpl category=new PresetCategoryImpl(each);
+      categories.put(category.getID(),category);
     }
   }
-  Collections.sort(contributedPresets,getPresetComparator());
-  ContributedPreset defaultPreset=getDefaultPreset();
+  for (  IConfigurationElement each : elements) {
+    if (each.getName().equals(ContributedPreset.ELEMENT_PRESET)) {
+      ContributedPreset preset=new ContributedPreset(each);
+      IJTPresetCategory category=categories.get(preset.getCategoryID());
+      category.getPresets().add(preset);
+    }
+  }
+  isLoaded=true;
+  for (  IJTPresetCategory eachCategory : categories.values()) {
+    Collections.sort(eachCategory.getPresets(),getPresetComparator());
+  }
+  IJTPreset defaultPreset=getDefaultPreset();
   if (defaultPreset != null) {
-    contributedPresets.remove(defaultPreset);
-    contributedPresets.add(0,defaultPreset);
+    defaultCategory.getPresets().remove(defaultPreset);
+    defaultCategory.getPresets().add(0,defaultPreset);
   }
 }

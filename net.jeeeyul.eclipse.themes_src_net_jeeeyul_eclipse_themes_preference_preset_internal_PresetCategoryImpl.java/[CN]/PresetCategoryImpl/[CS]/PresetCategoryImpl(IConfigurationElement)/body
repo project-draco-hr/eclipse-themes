@@ -1,0 +1,4 @@
+{
+  this.name=configurationElement.getAttribute(ATTR_NAME);
+  this.id=configurationElement.getAttribute(ATTR_ID);
+}

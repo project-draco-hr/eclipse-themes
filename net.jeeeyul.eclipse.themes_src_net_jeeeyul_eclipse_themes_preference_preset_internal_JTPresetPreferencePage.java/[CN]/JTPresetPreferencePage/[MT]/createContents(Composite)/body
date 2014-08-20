@@ -18,13 +18,13 @@
     @Override public void dispose(){
     }
     @Override public Object[] getElements(    Object inputElement){
-      return JThemesCore.getDefault().getPresetManager().getUserPresets().toArray();
+      return JThemesCore.getDefault().getPresetManager().getUserCategory().getPresets().toArray();
     }
     @Override public void inputChanged(    Viewer viewer,    Object oldInput,    Object newInput){
     }
   }
 );
-  viewer.setInput(JThemesCore.getDefault().getPresetManager().getUserPresets());
+  viewer.setInput(JThemesCore.getDefault().getPresetManager().getUserCategory());
   GridData viewerLayoutData=new GridData(SWT.FILL,SWT.FILL,true,false);
   viewerLayoutData.grabExcessVerticalSpace=true;
   viewerLayoutData.widthHint=200;

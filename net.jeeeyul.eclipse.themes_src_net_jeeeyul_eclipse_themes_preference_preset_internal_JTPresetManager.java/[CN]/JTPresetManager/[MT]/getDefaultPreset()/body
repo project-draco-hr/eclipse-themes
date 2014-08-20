@@ -1,8 +1,8 @@
 {
-  if (contributedPresets == null) {
+  if (!isLoaded) {
     loadPresetExtensions();
   }
-  for (  ContributedPreset each : contributedPresets) {
+  for (  IJTPreset each : getDefaultCategory().getPresets()) {
     if (DEFAULT_PRESET_ID.equals(each.getId())) {
       return each;
     }

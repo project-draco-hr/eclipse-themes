@@ -5,9 +5,9 @@
         return "Name must be specified.";
       }
       IJTPresetManager presetManager=JThemesCore.getDefault().getPresetManager();
-      for (      UserPreset each : presetManager.getUserPresets()) {
+      for (      IJTPreset each : presetManager.getUserCategory().getPresets()) {
         if (each.getName().equalsIgnoreCase(newText)) {
-          return "Already exist name.";
+          return MessageFormat.format("{0} is already exists.",each.getName());
         }
       }
       if (!UserPreset.isSafeName(newText)) {

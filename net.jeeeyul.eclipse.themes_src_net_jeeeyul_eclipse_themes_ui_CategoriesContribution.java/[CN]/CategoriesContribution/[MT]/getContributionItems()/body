@@ -1,0 +1,14 @@
+{
+  IJTPresetManager presetManager=JThemesCore.getDefault().getPresetManager();
+  IJTPresetCategory[] categories=presetManager.getCategories();
+  ArrayList<IContributionItem> result=new ArrayList<IContributionItem>();
+  for (  IJTPresetCategory each : categories) {
+    if (each.getPresets().size() == 0) {
+      continue;
+    }
+    MenuManager manager=new MenuManager(each.getName(),SharedImages.getImageDescriptor(SharedImages.PRESET),each.getID());
+    manager.add(new PresetsContribution(each));
+    result.add(manager);
+  }
+  return result.toArray(new IContributionItem[result.size()]);
+}

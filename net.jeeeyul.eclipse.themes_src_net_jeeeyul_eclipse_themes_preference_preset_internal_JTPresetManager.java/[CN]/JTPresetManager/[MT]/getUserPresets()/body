@@ -1,6 +1,0 @@
-{
-  if (userPresets == null) {
-    loadUserPresets();
-  }
-  return userPresets;
-}

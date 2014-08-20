@@ -1,0 +1,21 @@
+{
+  if (!isLoaded) {
+    loadPresetExtensions();
+  }
+  if (needToLoadUserCategory) {
+    loadUserPresets();
+  }
+  ArrayList<IJTPresetCategory> values=new ArrayList<IJTPresetCategory>(categories.values());
+  Collections.sort(values,new Comparator<IJTPresetCategory>(){
+    @Override public int compare(    IJTPresetCategory o1,    IJTPresetCategory o2){
+      return o1.getName().compareTo(o2.getName());
+    }
+  }
+);
+  values.remove(userCategory);
+  values.remove(defaultCategory);
+  values.add(0,defaultCategory);
+  values.add(0,userCategory);
+  IJTPresetCategory[] result=values.toArray(new IJTPresetCategory[categories.size()]);
+  return result;
+}

@@ -1,6 +1,5 @@
 {
-  IJTPresetManager presetManager=JThemesCore.getDefault().getPresetManager();
-  List<ContributedPreset> contributedPresets=presetManager.getContributedPresets();
+  List<IJTPreset> contributedPresets=category.getPresets();
   if (contributedPresets.size() == 0) {
     return new IContributionItem[0];
   }
