@@ -1,0 +1,5 @@
+{
+  JThemePreferenceStore fakeStore=new JThemePreferenceStore(new PreferenceStore());
+  root.saveTo(fakeStore);
+  return fakeStore;
+}

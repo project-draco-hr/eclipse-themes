@@ -1,0 +1,8 @@
+{
+  for (  IPreferenceFilter each : filters) {
+    if (!each.acceptKey(field)) {
+      return false;
+    }
+  }
+  return true;
+}

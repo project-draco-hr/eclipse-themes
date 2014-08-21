@@ -1,0 +1,4 @@
+{
+  super();
+  this.filters=new ArrayList<IPreferenceFilter>(filters);
+}

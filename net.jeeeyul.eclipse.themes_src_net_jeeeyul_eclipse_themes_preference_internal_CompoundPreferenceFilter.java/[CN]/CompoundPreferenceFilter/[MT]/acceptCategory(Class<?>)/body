@@ -1,0 +1,8 @@
+{
+  for (  IPreferenceFilter each : filters) {
+    if (!each.acceptCategory(category)) {
+      return false;
+    }
+  }
+  return true;
+}

@@ -1,0 +1,7 @@
+{
+  TypeHint annotation=field.getAnnotation(TypeHint.class);
+  if (annotation == null) {
+    return false;
+  }
+  return annotation.value() == typeClass;
+}

@@ -1,0 +1,5 @@
+{
+  List<IPreferenceFilter> list=new ArrayList<IPreferenceFilter>(this.filters);
+  list.add(other);
+  return new CompoundPreferenceFilter(list);
+}
