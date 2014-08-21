@@ -1,0 +1,8 @@
+{
+  if (areSame(this.minimumCharacters,minimumChars)) {
+    return;
+  }
+  int old=this.minimumCharacters;
+  this.minimumCharacters=minimumChars;
+  pcs.firePropertyChange("minimum-characters",old,minimumChars);
+}

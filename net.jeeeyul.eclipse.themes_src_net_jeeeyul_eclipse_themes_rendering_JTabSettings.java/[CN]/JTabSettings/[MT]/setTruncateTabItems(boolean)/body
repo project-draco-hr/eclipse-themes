@@ -1,0 +1,8 @@
+{
+  if (areSame(this.truncateTabItems,truncateTabItems)) {
+    return;
+  }
+  boolean old=this.truncateTabItems;
+  this.truncateTabItems=truncateTabItems;
+  pcs.firePropertyChange("truncate-tab-items",old,truncateTabItems);
+}
