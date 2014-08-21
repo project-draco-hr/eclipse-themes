@@ -22,6 +22,7 @@
       documentCSS.addStyleSheet(each);
     }
     cssEngine.reapply();
+    RangeIndicatorHack.update();
   }
  catch (  Exception e) {
     e.printStackTrace();
