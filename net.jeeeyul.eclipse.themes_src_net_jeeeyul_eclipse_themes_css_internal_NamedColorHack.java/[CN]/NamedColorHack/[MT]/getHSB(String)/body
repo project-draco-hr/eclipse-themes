@@ -1,0 +1,9 @@
+{
+  String bgExp=EDITOR_STORE.getString(key);
+  String[] segments=bgExp.split("[\\s,]+");
+  int r=Integer.parseInt(segments[0],10);
+  int g=Integer.parseInt(segments[1],10);
+  int b=Integer.parseInt(segments[2],10);
+  HSB hsb=new HSB(r,g,b);
+  return hsb;
+}

@@ -1,0 +1,24 @@
+{
+  try {
+    Field mapField=CSS2ColorHelper.class.getDeclaredField("colorNamesMap");
+    mapField.setAccessible(true);
+    @SuppressWarnings("unchecked") Map<String,String> map=(Map<String,String>)mapField.get(CSS2ColorHelper.class);
+    if (EDITOR_STORE.getBoolean(AbstractTextEditor.PREFERENCE_COLOR_BACKGROUND_SYSTEM_DEFAULT)) {
+      map.put("jtexteditor-background","#ffffff");
+    }
+ else {
+      HSB hsb=getHSB(AbstractTextEditor.PREFERENCE_COLOR_BACKGROUND);
+      map.put("jtexteditor-background",hsb.toHTMLCode());
+    }
+    if (EDITOR_STORE.getBoolean(AbstractTextEditor.PREFERENCE_COLOR_FOREGROUND_SYSTEM_DEFAULT)) {
+      map.put("jtexteditor-foreground","#000000");
+    }
+ else {
+      HSB hsb=getHSB(AbstractTextEditor.PREFERENCE_COLOR_FOREGROUND);
+      map.put("jtexteditor-foreground",hsb.toHTMLCode());
+    }
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}

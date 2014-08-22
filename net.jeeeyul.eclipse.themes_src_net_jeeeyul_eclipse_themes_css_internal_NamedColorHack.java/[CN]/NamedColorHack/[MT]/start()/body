@@ -1,0 +1,4 @@
+{
+  EDITOR_STORE.addPropertyChangeListener(listener);
+  update();
+}
