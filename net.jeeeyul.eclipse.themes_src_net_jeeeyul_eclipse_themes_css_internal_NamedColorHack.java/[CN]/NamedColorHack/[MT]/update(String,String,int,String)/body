@@ -1,0 +1,14 @@
+{
+  try {
+    Map<String,String> map=getNameColorMap();
+    if (EDITOR_STORE.getBoolean(defaultKey)) {
+      map.put(colorname,getHSBFromSystemColor(defaultSWTKey).toHTMLCode());
+    }
+ else {
+      map.put(colorname,getHSBFromEditorPreference(valueKey).toHTMLCode());
+    }
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}

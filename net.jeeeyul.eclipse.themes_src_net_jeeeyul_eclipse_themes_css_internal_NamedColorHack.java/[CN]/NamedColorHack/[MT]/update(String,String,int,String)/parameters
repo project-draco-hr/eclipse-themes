@@ -1,0 +1,4 @@
+String colorname
+String defaultKey
+int defaultSWTKey
+String valueKey

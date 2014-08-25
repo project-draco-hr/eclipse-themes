@@ -1,0 +1,14 @@
+{
+  if (updateJob == null) {
+    updateJob=new UIJob(Display.getDefault(),"Update Named Colors"){
+      @Override public IStatus runInUIThread(      IProgressMonitor monitor){
+        updateAll();
+        return Status.OK_STATUS;
+      }
+    }
+;
+    updateJob.setSystem(true);
+    updateJob.setUser(false);
+  }
+  return updateJob;
+}

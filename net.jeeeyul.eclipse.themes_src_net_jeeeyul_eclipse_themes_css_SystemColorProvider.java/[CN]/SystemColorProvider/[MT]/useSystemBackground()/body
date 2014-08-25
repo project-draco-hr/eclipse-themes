@@ -1,3 +1,0 @@
-{
-  return EDITOR_STORE.getBoolean(AbstractDecoratedTextEditor.PREFERENCE_COLOR_BACKGROUND_SYSTEM_DEFAULT);
-}
