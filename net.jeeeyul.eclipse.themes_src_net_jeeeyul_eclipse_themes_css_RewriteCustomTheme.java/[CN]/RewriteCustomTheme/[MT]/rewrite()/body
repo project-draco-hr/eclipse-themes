@@ -1,5 +1,6 @@
 {
   try {
+    Debug.println("Theme is about to rewrite");
     CSSEngine cssEngine=WidgetElement.getEngine(display);
     ExtendedDocumentCSS documentCSS=(ExtendedDocumentCSS)cssEngine.getDocumentCSS();
     StyleSheet customThemeSheet=findCustomThemeSheet(documentCSS);
@@ -23,6 +24,7 @@
     }
     cssEngine.reapply();
     RangeIndicatorHack.update();
+    Debug.println("Theme was re-written");
   }
  catch (  Exception e) {
     e.printStackTrace();

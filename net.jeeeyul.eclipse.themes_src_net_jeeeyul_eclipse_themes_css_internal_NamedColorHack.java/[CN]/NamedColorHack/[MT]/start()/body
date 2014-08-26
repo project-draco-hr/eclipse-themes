@@ -1,4 +1,4 @@
 {
-  EDITOR_STORE.addPropertyChangeListener(listener);
-  updateAll();
+  getEditorStore().addPropertyChangeListener(listener);
+  getUpdateJob().schedule();
 }

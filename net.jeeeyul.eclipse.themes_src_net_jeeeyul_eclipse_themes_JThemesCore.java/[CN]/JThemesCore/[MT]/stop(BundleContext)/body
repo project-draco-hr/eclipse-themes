@@ -1,5 +1,6 @@
 {
+  NamedColorHack.INSTANCE.stop();
+  EditBoxTracker.INSTANCE.stopTracking();
   plugin=null;
-  NamedColorHack.stop();
   super.stop(context);
 }

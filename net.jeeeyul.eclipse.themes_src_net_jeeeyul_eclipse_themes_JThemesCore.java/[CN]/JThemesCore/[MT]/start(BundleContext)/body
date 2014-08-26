@@ -5,6 +5,4 @@
   IThemeManager manager=context.getService(serviceReference);
   IThemeEngine engine=manager.getEngineForDisplay(Display.getDefault());
   engine.registerResourceLocator(new JTDynamicResourceLocator());
-  NamedColorHack.start();
-  EditBoxTracker.INSTANCE.beginTrack();
 }

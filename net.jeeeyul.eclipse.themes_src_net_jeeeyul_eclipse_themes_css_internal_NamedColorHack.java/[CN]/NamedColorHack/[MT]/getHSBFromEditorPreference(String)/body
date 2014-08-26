@@ -1,5 +1,5 @@
 {
-  String bgExp=EDITOR_STORE.getString(key);
+  String bgExp=getEditorStore().getString(key);
   String[] segments=bgExp.split("[\\s,]+");
   int r=Integer.parseInt(segments[0],10);
   int g=Integer.parseInt(segments[1],10);

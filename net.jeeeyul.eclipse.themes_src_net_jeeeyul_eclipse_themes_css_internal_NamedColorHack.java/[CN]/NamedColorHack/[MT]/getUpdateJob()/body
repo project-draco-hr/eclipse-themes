@@ -8,7 +8,7 @@
     }
 ;
     updateJob.setSystem(true);
-    updateJob.setUser(false);
+    updateJob.setUser(true);
   }
   return updateJob;
 }

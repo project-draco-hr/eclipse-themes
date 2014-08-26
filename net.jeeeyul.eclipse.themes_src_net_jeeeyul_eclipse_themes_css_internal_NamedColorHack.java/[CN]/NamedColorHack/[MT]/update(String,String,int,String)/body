@@ -1,7 +1,7 @@
 {
   try {
     Map<String,String> map=getNameColorMap();
-    if (EDITOR_STORE.getBoolean(defaultKey)) {
+    if (getEditorStore().getBoolean(defaultKey)) {
       map.put(colorname,getHSBFromSystemColor(defaultSWTKey).toHTMLCode());
     }
  else {

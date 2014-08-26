@@ -1,0 +1,4 @@
+{
+  NamedColorHack.INSTANCE.start();
+  EditBoxTracker.INSTANCE.beginTrack();
+}
