@@ -1,0 +1,16 @@
+{
+  browser=new Browser(parent,SWT.NORMAL);
+  if (Platform.inDevelopmentMode() && Platform.inDebugMode()) {
+    browser.setUrl("http://localhost:3000/");
+  }
+ else {
+    browser.setUrl("http://ets.meteor.com");
+  }
+  browser.addOpenWindowListener(new OpenWindowListener(){
+    @Override public void open(    WindowEvent event){
+      handleOpen(event);
+    }
+  }
+);
+  installFunctions();
+}

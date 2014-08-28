@@ -24,6 +24,9 @@
     }
     cssEngine.reapply();
     RangeIndicatorHack.update();
+    for (    Shell each : Display.getDefault().getShells()) {
+      each.layout(true,true);
+    }
     Debug.println("Theme was re-written");
   }
  catch (  Exception e) {

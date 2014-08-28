@@ -1,0 +1,11 @@
+{
+  IWorkbenchWindow window=HandlerUtil.getActiveWorkbenchWindow(event);
+  IWorkbenchPage ap=window.getActivePage();
+  try {
+    ap.openEditor(new StoreEditorInput(),StoreClient.EDITOR_ID);
+  }
+ catch (  PartInitException e) {
+    e.printStackTrace();
+  }
+  return null;
+}

@@ -1,0 +1,3 @@
+{
+  if (SWTExtensions.INSTANCE.isAlive(browser))   browser.setFocus();
+}

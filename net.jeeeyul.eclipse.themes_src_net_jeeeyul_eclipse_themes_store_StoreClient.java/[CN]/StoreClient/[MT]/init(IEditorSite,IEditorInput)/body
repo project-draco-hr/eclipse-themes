@@ -1,0 +1,4 @@
+{
+  setSite(site);
+  setInput(input);
+}

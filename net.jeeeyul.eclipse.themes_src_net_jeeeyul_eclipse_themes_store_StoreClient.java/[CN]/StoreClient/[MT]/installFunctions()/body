@@ -1,0 +1,18 @@
+{
+  new BrowserFunction(browser,"__install"){
+    public Object function(    Object[] arguments){
+      if (arguments.length == 1 && arguments[0] instanceof String) {
+        String soruce=(String)arguments[0];
+        installEPF(soruce);
+      }
+      return null;
+    }
+  }
+;
+  new BrowserFunction(browser,"__getCurrentEPF"){
+    public Object function(    Object[] args){
+      return new EPFGenerator().generate();
+    }
+  }
+;
+}

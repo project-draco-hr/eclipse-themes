@@ -1,0 +1,22 @@
+{
+  System.out.println(event.size);
+  final Shell shell=new Shell(browser.getShell(),SWT.SHELL_TRIM);
+  GridLayout layout=new GridLayout();
+  layout.marginWidth=layout.marginHeight=0;
+  shell.setLayout(layout);
+  Browser browser=new Browser(shell,SWT.NORMAL);
+  event.browser=browser;
+  browser.addCloseWindowListener(new CloseWindowListener(){
+    @Override public void close(    WindowEvent event){
+      shell.dispose();
+    }
+  }
+);
+  GridData data=new GridData(GridData.FILL_BOTH);
+  Point size=event.size != null ? event.size : new Point(640,480);
+  data.widthHint=size.x;
+  data.heightHint=size.y;
+  browser.setLayoutData(data);
+  shell.pack();
+  shell.open();
+}
