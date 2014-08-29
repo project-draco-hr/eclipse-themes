@@ -22,6 +22,7 @@
       engine.setTheme(JThemesCore.CUSTOM_THEME_ID,true);
       MessageDialog.openWarning(Display.getDefault().getActiveShell(),"Jeeeyul's Themes","A restart or opening new window is required for the theme change to full effect.");
     }
+    store.setValue(JTPConstants.Memento.LAST_CHOOSED_PRESET,"");
   }
  catch (  Exception e) {
     e.printStackTrace();
