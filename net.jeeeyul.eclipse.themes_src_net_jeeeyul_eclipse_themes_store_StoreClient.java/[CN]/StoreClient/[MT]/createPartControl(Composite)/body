@@ -1,16 +1,21 @@
 {
-  browser=new Browser(parent,SWT.NONE);
-  if (Platform.inDevelopmentMode() && Platform.inDebugMode()) {
-    browser.setUrl("http://localhost:3000/");
-  }
- else {
-    browser.setUrl("http://themes.jeeeyul.net");
-  }
-  browser.addOpenWindowListener(new OpenWindowListener(){
-    @Override public void open(    WindowEvent event){
-      handleOpen(event);
+  try {
+    browser=new Browser(parent,SWT.NONE);
+    if (Platform.inDevelopmentMode() && Platform.inDebugMode()) {
+      browser.setUrl("http://localhost:3000/");
     }
-  }
+ else {
+      browser.setUrl("http://themes.jeeeyul.net");
+    }
+    browser.addOpenWindowListener(new OpenWindowListener(){
+      @Override public void open(      WindowEvent event){
+        handleOpen(event);
+      }
+    }
 );
-  installFunctions();
+    installFunctions();
+  }
+ catch (  SWTError e) {
+    createBrowserHelpPage(parent);
+  }
 }

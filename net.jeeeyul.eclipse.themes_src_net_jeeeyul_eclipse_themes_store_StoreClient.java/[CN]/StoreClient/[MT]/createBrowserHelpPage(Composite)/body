@@ -1,0 +1,10 @@
+{
+  Link link=new Link(parent,SWT.NORMAL);
+  link.setText("Could not create browser, Please read <a href=\"https://github.com/jeeeyul/eclipse-themes/wiki/Linux-Theme-Store-Problem\">Linux User Guide</a>");
+  link.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      Program.launch(event.text);
+    }
+  }
+);
+}
