@@ -1,0 +1,37 @@
+{
+  Debug.println("Theme is about to rewrite");
+  CSSEngine cssEngine=WidgetElement.getEngine(display);
+  for (  IWorkbenchWindow each : PlatformUI.getWorkbench().getWorkbenchWindows()) {
+    TrimmedPartLayout layout=(TrimmedPartLayout)each.getShell().getLayout();
+    Rectangle margins=JThemesCore.getDefault().getPreferenceStore().getRectangle(JTPConstants.Window.MARGINS);
+    layout.gutterTop=margins.y;
+    layout.gutterBottom=margins.height;
+    layout.gutterLeft=margins.x;
+    layout.gutterRight=margins.width;
+  }
+  IResourcesRegistry resourcesRegistry=cssEngine.getResourcesRegistry();
+  new ResourceRegistryHack().disposeDynamicImages(resourcesRegistry);
+  ExtendedDocumentCSS documentCSS=(ExtendedDocumentCSS)cssEngine.getDocumentCSS();
+  StyleSheet customThemeSheet=findCustomThemeSheet(documentCSS);
+  StyleSheet newSheet=cssEngine.parseStyleSheet(new StringReader(css));
+  StyleSheetList oldSheetList=documentCSS.getStyleSheets();
+  List<StyleSheet> newSheetList=new ArrayList<StyleSheet>();
+  for (int i=0; i < oldSheetList.getLength(); i++) {
+    StyleSheet oldSheet=oldSheetList.item(i);
+    if (oldSheet != customThemeSheet) {
+      if (!newSheetList.contains(oldSheet))       newSheetList.add(oldSheet);
+    }
+ else {
+      if (!newSheetList.contains(newSheet))       newSheetList.add(newSheet);
+    }
+  }
+  documentCSS.removeAllStyleSheets();
+  for (  StyleSheet each : newSheetList) {
+    documentCSS.addStyleSheet(each);
+  }
+  cssEngine.reapply();
+  for (  Shell each : Display.getDefault().getShells()) {
+    each.layout(true,true);
+  }
+  Debug.println("Theme was re-written");
+}
