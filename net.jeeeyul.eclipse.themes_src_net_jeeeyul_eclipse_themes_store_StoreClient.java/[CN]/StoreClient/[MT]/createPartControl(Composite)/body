@@ -4,7 +4,7 @@
     browser.setUrl("http://localhost:3000/");
   }
  else {
-    browser.setUrl("http://ets.meteor.com");
+    browser.setUrl("http://themes.jeeeyul.net");
   }
   browser.addOpenWindowListener(new OpenWindowListener(){
     @Override public void open(    WindowEvent event){
