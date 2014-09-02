@@ -1,0 +1,8 @@
+{
+  if (this.closeButtonAlignment == closeButtonAlignment) {
+    return;
+  }
+  VerticalAlignment old=this.closeButtonAlignment;
+  this.closeButtonAlignment=closeButtonAlignment;
+  pcs.firePropertyChange("close-button-alignement",old,closeButtonAlignment);
+}

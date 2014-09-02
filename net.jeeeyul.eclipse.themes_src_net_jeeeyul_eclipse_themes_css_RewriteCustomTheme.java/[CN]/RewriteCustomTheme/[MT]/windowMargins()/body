@@ -1,0 +1,14 @@
+{
+  JThemePreferenceStore store=JThemesCore.getDefault().getPreferenceStore();
+  Rectangle margins=store.getRectangle(JTPConstants.Window.MARGINS);
+  if (store.getBoolean(JTPConstants.Layout.SHOW_SHADOW)) {
+    margins.x=Math.max(margins.x - 1,0);
+    margins.width=Math.max(margins.width - 4,0);
+    margins.height=Math.max(margins.height - 4,0);
+  }
+ else {
+    margins.width=Math.max(margins.width - 1,0);
+    margins.height=Math.max(margins.height - 1,0);
+  }
+  return margins;
+}
