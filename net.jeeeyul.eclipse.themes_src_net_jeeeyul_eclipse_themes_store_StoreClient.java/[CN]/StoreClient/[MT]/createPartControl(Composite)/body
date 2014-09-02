@@ -1,7 +1,7 @@
 {
   try {
     browser=new Browser(parent,SWT.NONE);
-    if (Platform.inDevelopmentMode() && Platform.inDebugMode()) {
+    if (Debug.useLocalStore()) {
       browser.setUrl("http://localhost:3000/");
     }
  else {
