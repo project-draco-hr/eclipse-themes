@@ -1,0 +1,20 @@
+{
+  IWorkbenchSiteProgressService service=(IWorkbenchSiteProgressService)getSite().getService(IWorkbenchSiteProgressService.class);
+  service.schedule(new Job("Test Job"){
+    @Override protected IStatus run(    IProgressMonitor monitor){
+      monitor.beginTask("Test",100);
+      for (int i=0; i < 100; i++) {
+        try {
+          Thread.sleep(100);
+          monitor.worked(1);
+        }
+ catch (        InterruptedException e) {
+          e.printStackTrace();
+        }
+      }
+      monitor.done();
+      return Status.OK_STATUS;
+    }
+  }
+);
+}

@@ -1,0 +1,12 @@
+{
+  Composite composite=new Composite(parent,SWT.NORMAL);
+  composite.setLayout(new GridLayout());
+  Button testButton=new Button(composite,SWT.PUSH);
+  testButton.setText("Do some job");
+  testButton.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      doTest();
+    }
+  }
+);
+}
