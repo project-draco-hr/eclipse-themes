@@ -1,0 +1,15 @@
+{
+  if (!(element instanceof ShellElement)) {
+    return false;
+  }
+  Shell shell=(Shell)((ShellElement)element).getNativeWidget();
+  if (property.equals("jswt-alpha")) {
+    if (!(value instanceof CSSPrimitiveValue)) {
+      return false;
+    }
+    float alpha=((CSSPrimitiveValue)value).getFloatValue(CSSPrimitiveValue.CSS_NUMBER);
+    shell.setAlpha((int)alpha);
+    return true;
+  }
+  return false;
+}

@@ -1,0 +1,10 @@
+{
+  if (!(element instanceof ShellElement)) {
+    return null;
+  }
+  Shell shell=(Shell)((ShellElement)element).getNativeWidget();
+  if (property.equals("jswt-alpha")) {
+    return Integer.toString(shell.getAlpha());
+  }
+  return null;
+}
