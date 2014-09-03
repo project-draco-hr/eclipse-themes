@@ -1,0 +1,32 @@
+{
+  IPreferencePageContainer container=getContainer();
+  if (!(container instanceof PreferenceDialog)) {
+    return;
+  }
+  PreferenceManager manager=((PreferenceDialog)container).getPreferenceManager();
+  List<IPreferenceNode> elements=manager.getElements(PreferenceManager.POST_ORDER);
+  IPreferenceNode node=IterableExtensions.findFirst(elements,new Function1<IPreferenceNode,Boolean>(){
+    @Override public Boolean apply(    IPreferenceNode t){
+      return t.getId().equals(JTPreferencePage.ID);
+    }
+  }
+);
+  if (node == null || node.getPage() == null) {
+    return;
+  }
+  JTPreferencePage page=(JTPreferencePage)node.getPage();
+  JThemePreferenceStore copy=JThemesCore.getDefault().getPreferenceStore().getCopyWithContext(null);
+  Properties properties=selected.getProperties();
+  for (  Object keyObj : properties.keySet()) {
+    String key=(String)keyObj;
+    String value=properties.getProperty(key);
+    if (key.equals(JTPConstants.Layout.TAB_HEIGHT)) {
+      int intValue=Integer.parseInt(value);
+      copy.setValue(key,Math.max(intValue,SWTExtensions.INSTANCE.getMinimumToolBarHeight()));
+    }
+ else {
+      copy.setValue(key,value);
+    }
+  }
+  page.loadFrom(copy);
+}

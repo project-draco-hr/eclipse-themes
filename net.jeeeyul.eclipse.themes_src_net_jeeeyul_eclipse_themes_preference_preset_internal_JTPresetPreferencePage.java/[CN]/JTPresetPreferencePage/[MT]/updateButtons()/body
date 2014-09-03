@@ -1,5 +1,6 @@
 {
   List<UserPreset> selection=getSelection();
+  activateButton.setEnabled(selection.size() == 1);
   deleteButton.setEnabled(selection.size() > 0);
   renameButton.setEnabled(selection.size() == 1);
   exportButton.setEnabled(selection.size() == 1);

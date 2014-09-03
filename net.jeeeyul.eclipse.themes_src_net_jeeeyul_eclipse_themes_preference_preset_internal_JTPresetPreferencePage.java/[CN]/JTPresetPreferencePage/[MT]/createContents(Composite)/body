@@ -3,14 +3,14 @@
   container.setLayout(new GridLayout(2,false));
   viewer=new TableViewer(container,SWT.FULL_SELECTION | SWT.BORDER | SWT.MULTI);
   viewer.setLabelProvider(new LabelProvider(){
-    @Override public String getText(    Object element){
-      return ((IJTPreset)element).getName();
-    }
     @Override public Image getImage(    Object element){
       IJTPreset preset=(IJTPreset)element;
       Image image=preset.getImageDescriptor().createImage();
       $.shouldDisposeWith(image,viewer.getControl());
       return image;
+    }
+    @Override public String getText(    Object element){
+      return ((IJTPreset)element).getName();
     }
   }
 );
@@ -29,8 +29,17 @@
   viewerLayoutData.grabExcessVerticalSpace=true;
   viewerLayoutData.widthHint=200;
   viewerLayoutData.heightHint=200;
-  viewerLayoutData.verticalSpan=4;
+  viewerLayoutData.verticalSpan=5;
   viewer.getControl().setLayoutData(viewerLayoutData);
+  activateButton=new Button(container,SWT.PUSH);
+  activateButton.setText("Apply");
+  activateButton.setLayoutData(new GridData(SWT.FILL,SWT.TOP,false,false));
+  activateButton.addListener(SWT.Selection,new Listener(){
+    @Override public void handleEvent(    Event event){
+      activate();
+    }
+  }
+);
   deleteButton=new Button(container,SWT.PUSH);
   deleteButton.setText("Delete");
   deleteButton.setLayoutData(new GridData(SWT.FILL,SWT.TOP,false,false));

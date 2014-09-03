@@ -1,0 +1,8 @@
+{
+  IJTPreset selected=(IJTPreset)((IStructuredSelection)viewer.getSelection()).getFirstElement();
+  if (selected == null) {
+    return;
+  }
+  new ApplyPresetAction(selected).run();
+  copySettingsIfAvailable(selected);
+}
