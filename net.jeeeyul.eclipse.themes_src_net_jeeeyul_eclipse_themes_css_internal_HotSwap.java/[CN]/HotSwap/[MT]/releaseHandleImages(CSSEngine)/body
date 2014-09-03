@@ -1,0 +1,4 @@
+{
+  IResourcesRegistry resourcesRegistry=cssEngine.getResourcesRegistry();
+  new ResourceRegistryHack().disposeDynamicImages(resourcesRegistry);
+}

@@ -1,0 +1,8 @@
+{
+  HashSet<Resource> hashSet=trackedFrames.get(f);
+  if (hashSet != null) {
+    Debug.println(MessageFormat.format("Image Frame {0} disposed {1} resources",f.hashCode(),hashSet.size()));
+    SWTExtensions.INSTANCE.safeDispose(hashSet);
+    hashSet.clear();
+  }
+}

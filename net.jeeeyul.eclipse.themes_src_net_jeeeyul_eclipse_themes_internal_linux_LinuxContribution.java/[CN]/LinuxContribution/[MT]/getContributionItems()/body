@@ -1,5 +1,5 @@
 {
-  if (OSHelper.INSTANCE.isLinux() == false) {
+  if (ENVHelper.INSTANCE.isLinux() == false) {
     return new IContributionItem[0];
   }
   return new IContributionItem[]{new ActionContributionItem(new LaunchGTKWizardAction())};

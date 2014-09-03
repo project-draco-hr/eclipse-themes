@@ -1,0 +1,11 @@
+{
+  for (  Shell each : Display.getDefault().getShells()) {
+    Iterator<? extends Widget> iter=SWTExtensions.INSTANCE.getAllContent(each);
+    while (iter.hasNext()) {
+      Widget w=iter.next();
+      if (w instanceof ImageBasedFrame) {
+        fixHandle(cssEngine,w);
+      }
+    }
+  }
+}

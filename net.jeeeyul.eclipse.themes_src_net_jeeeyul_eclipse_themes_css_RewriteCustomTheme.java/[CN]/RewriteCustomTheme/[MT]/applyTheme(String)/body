@@ -1,16 +1,9 @@
 {
   Debug.println("Theme is about to rewrite");
   CSSEngine cssEngine=WidgetElement.getEngine(display);
-  for (  IWorkbenchWindow each : PlatformUI.getWorkbench().getWorkbenchWindows()) {
-    TrimmedPartLayout layout=(TrimmedPartLayout)each.getShell().getLayout();
-    Rectangle margins=windowMargins();
-    layout.gutterTop=margins.y;
-    layout.gutterBottom=margins.height;
-    layout.gutterLeft=margins.x;
-    layout.gutterRight=margins.width;
+  if (hotSwap) {
+    HotSwap.INSTANCE.fixWindowMargins();
   }
-  IResourcesRegistry resourcesRegistry=cssEngine.getResourcesRegistry();
-  new ResourceRegistryHack().disposeDynamicImages(resourcesRegistry);
   ExtendedDocumentCSS documentCSS=(ExtendedDocumentCSS)cssEngine.getDocumentCSS();
   StyleSheet customThemeSheet=findCustomThemeSheet(documentCSS);
   StyleSheet newSheet=cssEngine.parseStyleSheet(new StringReader(css));
@@ -26,12 +19,18 @@
     }
   }
   documentCSS.removeAllStyleSheets();
+  if (hotSwap && ENVHelper.INSTANCE.isLunaOrAbove()) {
+    HotSwap.INSTANCE.releaseHandleImages(cssEngine);
+  }
   for (  StyleSheet each : newSheetList) {
     documentCSS.addStyleSheet(each);
   }
   cssEngine.reapply();
   for (  Shell each : Display.getDefault().getShells()) {
     each.layout(true,true);
+  }
+  if (hotSwap && ENVHelper.INSTANCE.isLunaOrAbove()) {
+    HotSwap.INSTANCE.fixDragHandles(cssEngine);
   }
   Debug.println("Theme was re-written");
 }

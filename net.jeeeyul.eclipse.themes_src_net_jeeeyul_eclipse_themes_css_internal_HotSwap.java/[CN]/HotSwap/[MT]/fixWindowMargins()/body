@@ -1,0 +1,10 @@
+{
+  for (  IWorkbenchWindow each : PlatformUI.getWorkbench().getWorkbenchWindows()) {
+    TrimmedPartLayout layout=(TrimmedPartLayout)each.getShell().getLayout();
+    Rectangle margins=windowMargins();
+    layout.gutterTop=margins.y;
+    layout.gutterBottom=margins.height;
+    layout.gutterLeft=margins.x;
+    layout.gutterRight=margins.width;
+  }
+}

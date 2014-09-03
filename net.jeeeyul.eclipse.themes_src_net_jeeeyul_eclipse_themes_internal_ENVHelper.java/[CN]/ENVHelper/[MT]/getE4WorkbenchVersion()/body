@@ -1,0 +1,8 @@
+{
+  if (Platform.isRunning()) {
+    return Platform.getBundle("org.eclipse.e4.ui.workbench").getVersion();
+  }
+ else {
+    return new Version(0,0,0);
+  }
+}

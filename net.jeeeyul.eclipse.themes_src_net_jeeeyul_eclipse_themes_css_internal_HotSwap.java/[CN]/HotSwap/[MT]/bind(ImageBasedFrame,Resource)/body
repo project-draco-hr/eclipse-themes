@@ -1,0 +1,8 @@
+{
+  HashSet<Resource> hashSet=trackedFrames.get(owner);
+  if (hashSet == null) {
+    hashSet=new HashSet<Resource>();
+    trackedFrames.put(owner,hashSet);
+  }
+  hashSet.addAll(Arrays.asList(r));
+}

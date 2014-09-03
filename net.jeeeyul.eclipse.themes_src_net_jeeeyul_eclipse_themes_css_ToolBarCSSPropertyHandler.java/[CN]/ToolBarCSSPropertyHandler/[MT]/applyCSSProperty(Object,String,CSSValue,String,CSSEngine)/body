@@ -1,0 +1,19 @@
+{
+  if (!(element instanceof ToolBarElement)) {
+    return false;
+  }
+  ToolBarElement toolBarElement=(ToolBarElement)element;
+  ToolBar toolBar=(ToolBar)toolBarElement.getNativeWidget();
+  if (property.equals("jtool-item-color")) {
+    Color color=(Color)engine.convert(value,Color.class,toolBar.getDisplay());
+    toolBar.setForeground(color);
+    ToolItem[] items=toolBar.getItems();
+    for (    ToolItem each : items) {
+      String text=each.getText();
+      each.setText("");
+      each.setText(text);
+    }
+    return true;
+  }
+  return false;
+}

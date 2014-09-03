@@ -1,0 +1,11 @@
+{
+  if (!(element instanceof ToolBarElement)) {
+    return null;
+  }
+  ToolBarElement toolBarElement=(ToolBarElement)element;
+  ToolBar toolBar=(ToolBar)toolBarElement.getNativeWidget();
+  if (property.equals("jtool-item-color")) {
+    return new HSB(toolBar.getForeground().getRGB()).toHTMLCode();
+  }
+  return null;
+}
