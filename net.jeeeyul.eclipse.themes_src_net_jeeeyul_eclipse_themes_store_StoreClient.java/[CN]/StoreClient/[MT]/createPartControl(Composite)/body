@@ -1,12 +1,58 @@
 {
   try {
-    browser=new Browser(parent,SWT.NONE);
-    if (Debug.useLocalStore()) {
-      browser.setUrl("http://localhost:3000/");
+    Composite composite=new Composite(parent,SWT.NORMAL);
+    GridLayout layout=new GridLayout(2,false);
+    composite.setLayout(layout);
+    layout.marginWidth=layout.marginHeight=0;
+    layout.verticalSpacing=0;
+    ToolBar toolBar=new ToolBar(composite,SWT.FLAT);
+    backItem=new ToolItem(toolBar,SWT.PUSH);
+    backItem.setImage(SharedImages.getImage(SharedImages.BACKWARD_NAV));
+    backItem.addListener(SWT.Selection,new Listener(){
+      @Override public void handleEvent(      Event event){
+        browser.back();
+      }
     }
- else {
-      browser.setUrl("http://themes.jeeeyul.net");
+);
+    forwardItem=new ToolItem(toolBar,SWT.PUSH);
+    forwardItem.setImage(SharedImages.getImage(SharedImages.FORWARD_NAV));
+    forwardItem.addListener(SWT.Selection,new Listener(){
+      @Override public void handleEvent(      Event event){
+        browser.forward();
+      }
     }
+);
+    new ToolItem(toolBar,SWT.SEPARATOR);
+    homeItem=new ToolItem(toolBar,SWT.PUSH);
+    homeItem.setImage(SharedImages.getImage(SharedImages.HOME_NAV));
+    homeItem.addListener(SWT.Selection,new Listener(){
+      @Override public void handleEvent(      Event event){
+        browser.setUrl(getBootstrapURL());
+      }
+    }
+);
+    urlField=new Text(composite,SWT.BORDER | SWT.READ_ONLY);
+    urlField.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+    browser=new Browser(composite,SWT.NONE);
+    GridData browserData=new GridData(GridData.FILL_BOTH);
+    browserData.horizontalSpan=2;
+    browser.setLayoutData(browserData);
+    browser.addTitleListener(new TitleListener(){
+      @Override public void changed(      TitleEvent event){
+        Debug.println(event);
+      }
+    }
+);
+    browser.addLocationListener(new LocationListener(){
+      @Override public void changing(      LocationEvent event){
+        Debug.println(event);
+      }
+      @Override public void changed(      LocationEvent event){
+        Debug.println(event);
+        urlField.setText(event.location);
+      }
+    }
+);
     browser.addOpenWindowListener(new OpenWindowListener(){
       @Override public void open(      WindowEvent event){
         handleOpen(event);
@@ -14,6 +60,7 @@
     }
 );
     installFunctions();
+    browser.setUrl(getBootstrapURL());
   }
  catch (  SWTError e) {
     createBrowserHelpPage(parent);

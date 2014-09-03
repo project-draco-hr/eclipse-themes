@@ -1,0 +1,8 @@
+{
+  if (Debug.useLocalStore()) {
+    return "http://localhost:3000/";
+  }
+ else {
+    return "http://themes.jeeeyul.net";
+  }
+}
