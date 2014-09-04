@@ -1,0 +1,9 @@
+{
+  Properties result=new Properties();
+  for (  Properties eachProps : propertiesList) {
+    for (    Object eachKey : eachProps.keySet()) {
+      result.put(eachKey,eachProps.get(eachKey));
+    }
+  }
+  return result;
+}

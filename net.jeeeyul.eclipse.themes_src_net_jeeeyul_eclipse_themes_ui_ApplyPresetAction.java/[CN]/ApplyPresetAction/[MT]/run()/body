@@ -1,6 +1,7 @@
 {
   JThemePreferenceStore store=getStore();
-  Properties properties=preset.getProperties();
+  IJTPresetManager presetManager=JThemesCore.getDefault().getPresetManager();
+  Properties properties=PropertiesUtil.merge(presetManager.getDefaultPreset().getProperties(),preset.getProperties());
   for (  Object keyObj : properties.keySet()) {
     String key=(String)keyObj;
     String value=properties.getProperty(key);

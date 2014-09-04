@@ -2,6 +2,8 @@
   try {
     Properties properties=new Properties();
     properties.load(new ByteArrayInputStream(epfString.getBytes("ISO-8859-1")));
+    IJTPreset defaultPreset=JThemesCore.getDefault().getPresetManager().getDefaultPreset();
+    properties=PropertiesUtil.merge(defaultPreset.getProperties(),properties);
     JThemePreferenceStore store=JThemesCore.getDefault().getPreferenceStore();
     for (    Object keyObj : properties.keySet()) {
       String key=(String)keyObj;
