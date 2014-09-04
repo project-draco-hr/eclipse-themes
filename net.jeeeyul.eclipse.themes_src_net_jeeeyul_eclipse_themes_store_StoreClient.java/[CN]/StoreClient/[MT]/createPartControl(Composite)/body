@@ -37,22 +37,6 @@
     GridData browserData=new GridData(GridData.FILL_BOTH);
     browserData.horizontalSpan=2;
     browser.setLayoutData(browserData);
-    browser.addTitleListener(new TitleListener(){
-      @Override public void changed(      TitleEvent event){
-        Debug.println(event);
-      }
-    }
-);
-    browser.addLocationListener(new LocationListener(){
-      @Override public void changing(      LocationEvent event){
-        Debug.println(event);
-      }
-      @Override public void changed(      LocationEvent event){
-        Debug.println(event);
-        urlField.setText(event.location);
-      }
-    }
-);
     browser.addOpenWindowListener(new OpenWindowListener(){
       @Override public void open(      WindowEvent event){
         handleOpen(event);
