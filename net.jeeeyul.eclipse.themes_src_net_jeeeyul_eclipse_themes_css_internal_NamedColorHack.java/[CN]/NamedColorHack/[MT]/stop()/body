@@ -1,3 +1,5 @@
 {
-  getEditorStore().removePropertyChangeListener(listener);
+  if (textEditorAvailable()) {
+    getEditorStore().removePropertyChangeListener(listener);
+  }
 }

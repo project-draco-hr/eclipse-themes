@@ -1,4 +1,6 @@
 {
-  getEditorStore().addPropertyChangeListener(listener);
-  getUpdateJob().schedule();
+  if (textEditorAvailable()) {
+    getEditorStore().addPropertyChangeListener(listener);
+    getUpdateJob().schedule();
+  }
 }
