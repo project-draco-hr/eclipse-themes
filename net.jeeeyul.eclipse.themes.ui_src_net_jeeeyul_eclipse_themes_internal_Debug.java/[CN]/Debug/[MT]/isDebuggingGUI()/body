@@ -1,7 +1,0 @@
-{
-  if (DEBUG_GUI == null) {
-    String debugOption=Platform.getDebugOption("net.jeeeyul.eclipse.themes/debug/gui");
-    DEBUG_GUI=Boolean.parseBoolean(debugOption);
-  }
-  return DEBUG_GUI;
-}

@@ -1,0 +1,4 @@
+{
+  eventBroker.unsubscribe(themeChangeHandler);
+  Debug.println("Active Theme Processor is disposed");
+}

@@ -1,4 +1,0 @@
-{
-  eventBroker.unsubscribe(themeChangeHandler);
-  Debug.println("Active Theme Tracker is disposed");
-}

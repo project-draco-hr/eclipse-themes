@@ -1,8 +1,0 @@
-{
-  Debug.println("JThemeProcessor started");
-  validateAddons(application);
-  Set<String> contributionIds=getContributionURIs(application);
-  if (!contributionIds.contains(getContributionURI(ActiveThemeTracker.class))) {
-    installAddon(application,ActiveThemeTracker.class);
-  }
-}

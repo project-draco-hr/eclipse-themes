@@ -1,5 +1,0 @@
-{
-  this.folder=folder;
-  folder.addListener(SWT.Paint,selectionHook);
-  getComputeJob().schedule();
-}

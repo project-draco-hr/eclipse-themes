@@ -1,6 +1,0 @@
-{
-  MAddon addonInstance=MApplicationFactory.INSTANCE.createAddon();
-  addonInstance.setContributionURI(getContributionURI(addOn));
-  addonInstance.setContributorURI(getContributorURI());
-  application.getAddons().add(addonInstance);
-}

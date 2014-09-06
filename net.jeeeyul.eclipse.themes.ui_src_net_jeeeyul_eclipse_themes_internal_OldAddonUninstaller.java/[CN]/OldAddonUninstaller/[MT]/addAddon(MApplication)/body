@@ -1,0 +1,4 @@
+{
+  Debug.println("Old Addon Uninstaller started");
+  validateAddons(application);
+}

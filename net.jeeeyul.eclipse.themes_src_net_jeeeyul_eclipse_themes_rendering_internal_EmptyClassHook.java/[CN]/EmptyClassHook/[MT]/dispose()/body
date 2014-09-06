@@ -1,9 +1,0 @@
-{
-  if (isDisposed) {
-    return;
-  }
-  if (folder != null && !folder.isDisposed()) {
-    folder.removeListener(SWT.Paint,selectionHook);
-  }
-  isDisposed=true;
-}
