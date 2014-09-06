@@ -1,0 +1,4 @@
+{
+  String contributorURI=each.getContributorURI();
+  return MessageFormat.format("plugin://{0}",JTRuntime.PLUGIN_ID).equals(contributorURI) || MessageFormat.format("plugin://{0}",JThemesCore.PLUGIN_ID).equals(contributorURI);
+}

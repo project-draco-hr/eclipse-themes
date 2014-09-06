@@ -1,6 +1,0 @@
-{
-  boolean isCustomThemeActivated=isCustomThemeActive();
-  if (isCustomThemeActivated) {
-    new RewriteCustomTheme().rewrite();
-  }
-}

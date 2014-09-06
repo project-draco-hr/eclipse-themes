@@ -1,0 +1,6 @@
+{
+  if (DEBUG == null) {
+    DEBUG=JThemesCore.getDefault().isDebugging();
+  }
+  return DEBUG;
+}

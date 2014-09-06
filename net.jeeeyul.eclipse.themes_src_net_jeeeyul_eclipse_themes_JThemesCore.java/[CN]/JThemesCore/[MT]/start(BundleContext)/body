@@ -1,8 +1,0 @@
-{
-  super.start(context);
-  plugin=this;
-  ServiceReference<IThemeManager> serviceReference=context.getServiceReference(IThemeManager.class);
-  IThemeManager manager=context.getService(serviceReference);
-  IThemeEngine engine=manager.getEngineForDisplay(Display.getDefault());
-  engine.registerResourceLocator(new JTDynamicResourceLocator());
-}

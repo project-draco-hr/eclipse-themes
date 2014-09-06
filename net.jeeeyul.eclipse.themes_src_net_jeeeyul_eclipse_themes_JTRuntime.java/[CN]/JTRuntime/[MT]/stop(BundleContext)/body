@@ -1,0 +1,5 @@
+{
+  EditBoxTracker.INSTANCE.stopTracking();
+  NamedColorHack.INSTANCE.stop();
+  super.stop(bundleContext);
+}

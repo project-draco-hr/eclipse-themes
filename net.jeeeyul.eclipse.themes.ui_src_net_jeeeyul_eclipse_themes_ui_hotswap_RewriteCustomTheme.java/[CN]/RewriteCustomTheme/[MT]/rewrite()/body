@@ -1,0 +1,10 @@
+{
+  try {
+    CustomThemeGenerator generator=new CustomThemeGenerator(JThemesCore.getDefault().getPreferenceStore());
+    String newCSSContent=generator.generate().toString();
+    applyTheme(newCSSContent);
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}

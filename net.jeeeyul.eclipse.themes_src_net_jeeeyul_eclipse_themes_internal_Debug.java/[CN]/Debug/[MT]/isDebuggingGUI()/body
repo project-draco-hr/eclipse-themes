@@ -1,6 +1,6 @@
 {
   if (DEBUG_GUI == null) {
-    String debugOption=Platform.getDebugOption("net.jeeeyul.eclipse.themes/debug/gui");
+    String debugOption=Platform.getDebugOption(MessageFormat.format("{0}/debug/gui",JTRuntime.PLUGIN_ID));
     DEBUG_GUI=Boolean.parseBoolean(debugOption);
   }
   return DEBUG_GUI;

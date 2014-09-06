@@ -1,0 +1,4 @@
+{
+  Debug.println("Dynamic Custom Theme is Activated!");
+  new RewriteCustomTheme().rewrite();
+}

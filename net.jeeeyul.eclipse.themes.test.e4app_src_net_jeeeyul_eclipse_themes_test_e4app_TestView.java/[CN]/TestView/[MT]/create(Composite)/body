@@ -1,0 +1,4 @@
+{
+  Label label=new Label(parent,SWT.NORMAL);
+  label.setText("Hello World");
+}

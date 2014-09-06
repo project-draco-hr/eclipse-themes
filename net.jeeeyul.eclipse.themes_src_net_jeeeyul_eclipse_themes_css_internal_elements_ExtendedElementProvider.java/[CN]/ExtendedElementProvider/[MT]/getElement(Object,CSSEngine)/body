@@ -1,0 +1,12 @@
+{
+  if (element instanceof FormHeading) {
+    return new FormHeadingElement((FormHeading)element,engine);
+  }
+ else   if (element instanceof Section) {
+    return new SectionElement((Section)element,engine);
+  }
+ else   if (element instanceof FormText) {
+    return new FormTextElement((FormText)element,engine);
+  }
+  return null;
+}

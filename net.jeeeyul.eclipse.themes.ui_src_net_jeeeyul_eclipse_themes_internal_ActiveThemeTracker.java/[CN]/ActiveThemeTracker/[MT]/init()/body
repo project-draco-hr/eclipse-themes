@@ -1,0 +1,4 @@
+{
+  eventBroker.subscribe(IThemeEngine.Events.THEME_CHANGED,themeChangeHandler);
+  Debug.println("Active Theme Tracker has been started");
+}

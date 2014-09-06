@@ -1,9 +1,0 @@
-{
-  IThemeEngine engine=(IThemeEngine)Display.getDefault().getData("org.eclipse.e4.ui.css.swt.theme");
-  ITheme theme=engine.getActiveTheme();
-  if (theme == null) {
-    return false;
-  }
-  boolean isCustomThemeActivated=JThemesCore.CUSTOM_THEME_ID.equals(theme.getId());
-  return isCustomThemeActivated;
-}

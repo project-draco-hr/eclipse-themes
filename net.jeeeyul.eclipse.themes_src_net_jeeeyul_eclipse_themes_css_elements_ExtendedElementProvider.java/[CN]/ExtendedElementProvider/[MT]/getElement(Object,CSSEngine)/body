@@ -1,9 +1,0 @@
-{
-  if (element instanceof FormHeading) {
-    return new FormHeadingElement((FormHeading)element,engine);
-  }
- else   if (element instanceof Section) {
-    return new SectionElement((Section)element,engine);
-  }
-  return null;
-}

@@ -1,6 +1,7 @@
 {
   if (DEBUG == null) {
-    DEBUG=JThemesCore.getDefault().isDebugging();
+    String debugOption=Platform.getDebugOption(MessageFormat.format("{0}/debug",JTRuntime.PLUGIN_ID));
+    DEBUG=Boolean.parseBoolean(debugOption);
   }
   return DEBUG;
 }
