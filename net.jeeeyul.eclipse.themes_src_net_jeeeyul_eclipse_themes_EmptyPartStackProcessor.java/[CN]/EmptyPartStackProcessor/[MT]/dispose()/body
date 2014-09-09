@@ -1,0 +1,5 @@
+{
+  broker.unsubscribe(widgetAssignListener);
+  broker.unsubscribe(modelChildrenListener);
+  Debug.println("Empty Part Stack Processor is stopped.");
+}

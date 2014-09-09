@@ -1,0 +1,7 @@
+{
+  if (ps.getChildren().size() == 0) {
+    if (!ps.getTags().contains("empty")) {
+      ps.getTags().add("empty");
+    }
+  }
+}

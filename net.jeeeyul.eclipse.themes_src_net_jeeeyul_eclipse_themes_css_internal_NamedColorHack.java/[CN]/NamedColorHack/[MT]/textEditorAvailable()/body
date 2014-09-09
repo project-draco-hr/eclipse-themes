@@ -1,3 +1,3 @@
 {
-  return Platform.getBundle("org.eclipse.ui.editors") != null;
+  return Platform.getBundle(PLUGIN_ID__TEXT_EDITORS) != null;
 }

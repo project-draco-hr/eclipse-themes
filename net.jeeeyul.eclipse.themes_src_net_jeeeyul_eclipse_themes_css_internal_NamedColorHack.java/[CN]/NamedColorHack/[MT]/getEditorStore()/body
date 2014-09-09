@@ -1,6 +1,6 @@
 {
   if (fEditorStore == null) {
-    fEditorStore=new ScopedPreferenceStore(InstanceScope.INSTANCE,"org.eclipse.ui.editors");
+    fEditorStore=new ScopedPreferenceStore(InstanceScope.INSTANCE,PLUGIN_ID__TEXT_EDITORS);
   }
   return fEditorStore;
 }

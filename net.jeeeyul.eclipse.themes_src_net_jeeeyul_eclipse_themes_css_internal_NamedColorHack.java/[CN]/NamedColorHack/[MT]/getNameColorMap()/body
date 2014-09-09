@@ -1,6 +1,6 @@
 {
   if (namedColorMap == null) {
-    Field mapField=CSS2ColorHelper.class.getDeclaredField("colorNamesMap");
+    Field mapField=CSS2ColorHelper.class.getDeclaredField(FIELD_NAME__COLOR_NAMES_MAP);
     mapField.setAccessible(true);
     namedColorMap=(Map<String,String>)mapField.get(CSS2ColorHelper.class);
   }
