@@ -2,4 +2,5 @@
   Debug.println("Empty Part Stack Processor is started");
   broker.subscribe(UIEvents.UIElement.TOPIC_WIDGET,widgetAssignListener);
   broker.subscribe(ElementContainer.TOPIC_CHILDREN,modelChildrenListener);
+  broker.subscribe(UIEvents.UIElement.TOPIC_TOBERENDERED,toggleViewVisibilityListener);
 }

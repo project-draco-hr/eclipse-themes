@@ -5,7 +5,7 @@
   }
   CSSClasses styleClasses=CSSClasses.getStyleClasses(widget);
   boolean hasEmptyTag=stack.getTags().contains("empty");
-  boolean hasChild=IterableExtensions.filter(stack.getChildren(),MPart.class).iterator().hasNext();
+  boolean hasChild=hasVisibleChild(stack);
   if (hasChild == false && hasEmptyTag == false) {
     stack.getTags().add("empty");
     styleClasses.add("empty");

@@ -1,7 +1,10 @@
 {
-  if (ps.getChildren().size() == 0) {
-    if (!ps.getTags().contains("empty")) {
-      ps.getTags().add("empty");
-    }
+  boolean hasEmptyTag=stack.getTags().contains("empty");
+  boolean hasChild=hasVisibleChild(stack);
+  if (hasChild == false && hasEmptyTag == false) {
+    stack.getTags().add("empty");
+  }
+ else   if (hasEmptyTag && hasChild) {
+    stack.getTags().remove("empty");
   }
 }

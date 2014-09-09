@@ -1,0 +1,16 @@
+{
+  boolean hasChild=IterableExtensions.exists(stack.getChildren(),new Functions.Function1<MStackElement,Boolean>(){
+    @Override public Boolean apply(    MStackElement e){
+      if (e instanceof MPart) {
+        return true;
+      }
+ else       if (e instanceof MPlaceholder) {
+        MPlaceholder placeholder=(MPlaceholder)e;
+        return placeholder.isToBeRendered();
+      }
+      return false;
+    }
+  }
+);
+  return hasChild;
+}
