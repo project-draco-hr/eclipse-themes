@@ -1,14 +1,21 @@
 {
   Widget widget=(Widget)stack.getWidget();
+  if (widget == null || widget.isDisposed()) {
+    return;
+  }
   CSSClasses styleClasses=CSSClasses.getStyleClasses(widget);
-  if (stack.getChildren().size() == 0) {
+  boolean hasEmptyTag=stack.getTags().contains("empty");
+  boolean hasChild=IterableExtensions.filter(stack.getChildren(),MPart.class).iterator().hasNext();
+  if (hasChild == false && hasEmptyTag == false) {
     stack.getTags().add("empty");
     styleClasses.add("empty");
     engine.setClassname(widget,styleClasses.toString());
+    Debug.println("New Empty Part Stack Found!");
   }
- else {
+ else   if (hasEmptyTag && hasChild) {
     stack.getTags().remove("empty");
     styleClasses.remove("empty");
     engine.setClassname(widget,styleClasses.toString());
+    Debug.println("Empty Part Stack about to have a new child");
   }
 }
