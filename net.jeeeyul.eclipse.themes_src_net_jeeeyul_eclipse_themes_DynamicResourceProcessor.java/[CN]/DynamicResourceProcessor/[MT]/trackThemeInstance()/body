@@ -2,7 +2,8 @@
   Debug.println("DynamicResourceProcessor Started.");
   ctx.runAndTrack(new RunAndTrack(){
     @Override public boolean changed(    IEclipseContext context){
-      return tryToInstall(context) == false;
+      boolean tryNext=tryToInstall(context) == false;
+      return tryNext;
     }
   }
 );

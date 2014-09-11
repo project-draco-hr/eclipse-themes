@@ -21,6 +21,7 @@
   documentCSS.removeAllStyleSheets();
   if (hotSwap && ENVHelper.INSTANCE.isLunaOrAbove()) {
     HotSwap.INSTANCE.releaseHandleImages(cssEngine);
+    Debug.println("Old handle and frame images are disposed.");
   }
   for (  StyleSheet each : newSheetList) {
     documentCSS.addStyleSheet(each);
@@ -31,6 +32,7 @@
   }
   if (hotSwap && ENVHelper.INSTANCE.isLunaOrAbove()) {
     HotSwap.INSTANCE.fixDragHandles(cssEngine);
+    Debug.println("Old handle and frame images are hot-swapped.");
   }
   Debug.println("Theme was re-written");
 }
