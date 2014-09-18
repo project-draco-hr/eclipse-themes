@@ -48,12 +48,7 @@
     GridData browserData=new GridData(GridData.FILL_BOTH);
     browserData.horizontalSpan=3;
     browser.setLayoutData(browserData);
-    browser.addOpenWindowListener(new OpenWindowListener(){
-      @Override public void open(      WindowEvent event){
-        handleOpen(event);
-      }
-    }
-);
+    initializeBrowser(browser,false);
     installFunctions();
     browser.setUrl(getBootstrapURL());
   }

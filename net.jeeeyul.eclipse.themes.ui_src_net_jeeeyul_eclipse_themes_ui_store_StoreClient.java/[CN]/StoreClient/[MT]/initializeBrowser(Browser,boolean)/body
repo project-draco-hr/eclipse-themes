@@ -1,0 +1,55 @@
+{
+  browser.addOpenWindowListener(new OpenWindowListener(){
+    public void open(    WindowEvent event){
+      if (!event.required)       return;
+      Shell shell=new Shell(browser.getDisplay(),SWT.SHELL_TRIM);
+      shell.setImage(SharedImages.getImage(SharedImages.STORE));
+      shell.setText("New Window");
+      shell.setLayout(new FillLayout());
+      Browser browser=new Browser(shell,SWT.NONE);
+      initializeBrowser(browser,true);
+      event.browser=browser;
+    }
+  }
+);
+  if (!closable) {
+    return;
+  }
+  browser.addVisibilityWindowListener(new VisibilityWindowListener(){
+    public void hide(    WindowEvent event){
+      Browser browser=(Browser)event.widget;
+      Shell shell=browser.getShell();
+      shell.setVisible(false);
+    }
+    public void show(    WindowEvent event){
+      Browser browser=(Browser)event.widget;
+      Shell shell=browser.getShell();
+      if (event.location != null)       shell.setLocation(event.location);
+      if (event.size == null) {
+        event.size=new Point(1024,768);
+      }
+      if (event.size != null) {
+        Point size=event.size;
+        shell.setSize(shell.computeSize(Math.min(size.x,1027),Math.min(size.y,768)));
+      }
+      if (event.addressBar || event.menuBar || event.statusBar|| event.toolBar) {
+      }
+      shell.open();
+    }
+  }
+);
+  browser.addCloseWindowListener(new CloseWindowListener(){
+    public void close(    WindowEvent event){
+      Browser browser=(Browser)event.widget;
+      Shell shell=browser.getShell();
+      shell.close();
+    }
+  }
+);
+  browser.addTitleListener(new TitleListener(){
+    @Override public void changed(    TitleEvent event){
+      browser.getShell().setText(event.title);
+    }
+  }
+);
+}
