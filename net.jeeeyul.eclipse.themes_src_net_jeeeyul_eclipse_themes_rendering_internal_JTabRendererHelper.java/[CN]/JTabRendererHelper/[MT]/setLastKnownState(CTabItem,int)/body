@@ -1,0 +1,4 @@
+{
+  item.setData(DATA_KEY__LAST_KNOWN_STATE,state);
+  return state;
+}

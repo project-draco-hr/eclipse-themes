@@ -1,0 +1,25 @@
+{
+  if (countThread != null) {
+    return;
+  }
+  countThread=new Thread(new Runnable(){
+    @Override public void run(){
+      while (!shell.isDisposed()) {
+        Display.getDefault().asyncExec(new Runnable(){
+          @Override public void run(){
+            if (fpsLabel != null && !fpsLabel.isDisposed())             fpsLabel.setText(Long.toString(getFPS(),10));
+          }
+        }
+);
+        try {
+          Thread.sleep(100);
+        }
+ catch (        InterruptedException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+  }
+);
+  countThread.start();
+}

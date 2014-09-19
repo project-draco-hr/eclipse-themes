@@ -1,0 +1,7 @@
+{
+  Integer state=(Integer)item.getData(DATA_KEY__LAST_KNOWN_STATE);
+  if (state == null) {
+    state=0;
+  }
+  return state;
+}

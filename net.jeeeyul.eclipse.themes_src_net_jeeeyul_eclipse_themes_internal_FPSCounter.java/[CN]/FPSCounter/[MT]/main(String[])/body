@@ -1,0 +1,25 @@
+{
+  Display display=Display.getDefault();
+  final FPSCounter counter=new FPSCounter();
+  Shell shell=counter.getShell();
+  counter.open();
+  new Thread(new Runnable(){
+    @Override public void run(){
+      while (true) {
+        counter.addCount();
+        try {
+          Thread.sleep((long)(100));
+        }
+ catch (        InterruptedException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+  }
+).start();
+  while (!shell.isDisposed()) {
+    if (!display.readAndDispatch()) {
+      display.sleep();
+    }
+  }
+}

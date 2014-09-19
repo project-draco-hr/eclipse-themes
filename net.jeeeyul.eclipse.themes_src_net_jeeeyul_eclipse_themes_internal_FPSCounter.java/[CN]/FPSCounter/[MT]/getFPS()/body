@@ -1,0 +1,11 @@
+{
+  Iterator<Long> iter=queue.iterator();
+  long offset=System.currentTimeMillis() - 1000;
+  long count=0;
+  while (iter.hasNext()) {
+    if (iter.next() > offset) {
+      count++;
+    }
+  }
+  return count;
+}

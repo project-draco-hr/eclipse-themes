@@ -1,8 +1,9 @@
 {
   browser.addOpenWindowListener(new OpenWindowListener(){
     public void open(    WindowEvent event){
+      Debug.println("Open");
       if (!event.required)       return;
-      Shell shell=new Shell(browser.getDisplay(),SWT.SHELL_TRIM);
+      Shell shell=new Shell(browser.getDisplay(),SWT.SHELL_TRIM | SWT.TOP);
       shell.setImage(SharedImages.getImage(SharedImages.STORE));
       shell.setText("New Window");
       shell.setLayout(new FillLayout());
@@ -17,11 +18,13 @@
   }
   browser.addVisibilityWindowListener(new VisibilityWindowListener(){
     public void hide(    WindowEvent event){
+      Debug.println("hide");
       Browser browser=(Browser)event.widget;
       Shell shell=browser.getShell();
       shell.setVisible(false);
     }
     public void show(    WindowEvent event){
+      Debug.println("show");
       Browser browser=(Browser)event.widget;
       Shell shell=browser.getShell();
       if (event.location != null)       shell.setLocation(event.location);
@@ -40,6 +43,7 @@
 );
   browser.addCloseWindowListener(new CloseWindowListener(){
     public void close(    WindowEvent event){
+      Debug.println("close");
       Browser browser=(Browser)event.widget;
       Shell shell=browser.getShell();
       shell.close();
@@ -49,6 +53,12 @@
   browser.addTitleListener(new TitleListener(){
     @Override public void changed(    TitleEvent event){
       browser.getShell().setText(event.title);
+    }
+  }
+);
+  browser.addDisposeListener(new DisposeListener(){
+    @Override public void widgetDisposed(    DisposeEvent e){
+      Debug.println("dispose");
     }
   }
 );

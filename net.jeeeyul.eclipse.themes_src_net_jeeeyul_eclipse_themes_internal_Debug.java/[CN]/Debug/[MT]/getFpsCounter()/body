@@ -1,0 +1,7 @@
+{
+  if (fpsCounter == null) {
+    fpsCounter=new FPSCounter();
+    fpsCounter.open();
+  }
+  return fpsCounter;
+}

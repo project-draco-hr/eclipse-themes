@@ -1,0 +1,3 @@
+{
+  if (isDebuggingGUI())   getFpsCounter().addCount();
+}

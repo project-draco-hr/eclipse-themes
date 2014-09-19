@@ -1,0 +1,3 @@
+{
+  return getLastVisibleItem(me.getParent()) == me;
+}

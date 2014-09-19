@@ -1,0 +1,6 @@
+{
+  if (shell == null || shell.isDisposed()) {
+    create();
+  }
+  return shell;
+}
