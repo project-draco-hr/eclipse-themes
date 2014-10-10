@@ -1,0 +1,7 @@
+{
+  IWorkbench workbench=PlatformUI.getWorkbench();
+  theme=workbench.getThemeManager().getCurrentTheme();
+  registry=WorkbenchPlugin.getDefault().getThemeRegistry();
+  generateWorkbenchSettings(builder,WorkbenchPlugin.getDefault().getPreferenceStore());
+  generateEditorSettings(builder,EditorsPlugin.getDefault().getMarkerAnnotationPreferences(),EditorsPlugin.getDefault().getPreferenceStore());
+}

@@ -1,0 +1,15 @@
+{
+  sb.append("IEclipsePreferences#org-eclipse-ui-editors {\n  preferences:");
+  for (  AnnotationPreference p : (List<AnnotationPreference>)markerAnnotationPreferences.getAnnotationPreferences()) {
+    String preferenceKey=p.getColorPreferenceKey();
+    if (preferenceKey == null) {
+      continue;
+    }
+    String value=preferences.getString(preferenceKey);
+    RGB defaultValue=p.getColorPreferenceValue();
+    if (value.length() > 0 && (defaultValue == null || !value.equals(StringConverter.asString(defaultValue)))) {
+      sb.append("\n    '").append(preferenceKey).append("=").append(value).append("'");
+    }
+  }
+  sb.append("\n}\n\n");
+}
