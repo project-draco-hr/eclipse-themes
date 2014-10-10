@@ -1,0 +1,18 @@
+{
+  try {
+    Bundle bundle=Platform.getBundle("net.jeeeyul.eclipse.themes");
+    URL resource=null;
+    if (bundle != null) {
+      resource=Platform.getBundle("net.jeeeyul.eclipse.themes").getResource(key);
+    }
+ else {
+      resource=new File(key).toURI().toURL();
+    }
+    Image image=new Image(null,resource.openStream());
+    return image;
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+    return PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_OBJS_ERROR_TSK);
+  }
+}
