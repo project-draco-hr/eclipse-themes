@@ -1,0 +1,26 @@
+{
+  sb.append("IEclipsePreferences#org-eclipse-ui-workbench {\n  preferences:");
+  FontRegistry fontRegistry=theme.getFontRegistry();
+  for (  ColorDefinition definition : registry.getColorsFor(theme.getId())) {
+    if (definition.isModifiedByUser()) {
+      String prefKey=ThemeElementHelper.createPreferenceKey(theme,definition.getId());
+      String fdString=StringConverter.asString(definition.getValue());
+      String value=preferences.getString(prefKey);
+      if (value.length() > 0 && !value.equals(fdString)) {
+        sb.append("\n    '").append(prefKey).append("=").append(fdString).append("'");
+      }
+    }
+  }
+  ColorRegistry colorRegistry=theme.getColorRegistry();
+  for (  FontDefinition definition : registry.getFontsFor(theme.getId())) {
+    if (definition.isModifiedByUser()) {
+      String prefKey=ThemeElementHelper.createPreferenceKey(theme,definition.getId());
+      String fdString=PreferenceConverter.getStoredRepresentation(definition.getValue());
+      String value=preferences.getString(prefKey);
+      if (value.length() > 0 && !value.equals(fdString)) {
+        sb.append("\n    '").append(prefKey).append("=").append(fdString).append("'");
+      }
+    }
+  }
+  sb.append("\n}\n\n");
+}
