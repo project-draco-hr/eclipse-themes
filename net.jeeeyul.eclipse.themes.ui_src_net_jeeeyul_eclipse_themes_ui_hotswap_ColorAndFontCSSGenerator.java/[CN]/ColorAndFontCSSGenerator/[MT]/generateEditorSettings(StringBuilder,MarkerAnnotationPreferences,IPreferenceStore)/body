@@ -1,5 +1,6 @@
 {
-  sb.append("IEclipsePreferences#org-eclipse-ui-editors {\n  preferences:");
+  List<String> keys=new LinkedList<String>();
+  List<String> values=new LinkedList<String>();
   for (  AnnotationPreference p : (List<AnnotationPreference>)markerAnnotationPreferences.getAnnotationPreferences()) {
     String preferenceKey=p.getColorPreferenceKey();
     if (preferenceKey == null) {
@@ -8,8 +9,15 @@
     String value=preferences.getString(preferenceKey);
     RGB defaultValue=p.getColorPreferenceValue();
     if (value.length() > 0 && (defaultValue == null || !value.equals(StringConverter.asString(defaultValue)))) {
-      sb.append("\n    '").append(preferenceKey).append("=").append(value).append("'");
+      keys.add(preferenceKey);
+      values.add(value);
     }
   }
-  sb.append("\n}\n\n");
+  if (keys.size() > 0) {
+    sb.append("IEclipsePreferences#org-eclipse-ui-editors {\n  preferences:");
+    for (int i=0; i < keys.size(); i++) {
+      sb.append("\n    '").append(keys.get(i)).append("=").append(values.get(i)).append("'");
+    }
+    sb.append(";\n}\n\n");
+  }
 }
