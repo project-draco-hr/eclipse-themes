@@ -1,24 +1,39 @@
 {
-  sb.append("IEclipsePreferences#org-eclipse-ui-workbench {\n  preferences:");
+  List<String> keys=new LinkedList<String>();
+  List<String> values=new LinkedList<String>();
   for (  ColorDefinition definition : registry.getColorsFor(theme.getId())) {
     if (definition.isModifiedByUser()) {
       String prefKey=ThemeElementHelper.createPreferenceKey(theme,definition.getId());
-      String fdString=StringConverter.asString(definition.getValue());
+      String fdString=null;
+      if (definition.getValue() != null) {
+        fdString=StringConverter.asString(definition.getValue());
+      }
       String value=preferences.getString(prefKey);
-      if (value.length() > 0 && !value.equals(fdString)) {
-        sb.append("\n    '").append(prefKey).append("=").append(fdString).append("'");
+      if (value.length() > 0 && (fdString == null || !value.equals(fdString))) {
+        keys.add(prefKey);
+        values.add(value);
       }
     }
   }
   for (  FontDefinition definition : registry.getFontsFor(theme.getId())) {
     if (definition.isModifiedByUser()) {
       String prefKey=ThemeElementHelper.createPreferenceKey(theme,definition.getId());
-      String fdString=PreferenceConverter.getStoredRepresentation(definition.getValue());
+      String fdString=null;
+      if (definition.getValue() != null) {
+        fdString=PreferenceConverter.getStoredRepresentation(definition.getValue());
+      }
       String value=preferences.getString(prefKey);
-      if (value.length() > 0 && !value.equals(fdString)) {
-        sb.append("\n    '").append(prefKey).append("=").append(fdString).append("'");
+      if (value.length() > 0 && (fdString == null || !value.equals(fdString))) {
+        keys.add(prefKey);
+        values.add(value);
       }
     }
   }
-  sb.append("\n}\n\n");
+  if (keys.size() > 0) {
+    sb.append("IEclipsePreferences#org-eclipse-ui-workbench {\n  preferences:");
+    for (int i=0; i < keys.size(); i++) {
+      sb.append("\n    '").append(keys.get(i)).append("=").append(values.get(i)).append("'");
+    }
+    sb.append(";\n}\n\n");
+  }
 }
