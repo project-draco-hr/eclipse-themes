@@ -1,0 +1,8 @@
+{
+  Image result=REGISTRY.get(key);
+  if (result == null) {
+    result=loadImage(key);
+    REGISTRY.put(key,result);
+  }
+  return result;
+}
