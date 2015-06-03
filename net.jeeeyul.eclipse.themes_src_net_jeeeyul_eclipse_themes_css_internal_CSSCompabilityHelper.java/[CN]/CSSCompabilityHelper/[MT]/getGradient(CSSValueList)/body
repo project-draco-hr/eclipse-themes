@@ -21,16 +21,17 @@ switch (primType) {
 case CSSPrimitiveValue.CSS_IDENT:
 case CSSPrimitiveValue.CSS_STRING:
 case CSSPrimitiveValue.CSS_RGBCOLOR:
-        RGB rgb=CSSSWTColorHelper.getRGB(value);
-      if (rgb != null) {
-        gradient.addRGB(rgb,(CSSPrimitiveValue)value);
-      }
+        RGBA rgba=CSSSWTColorHelper.getRGBA(value);
+      RGB rgb=(rgba != null) ? rgba.rgb : null;
+    if (rgb != null) {
+      gradient.addRGB(rgb,(CSSPrimitiveValue)value);
+    }
  else {
-        gradient.setVertical(!value.getCssText().equals("false"));
-      }
-    break;
+      gradient.setVertical(!value.getCssText().equals("false"));
+    }
+  break;
 case CSSPrimitiveValue.CSS_PERCENTAGE:
-  gradient.addPercent(getPercent((CSSPrimitiveValue)value));
+gradient.addPercent(getPercent((CSSPrimitiveValue)value));
 break;
 }
 }
