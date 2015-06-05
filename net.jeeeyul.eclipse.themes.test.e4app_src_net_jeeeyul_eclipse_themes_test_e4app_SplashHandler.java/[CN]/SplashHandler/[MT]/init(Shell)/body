@@ -1,0 +1,4 @@
+{
+  super.init(splash);
+  System.out.println(splash);
+}
