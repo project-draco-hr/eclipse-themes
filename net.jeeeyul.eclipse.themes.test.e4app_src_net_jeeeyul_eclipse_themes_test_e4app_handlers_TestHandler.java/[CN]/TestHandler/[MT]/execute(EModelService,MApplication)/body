@@ -1,0 +1,11 @@
+{
+  List<MHandledMenuItem> items=modelService.findElements(app,MHandledMenuItem.class,EModelService.ANYWHERE | EModelService.IN_PART,new Selector(){
+    @Override public boolean select(    MApplicationElement element){
+      return true;
+    }
+  }
+);
+  for (  MHandledItem each : items) {
+    System.out.println(each.getCommand().getCommandName());
+  }
+}
